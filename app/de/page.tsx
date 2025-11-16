@@ -2,6 +2,7 @@ import HomeContent from "../../components/HomeContent";
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: "Sport Endorse | Verbinde Marken mit Elite-Athleten & Sport-Influencern",

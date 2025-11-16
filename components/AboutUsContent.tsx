@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import '../styles/aboutUs.css';
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "@/utils/translations";
-import Image from 'next/image';
+
 
 interface ValueItem {
   icon: string;
@@ -206,15 +206,12 @@ export default function AboutUsContent() {
               {teamMembers.map((member, index) => (
                 <div key={index} className="about-us-team-card">
                   <div className="about-us-team-photo-container">
-                    <Image
-                      src={member.imageUrl}
+                    <img src={member.imageUrl}
                       alt={member.name}
                       width={200}
                       height={200}
                       className="about-us-team-photo"
-                      loading="lazy"
-                      sizes="(max-width: 768px) 150px, 200px"
-                      onError={(e) => {
+                      loading="lazy"onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "/images/placeholder.png";
                       }}
@@ -279,15 +276,12 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://www.add-victor.com/" target="_blank" rel="noopener">
-                      <Image 
-                        src="/images/add-victor.webp" 
+                      <img src="/images/add-victor.webp" 
                         alt="add-victor logo" 
                         width={150} 
                         height={150} 
                         style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 120px, 150px"
-                      />
+                        loading="lazy"/>
                     </a>
                   </div>
                   <div className="about-us-partner-info">
@@ -308,15 +302,12 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://3bigwheels.com/" target="_blank" rel="noopener">
-                      <Image 
-                        src="/images/3 big wheels.png" 
+                      <img src="/images/3 big wheels.png" 
                         alt="3 big wheels logo" 
                         width={150} 
                         height={150} 
                         style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 120px, 150px"
-                      />
+                        loading="lazy"/>
                     </a>
                   </div>
                   <div className="about-us-partner-info">
@@ -337,15 +328,12 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo" style={{ backgroundColor:"black"}}>
                     <a href="https://thesportingclub.ie/" target="_blank" rel="noopener">
-                      <Image 
-                        src="/images/The Sporting Club Ireland.webp" 
+                      <img src="/images/The Sporting Club Ireland.webp" 
                         alt="The Sporting Club Ireland logo" 
                         width={150} 
                         height={150} 
                         style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 120px, 150px"
-                      />
+                        loading="lazy"/>
                     </a>
                   </div>
                   <div className="about-us-partner-info">

@@ -2,6 +2,7 @@ import AboutUsContent from "@/components/AboutUsContent";
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: "About Sport Endorse | Connecting Athletes with Brands Worldwide",

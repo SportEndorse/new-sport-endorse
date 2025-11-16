@@ -3,6 +3,7 @@ import translations from "@/utils/translations";
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: "Finden Sie Elite-Athleten & Sport-Influencer für Ihre Marke | Sport Endorse",

@@ -2,6 +2,7 @@ import TermsAndConditionsContent from "@/components/TermsAndConditionsContent";
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Sport Endorse",

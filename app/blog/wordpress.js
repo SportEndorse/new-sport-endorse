@@ -8,7 +8,7 @@ export async function getAllPosts() {
 
   while (hasMore) {
     const res = await fetch(`${API_URL}/posts?_embed&page=${page}`, {
-      next: { revalidate: 300 } // ISR with App Router
+      next: { revalidate: 86400 } // ISR with App Router - 24 hours
     });
 
     if (!res.ok) {
@@ -43,7 +43,7 @@ export async function getAllPosts() {
 
 export async function getPostBySlug(slug) {
   const res = await fetch(`${API_URL}/posts?slug=${slug}&_embed`, {
-    next: { revalidate: 300 }
+    next: { revalidate: 86400 }
   })
   if (!res.ok) throw new Error('Failed to fetch post')
   const posts = await res.json()

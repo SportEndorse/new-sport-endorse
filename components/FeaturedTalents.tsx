@@ -3,7 +3,7 @@ import "../styles/featuredTalents.css";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
 import { getAllFeaturedTalents } from "../utils/featuredTalentsData";
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 export default function FeaturedTalents() {
@@ -31,65 +31,52 @@ export default function FeaturedTalents() {
       <div className="scrollTalents">
         {talents.map((talent, i) => (
           <div className="talent-card" key={i}>
-            <Image 
+            <img 
               src={talent.image} 
               alt={`${talent.name} profile`} 
               width={200} 
               height={200}
               loading="lazy"
-              sizes="(max-width: 768px) 150px, 200px"
             />
             <div className="talent-info">
               <p className="talent-name">{talent.name}</p>
               <div className="all-social-logos">
                 {talent.followingInstagram && (
                   <div className="social-platform">
-                    <Image 
-                      src="/images/instagramLogo.webp" 
+                    <img src="/images/instagramLogo.webp" 
                       alt="instagram logo" 
                       width={24} 
                       height={24} 
                       className="social-logo"
-                      loading="lazy"
-                      sizes="24px"
-                    />
+                      loading="lazy"/>
                     <p className="follower-count">{talent.followingInstagram}</p>
                   </div>
                 )}
                 {talent.followingTiktok && (
                   <div className="social-platform">
-                    <Image 
-                      src="/images/tiktokLogo.webp" 
+                    <img src="/images/tiktokLogo.webp" 
                       alt="tiktok logo" 
                       width={24} 
                       height={24} 
                       className="social-logo"
-                      loading="lazy"
-                      sizes="24px"
-                    />
+                      loading="lazy"/>
                     <p className="follower-count">{talent.followingTiktok}</p>
                   </div>
                 )}
               </div>
               <div className="tags">
-                <span><Image 
-                  src="/images/trophy.png" 
+                <span><img src="/images/trophy.png" 
                   alt="trophy icon" 
                   width={16} 
                   height={16} 
                   className="tag-icon"
-                  loading="lazy"
-                  sizes="16px"
-                />{talent.sport}</span>
-                <span><Image 
-                  src="/images/location.png" 
+                  loading="lazy"/>{talent.sport}</span>
+                <span><img src="/images/location.png" 
                   alt="location icon" 
                   width={16} 
                   height={16} 
                   className="tag-icon"
-                  loading="lazy"
-                  sizes="16px"
-                />{talent.location}</span>
+                  loading="lazy"/>{talent.location}</span>
               </div>
             </div>
           </div>
@@ -97,15 +84,12 @@ export default function FeaturedTalents() {
         
         {/* CTA Card */}
         <Link href={getSubscriptionLink()} className="cta-card">
-          <Image 
-            src="/images/SE_logo_lockup_wht.png" 
+          <img src="/images/SE_logo_lockup_wht.png" 
             alt="Sport Endorse logo" 
             width={120} 
             height={160}
             style={{ objectFit: 'contain' }}
-            loading="lazy"
-            sizes="(max-width: 768px) 100px, 120px"
-          />
+            loading="lazy"/>
           <h3>{t.viewAll}</h3>
         </Link>
       </div>

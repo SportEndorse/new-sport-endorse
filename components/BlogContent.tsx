@@ -2,7 +2,7 @@
 
 import { getAllPosts } from "../app/blog/wordpress.js";
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "@/utils/translations";
@@ -90,15 +90,12 @@ export default function BlogContent() {
               {posts.map(post => (
                 <article key={post.id} className="blog-post-card">
                   {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
-                    <Image
-                      src={post._embedded['wp:featuredmedia'][0].source_url}
+                    <img src={post._embedded['wp:featuredmedia'][0].source_url}
                       alt={decodeHtmlEntities(post.title.rendered)}
                       width={400}
                       height={250}
                       className="blog-post-image"
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                    />
+                      loading="lazy"/>
                   )}
                           
                   <div className="blog-post-content">

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import ContactUsContent from '@/components/ContactUsContent'
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: 'Contactar Sport Endorse | Ponte en Contacto con Nuestro Equipo',

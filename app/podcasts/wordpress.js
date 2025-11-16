@@ -18,7 +18,7 @@ export async function fetchPodcasts() {
         },
         // Add cache control for better performance
         next: { 
-          revalidate: 3600*24 // Revalidate every day
+          revalidate: 86400 // Revalidate every day (24 hours)
         }
       });
 
@@ -68,7 +68,7 @@ export async function fetchPodcastById(id) {
         'Content-Type': 'application/json',
       },
       next: { 
-        revalidate: 3600*24
+        revalidate: 86400
       }
     });
 
@@ -96,7 +96,7 @@ export async function getPodcastBySlug(slug) {
         'Content-Type': 'application/json',
       },
       next: { 
-        revalidate: 3600*24
+        revalidate: 86400
       }
     });
 

@@ -25,7 +25,7 @@ export default function LetsTalk() {
 
     // Validate required fields
     if (!formData.name || !formData.email || !formData.phone) {
-      alert('Please fill in all required fields.');
+      alert('Pleasein all required fields.');
       return;
     }
 

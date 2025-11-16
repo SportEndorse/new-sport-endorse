@@ -1,6 +1,6 @@
 "use client";
 import "../styles/brandsHeroTalents.css";
-import Image from 'next/image';
+
 
 export default function BrandsHeroTalents() {
   const talents = [
@@ -64,25 +64,25 @@ export default function BrandsHeroTalents() {
       <div className="hero-talents-scroll">
         {talents.map((talent, i) => (
           <div className="hero-talent-card" key={i}>
-            <Image src={talent.image} alt={`${talent.name} profile`} width={200} height={200} />
+            <img src={talent.image} alt={`${talent.name} profile`} width={200} height={200} />
             <div className="hero-talent-info">
               <p className="hero-talent-name">{talent.name}</p>
               <div className="hero-social-logos">
                 {talent.followingInstagram && (
                   <div className="hero-social-platform">
-                    <Image src="/images/instagramLogo.webp" alt="instagram logo" width={24} height={24} className="hero-social-logo" />
+                    <img src="/images/instagramLogo.webp" alt="instagram logo" width={24} height={24} className="hero-social-logo" />
                     <p className="hero-follower-count">{talent.followingInstagram}</p>
                   </div>
                 )}
                 {talent.followingTiktok && (
                   <div className="hero-social-platform">
-                    <Image src="/images/tiktokLogo.webp" alt="tiktok logo" width={24} height={24} className="hero-social-logo" />
+                    <img src="/images/tiktokLogo.webp" alt="tiktok logo" width={24} height={24} className="hero-social-logo" />
                     <p className="hero-follower-count">{talent.followingTiktok}</p>
                   </div>
                 )}
               </div>
               <div className="hero-tags">
-                <span><Image src="/images/trophy.png" alt="trophy icon" width={16} height={16} className="hero-tag-icon"/>{talent.sport}</span>
+                <span><img src="/images/trophy.png" alt="trophy icon" width={16} height={16} className="hero-tag-icon"/>{talent.sport}</span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function BrandsHeroTalents() {
         
         {/* CTA Card */}
         <a target="_blank" href="https://platform.sportendorse.com/signup/brand" className="hero-cta-card">
-          <Image src="/images/whiteSportEndorseLogo.webp" alt="Sport Endorse logo" width={120} height={40} />
+          <img src="/images/whiteSportEndorseLogo.webp" alt="Sport Endorse logo" width={120} height={40} />
           <h4>View All Athletes</h4>
         </a>
       </div>

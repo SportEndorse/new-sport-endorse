@@ -14,11 +14,9 @@ export async function getAllSuccessStories() {
       console.log(`� Fetching page ${page}...`);
       
       // Try the main endpoint first
-      let res = await fetch(`${API_URL}/success_stories?_embed&page=${page}`, {
-        next: { revalidate: 300 }
-      });
-      
-      console.log(`� Main endpoint response status for page ${page}:`, res.status);
+        let res = await fetch(`${API_URL}/success_stories?_embed&page=${page}`, {
+          next: { revalidate: 86400 }
+        });      console.log(`� Main endpoint response status for page ${page}:`, res.status);
       
       // If main endpoint fails, try alternatives (same as working component)
       if (!res.ok) {
@@ -34,7 +32,7 @@ export async function getAllSuccessStories() {
           console.log(`🔄 Trying: ${altEndpoint}`);
           try {
             const altRes = await fetch(altEndpoint, {
-              next: { revalidate: 300 }
+              next: { revalidate: 86400 }
             });
             if (altRes.ok) {
               console.log(`✅ Alternative worked: ${altEndpoint}`);
@@ -138,7 +136,7 @@ export async function getSuccessStoryBySlug(slug) {
     
     // Try the main endpoint first
     let res = await fetch(`${API_URL}/success_stories?slug=${slug}&_embed`, {
-      next: { revalidate: 300 }
+      next: { revalidate: 86400 }
     });
     
     console.log(`📊 Main endpoint response status for slug "${slug}":`, res.status);
@@ -157,7 +155,7 @@ export async function getSuccessStoryBySlug(slug) {
         console.log(`🔄 Trying: ${altEndpoint}`);
         try {
           const altRes = await fetch(altEndpoint, {
-            next: { revalidate: 300 }
+            next: { revalidate: 86400 }
           });
           if (altRes.ok) {
             console.log(`✅ Alternative worked for slug "${slug}": ${altEndpoint}`);
