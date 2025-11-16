@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+
 import "../styles/successStories.css";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
@@ -166,14 +166,12 @@ export default function SuccessStories() {
             visibleStories.map((story, i) => (
               <div className={`success-card${i === Math.floor(visibleCount / 2) ? " active" : " faded"}`} key={story.id}>
                 {story.yoast_head_json?.og_image?.[0]?.url && (
-                  <Image
+                  <img
                     src={story.yoast_head_json.og_image[0].url}
                     alt={decodeHtmlEntities(story.title.rendered)}
-                    width={300}
-                    height={200}
+                    width="300"
+                    height="200"
                     style={{ objectFit: 'cover' }}
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px"
                   />
                 )}
                 <div className="success-info">

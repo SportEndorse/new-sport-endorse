@@ -2,7 +2,7 @@
 
 import { getAllSuccessStories } from "../app/success-stories/wordpress.js";
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "@/utils/translations";
@@ -92,14 +92,12 @@ export default function SuccessStoriesContent() {
                 stories.map((story) => (
                   <article key={story.id} className="blog-post-card">
                     {story.yoast_head_json?.og_image?.[0]?.url && (
-                      <Image
+                      <img
                         src={story.yoast_head_json.og_image[0].url}
                         alt={decodeHtmlEntities(story.title.rendered)}
-                        width={400}
-                        height={250}
+                        width="400"
+                        height="250"
                         className="blog-post-image"
-                        loading="lazy"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                       />
                     )}
 

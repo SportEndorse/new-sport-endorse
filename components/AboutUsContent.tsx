@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import '../styles/aboutUs.css';
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "@/utils/translations";
-import Image from 'next/image';
+
 
 interface ValueItem {
   icon: string;
@@ -206,7 +206,7 @@ export default function AboutUsContent() {
               {teamMembers.map((member, index) => (
                 <div key={index} className="about-us-team-card">
                   <div className="about-us-team-photo-container">
-                    <Image
+                    <img
                       src={member.imageUrl}
                       alt={member.name}
                       width={200}
@@ -279,7 +279,7 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://www.add-victor.com/" target="_blank" rel="noopener">
-                      <Image 
+                      <img 
                         src="/images/add-victor.webp" 
                         alt="add-victor logo" 
                         width={150} 
@@ -308,7 +308,7 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://3bigwheels.com/" target="_blank" rel="noopener">
-                      <Image 
+                      <img 
                         src="/images/3 big wheels.png" 
                         alt="3 big wheels logo" 
                         width={150} 
@@ -337,7 +337,7 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo" style={{ backgroundColor:"black"}}>
                     <a href="https://thesportingclub.ie/" target="_blank" rel="noopener">
-                      <Image 
+                      <img 
                         src="/images/The Sporting Club Ireland.webp" 
                         alt="The Sporting Club Ireland logo" 
                         width={150} 

@@ -2,7 +2,7 @@
 
 import { fetchPodcasts, stripHtml, formatDate, createExcerpt } from "../app/podcasts/wordpress.js";
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "@/utils/translations";
@@ -187,7 +187,7 @@ export default function PodcastsContent() {
             
             <div className="podcasts-platforms-container">
               <a href="https://podcasts.apple.com/ie/podcast/the-athlete-sitdown/id1550095395" target="_blank" rel="noopener noreferrer">
-                <Image 
+                <img 
                   src="/images/podcast/apple-podcasts-logo.webp"
                   loading="lazy"
                   sizes="(max-width: 768px) 120px, 150px" 
@@ -198,7 +198,7 @@ export default function PodcastsContent() {
                 />
               </a>
               <a href="https://music.amazon.com/podcasts/47a22b01-42ad-447a-b137-1866a49890a1/the-athlete-sitdown" target="_blank" rel="noopener noreferrer">
-                <Image 
+                <img 
                   src="/images/podcast/amazon-music-logo.webp"
                   loading="lazy"
                   sizes="(max-width: 768px) 120px, 150px" 
@@ -209,7 +209,7 @@ export default function PodcastsContent() {
                 />
               </a>
               <a href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5" target="_blank" rel="noopener noreferrer">
-                <Image 
+                <img 
                   src="/images/podcast/Spotify-Logo.webp"
                   loading="lazy"
                   sizes="(max-width: 768px) 120px, 150px" 

@@ -7,7 +7,7 @@ import MainLogo from '@/components/MainLogo';
 import BlogBackButton from '@/components/BlogBackButton';
 import { getPostBySlug } from '../app/blog/wordpress';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+
 import "../styles/blog.css";
 
 interface BlogPost {
@@ -116,7 +116,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
               </div>
               
               {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
-                <Image 
+                <img 
                   src={post._embedded['wp:featuredmedia'][0].source_url} 
                   alt={post.title.rendered}
                   className="blog-post-article-image"

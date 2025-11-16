@@ -2,7 +2,7 @@
 import "../styles/community.css";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
-import Image from 'next/image';
+
 
 interface CommunityProps {
   showAgencies?: boolean;
@@ -33,7 +33,7 @@ export default function Community({ showAgencies = false }: CommunityProps) {
       <div className="statistics-grid">
         <div className="stat-box">
           <div className="stat-content">
-            <Image src="/images/statistics/athlete.png" alt="Athletes icon" width={60} height={60} style={{backgroundColor:"#0078c1"}}/>
+            <img src="/images/statistics/athlete.png" alt="Athletes icon" width={60} height={60} style={{backgroundColor:"#0078c1"}}/>
             <h3>{athletes.toLocaleString()}</h3>
           </div>
           <hr className="stats-bar"/>
@@ -41,7 +41,7 @@ export default function Community({ showAgencies = false }: CommunityProps) {
         </div>
         <div className="stat-box">
           <div className="stat-content">
-            <Image src="/images/statistics/price-tag.png" alt={showAgencies ? "Agencies icon" : "Brands icon"} width={60} height={60} style={{backgroundColor:"#F6B014"}}/>
+            <img src="/images/statistics/price-tag.png" alt={showAgencies ? "Agencies icon" : "Brands icon"} width={60} height={60} style={{backgroundColor:"#F6B014"}}/>
             <h3>{showAgencies ? agencies : brands}</h3>
           </div>
           <hr className="stats-bar"/>
@@ -49,7 +49,7 @@ export default function Community({ showAgencies = false }: CommunityProps) {
         </div>
         <div className="stat-box">
           <div className="stat-content">
-            <Image src="/images/statistics/soccer-ball.png" alt="Sports icon" width={60} height={60} style={{backgroundColor:"#83BF24"}}/>
+            <img src="/images/statistics/soccer-ball.png" alt="Sports icon" width={60} height={60} style={{backgroundColor:"#83BF24"}}/>
             <h3>{sports.toLocaleString()}</h3>
           </div>
           <hr className="stats-bar"/>
@@ -57,7 +57,7 @@ export default function Community({ showAgencies = false }: CommunityProps) {
         </div>
         <div className="stat-box">
           <div className="stat-content">
-            <Image src="/images/statistics/worldwide.png" alt="Nationalities icon" width={60} height={60} style={{backgroundColor:"#FF5151"}}/>
+            <img src="/images/statistics/worldwide.png" alt="Nationalities icon" width={60} height={60} style={{backgroundColor:"#FF5151"}}/>
             <h3>{nationalities.toLocaleString()}</h3>
           </div>
           <hr className="stats-bar"/>

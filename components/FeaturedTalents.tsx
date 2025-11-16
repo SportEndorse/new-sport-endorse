@@ -3,7 +3,7 @@ import "../styles/featuredTalents.css";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
 import { getAllFeaturedTalents } from "../utils/featuredTalentsData";
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 export default function FeaturedTalents() {
@@ -31,7 +31,7 @@ export default function FeaturedTalents() {
       <div className="scrollTalents">
         {talents.map((talent, i) => (
           <div className="talent-card" key={i}>
-            <Image 
+            <img 
               src={talent.image} 
               alt={`${talent.name} profile`} 
               width={200} 
@@ -44,7 +44,7 @@ export default function FeaturedTalents() {
               <div className="all-social-logos">
                 {talent.followingInstagram && (
                   <div className="social-platform">
-                    <Image 
+                    <img 
                       src="/images/instagramLogo.webp" 
                       alt="instagram logo" 
                       width={24} 
@@ -58,7 +58,7 @@ export default function FeaturedTalents() {
                 )}
                 {talent.followingTiktok && (
                   <div className="social-platform">
-                    <Image 
+                    <img 
                       src="/images/tiktokLogo.webp" 
                       alt="tiktok logo" 
                       width={24} 
@@ -72,7 +72,7 @@ export default function FeaturedTalents() {
                 )}
               </div>
               <div className="tags">
-                <span><Image 
+                <span><img 
                   src="/images/trophy.png" 
                   alt="trophy icon" 
                   width={16} 
@@ -81,7 +81,7 @@ export default function FeaturedTalents() {
                   loading="lazy"
                   sizes="16px"
                 />{talent.sport}</span>
-                <span><Image 
+                <span><img 
                   src="/images/location.png" 
                   alt="location icon" 
                   width={16} 
@@ -97,7 +97,7 @@ export default function FeaturedTalents() {
         
         {/* CTA Card */}
         <Link href={getSubscriptionLink()} className="cta-card">
-          <Image 
+          <img 
             src="/images/SE_logo_lockup_wht.png" 
             alt="Sport Endorse logo" 
             width={120} 

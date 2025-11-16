@@ -7,7 +7,7 @@ import MainLogo from '@/components/MainLogo';
 import NewsBackButton from '@/components/NewsBackButton';
 import { getNewsStoryBySlug } from '../app/news/wordpress';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+
 import "../styles/blog.css";
 
 interface NewsStory {
@@ -119,7 +119,7 @@ export default function NewsContent({ slug }: NewsContentProps) {
               </div>
               
               {newsStory.yoast_head_json?.og_image?.[0]?.url && (
-                <Image 
+                <img 
                   src={newsStory.yoast_head_json.og_image[0].url} 
                   alt={newsStory.title.rendered}
                   className="blog-post-article-image"
