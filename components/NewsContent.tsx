@@ -91,7 +91,8 @@ export default function NewsContent() {
               {newsStories.map(story => (
                 <article key={story.id} className="blog-post-card">
                   {story.yoast_head_json?.og_image?.[0]?.url && (
-                    <img src={story.yoast_head_json.og_image[0].url}
+                    <img
+                      src={story.yoast_head_json.og_image[0].url}
                       alt={decodeHtmlEntities(story.title.rendered)}
                       width={400}
                       height={250}

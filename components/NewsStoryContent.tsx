@@ -119,7 +119,8 @@ export default function NewsContent({ slug }: NewsContentProps) {
               </div>
               
               {newsStory.yoast_head_json?.og_image?.[0]?.url && (
-                <img src={newsStory.yoast_head_json.og_image[0].url} 
+                <img 
+                  src={newsStory.yoast_head_json.og_image[0].url} 
                   alt={newsStory.title.rendered}
                   className="blog-post-article-image"
                   width={1200}

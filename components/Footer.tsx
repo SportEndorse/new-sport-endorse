@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+
 import { useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
@@ -43,12 +44,12 @@ export default function Footer() {
             <div className="hs-form-frame" data-region="na1" data-form-id="055eacf1-693f-4dc9-b3fe-d89bc73e48b2" data-portal-id="4025606"></div>
 
             <div className="all-social-logos">
-              <span><a target="_blank" href="https://www.facebook.com/SportEndorseLtd/"><img src="/images/facebookLogo.jpg" alt="facebook logo" width={32} height={32} className="social-logo" loading="lazy" /></a></span>
-              <span><a target="_blank" href="https://www.instagram.com/sport_endorse/"><img src="/images/instagramLogo.webp" alt="instagram logo" width={32} height={32} className="social-logo" loading="lazy" /></a></span>
-              <span><a target="_blank" href="https://www.linkedin.com/company/sportendorse/"><img src="/images/tiktokLogo.webp" alt="tiktok logo" width={32} height={32} className="social-logo" loading="lazy" /></a></span>
-              <span><a target="_blank" href="https://www.tiktok.com/@sportendorse"><img src="/images/linkedinLogo.webp" alt="linkedin logo" width={32} height={32} className="social-logo" loading="lazy" /></a></span>
-              <span><a target="_blank" href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5"><img src="/images/spotify.png" alt="spotify logo" width={32} height={32} className="social-logo" loading="lazy" /></a></span>
-              <span><a target="_blank" href="https://www.youtube.com/channel/UCwHt-_eNBHav6TSihoirZIA"><img src="/images/youtube icon.png" alt="youtube logo" width={32} height={32} className="social-logo" loading="lazy" /></a></span>
+              <span><a target="_blank" href="https://www.facebook.com/SportEndorseLtd/"><img src="/images/facebookLogo.jpg" alt="facebook logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://www.instagram.com/sport_endorse/"><img src="/images/instagramLogo.webp" alt="instagram logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://www.linkedin.com/company/sportendorse/"><img src="/images/tiktokLogo.webp" alt="tiktok logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://www.tiktok.com/@sportendorse"><img src="/images/linkedinLogo.webp" alt="linkedin logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5"><img src="/images/spotify.png" alt="spotify logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://www.youtube.com/channel/UCwHt-_eNBHav6TSihoirZIA"><img src="/images/youtube icon.png" alt="youtube logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
             </div>
             
           </div>
@@ -58,15 +59,15 @@ export default function Footer() {
             <div>
               {/*<h5>{/* <span className="footer-number">01]</span> }<Link target="_blank" href="https://platform.sportendorse.com/signup/brand" >{t.links.signUpBrand}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} /></Link></h5>*/}
               {/*<h5>{/* <span className="footer-number">06]</span> <Link target="_blank" href="https://platform.sportendorse.com/signup/talent">{t.links.signUpTalent}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} /></Link></h5>*/}
-              <h5>{/* <span className="footer-number">02]</span> */}<Link target="_blank" href="https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07">{t.links.bookDemo}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" /></Link></h5>
-              <h5>{/* <span className="footer-number">03]</span> */}<Link href={getNavLink("/podcasts")}>{t.links.podcasts}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" /></Link></h5>
-              <h5>{/* <span className="footer-number">04]</span> */}<Link href={getNavLink("/about-us#careers")}>{t.links.careers}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" /></Link></h5>
-              <h5>{/* <span className="footer-number">05]</span> */}<Link href={getNavLink("/about-us")}>{t.links.aboutUs}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" /></Link></h5>
+              <h5>{/* <span className="footer-number">02]</span> */}<Link target="_blank" href="https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07">{t.links.bookDemo}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>
+              <h5>{/* <span className="footer-number">03]</span> */}<Link href={getNavLink("/podcasts")}>{t.links.podcasts}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>
+              <h5>{/* <span className="footer-number">04]</span> */}<Link href={getNavLink("/about-us#careers")}>{t.links.careers}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>
+              <h5>{/* <span className="footer-number">05]</span> */}<Link href={getNavLink("/about-us")}>{t.links.aboutUs}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>
             </div>
             <div>
-              <h5>{/* <span className="footer-number">09]</span> */}<Link href={getNavLink("/blog")}>{t.links.blog}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" /></Link></h5>     
-              <h5>{/* <span className="footer-number">07]</span> */}<Link href={getNavLink("/success-stories")}>{t.links.successStories}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" /></Link></h5>
-              <h5>{/* <span className="footer-number">08]</span> */}<Link href={getNavLink("/faqs")}>{t.links.faqs}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" /></Link></h5>      
+              <h5>{/* <span className="footer-number">09]</span> */}<Link href={getNavLink("/blog")}>{t.links.blog}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>     
+              <h5>{/* <span className="footer-number">07]</span> */}<Link href={getNavLink("/success-stories")}>{t.links.successStories}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>
+              <h5>{/* <span className="footer-number">08]</span> */}<Link href={getNavLink("/faqs")}>{t.links.faqs}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>      
               <h5>{/* <span className="footer-number">10]</span> */}<Link href={getNavLink("/contact-us")}>{t.links.contactUs}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} /></Link></h5>
               <h5>{/* <span className="footer-number">11]</span> */}<Link href={getNavLink("/news")}>{t.links.news}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} /></Link></h5>
             </div>

@@ -80,7 +80,8 @@ export default function BrandsGrid({ variant = "8x4", label }: BrandsGridProps) 
                       className={styles.ctaButton}
                       onClick={handleSubscriptionClick}
                     >
-                      <img src={brand.src} 
+                      <img 
+                        src={brand.src} 
                         alt={brand.alt}
                         width={120}
                         height={60}
@@ -88,7 +89,8 @@ export default function BrandsGrid({ variant = "8x4", label }: BrandsGridProps) 
                         loading="lazy"/>
                     </button>
                   ) : (
-                    <img src={brand.src} 
+                    <img 
+                      src={brand.src} 
                       alt={brand.alt}
                       width={120}
                       height={60}

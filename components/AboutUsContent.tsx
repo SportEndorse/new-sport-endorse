@@ -206,7 +206,8 @@ export default function AboutUsContent() {
               {teamMembers.map((member, index) => (
                 <div key={index} className="about-us-team-card">
                   <div className="about-us-team-photo-container">
-                    <img src={member.imageUrl}
+                    <img
+                      src={member.imageUrl}
                       alt={member.name}
                       width={200}
                       height={200}
@@ -276,7 +277,8 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://www.add-victor.com/" target="_blank" rel="noopener">
-                      <img src="/images/add-victor.webp" 
+                      <img 
+                        src="/images/add-victor.webp" 
                         alt="add-victor logo" 
                         width={150} 
                         height={150} 
@@ -302,7 +304,8 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://3bigwheels.com/" target="_blank" rel="noopener">
-                      <img src="/images/3 big wheels.png" 
+                      <img 
+                        src="/images/3 big wheels.png" 
                         alt="3 big wheels logo" 
                         width={150} 
                         height={150} 
@@ -328,7 +331,8 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo" style={{ backgroundColor:"black"}}>
                     <a href="https://thesportingclub.ie/" target="_blank" rel="noopener">
-                      <img src="/images/The Sporting Club Ireland.webp" 
+                      <img 
+                        src="/images/The Sporting Club Ireland.webp" 
                         alt="The Sporting Club Ireland logo" 
                         width={150} 
                         height={150} 
