@@ -590,11 +590,11 @@ const translations = {
   },
   es: {
     footer: {
-      newsletterTitle: "¡Suscríbete a nuestro boletín!",
+      newsletterTitle: "¡Suscríbete a nuestra Newsletter!",
       newsletterDescription: "Recibe noticias, fotos, eventos y actualizaciones de negocios",
       emailPlaceholder: "Dirección de correo electrónico*",
       subscribeButton: "SUSCRIBIRSE",
-      termsText: "Al registrarme, acepto las",
+      termsText: "Al registrarme, acepto la",
       privacyPolicy: "Política de privacidad",
       termsConditions: "Términos y Condiciones de Sport Endorse.",
       contactUsTitle: "¡Contáctanos!",
@@ -620,8 +620,8 @@ const translations = {
         termsRequired: "Por favor acepta la Política de Privacidad y Términos y Condiciones"
       },
       newsletter: {
-        subject: "Solicitud de Suscripción al Boletín",
-        bodyIntro: "Hola,\n\nMe gustaría suscribirme al boletín de Sport Endorse.",
+        subject: "Solicitud de Suscripción al Newsletter",
+        bodyIntro: "Hola,\n\nMe gustaría suscribirme al newsletter de Sport Endorse.",
         bodyEmail: "Correo electrónico:",
         bodyRequest: "Por favor agrégame a tu lista de correos para noticias, fotos, eventos y actualizaciones de negocios.",
         bodyClosing: "¡Gracias!"
@@ -680,12 +680,12 @@ const translations = {
     talent: {
       badge: "PARA ATLETAS",
       title: "Cómo Conseguir Patrocinio como Atleta",
-      description: "Bienvenido al mercado líder de patrocinio de atletas. Sport Endorse es la plataforma integral que te conecta directamente con marcas para patrocinios de atletas y colaboraciones pagadas que se alinean con tu perfil y pasiones. Es la forma más fácil de encontrar y gestionar patrocinios para atletas",
+      description: "Bienvenido al mercado líder de colaboraciones deportivas. Sport Endorse es la plataforma integral que te conecta directamente con marcas para patrocinios de atletas y colaboraciones pagadas que se alinean con tu perfil y pasiones. Es la forma más senzilla de encontrar y gestionar patrocinios para atletas",
       sponsorshipSection: {
         title: "Encuentra Tu Próxima Oportunidad de Patrocinio",
-        lead: "Únete a miles de atletas verificados que usan Sport Endorse — una plataforma confiada por las principales marcas globales — para solicitar patrocinios deportivos y ser descubiertos por patrocinadores que buscan talento atlético.",
+        lead: "Únete a miles de deportistas verificados que usan Sport Endorse — una plataforma confiada por las principales marcas globales — para buscar patrocinios deportivos y ser descubiertos por patrocinadores que buscan talento deportivo.",
         description: "Encuentra oportunidades de patrocinio deportivo que coincidan con tu deporte, logros y personalidad, desde colaboraciones en redes sociales hasta apariciones en eventos y endorsements de productos.",
-        benefits: "Nuestra plataforma de patrocinio deportivo para atletas hace que sea simple encontrar patrocinadores, conectar directamente con empresas verificadas y gestionar cada etapa de tus asociaciones pagadas — todo en un solo lugar."
+        benefits: "Nuestra plataforma de patrocinio deportivo para atletas hace que sea simple encontrar patrocinadores, conectar directamente con empresas verificadas y gestionar cada etapa de tus colaboraciones pagadas — todo en un solo lugar."
       },
       metadata: {
         title: "Atletas de Élite: Impulsa tu Marca con Patrocinios | Únete a Sport Endorse",
@@ -695,12 +695,12 @@ const translations = {
     home:{
       welcome: "La plataforma de colaboraciones deportivas definitiva",
       description: "Sport Endorse es la plataforma líder de colaboraciones deportivas que conecta marcas, atletas e influencers deportivos para colaboraciones auténticas, basadas en datos reales. Simplificamos cada etapa de la gestión del patrocinio deportivo — facilitando que las marcas descubran a los atletas correctos y que los atletas se conecten directamente con marcas para colaboraciones verificadas y remuneradas. Con la confianza de organizaciones globales, Sport Endorse es el marketplace de colaboraciones deportivas más confiable de la industria.",
-      tableHeader: "Marcas que confían en nuestra plataforma",
+      tableHeader: "Marcas que confían en nuestra plataforma de Marketing Deportivo",
       benefitSection: {
         athlete: {
           label: "Para Talento",
           title: "Colabora con Marcas. Recibe Pagos.",
-          subtitle: "Para atletas, Sport Endorse es más que una red de patrocinio de atletas — es donde las oportunidades de carrera se encuentran con la conveniencia. Proporcionamos acceso directo a marcas verificadas listas para pagar por tu influencia. Nuestra plataforma de patrocinio deportivo te ayuda a aplicar para acuerdos que se alineen contigo, para que puedas enfocarte en tu carrera.",
+          subtitle: "Para deportistas, Sport Endorse es más que una red de patrocinio de atletas — es donde las oportunidades se encuentran fácilmente. Proporcionamos acceso directo a marcas verificadas listas para pagar por tu influencia. Nuestra plataforma de patrocinio deportivo te ayuda a aplicar para acuerdos que se alineen contigo, listas para pagar por tu contenido. .",
           bullet1: "Aplica para acuerdos que se alineen contigo.",
           bullet2: "Gestiona tus oportunidades directamente desde nuestra aplicación móvil.",
           bullet3: "Recibe pagos de manera segura y transparente, sin tarifas ocultas.",
@@ -710,7 +710,7 @@ const translations = {
           title: "Encontrar Tu Próximo Embajador Atleta Nunca Ha Sido Más Fácil",
           subtitle: "Descubre, evalúa y colabora con atletas destacados e influencers deportivos para cumplir tus objetivos de campaña. Nuestra plataforma de marketing de embajadores deportivos simplifica todo el proceso — desde el descubrimiento hasta la finalización del acuerdo — ayudando a las marcas a gestionar patrocinios y respaldos de atletas sin esfuerzo.",
           bullet1: "Descubre y comunícate fácilmente con talento de todos los deportes.",
-          bullet2: "Elige la asociación correcta para ti, desde embajadores de marca hasta campañas en redes sociales y oradores invitados.",
+          bullet2: "Elige la colaboración correcta para ti, desde embajadores de marca hasta campañas en redes sociales y oradores invitados.",
           bullet3: "Gestiona acuerdos con precios transparentes y comunicación directa.",
         },
         agency: {
@@ -815,11 +815,11 @@ const translations = {
           },
           {
             title: "Explora Oportunidades",
-            description: "Explora asociaciones con marcas, acuerdos de patrocinio y oportunidades de colaboración que coincidan con tus intereses."
+            description: "Explora colaboraciones con marcas, acuerdos de patrocinio y oportunidades de colaboración que coincidan con tus intereses."
           },
           {
             title: "Conecta y Negocia",
-            description: "Conecta directamente con marcas, discute los términos de la asociación y negocia acuerdos que funcionen para ambas partes."
+            description: "Conecta directamente con marcas, discute los términos de la colaboración y negocia acuerdos que funcionen para ambas partes."
           },
           {
             title: "Recibe Pagos",
@@ -841,7 +841,7 @@ const translations = {
           },
           {
             title: "Gestiona en Movimiento",
-            description: "Nuestra aplicación móvil permite la gestión fácil de patrocinios, mensajes y pagos — perfecto para atletas ocupados rastreando patrocinios deportivos desde cualquier lugar."
+            description: "Nuestra aplicación móvil permite la gestión fácil de patrocinios, mensajes y pagos — perfecto para atletas ocupados siguiendo colaboraciones deportivas desde cualquier lugar."
           }
         ],
         ctaText: "Descarga la aplicación y regístrate gratis"
