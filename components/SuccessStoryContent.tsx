@@ -41,6 +41,7 @@ interface SuccessStory {
   excerpt: { rendered: string };
   date: string;
   slug: string;
+  success_stories_bottom_description?: string;
   yoast_head_json?: {
     og_image?: Array<{ url: string }>;
     description?: string;
@@ -167,7 +168,21 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
                     borderLeft: '4px solid #0078c1',
                     borderRadius: '4px'
                   }}>
-                    {story.yoast_head_json.description}
+                    {decodeHtmlEntities(story.yoast_head_json.description)}
+                  </div>
+                )}
+                
+                {/* Show bottom description if available */}
+                {story.success_stories_bottom_description && (
+                  <div className="success-story-bottom-description" style={{ 
+                    fontSize: '1rem', 
+                    marginBottom: '2rem',
+                    padding: '1rem',
+                    background: '#f1f3f4',
+                    borderLeft: '4px solid #28a745',
+                    borderRadius: '4px'
+                  }}>
+                    {decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '')}
                   </div>
                 )}
                 

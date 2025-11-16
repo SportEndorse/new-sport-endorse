@@ -106,12 +106,6 @@ export default function AboutUsContent() {
       imageUrl: "/images/teamPhotos/collin-fiske.jpg"
     },
     {
-      name: "Jack Sampson",
-      role: "Data Analyst",
-      country: "USA",
-      imageUrl: "/images/teamPhotos/jack-sampson.jpeg"
-    },
-    {
       name: "Allison Melting",
       role: "Content Marketing Manager",
       country: "USA",
@@ -122,6 +116,12 @@ export default function AboutUsContent() {
       role: "Customer Success Manager",
       country: "Ireland",
       imageUrl: "/images/teamPhotos/karl-napper.jpeg"
+    },
+    {
+      name: "Jack Sampson",
+      role: "Data Analyst",
+      country: "USA",
+      imageUrl: "/images/teamPhotos/jack-sampson.jpeg"
     },
     {
       name: "Oscar Hunt Quinn",
@@ -212,6 +212,8 @@ export default function AboutUsContent() {
                       width={200}
                       height={200}
                       className="about-us-team-photo"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 150px, 200px"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "/images/placeholder.png";
@@ -277,7 +279,15 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://www.add-victor.com/" target="_blank" rel="noopener">
-                      <Image src="/images/add-victor.webp" alt="add-victor logo" width={150} height={150} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }} />
+                      <Image 
+                        src="/images/add-victor.webp" 
+                        alt="add-victor logo" 
+                        width={150} 
+                        height={150} 
+                        style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 120px, 150px"
+                      />
                     </a>
                   </div>
                   <div className="about-us-partner-info">
@@ -298,7 +308,15 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href="https://3bigwheels.com/" target="_blank" rel="noopener">
-                      <Image src="/images/3 big wheels.png" alt="3 big wheels logo" width={150} height={150} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }} />
+                      <Image 
+                        src="/images/3 big wheels.png" 
+                        alt="3 big wheels logo" 
+                        width={150} 
+                        height={150} 
+                        style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 120px, 150px"
+                      />
                     </a>
                   </div>
                   <div className="about-us-partner-info">
@@ -319,7 +337,15 @@ export default function AboutUsContent() {
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo" style={{ backgroundColor:"black"}}>
                     <a href="https://thesportingclub.ie/" target="_blank" rel="noopener">
-                      <Image src="/images/The Sporting Club Ireland.webp" alt="The Sporting Club Ireland logo" width={150} height={150} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }} />
+                      <Image 
+                        src="/images/The Sporting Club Ireland.webp" 
+                        alt="The Sporting Club Ireland logo" 
+                        width={150} 
+                        height={150} 
+                        style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 120px, 150px"
+                      />
                     </a>
                   </div>
                   <div className="about-us-partner-info">

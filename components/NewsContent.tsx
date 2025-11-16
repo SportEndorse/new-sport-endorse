@@ -93,10 +93,12 @@ export default function NewsContent() {
                   {story.yoast_head_json?.og_image?.[0]?.url && (
                     <Image
                       src={story.yoast_head_json.og_image[0].url}
-                      alt={story.title.rendered}
+                      alt={decodeHtmlEntities(story.title.rendered)}
                       width={400}
                       height={250}
                       className="blog-post-image"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
                   )}
                           

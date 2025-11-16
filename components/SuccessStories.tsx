@@ -167,10 +167,12 @@ export default function SuccessStories() {
                 {story.yoast_head_json?.og_image?.[0]?.url && (
                   <Image
                     src={story.yoast_head_json.og_image[0].url}
-                    alt={story.title.rendered}
+                    alt={decodeHtmlEntities(story.title.rendered)}
                     width={300}
                     height={200}
                     style={{ objectFit: 'cover' }}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px"
                   />
                 )}
                 <div className="success-info">

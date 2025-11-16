@@ -42,6 +42,7 @@ interface SuccessStory {
   date: string;
   slug: string;
   featured_media_url?: string;
+  success_stories_bottom_description?: string;
   yoast_head_json?: {
     og_image?: Array<{
       url: string;
@@ -93,10 +94,12 @@ export default function SuccessStoriesContent() {
                     {story.yoast_head_json?.og_image?.[0]?.url && (
                       <Image
                         src={story.yoast_head_json.og_image[0].url}
-                        alt={story.title.rendered}
+                        alt={decodeHtmlEntities(story.title.rendered)}
                         width={400}
                         height={250}
                         className="blog-post-image"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                       />
                     )}
 
@@ -116,7 +119,11 @@ export default function SuccessStoriesContent() {
                         style={{ textDecoration: 'none' }}
                       >
                         <p className="blog-post-excerpt">
-                          {story.yoast_head_json?.description ? decodeHtmlEntities(story.yoast_head_json.description) : t.components.successStoriesContent.noSummary}
+                          {story.yoast_head_json?.description 
+                            ? decodeHtmlEntities(story.yoast_head_json.description).slice(0, 250) + (story.yoast_head_json.description.length > 250 ? '...' : '')
+                            : story.success_stories_bottom_description 
+                              ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (story.success_stories_bottom_description.length > 250 ? '...' : '')
+                              : t.components.successStoriesContent.noSummary}
                         </p>
                       </Link>
 

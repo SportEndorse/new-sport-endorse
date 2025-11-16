@@ -86,6 +86,8 @@ export default function BrandsGrid({ variant = "8x4", label }: BrandsGridProps) 
                         width={120}
                         height={60}
                         style={{ objectFit: 'contain' }}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 80px, 120px"
                       />
                     </button>
                   ) : (
@@ -95,6 +97,8 @@ export default function BrandsGrid({ variant = "8x4", label }: BrandsGridProps) 
                       width={120}
                       height={60}
                       style={{ objectFit: 'contain' }}
+                      loading="lazy"
+                      sizes="(max-width: 768px) 80px, 120px"
                     />
                   )}
                 </td>

@@ -92,10 +92,12 @@ export default function BlogContent() {
                   {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                     <Image
                       src={post._embedded['wp:featuredmedia'][0].source_url}
-                      alt={post.title.rendered}
+                      alt={decodeHtmlEntities(post.title.rendered)}
                       width={400}
                       height={250}
                       className="blog-post-image"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
                   )}
                           

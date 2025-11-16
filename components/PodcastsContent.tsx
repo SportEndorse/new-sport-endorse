@@ -188,7 +188,9 @@ export default function PodcastsContent() {
             <div className="podcasts-platforms-container">
               <a href="https://podcasts.apple.com/ie/podcast/the-athlete-sitdown/id1550095395" target="_blank" rel="noopener noreferrer">
                 <Image 
-                  src="/images/podcast/apple-podcasts-logo.webp" 
+                  src="/images/podcast/apple-podcasts-logo.webp"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 120px, 150px" 
                   alt="Apple Podcasts logo" 
                   width={96}
                   height={32}
@@ -197,7 +199,9 @@ export default function PodcastsContent() {
               </a>
               <a href="https://music.amazon.com/podcasts/47a22b01-42ad-447a-b137-1866a49890a1/the-athlete-sitdown" target="_blank" rel="noopener noreferrer">
                 <Image 
-                  src="/images/podcast/amazon-music-logo.webp" 
+                  src="/images/podcast/amazon-music-logo.webp"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 120px, 150px" 
                   alt="Amazon Music logo" 
                   width={90}
                   height={45}
@@ -206,7 +210,9 @@ export default function PodcastsContent() {
               </a>
               <a href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5" target="_blank" rel="noopener noreferrer">
                 <Image 
-                  src="/images/podcast/Spotify-Logo.webp" 
+                  src="/images/podcast/Spotify-Logo.webp"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 120px, 150px" 
                   alt="Spotify logo" 
                   width={75}
                   height={75}
