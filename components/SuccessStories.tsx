@@ -62,7 +62,9 @@ function useVisibleCount() {
 type Story = {
   id: number;
   title: { rendered: string };
+  slug: string;
   yoast_head_json?: { og_image?: { url: string }[]; description?: string };
+  success_stories_bottom_description?: string;
   link: string;
   success_stories_bottom_description?: string;
 };
@@ -185,8 +187,8 @@ export default function SuccessStories() {
                   </p>
                   <Link className="read-more" href="/success-stories" >{t.readMore}</Link>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
         <button

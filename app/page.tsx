@@ -30,3 +30,4 @@ export default function HomePage() {
 
 // Force static generation
 export const dynamic = 'force-static';
+export const revalidate = false;

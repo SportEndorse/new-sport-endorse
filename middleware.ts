@@ -1,5 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Use Edge Runtime for faster execution and lower costs
+export const config = {
+  matcher: [
+    // Match all paths except static files, images, and API routes
+    '/((?!_next/static|_next/image|favicon.ico|robots.txt|images|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|ico|css|js)$).*)',
+  ],
+};
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
@@ -59,10 +67,3 @@ export function middleware(request: NextRequest) {
   // Default: English version (no redirect needed)
   return NextResponse.next();
 }
-
-export const config = {
-  matcher: [
-    // Match all paths except static files, images, and API routes
-    '/((?!_next/static|_next/image|favicon.ico|robots.txt|images|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|ico|css|js)$).*)',
-  ],
-};

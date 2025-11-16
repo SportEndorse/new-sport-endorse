@@ -12,6 +12,25 @@ import type { NextConfig } from 'next';
 const config: NextConfig = {
   reactStrictMode: true,
   
+  // Optimize for static generation where possible
+  poweredByHeader: false,
+  generateEtags: false,
+  
+  // Enhanced static generation settings
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
+  
+  // File tracing for static generation
+  outputFileTracingIncludes: {
+    '/': ['./public/**/*', './public/videos/**/*'],
+  },
+  
+  // Optimize build output
+  compiler: {
+    removeConsole: false,
+  },
+  
   // Image optimization configuration
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -30,7 +49,7 @@ const config: NextConfig = {
     ],
   },
   
-  // Add these to help with your chunk loading issues:
+  // Enhanced webpack configuration for video optimization
   webpack: (config, { isServer }) => {
     config.output.chunkLoadTimeout = 30000;
     
@@ -38,6 +57,24 @@ const config: NextConfig = {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
+      };
+      
+      // Optimize chunking for better video loading
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization?.splitChunks,
+          cacheGroups: {
+            ...config.optimization?.splitChunks?.cacheGroups,
+            // Separate chunk for video utilities
+            video: {
+              name: 'video-utils',
+              chunks: 'all',
+              test: /[\\/]utils[\\/]videoOptimization/,
+              priority: 20,
+            },
+          },
+        },
       };
     }
     

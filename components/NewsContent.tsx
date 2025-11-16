@@ -97,9 +97,7 @@ export default function NewsContent() {
                       width={400}
                       height={250}
                       className="blog-post-image"
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                    />
+                      loading="lazy"/>
                   )}
                           
                   <div className="blog-post-content">

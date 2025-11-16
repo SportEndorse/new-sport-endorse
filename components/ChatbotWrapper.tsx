@@ -12,8 +12,7 @@ const ChatbotWrapper = ({ children }: { children: React.ReactNode }) => {
           position: "fixed",
           bottom: 32,
           right: 32,
-          zIndex: 1000,
-        }}
+          zIndex: 1000 }}
       >
         <button
           onClick={() => setOpen((o) => !o)}
@@ -29,8 +28,7 @@ const ChatbotWrapper = ({ children }: { children: React.ReactNode }) => {
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-          }}
+            justifyContent: "center" }}
           aria-label="Open chat"
         >
           💬
@@ -48,8 +46,7 @@ const ChatbotWrapper = ({ children }: { children: React.ReactNode }) => {
               boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
               overflow: "hidden",
               display: "flex",
-              flexDirection: "column",
-            }}
+              flexDirection: "column" }}
           >
             {/* Replace below with your chatbot UI/component */}
             <div style={{ flex: 1, padding: 16, overflowY: "auto" }}>

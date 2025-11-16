@@ -212,9 +212,7 @@ export default function AboutUsContent() {
                       width={200}
                       height={200}
                       className="about-us-team-photo"
-                      loading="lazy"
-                      sizes="(max-width: 768px) 150px, 200px"
-                      onError={(e) => {
+                      loading="lazy"onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "/images/placeholder.png";
                       }}
@@ -285,9 +283,7 @@ export default function AboutUsContent() {
                         width={150} 
                         height={150} 
                         style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 120px, 150px"
-                      />
+                        loading="lazy"/>
                     </a>
                   </div>
                   <div className="about-us-partner-info">
@@ -314,9 +310,7 @@ export default function AboutUsContent() {
                         width={150} 
                         height={150} 
                         style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 120px, 150px"
-                      />
+                        loading="lazy"/>
                     </a>
                   </div>
                   <div className="about-us-partner-info">
@@ -343,9 +337,7 @@ export default function AboutUsContent() {
                         width={150} 
                         height={150} 
                         style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 120px, 150px"
-                      />
+                        loading="lazy"/>
                     </a>
                   </div>
                   <div className="about-us-partner-info">

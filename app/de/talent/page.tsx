@@ -2,6 +2,7 @@ import TalentContent from "../../../components/TalentContent";
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: "Athleten & Sport-Influencer - Bezahlte Deals mit Marken erhalten | Sport Endorse",

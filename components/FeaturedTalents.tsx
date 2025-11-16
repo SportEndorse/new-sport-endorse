@@ -37,7 +37,6 @@ export default function FeaturedTalents() {
               width={200} 
               height={200}
               loading="lazy"
-              sizes="(max-width: 768px) 150px, 200px"
             />
             <div className="talent-info">
               <p className="talent-name">{talent.name}</p>
@@ -50,9 +49,7 @@ export default function FeaturedTalents() {
                       width={24} 
                       height={24} 
                       className="social-logo"
-                      loading="lazy"
-                      sizes="24px"
-                    />
+                      loading="lazy"/>
                     <p className="follower-count">{talent.followingInstagram}</p>
                   </div>
                 )}
@@ -64,9 +61,7 @@ export default function FeaturedTalents() {
                       width={24} 
                       height={24} 
                       className="social-logo"
-                      loading="lazy"
-                      sizes="24px"
-                    />
+                      loading="lazy"/>
                     <p className="follower-count">{talent.followingTiktok}</p>
                   </div>
                 )}
@@ -87,9 +82,7 @@ export default function FeaturedTalents() {
                   width={16} 
                   height={16} 
                   className="tag-icon"
-                  loading="lazy"
-                  sizes="16px"
-                />{talent.location}</span>
+                  loading="lazy"/>{talent.location}</span>
               </div>
             </div>
           </div>
@@ -103,9 +96,7 @@ export default function FeaturedTalents() {
             width={120} 
             height={160}
             style={{ objectFit: 'contain' }}
-            loading="lazy"
-            sizes="(max-width: 768px) 100px, 120px"
-          />
+            loading="lazy"/>
           <h3>{t.viewAll}</h3>
         </Link>
       </div>

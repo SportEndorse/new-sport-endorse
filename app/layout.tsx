@@ -33,8 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <link rel="icon" type="image/ico" href="favicon.ico" />
         
-        {/* Preload video for instant loading */}
-        <link rel="preload" as="video" href="/videos/examplewatervideo.mp4" type="video/mp4" />
+        {/* Optimized video preloading with WebM format */}
+        <link rel="preload" as="video" href="/videos/4_3 aspect ratio (wide) .webm" type="video/webm" />
+        
+        {/* DNS prefetch for potential video CDN */}
+        <link rel="dns-prefetch" href="//cdn.sportendorse.com" />
 
         {/*<!-- Start of HubSpot Embed Code -->*/}
         <Script

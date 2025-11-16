@@ -29,25 +29,49 @@ export default function HomeContent() {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  // Function to get the appropriate video source based on screen size
+  // Optimized video source selection with compressed formats
   const getVideoSource = () => {
-    if (!isClient) return "/videos/4_3 aspect ratio (wide) .MOV";
+    if (!isClient) return {
+      webm: "/videos/4_3 aspect ratio (wide) .webm",
+      mp4: "/videos/4_3 aspect ratio (wide) .MOV"
+    };
     
     if (window.innerWidth <= 480) {
-      return "/videos/9_16 aspect ratio (mobile_reel_tiktok).MOV";
+      return {
+        webm: "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm",
+        mp4: "/videos/9_16 aspect ratio (mobile_reel_tiktok).MOV"
+      };
     } else if (window.innerWidth <= 768) {
-      return "/videos/3_4 aspect ratio (in between).MOV";
+      return {
+        webm: "/videos/3_4 aspect ratio (in between).webm", 
+        mp4: "/videos/3_4 aspect ratio (in between).MOV"
+      };
     } else {
-      return "/videos/4_3 aspect ratio (wide) .MOV";
+      return {
+        webm: "/videos/4_3 aspect ratio (wide) .webm",
+        mp4: "/videos/4_3 aspect ratio (wide) .MOV"
+      };
     }
   };
+
+  const videoSources = getVideoSource();
 
   return (
     <>
       <section className="home-heroSection">
         <div className="home-videoBackground">
-          <video autoPlay muted loop playsInline className="home-backgroundVideo">
-            <source src={getVideoSource()} type="video/mp4" />
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="home-backgroundVideo"
+            preload="auto"
+          >
+            {/* WebM format for better compression */}
+            <source src={videoSources.webm} type="video/webm" />
+            {/* Fallback MP4 */}
+            <source src={videoSources.mp4} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

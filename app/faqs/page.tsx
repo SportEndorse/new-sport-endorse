@@ -3,6 +3,7 @@ import FAQs from "@/components/FAQs";
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Sport Endorse",
