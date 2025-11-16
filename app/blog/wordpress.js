@@ -2,23 +2,29 @@
 const API_URL = 'https://www.sportendorse.com/wp-json/wp/v2'
 
 export async function getAllPosts() {
-  let allPosts = [];
-  let page = 1;
-  let hasMore = true;
+  try {
+    let allPosts = [];
+    let page = 1;
+    let hasMore = true;
 
-  while (hasMore) {
-    const res = await fetch(`${API_URL}/posts?_embed&page=${page}`, {
-      next: { revalidate: 86400 } // ISR with App Router - 24 hours
-    });
+    while (hasMore) {
+      const res = await fetch(`${API_URL}/posts?_embed&page=${page}`, {
+        next: { revalidate: 86400 }, // ISR with App Router - 24 hours
+        headers: {
+          'User-Agent': 'NextJS-App'
+        }
+      });
 
-    if (!res.ok) {
-      if (res.status === 404) {
-        // No more pages available
-        hasMore = false;
-        break;
+      if (!res.ok) {
+        if (res.status === 404) {
+          // No more pages available
+          hasMore = false;
+          break;
+        }
+        console.warn(`WordPress API error: ${res.status}`);
+        // Return empty array instead of throwing during build
+        return [];
       }
-      throw new Error('Failed to fetch posts');
-    }
 
     const posts = await res.json();
     
@@ -36,16 +42,34 @@ export async function getAllPosts() {
     if (totalPages && page > parseInt(totalPages)) {
       hasMore = false;
     }
-  }
+    }
 
-  return allPosts;
+    return allPosts;
+  } catch (error) {
+    console.warn('WordPress API getAllPosts error:', error);
+    // Return empty array instead of throwing during build
+    return [];
+  }
 }
 
 export async function getPostBySlug(slug) {
-  const res = await fetch(`${API_URL}/posts?slug=${slug}&_embed`, {
-    next: { revalidate: 86400 }
-  })
-  if (!res.ok) throw new Error('Failed to fetch post')
-  const posts = await res.json()
-  return posts[0]
+  try {
+    const res = await fetch(`${API_URL}/posts?slug=${slug}&_embed`, {
+      next: { revalidate: 86400 },
+      headers: {
+        'User-Agent': 'NextJS-App'
+      }
+    });
+    
+    if (!res.ok) {
+      console.warn(`WordPress API getPostBySlug error: ${res.status}`);
+      return null;
+    }
+    
+    const posts = await res.json();
+    return posts[0] || null;
+  } catch (error) {
+    console.warn('WordPress API getPostBySlug error:', error);
+    return null;
+  }
 }
