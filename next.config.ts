@@ -31,9 +31,14 @@ const config: NextConfig = {
     removeConsole: false,
   },
   
-  // Image optimization configuration - disabled since using HTML img tags
+  // Image optimization configuration
   images: {
-    unoptimized: true,
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Disable static imports for better production handling
+    unoptimized: false,
+    // Allow external images from WordPress
     remotePatterns: [
       {
         protocol: 'https',
@@ -43,10 +48,6 @@ const config: NextConfig = {
       },
     ],
   },
-  
-  // Add fallback for deployment issues
-  trailingSlash: false,
-  skipTrailingSlashRedirect: true,
   
   // Enhanced webpack configuration for video optimization
   webpack: (config, { isServer }) => {
