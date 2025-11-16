@@ -64,6 +64,7 @@ type Story = {
   title: { rendered: string };
   yoast_head_json?: { og_image?: { url: string }[]; description?: string };
   link: string;
+  success_stories_bottom_description?: string;
 };
 
 export default function SuccessStories() {
@@ -178,7 +179,11 @@ export default function SuccessStories() {
                 <div className="success-info">
                   <p className="success-title">{decodeHtmlEntities(story.title.rendered)}</p>
                   <p className="success-text">
-                    {decodeHtmlEntities(story.yoast_head_json?.description ?? "") || "No summary available."}
+                    {story.yoast_head_json?.description 
+                      ? decodeHtmlEntities(story.yoast_head_json.description).slice(0, 250) + (story.yoast_head_json.description.length > 250 ? '...' : '')
+                      : story.success_stories_bottom_description 
+                        ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (story.success_stories_bottom_description.length > 250 ? '...' : '')
+                        : "No summary available."}
                   </p>
                   <Link className="read-more" href="/success-stories" >{t.readMore}</Link>
                 </div>
