@@ -51,7 +51,7 @@ export default function BrandReviews() {
     },
     {
       id: 6,
-      image: "/images/solestar.png",
+      image: "/images/homePageTable/solestar.png",
       alt: "Solestar logo",
       text: "Sport Endorse is a great platform for connecting with brand ambassadors! It's always a plus when a platform is not only effective but also easy to use and has helpful support staff.",
       name: "Jelena Jelic",
@@ -75,7 +75,7 @@ export default function BrandReviews() {
     },
     {
       id: 9,
-      image: "/images/homePageTable/shokz.png",
+      image: "/images/homePageTable/shokz-min.png",
       alt: "Shokz logo",
       text: "The collaboration with Dan Tai for the Shokz OpenFit 2+ campaign went really well. It was a pleasure working with him and Sport Endorse. Dan's professionalism and the authenticity of his content truly resonated with our audience, and we saw great engagement from his posts.",
       name: "Victoria Liu",
@@ -83,7 +83,7 @@ export default function BrandReviews() {
     },
     {
       id: 10,
-      image: "/images/homePageTable/affidea.jpg",
+      image: "/images/homePageTable/affidea-min.jpg",
       alt: "Affidea logo",
       text: "Working with Declan and the team at Sport Endorse has been an absolute pleasure. They have a clear understanding of our business and how to match a suitable Ambassador to fit our brand. They are forthcoming with advice and suggestions to help you maximise your agreement with your chosen athlete. I would highly recommend them!",
       name: "Muireann Feirteir",
@@ -91,7 +91,7 @@ export default function BrandReviews() {
     },
     {
       id: 11,
-      image: "/images/homePageTable/active-iron.png",
+      image: "/images/homePageTable/active-iron-min.png",
       alt: "Active Iron logo",
       text: "Sport Endorse were instrumental in sourcing the right talent to communicate our message across multiple channels. They made the process easy, professional, and cost-effective.",
       name: "Claire Lynch",
