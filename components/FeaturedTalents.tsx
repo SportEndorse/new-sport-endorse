@@ -43,7 +43,8 @@ export default function FeaturedTalents() {
               <div className="all-social-logos">
                 {talent.followingInstagram && (
                   <div className="social-platform">
-                    <img src="/images/instagramLogo.webp" 
+                    <img 
+                      src="/images/instagramLogo.webp" 
                       alt="instagram logo" 
                       width={24} 
                       height={24} 
@@ -54,7 +55,8 @@ export default function FeaturedTalents() {
                 )}
                 {talent.followingTiktok && (
                   <div className="social-platform">
-                    <img src="/images/tiktokLogo.webp" 
+                    <img 
+                      src="/images/tiktokLogo.webp" 
                       alt="tiktok logo" 
                       width={24} 
                       height={24} 
@@ -65,13 +67,17 @@ export default function FeaturedTalents() {
                 )}
               </div>
               <div className="tags">
-                <span><img src="/images/trophy.png" 
+                <span><img 
+                  src="/images/trophy.png" 
                   alt="trophy icon" 
                   width={16} 
                   height={16} 
                   className="tag-icon"
-                  loading="lazy"/>{talent.sport}</span>
-                <span><img src="/images/location.png" 
+                  loading="lazy"
+                  sizes="16px"
+                />{talent.sport}</span>
+                <span><img 
+                  src="/images/location.png" 
                   alt="location icon" 
                   width={16} 
                   height={16} 
@@ -84,7 +90,8 @@ export default function FeaturedTalents() {
         
         {/* CTA Card */}
         <Link href={getSubscriptionLink()} className="cta-card">
-          <img src="/images/SE_logo_lockup_wht.png" 
+          <img 
+            src="/images/SE_logo_lockup_wht.png" 
             alt="Sport Endorse logo" 
             width={120} 
             height={160}

@@ -31,27 +31,17 @@ export default function HomeContent() {
 
   // Optimized video source selection with compressed formats
   const getVideoSource = () => {
-    if (!isClient) return {
-      webm: "/videos/4_3 aspect ratio (wide) .webm",
-      mp4: "/videos/4_3 aspect ratio (wide) .MOV"
-    };
-    
+    if (!isClient) return "/videos/4_3 aspect ratio (wide) .webm";
     if (window.innerWidth <= 480) {
-      return {
-        webm: "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm"
-      };
+      return "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm";
     } else if (window.innerWidth <= 768) {
-      return {
-        webm: "/videos/3_4 aspect ratio (in between).webm"
-      };
+      return "/videos/3_4 aspect ratio (in between).webm";
     } else {
-      return {
-        webm: "/videos/4_3 aspect ratio (wide) .webm"
-      };
+      return "/videos/4_3 aspect ratio (wide) .webm";
     }
   };
 
-  const videoSources = getVideoSource();
+  const videoSource = getVideoSource();
 
   return (
     <>
@@ -64,9 +54,9 @@ export default function HomeContent() {
             playsInline 
             className="home-backgroundVideo"
             preload="auto"
+            src={undefined}
           >
-            {/* WebM format for better compression */}
-            <source src={videoSources.webm} type="video/webm" />
+            <source src={videoSource} type="video/webm" />
             Your browser does not support the video tag.
           </video>
         </div>

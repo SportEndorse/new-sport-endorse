@@ -116,7 +116,8 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
               </div>
               
               {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
-                <img src={post._embedded['wp:featuredmedia'][0].source_url} 
+                <img 
+                  src={post._embedded['wp:featuredmedia'][0].source_url} 
                   alt={post.title.rendered}
                   className="blog-post-article-image"
                   width={1200}

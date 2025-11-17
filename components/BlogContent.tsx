@@ -90,7 +90,8 @@ export default function BlogContent() {
               {posts.map(post => (
                 <article key={post.id} className="blog-post-card">
                   {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
-                    <img src={post._embedded['wp:featuredmedia'][0].source_url}
+                    <img
+                      src={post._embedded['wp:featuredmedia'][0].source_url}
                       alt={decodeHtmlEntities(post.title.rendered)}
                       width={400}
                       height={250}

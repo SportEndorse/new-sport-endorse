@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+
 import "../styles/successStories.css";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
@@ -163,39 +164,30 @@ export default function SuccessStories() {
           ) : stories.length === 0 ? (
             <div>{t.noStories}</div>
           ) : (
-            visibleStories.map((story, i) => {
-              // Get description - prefer yoast description, fallback to bottom description
-              const description = story.yoast_head_json?.description 
-                ? decodeHtmlEntities(story.yoast_head_json.description).slice(0, 150) + '...'
-                : story.success_stories_bottom_description 
-                  ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 150) + '...'
-                  : "No summary available.";
-              
-              // Generate proper link based on current language
-              const storyLink = language === 'en' 
-                ? `/success-stories/${story.slug}` 
-                : `/${language}/success-stories/${story.slug}`;
-              
-              return (
-                <div className={`success-card${i === Math.floor(visibleCount / 2) ? " active" : " faded"}`} key={story.id}>
-                  {story.yoast_head_json?.og_image?.[0]?.url && (
-                    <img src={story.yoast_head_json.og_image[0].url}
-                      alt={decodeHtmlEntities(story.title.rendered)}
-                      width={300}
-                      height={200}
-                      style={{ objectFit: 'cover' }}
-                      loading="lazy"/>
-                  )}
-                  <div className="success-info">
-                    <p className="success-title">{decodeHtmlEntities(story.title.rendered)}</p>
-                    <p className="success-text">
-                      {description}
-                    </p>
-                    <Link className="read-more" href={storyLink}>{t.readMore}</Link>
-                  </div>
+            visibleStories.map((story, i) => (
+              <div className={`success-card${i === Math.floor(visibleCount / 2) ? " active" : " faded"}`} key={story.id}>
+                {story.yoast_head_json?.og_image?.[0]?.url && (
+                  <img
+                    src={story.yoast_head_json.og_image[0].url}
+                    alt={decodeHtmlEntities(story.title.rendered)}
+                    width="300"
+                    height="200"
+                    style={{ objectFit: 'cover' }}
+                  />
+                )}
+                <div className="success-info">
+                  <p className="success-title">{decodeHtmlEntities(story.title.rendered)}</p>
+                  <p className="success-text">
+                    {story.yoast_head_json?.description 
+                      ? decodeHtmlEntities(story.yoast_head_json.description).slice(0, 250) + (story.yoast_head_json.description.length > 250 ? '...' : '')
+                      : story.success_stories_bottom_description 
+                        ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (story.success_stories_bottom_description.length > 250 ? '...' : '')
+                        : "No summary available."}
+                  </p>
+                  <Link className="read-more" href="/success-stories" >{t.readMore}</Link>
                 </div>
-              );
-            })
+              </div>
+            ))
           )}
         </div>
         <button
