@@ -11,7 +11,7 @@ export default function BrandReviews() {
   const reviews = [
     {
       id: 1,
-      image: "/images/shuzgroup_logo.png",
+      image: "/images/shuzgroup_logo-min.png",
       alt: "Shuz Group company logo",
       text: "Sport Endorse has revolutionised the way ShuzGroup approaches sports brand ambassador marketing. This platform has not only simplified the process of connecting with sports talent across the nation but has also given us the freedom to choose the perfect ambassadors for our brand. This platform has truly enhanced our ability to make informed decisions when selecting sports talent and we would gladly recommend Sport Endorse.",
       name: "Rebecca Quinlan",
@@ -19,7 +19,7 @@ export default function BrandReviews() {
     },
     {
       id: 2,
-      image: "/images/donal healy.png",
+      image: "/images/donal healy-min.png",
       alt: "Donal Healy",
       text: "We were delighted to work with Sport Endorse on campaigns involving both Jack Carty and Jason Quigley - two outstanding sporting ambassadors for the West and North West of Ireland.",
       name: "Donal Healy",
@@ -27,7 +27,7 @@ export default function BrandReviews() {
     },
     {
       id: 3,
-      image: "/images/john delves.png",
+      image: "/images/john delves-min.png",
       alt: "John Delves",
       text: "The team at Sport Endorse were a pleasure to work with, they were on hand in the lead up to our photoshoot and on the day were more than accommodatingwith our requests. A great experience all around and one we will no doubt repeat!”",
       name: "John Delves",
@@ -35,7 +35,7 @@ export default function BrandReviews() {
     },
     {
       id: 4,
-      image: "/images/daithi oconnor.png",
+      image: "/images/daithi oconnor-min.png",
       alt: "Daithí O'Connor",
       text: "Working with Sport Endorse is a pleasure. We've been very happy with the partnerships we've secured and look forward to driving our business  in the UK with help from the platform.",
       name: "Daithí O'Connor",
@@ -43,7 +43,7 @@ export default function BrandReviews() {
     },
     {
       id: 5,
-      image: "/images/perform_nutrition.png",
+      image: "/images/perform_nutrition-min.png",
       alt: "Perfom nutrition logo",
       text: "Sport Endorse is doing fantastic work in looking after athletes and helping them achieve their potential on and off the field. We are delighted to work with the Sport Endorse team to secure brand partnerships that, without them, would not have been possible.",
       name: "Aoife Cassidy",

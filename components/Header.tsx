@@ -145,7 +145,7 @@ export default function Header() {
       {/* Logo/Home Button - Far left */}
       <div className="logo-area">
         <Link href={language === 'en' ? '/' : `/${language}`}>
-          <img src="/images/sportEndorseLogo.png" alt="sport endorse logo" width={40} height={40} />
+          <img src="/images/sportEndorseLogo-min.png" alt="sport endorse logo" width={40} height={40} />
           <p>SPORT ENDORSE</p>
         </Link>
       </div>

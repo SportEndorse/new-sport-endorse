@@ -212,10 +212,7 @@ export default function AboutUsContent() {
                       width={200}
                       height={200}
                       className="about-us-team-photo"
-                      loading="lazy"onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/images/placeholder.png";
-                      }}
+                      loading="lazy"
                     />
                   </div>
                   <div className="about-us-team-info">
@@ -305,7 +302,7 @@ export default function AboutUsContent() {
                   <div className="about-us-partner-logo">
                     <a href="https://3bigwheels.com/" target="_blank" rel="noopener">
                       <img 
-                        src="/images/3 big wheels.png" 
+                        src="/images/3 big wheels-min.png" 
                         alt="3 big wheels logo" 
                         width={150} 
                         height={150} 

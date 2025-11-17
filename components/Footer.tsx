@@ -35,7 +35,7 @@ export default function Footer() {
     <footer className={`modern-footer ${language === 'es' ? 'footer-spanish' : ''}`}>
       <div className="maxWidth">
         <Link href={language === 'en' ? '/' : `/${language}`}>
-          <img src="/images/sport endorse logo white.png" alt="Sport Endorse Logo" width={200} height={96} style={{ height: '6rem', width: 'auto', marginBottom: '0' }} />
+          <img src="/images/sport endorse logo white-min.png" alt="Sport Endorse Logo" width={200} height={96} style={{ height: '6rem', width: 'auto', marginBottom: '0' }} />
         </Link>
         <div className="footer-top">
           <div className="newsletter">
@@ -44,12 +44,12 @@ export default function Footer() {
             <div className="hs-form-frame" data-region="na1" data-form-id="055eacf1-693f-4dc9-b3fe-d89bc73e48b2" data-portal-id="4025606"></div>
 
             <div className="all-social-logos">
-              <span><a target="_blank" href="https://www.facebook.com/SportEndorseLtd/"><img src="/images/facebookLogo.jpg" alt="facebook logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://www.facebook.com/SportEndorseLtd/"><img src="/images/facebookLogo-min.jpg" alt="facebook logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
               <span><a target="_blank" href="https://www.instagram.com/sport_endorse/"><img src="/images/instagramLogo.webp" alt="instagram logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
               <span><a target="_blank" href="https://www.linkedin.com/company/sportendorse/"><img src="/images/tiktokLogo.webp" alt="tiktok logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
               <span><a target="_blank" href="https://www.tiktok.com/@sportendorse"><img src="/images/linkedinLogo.webp" alt="linkedin logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
-              <span><a target="_blank" href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5"><img src="/images/spotify.png" alt="spotify logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
-              <span><a target="_blank" href="https://www.youtube.com/channel/UCwHt-_eNBHav6TSihoirZIA"><img src="/images/youtube icon.png" alt="youtube logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5"><img src="/images/spotify-min.png" alt="spotify logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
+              <span><a target="_blank" href="https://www.youtube.com/channel/UCwHt-_eNBHav6TSihoirZIA"><img src="/images/youtube icon-min.png" alt="youtube logo" width={32} height={32} className="social-logo" loading="lazy" sizes="32px" /></a></span>
             </div>
             
           </div>
@@ -88,10 +88,10 @@ export default function Footer() {
           <div className="footer-bottom-right">
             <div className="logoContainer">
               <p>{t.supportedBy}</p>
-              <div className="logo" style={{width:"100px"}}><img src="/images/image-129.png" alt="Support Logos" width={100} height={60} /></div>
-              <div className="logo"><img src="/images/image-128.png" alt="Support Logos" width={90} height={60} /></div>
-              <div className="logo" style={{width:"95px"}}><img src="/images/image-127.png" alt="Support Logos" width={95} height={60} /></div>
-              <div className="logo" style={{width:"135px"}}><img src="/images/image-126.png" alt="Support Logos" width={135} height={60} /></div>
+              <div className="logo" style={{width:"100px"}}><img src="/images/image-129-min.png" alt="Support Logos" width={100} height={60} /></div>
+              <div className="logo"><img src="/images/image-128-min.png" alt="Support Logos" width={90} height={60} /></div>
+              <div className="logo" style={{width:"95px"}}><img src="/images/image-127-min.png" alt="Support Logos" width={95} height={60} /></div>
+              <div className="logo" style={{width:"135px"}}><img src="/images/image-126-min.png" alt="Support Logos" width={135} height={60} /></div>
             </div>
           </div>
 

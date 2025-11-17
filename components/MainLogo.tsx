@@ -12,7 +12,7 @@ export default function MainLogo() {
         <Link href={language === 'en' ? '/' : `/${language}`}>
             <img 
               className="main-logo-img" 
-              src="/images/sportEndorseLogo.png" 
+              src="/images/sportEndorseLogo-min.png" 
               alt="sport endorse logo"
               width="50"
               height="50"

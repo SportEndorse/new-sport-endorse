@@ -84,7 +84,7 @@ export default function HomeContent() {
       <BenefitSection
         title={t.home.benefitSection.brand.title}
         subtitle={t.home.benefitSection.brand.subtitle}
-        image="/images/For-Brands-image.png"
+        image="/images/For-Brands-image-min.png"
         label={t.home.benefitSection.brand.label} 
         background="#E5F1FF"
         item1={t.home.benefitSection.brand.bullet1}
@@ -97,7 +97,7 @@ export default function HomeContent() {
       <BenefitSection
         title={t.home.benefitSection.athlete.title}
         subtitle={t.home.benefitSection.athlete.subtitle}
-        image="/images/talentBenefitPic.png"
+        image="/images/talentBenefitPic-min.png"
         label={t.home.benefitSection.athlete.label}
         background="#E5F1FF"
         item1={t.home.benefitSection.athlete.bullet1}
@@ -110,7 +110,7 @@ export default function HomeContent() {
       <BenefitSection
         title={t.home.benefitSection.agency.title}
         subtitle={t.home.benefitSection.agency.subtitle}
-        image="/images/agency_dashboard.png"
+        image="/images/agency_dashboard-min.png"
         label={t.home.benefitSection.agency.label}
         background="#E5F1FF"
         item1={t.home.benefitSection.agency.bullet1}

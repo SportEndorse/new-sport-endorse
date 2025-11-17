@@ -25,7 +25,7 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
 
   const getPageLink = () => {
     // Determine which page to link to based on the image or other identifiers
-    if (image === "/images/agency_dashboard.png" || label === t.home.benefitSection.agency.label) {
+    if (image === "/images/agency_dashboard-min.png" || label === t.home.benefitSection.agency.label) {
       // Agency section
       if (language === 'en') {
         return '/agency';
@@ -48,12 +48,12 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
         <h2 style={label ? undefined: { marginTop: 0 }}>{title}</h2>
         <p>{subtitle}</p>
         <div className="icons-row">
-          <img src="/images/gold-heart-icon2.png" alt="heart" width={24} height={24} className="bullet-icon-mobile" />
-          <img src="/images/division_icon.png" alt="division" width={24} height={24} className="bullet-icon-mobile" />
-          <img src="/images/star_icon.png" alt="star" width={24} height={24} className="bullet-icon-mobile" />
+          <img src="/images/gold-heart-icon2-min.png" alt="heart" width={24} height={24} className="bullet-icon-mobile" />
+          <img src="/images/division_icon-min.png" alt="division" width={24} height={24} className="bullet-icon-mobile" />
+          <img src="/images/star_icon-min.png" alt="star" width={24} height={24} className="bullet-icon-mobile" />
         </div>
         <ul>
-          <li><img src="/images/gold-heart-icon2.png" alt="heart" width={16} height={16} className="bullet-icon" /> {item1}</li>
+          <li><img src="/images/gold-heart-icon2-min.png" alt="heart" width={16} height={16} className="bullet-icon" /> {item1}</li>
           <li><img src="/images/division_icon.png" alt="division" width={16} height={16} className="bullet-icon" /> {item2}</li>
           <li><img src="/images/star_icon.png" alt="star" width={16} height={16} className="bullet-icon" /> {item3}</li>
         </ul>

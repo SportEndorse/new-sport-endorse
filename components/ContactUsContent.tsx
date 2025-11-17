@@ -138,12 +138,12 @@ export default function ContactUsContent() {
           <div className="contact-us-socials">
             <h3>{t.followUs}</h3>
             <div className="contact-us-social-logos">
-              <span><a target="_blank" href="https://www.facebook.com/SportEndorseLtd/"><img src="/images/facebookLogo.jpg" alt="facebook logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
+              <span><a target="_blank" href="https://www.facebook.com/SportEndorseLtd/"><img src="/images/facebookLogo-min.jpg" alt="facebook logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
               <span><a target="_blank" href="https://www.instagram.com/sport_endorse/"><img src="/images/instagramLogo.webp" alt="instagram logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
               <span><a target="_blank" href="https://www.linkedin.com/company/sportendorse/"><img src="/images/linkedinLogo.webp" alt="linkedin logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
               <span><a target="_blank" href="https://www.tiktok.com/@sportendorse"><img src="/images/tiktokLogo.webp" alt="tiktok logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
-              <span><a target="_blank" href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5"><img src="/images/spotify.png" alt="spotify logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
-              <span><a target="_blank" href="https://www.youtube.com/channel/UCwHt-_eNBHav6TSihoirZIA"><img src="/images/youtube icon.png" alt="youtube logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
+              <span><a target="_blank" href="https://open.spotify.com/show/2c2mWOkxmUpeGyFI2dZgC5"><img src="/images/spotify-min.png" alt="spotify logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
+              <span><a target="_blank" href="https://www.youtube.com/channel/UCwHt-_eNBHav6TSihoirZIA"><img src="/images/youtube icon-min.png" alt="youtube logo" width={32} height={32} className="contact-us-social-logo" /></a></span>
             </div>
           </div>
         </div>

@@ -90,7 +90,7 @@ export default function BrandsContent({
                   padding: '1rem',
                   transition: 'background 0.2s ease'
                 }}>
-                  <img src="/images/SE_logo_lockup_wht.png" alt="Sport Endorse logo" width={120} height={100} style={{ maxWidth: '80px', marginBottom: '0.0' }} />
+                  <img src="/images/SE_logo_lockup_wht-min.png" alt="Sport Endorse logo" width={120} height={100} style={{ maxWidth: '80px', marginBottom: '0.0' }} />
                   <p style={{ fontSize: '0.85rem', fontWeight: '600', margin: '0', textTransform: 'uppercase' }}>
                     {viewAll}
                   </p>
