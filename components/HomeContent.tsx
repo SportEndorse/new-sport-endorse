@@ -38,18 +38,15 @@ export default function HomeContent() {
     
     if (window.innerWidth <= 480) {
       return {
-        webm: "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm",
-        mp4: "/videos/9_16 aspect ratio (mobile_reel_tiktok).MOV"
+        webm: "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm"
       };
     } else if (window.innerWidth <= 768) {
       return {
-        webm: "/videos/3_4 aspect ratio (in between).webm", 
-        mp4: "/videos/3_4 aspect ratio (in between).MOV"
+        webm: "/videos/3_4 aspect ratio (in between).webm"
       };
     } else {
       return {
-        webm: "/videos/4_3 aspect ratio (wide) .webm",
-        mp4: "/videos/4_3 aspect ratio (wide) .MOV"
+        webm: "/videos/4_3 aspect ratio (wide) .webm"
       };
     }
   };
@@ -70,8 +67,6 @@ export default function HomeContent() {
           >
             {/* WebM format for better compression */}
             <source src={videoSources.webm} type="video/webm" />
-            {/* Fallback MP4 */}
-            <source src={videoSources.mp4} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
