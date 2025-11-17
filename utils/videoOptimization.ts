@@ -5,22 +5,22 @@
 
 export const VIDEO_FORMATS = {
   mobile: {
-    webm: "/videos/9_16_aspect_ratio_mobile.webm",
-    mp4: "/videos/9_16 aspect ratio (mobile_reel_tiktok).MOV",
+    webm: "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm",
+    mp4: "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm",
     poster: "/images/video-poster-mobile.jpg",
     width: 480,
     height: 854
   },
   tablet: {
-    webm: "/videos/3_4_aspect_ratio_tablet.webm", 
-    mp4: "/videos/3_4 aspect ratio (in between).MOV",
+    webm: "/videos/3_4 aspect ratio (in between).webm", 
+    mp4: "/videos/3_4 aspect ratio (in between).webm",
     poster: "/images/video-poster-tablet.jpg",
     width: 768,
     height: 1024
   },
   desktop: {
-    webm: "/videos/4_3_aspect_ratio_wide.webm",
-    mp4: "/videos/4_3 aspect ratio (wide) .MOV",
+    webm: "/videos/4_3 aspect ratio (wide) .webm",
+    mp4: "/videos/4_3 aspect ratio (wide) .webm",
     poster: "/images/video-poster-wide.jpg",
     width: 1920,
     height: 1440

@@ -9,7 +9,7 @@ export default function AppStores() {
           <img
             src="/images/appleStore.png"
             alt="App Store"
-            width="200"
+            width="170"
             height="60"
             style={{ objectFit: "contain" }}
           />
@@ -20,7 +20,7 @@ export default function AppStores() {
           <img
             src="/images/googlePlay.png"
             alt="Google Play"
-            width="200"
+            width="170"
             height="60"
             style={{ objectFit: "contain" }}
           />
