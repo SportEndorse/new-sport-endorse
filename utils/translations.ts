@@ -470,7 +470,7 @@ const translations = {
             sport: "Triathlete",
             region: "UK",
             quote: "I've been a long-time fan of MINI. It's a brand that for me is so British and carries this heritage through its design over the years. My favourite film is the 1969 The Italian Job, and I mean how can you just not love this brand and the cars. I was delighted when through Sport Endorse I was made a Friend of the Brand for MINI UK. I'm lucky enough to be driving a new MINI Countryman, and even better, it fits my TT bike in the boot without needing to take any wheels off!",
-            image: "/images/laura-siddal.png",
+            image: "/images/laura-siddal-min.png",
             alt: "Laura Siddall, Professional Triathlete"
           },
           {
@@ -479,7 +479,7 @@ const translations = {
             sport: "Boxing",
             region: "Ireland",
             quote: "When you're on your way to become world champion, you need a good team in your corner, and Sport Endorse has been setting me up to knock out the competition for brands I work with.",
-            image: "/images/jason-quigley.png",
+            image: "/images/jason-quigley-min.png",
             alt: "Jason Quigley, Professional Boxer"
           },
           {
@@ -497,7 +497,7 @@ const translations = {
             sport: "Athletics",
             region: "USA",
             quote: "Amazing platform! Very easy and right to the point! I can talk directly to brands and even favorite the ones I love!",
-            image: "/images/Marquis-Dendy.jpeg",
+            image: "/images/Marquis-Dendy-min.jpeg",
             alt: "Marquis Dendy, Athletics"
           },
           {
@@ -506,7 +506,7 @@ const translations = {
             sport: "Boxing",
             region: "UK",
             quote: "It's been a delight to work with Sports Endorse on social media campaigns. I've successfully had 1 paid promotion and 1 product promotion exchange. I look forward to working with more brands with the support of Sports Endorses influential network.",
-            image: "/images/nicola_barke.png",
+            image: "/images/nicola_barke-min.png",
             alt: "Nicola Barke, Boxing"
           },
           {
@@ -1058,7 +1058,7 @@ const translations = {
             sport: "Roller Sports",
             region: "España",
             quote: "La verdad que vuestra aplicación es una pasada, la colaboración con Hover Air fue increíble. No puedo esperar a poder encontrar otra colaboración para acceder ya que facilita mucho para contactar con las marcas. Espero que haya mas disponibilidades para españa y poder hacer mas colaboraciones 💕",
-            image: "/images/Carla-Martin.jpg",
+            image: "/images/Carla-Martin-min.jpg",
             alt: "Carla Martin, Roller Sports"
           },
           {
@@ -1067,7 +1067,7 @@ const translations = {
             sport: "Mountain Running",
             region: "España",
             quote: "Buena plataforma para entablar relación con marcas y colaborar",
-            image: "/images/Marcos-Pascual.jpg",
+            image: "/images/Marcos-Pascual-min.jpg",
             alt: "Marcos Pascual, Mountain Running"
           },
           {
@@ -1076,7 +1076,7 @@ const translations = {
             sport: "Fotógrafo",
             region: "España",
             quote: "Una plataforma muy bien pensada para deportistas y con seguimiento real con personas reales, muy importante. Hacen un gran trabajo de seguimiento.",
-            image: "/images/Alvaro-Postigo.jpg",
+            image: "/images/Alvaro-Postigo-min.jpg",
             alt: "Alvaro Postigo Armendariz, Fotógrafo"
           },
           {
@@ -1085,7 +1085,7 @@ const translations = {
             sport: "Artist",
             region: "España",
             quote: "Plataforma para creadores de contenido muy recomendada.",
-            image: "/images/Adan.jpg",
+            image: "/images/Adan-min.jpg",
             alt: "Adan Ramírez, Artist"
           },
           {
@@ -1637,7 +1637,7 @@ const translations = {
             sport: "Triathlet",
             region: "Vereinigtes Königreich",
             quote: "Ich bin schon lange ein Fan von MINI. Es ist eine Marke, die für mich so britisch ist und dieses Erbe durch ihr Design über die Jahre trägt. Mein Lieblingsfilm ist The Italian Job von 1969, und ich meine, wie kann man diese Marke und die Autos einfach nicht lieben. Ich war begeistert, als ich durch Sport Endorse zu einem Friend of the Brand für MINI UK wurde. Ich habe das Glück, einen neuen MINI Countryman zu fahren, und noch besser, mein TT-Bike passt in den Kofferraum, ohne dass ich Räder abnehmen muss!",
-            image: "/images/laura-siddal.png",
+            image: "/images/laura-siddal-min.png",
             alt: "Laura Siddall, Professionelle Triathletin"
           },
           {
@@ -1646,7 +1646,7 @@ const translations = {
             sport: "Boxen",
             region: "Irland",
             quote: "Wenn man auf dem Weg zum Weltmeister ist, braucht man ein gutes Team in seiner Ecke, und Sport Endorse hat mich darauf vorbereitet, die Konkurrenz für Marken auszuschalten, mit denen ich arbeite.",
-            image: "/images/jason-quigley.png",
+            image: "/images/jason-quigley-min.png",
             alt: "Jason Quigley, Profiboxer"
           },
           {
@@ -1655,7 +1655,7 @@ const translations = {
             sport: "Wasserspringen",
             region: "Vereinigtes Königreich",
             quote: "Ich liebte das Konzept, als ich zum ersten Mal von Sport Endorse hörte, aber ich war mir nicht sicher, wie schnell es zu Möglichkeiten führen würde. Vom Moment der Anmeldung an war das Team in regelmäßigem Kontakt und fragte nach der Art von Zusammenarbeit, die für mich ideal wäre. Innerhalb von nur ein oder zwei Monaten landete ich genau die Art von Kooperation, die ich mir erhofft hatte! Fantastische Erfahrung — großartige Kommunikation, großartige Menschen, und es funktioniert wirklich.",
-            image: "/images/freddie_woodward.png",
+            image: "/images/freddie_woodward-min.png",
             alt: "Freddie Woodward, Wasserspringen Olympionike"
           },
           {
@@ -1664,7 +1664,7 @@ const translations = {
             sport: "Leichtathletik",
             region: "USA",
             quote: "Erstaunliche Plattform! Sehr einfach und direkt auf den Punkt! Ich kann direkt mit Marken sprechen und sogar die favorisieren, die ich liebe!",
-            image: "/images/Marquis-Dendy.jpeg",
+            image: "/images/Marquis-Dendy-min.jpeg",
             alt: "Marquis Dendy, Leichtathletik"
           },
           {
@@ -1673,7 +1673,7 @@ const translations = {
             sport: "Boxen",
             region: "Vereinigtes Königreich",
             quote: "Es war eine Freude, mit Sports Endorse an Social Media Kampagnen zu arbeiten. Ich hatte erfolgreich 1 bezahlte Promotion und 1 Produktpromotion-Austausch. Ich freue mich darauf, mit mehr Marken mit der Unterstützung von Sports Endorses einflussreichem Netzwerk zu arbeiten.",
-            image: "/images/nicola_barke.png",
+            image: "/images/nicola_barke-min.png",
             alt: "Nicola Barke, Boxen"
           },
           {

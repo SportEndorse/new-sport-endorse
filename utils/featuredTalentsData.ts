@@ -11,7 +11,7 @@ export const featuredTalentsData = {
   en: [
     {
       name: "Marquis Dendy",
-      image: "/images/Marquis-Dendy-Featured.jpeg",
+      image: "/images/Marquis-Dendy-Featured-min.jpeg",
       followingInstagram: "25k",
       sport: "Track and Field",
       location: "Florida, USA"
