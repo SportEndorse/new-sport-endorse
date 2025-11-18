@@ -54,8 +54,8 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
         </div>
         <ul>
           <li><img src="/images/gold-heart-icon2-min.png" alt="heart" width={16} height={16} className="bullet-icon" /> {item1}</li>
-          <li><img src="/images/division_icon.png" alt="division" width={16} height={16} className="bullet-icon" /> {item2}</li>
-          <li><img src="/images/star_icon.png" alt="star" width={16} height={16} className="bullet-icon" /> {item3}</li>
+          <li><img src="/images/division_icon-min.png" alt="division" width={16} height={16} className="bullet-icon" /> {item2}</li>
+          <li><img src="/images/star_icon-min.png" alt="star" width={16} height={16} className="bullet-icon" /> {item3}</li>
         </ul>
         <div className="button-group">
           {image && (image !== "/images/talentBenefitPic.png" && image !== "images/agencyBenefitPic.jpg") ? (

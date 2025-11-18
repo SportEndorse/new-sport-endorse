@@ -12,35 +12,35 @@ export const featuredTalentsData = {
     {
       name: "Marquis Dendy",
       image: "/images/Marquis-Dendy-Featured-min.jpeg",
-      followingInstagram: "25k",
+      followingInstagram: "57.7k",
       sport: "Track and Field",
       location: "Florida, USA"
     },
     {
       name: "James Lowe",
       image: "/images/featuredTalent/James-Lowe.jpg",
-      followingInstagram: "95k",
+      followingInstagram: "137k",
       sport: "Rugby",
       location: "Dublin, Ireland"
     },
     {
       name: "Kira Toussaint",
       image: "/images/featuredTalent/Kira_Toussaint.png",
-      followingInstagram: "42k",
+      followingInstagram: "179k",
       sport: "Swimming",
       location: "Netherlands"
     },
     {
       name: "Danny Simpson",
       image: "/images/featuredTalent/Danny-Simpson.png",
-      followingInstagram: "78k",
+      followingInstagram: "170k",
       sport: "Football",
       location: "Leicester, UK"
     },
     {
       name: "Emily Cole",
       image: "/images/featuredTalent/emily cole.webp",
-      followingInstagram: "183k",
+      followingInstagram: "192k",
       followingTiktok: "328k",
       sport: "Athletics",
       location: "North Carolina, USA"
