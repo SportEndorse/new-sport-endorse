@@ -1,4 +1,3 @@
-
 const translations = {
   en: {
     footer: {
@@ -363,11 +362,12 @@ const translations = {
           annualInfo: "*Paid every 12 months, +VAT"
         },
         buttons: {
+          getStarted: "Get Started", // Added translation
           startFreeTrial: "START FREE TRIAL",
           subscribeNow: "SUBSCRIBE NOW",
           save35: "SAVE 35%",
-          getStarted: "Get Started",
-          talkToSales: "Talk to Sales"
+          seeMore: "SEE MORE", // Added translation
+          talkToSales: "Talk to Sales" // Added translation
         },
         customPackage: {
           title: "Custom Package",
@@ -856,7 +856,7 @@ const translations = {
           },
           {
             title: "Orientación Precisa",
-            description: "Apunta a deportes específicos, demografías y mercados para descubrir influencers atletas que se alineen con los objetivos de tu campaña."
+            description: "Apunta a deportes específicos, demografías y mercados para descubrir influencers atletas que se alinee con los objetivos de tu campaña."
           },
           {
             title: "Soporte Dedicado para Marcas",
@@ -896,7 +896,7 @@ const translations = {
           },
           {
             title: "Elige a los Atletas Correctos",
-            description: "Conéctate directamente con atletas, revisa propuestas y selecciona el talento que mejor se adapte a la audiencia y objetivos de tu marca."
+            description: "Conéctate directamente con atletas, revisa propuestas y selecciona el talento que mejor se adapte a la audiencia y los objetivos de tu marca."
           },
           {
             title: "Completa Tu Campaña",
@@ -951,11 +951,12 @@ const translations = {
           annualInfo: "*Pagado cada 12 meses, +IVA"
         },
         buttons: {
+          getStarted: "Comenzar", // Added translation
           startFreeTrial: "INICIAR PRUEBA GRATUITA",
           subscribeNow: "SUSCRIBIRSE AHORA",
           save35: "AHORRA 35%",
-          getStarted: "Empezar",
-          talkToSales: "Hablar con Ventas"
+          seeMore: "VER MÁS", // Added translation
+          talkToSales: "Hablar con ventas" // Added translation
         },
         customPackage: {
           title: "Paquete Personalizado",
@@ -1000,7 +1001,7 @@ const translations = {
       trustedSportAgencyPartners: {
         label: "SOCIOS DE AGENCIA DE CONFIANZA",
         title: "Socios de Agencia Deportiva de Confianza",
-        description: "Navegar contratos y asuntos legales puede ser complejo. Aunque solo nos enfocamos en oportunidades comerciales, podemos conectarte con socios de agencia deportiva de confianza en tu deporte y región para ayudar con tu carrera y contratos. Dinos tu deporte y región, y haremos una referencia.",
+        description: "Navegar contratos y asuntos legales puede ser complejo. Aunque nos enfocamos solo en oportunidades comerciales, podemos conectarte con socios de agencia deportiva de confianza en tu deporte y región para ayudar con tu carrera y contratos. Dinos tu deporte y región, y haremos una referencia.",
         disclaimer: "*Las referencias solo están disponibles para atletas no representados, sujeto a disponibilidad de agencia socia en tu región o deporte.",
         buttonText: "Obtener una Referencia",
         popup: {
@@ -1273,7 +1274,7 @@ const translations = {
     },
     home:{
       welcome: "Die Ultimative Sport-Sponsoring-Plattform",
-      description: "Sport Endorse ist die führende Sport-Sponsoring-Plattform, die Marken, Athleten und Sport-Influencer für authentische, datengestützte und wirkungsvolle Partnerschaften verbindet. Wir vereinfachen jede Stufe des Sport-Sponsoring-Managements — und machen es Marken einfach, die richtigen Athleten zu entdecken und Athleten, sich direkt mit Marken für verifizierte, bezahlte Kooperationen zu verbinden. Vertraut von globalen Organisationen ist Sport Endorse der zuverlässigste Sport-Sponsoring-Marktplatz der Branche.",
+      description: "Sport Endorse ist die führende Sport-Sponsoring-Plattform, die Marken, Athleten und Sport-Influencer für authentische, datengestützte und wirkungsvolle Partnerschaften verbindet. Wir vereinfachen jede Stufe des Sport-Sponsoring-Managements — und machen es einfach für Marken, die richtigen Athleten zu entdecken und für Athleten, sich direkt mit Marken für verifizierte, bezahlte Kooperationen zu verbinden. Vertraut von globalen Organisationen ist Sport Endorse der zuverlässigste Sport-Sponsoring-Marktplatz der Branche.",
       tableHeader: "Marken, Die Unserer Sport-Marketing-Plattform Vertrauen",
       benefitSection: {
         athlete: {
@@ -1310,7 +1311,7 @@ const translations = {
       hero: {
         title: "Über",
         titleSpan: " Sport Endorse",
-        subtitle: "Sport Endorse ist eine Online-Sportmarketing-Plattform, die die Art und Weise verändert, wie Marken und Athleten sich verbinden. Unsere leistungsstarke Plattform erleichtert authentische kommerzielle Partnerschaften und unterstützt die gesamte Sportwelt - von den Athleten, die ihn spielen, bis zu den Marken und Unternehmen, die ihn unterstützen.",
+        subtitle: "Sport Endorse ist eine Online-Sportmarketing-Plattform, die die Art und Weise verändert, wie Marken und Athleten sich verbinden. Unsere leistungsstarke Plattform erleichtert authentische kommerzielle Partnerschaften, unterstützt die gesamte Sportwelt - von den Athleten, die ihn spielen, bis zu den Marken und Unternehmen, die ihn unterstützen.",
         description: "Unser globales Team bringt jahrzehntelange Sportmarketing-Expertise mit. Als Spiegelbild der Vielfalt und Inklusivität unserer Plattform kommen unsere Teammitglieder aus einer breiten Palette von Sportarten und Hintergründen. Wir sind leidenschaftlich daran interessiert, unser tiefes Branchenwissen mit unserer exzellenten Technologie zu kombinieren, um Erfolg für unsere Kunden zu liefern und eine wirklich globale und inklusive Erfahrung für Marken und Athleten in jeder Art von Sport zu schaffen."
       },
       values: {
@@ -1530,11 +1531,12 @@ const translations = {
           annualInfo: "*Zahlung alle 12 Monate, +MwSt"
         },
         buttons: {
+          getStarted: "Loslegen", // Added translation
           startFreeTrial: "KOSTENLOSE TESTVERSION STARTEN",
           subscribeNow: "JETZT ABONNIEREN", 
           save35: "35% SPAREN",
-          getStarted: "Loslegen",
-          talkToSales: "Mit Vertrieb sprechen"
+          seeMore: "MEHR SEHEN", // Added translation
+          talkToSales: "Vertrieb kontaktieren" // Added translation
         },
         customPackage: {
           title: "Individuelles Paket",

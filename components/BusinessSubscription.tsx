@@ -77,7 +77,7 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
           <p className="subscription-subtitle">{t.mainSubtitle}</p>
         </div>
 
-{shortened ? (
+        {shortened ? (
           /* Shortened Version - Table Layout without Features */
           <div className="subscription-table-wrapper">
             <table className="subscription-table">
@@ -112,17 +112,17 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
                   <td><strong>{t.buttons.getStarted}</strong></td>
                   <td>
                     <a href={`${language === 'en' ? '' : `/${language}`}/subscription`} className="subscription-cta-button subscription-trial-button">
-                      {t.buttons.startFreeTrial}
+                      {t.buttons.seeMore}
                     </a>
                   </td>
                   <td>
                     <a href={`${language === 'en' ? '' : `/${language}`}/subscription`} className="subscription-cta-button subscription-quarterly-button">
-                      {t.buttons.subscribeNow}
+                      {t.buttons.seeMore}
                     </a>
                   </td>
                   <td>
                     <a href={`${language === 'en' ? '' : `/${language}`}/subscription`} className="subscription-cta-button subscription-annual-button">
-                      {t.buttons.save35}
+                      {t.buttons.seeMore}
                     </a>
                   </td>
                 </tr>
