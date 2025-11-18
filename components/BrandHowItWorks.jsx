@@ -9,25 +9,25 @@ export default function BrandHowItWorks() {
     
     const steps = [
         {
-        icon: "testmessage.png",
+        icon: "testmessage-min.png",
         title: t.steps[0].title,
         number: "[01]",
         description: t.steps[0].description,
         },
         {
-        icon: "volume.png",
+        icon: "volume-min.png",
         title: t.steps[1].title,
         number: "[02]",
         description: t.steps[1].description,
         },
         {
-        icon: "startwithyellow.png",
+        icon: "startwithyellow-min.png",
         title: t.steps[2].title,
         number: "[03]",
         description: t.steps[2].description,
         },
         {
-        icon: "dollarsign.png",
+        icon: "dollarsign-min.png",
         title: t.steps[3].title,
         number: "[04]",
         description: t.steps[3].description,
