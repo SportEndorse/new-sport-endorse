@@ -81,7 +81,7 @@ const translations = {
     },
     agency: {
       badge: "FOR SPORTS AGENCIES",
-      title: "Partner with Athletes",
+      title: "Maximise Your Roster's Earning Potential",
       description: "Sport Endorse is the all-in-one sports agent platform designed for agencies to manage athlete endorsement deals, secure paid collaborations, and streamline operations at scale. Connect your entire roster with verified brands seeking authentic sponsorships that align with each athlete's profile and passions.",
       imageAlt: "Agency Dashboard - Sport Endorse Platform",
       metadata: {
@@ -488,7 +488,7 @@ const translations = {
             sport: "Diving",
             region: "UK",
             quote: "I loved the concept when I first heard about Sport Endorse, but I wasn't sure how quickly it would lead to opportunities. From the moment I signed up, the team were in regular contact, asking about the type of collaboration that would be ideal for me. Within just a month or two, I landed exactly the kind of collab I'd hoped for! Fantastic experience — great communication, great people, and it really works.",
-            image: "/images/freddie_woodward.png",
+            image: "/images/freddie_woodward-min.png",
             alt: "Freddie Woodward, Diving Olympian"
           },
           {

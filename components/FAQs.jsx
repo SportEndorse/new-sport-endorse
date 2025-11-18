@@ -40,18 +40,17 @@ export default function FAQs(){
         <div className="faq-left-section">
           <h2 className="faq-title">{t.leftSection.title}</h2>
           
-          <div className="faq-questions-section">
-            {/*<div className="faq-avatars">
+          {/*<div className="faq-questions-section">
+            <div className="faq-avatars">
               <div className="faq-avatar"></div>
               <div className="faq-avatar"></div>
               <div className="faq-avatar"></div>
-            </div>*/}
+            </div>}
             <span className="faq-questions-text">{t.leftSection.questionsLeft}</span>
           </div>
-          
           <p className="faq-description">
             {t.leftSection.description}
-          </p>
+          </p>*/}
           
           {/*<a target="_blank" href="https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07">
             <button className="faq-schedule-button">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../styles/brandReviews.css';
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
@@ -101,14 +101,31 @@ export default function BrandReviews() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef(null);
+
+  const resetInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }, 5000);
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 5000); // Change every 5 seconds
-
-    return () => clearInterval(interval);
+    resetInterval();
+    return () => clearInterval(intervalRef.current);
   }, [reviews.length]);
+
+  const handlePrevClick = () => {
+    resetInterval();
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
+  };
+
+  const handleNextClick = () => {
+    resetInterval();
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+  };
 
   const currentReview = reviews[currentIndex];
 
@@ -149,13 +166,13 @@ export default function BrandReviews() {
         <div className="review-navigation">
           <button 
             className="nav-arrow prev"
-            onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length)}
+            onClick={handlePrevClick}
           >
             ←
           </button>
           <button 
             className="nav-arrow next"
-            onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length)}
+            onClick={handleNextClick}
           >
             →
           </button>
