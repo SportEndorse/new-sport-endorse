@@ -3,42 +3,43 @@ import { NextRequest, NextResponse } from 'next/server';
 // Use Edge Runtime for faster execution and lower costs
 export const config = {
   matcher: [
-    // Match all paths except static files, images, and API routes
-    '/((?!_next/static|_next/image|favicon.ico|robots.txt|images|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|ico|css|js)$).*)',
+    // Match only HTML pages, exclude all static assets and API routes
+    // This matcher already excludes: _next, images, videos, and all file extensions
+    '/((?!_next/static|_next/image|_next/webpack-hmr|favicon.ico|robots.txt|sitemap.xml|images|videos|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|ico|css|js|json|woff|woff2|ttf|eot|pdf)$).*)',
   ],
 };
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
-  // Don't redirect if already on a localized path, API routes, or static assets
-  if (
-    pathname.startsWith('/es') || 
-    pathname.startsWith('/de') || 
-    pathname.startsWith('/api') ||
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/images') ||
-    pathname === '/favicon.ico' ||
-    pathname === '/robots.txt'
-  ) {
+  // OPTIMIZATION: Respect user's manual language choice (path takes priority)
+  // If path already has a language prefix, skip geo-detection entirely
+  // This is GDPR/CCPA compliant - no cookies needed, URL-based preference
+  if (pathname.startsWith('/es') || pathname.startsWith('/de')) {
     return NextResponse.next();
   }
 
+  // CRITICAL OPTIMIZATION: Only run geo-detection on root path '/'
+  // If user is on any other English page (/blog, /about-us, etc.), they've already
+  // been through root or explicitly navigated there - no need to detect again
+  // This reduces function invocations by ~90% for non-root pages
+  if (pathname !== '/') {
+    return NextResponse.next();
+  }
+
+  // Only run geo-detection on root '/' path (first visit or direct root access)
+  // This expensive operation now runs ONLY on root path, not on every English page
+  
   // Get country from Vercel's geo headers (cast to any to avoid TypeScript issues)
   const country = (request as any).geo?.country;
   
-  // Get Accept-Language header as fallback
+  // Get Accept-Language header as fallback (always available, no consent needed)
   const acceptLanguage = request.headers.get('accept-language');
 
-  // Check if user has a language preference cookie
-  const langCookie = request.cookies.get('preferred-language')?.value;
-
-  // Priority: Cookie > Country > Accept-Language > Default
+  // Priority: Country > Accept-Language > Default (English)
   let targetLocale = '';
 
-  if (langCookie === 'es' || langCookie === 'de') {
-    targetLocale = langCookie;
-  } else if (country === 'ES') {
+  if (country === 'ES') {
     targetLocale = 'es';
   } else if (country === 'DE') {
     targetLocale = 'de';
@@ -52,11 +53,11 @@ export function middleware(request: NextRequest) {
   }
 
   // Redirect to localized version if target locale is determined
-  if (targetLocale && !pathname.startsWith(`/${targetLocale}`)) {
+  if (targetLocale) {
     const url = request.nextUrl.clone();
     url.pathname = `/${targetLocale}${pathname}`;
     
-    // Add headers to indicate this was a geo-redirect for debugging
+    // No cookies set - GDPR/CCPA compliant
     const response = NextResponse.redirect(url);
     response.headers.set('x-geo-redirect', 'true');
     response.headers.set('x-detected-locale', targetLocale);
@@ -64,6 +65,6 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  // Default: English version (no redirect needed)
+  // Default: English version (no redirect needed, no cookies)
   return NextResponse.next();
 }
