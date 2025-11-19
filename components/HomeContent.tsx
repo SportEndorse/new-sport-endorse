@@ -73,7 +73,7 @@ export default function HomeContent() {
       </section>
 
       <div className="home-appStoresContainer" style={{display: "flex", justifyContent: "center", padding: "2rem 0"}}>
-        <AppStores />
+        <AppStores pageName="home" />
       </div>
 
       <BrandsGrid variant={isMobile ? "5x4" : "8x4"} label={t.home.tableHeader} />

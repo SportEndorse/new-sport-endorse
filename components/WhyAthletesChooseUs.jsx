@@ -61,7 +61,7 @@ export default function WhyAthletesChooseUs() {
 
         <div className="why-athletes-cta-section">
           <p className="why-athletes-cta-text">{t.ctaText}</p>
-          <AppStores />
+          <AppStores pageName="why-athletes" />
         </div>
       </div>
     </section>

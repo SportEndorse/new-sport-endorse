@@ -2,6 +2,7 @@
 import Link from "next/link";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
 import "../styles/footer.css";
@@ -10,6 +11,27 @@ import AppStores from "./AppStores";
 export default function Footer() {
   const { language } = useLanguage();
   const t = translations[language].footer;
+  const pathname = usePathname();
+  
+  // Extract page name from pathname
+  const getPageName = () => {
+    // Remove language prefix if present
+    let path = pathname;
+    if (path.startsWith('/es/') || path.startsWith('/de/')) {
+      path = path.substring(3);
+    } else if (path === '/es' || path === '/de') {
+      path = '/';
+    }
+    
+    // Get the first segment after root
+    const segments = path.split('/').filter(segment => segment);
+    if (segments.length === 0 || segments[0] === '') {
+      return 'home';
+    }
+    return segments[0];
+  };
+  
+  const pageName = getPageName();
 
   useEffect(() => {
     // Load HubSpot script
@@ -73,7 +95,7 @@ export default function Footer() {
             </div>
 
             <span className="footer-app-store-logos">
-              <AppStores />
+              <AppStores pageName={`footer-${pageName}`} />
             </span>
           </div>
         </div>
