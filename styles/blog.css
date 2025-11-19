@@ -1,5 +1,14 @@
 /* Blog Styles */
 
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 /* Back Button */
 .back-button {
   display: inline-flex;
@@ -29,6 +38,34 @@
 .back-button-icon {
   margin-right: 0.5rem;
   font-size: 1rem;
+}
+
+/* See More Button */
+.see-more-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #0078c1;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.see-more-button:hover {
+  background-color: #006bb3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.see-more-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Container and Layout */

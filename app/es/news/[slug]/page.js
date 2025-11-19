@@ -1,4 +1,4 @@
-import { getNewsStories, getNewsStoryBySlug } from '../../../news/wordpress';
+import { getNewsStorySlugs, getNewsStoryBySlug } from '@/utils/wordpress-api';
 import NewsStoryContent from '@/components/NewsStoryContent';
 
 // Function to decode HTML entities
@@ -78,13 +78,15 @@ export async function generateMetadata({ params }) {
   }
 }
 
-// Generate static params for all news stories
+// Generate static params for all news stories (lightweight - only fetches slugs)
 export async function generateStaticParams() {
-  const newsStories = await getNewsStories();
-  
-  return newsStories.map(story => ({
-    slug: story.slug
-  }));
+  try {
+    const slugs = await getNewsStorySlugs();
+    return slugs.map(slug => ({ slug }));
+  } catch (error) {
+    console.warn('Error generating static params for news stories:', error);
+    return [];
+  }
 }
 
 export default async function NewsStoryPost({ params }) {

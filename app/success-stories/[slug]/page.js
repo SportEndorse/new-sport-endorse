@@ -1,4 +1,4 @@
-import { getAllSuccessStories, getSuccessStoryBySlug } from '../wordpress'
+import { getSuccessStorySlugs, getSuccessStoryBySlug } from '@/utils/wordpress-api'
 import SuccessStoryContent from '@/components/SuccessStoryContent'
 
 // Function to decode HTML entities
@@ -84,51 +84,14 @@ export async function generateMetadata({ params }) {
   }
 }
 
-// Generate static params for all success stories
+// Generate static params for all success stories (lightweight - only fetches slugs)
 export async function generateStaticParams() {
   try {
-    console.log('🏗️ Generating static params for success stories...');
-    const stories = await getAllSuccessStories()
-    console.log(`📊 Total stories fetched for static generation: ${stories?.length || 0}`);
-    
-    // Use the same relaxed filtering as the main page - only require basic fields
-    const validSlugs = stories
-      .filter(story => {
-        try {
-          const isValid = (
-            story?.slug &&
-            story?.title?.rendered
-          );
-          
-          if (!isValid) {
-            console.warn(`❌ Filtering out story during static params generation:`, {
-              hasSlug: !!story?.slug,
-              hasTitle: !!story?.title?.rendered,
-              storyId: story?.id
-            });
-          } else {
-            console.log(`✅ Including story in static generation:`, {
-              id: story.id,
-              slug: story.slug,
-              title: story.title.rendered
-            });
-          }
-          
-          return isValid;
-        } catch (error) {
-          console.warn(`❌ Error filtering story during static params generation:`, error)
-          return false
-        }
-      })
-      .map(story => ({
-        slug: story.slug
-      }))
-    
-    console.log(`Generating static params for ${validSlugs.length} success stories`)
-    return validSlugs
+    const slugs = await getSuccessStorySlugs();
+    return slugs.map(slug => ({ slug }));
   } catch (error) {
-    console.warn('Error generating static params for success stories:', error)
-    return [] // Return empty array to prevent build failure
+    console.warn('Error generating static params for success stories:', error);
+    return [];
   }
 }
 

@@ -1,10 +1,10 @@
 "use client";
 
-import { getNewsStories } from "../app/news/wordpress.js";
 import Link from "next/link";
 
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
 import translations from "@/utils/translations";
 import "../styles/blog.css";
 
@@ -35,39 +35,80 @@ function decodeHtmlEntities(text: string): string {
   return decodedText;
 }
 
-interface NewsStory {
-  id: number;
-  title: { rendered: string };
-  excerpt: { rendered: string };
-  date: string;
-  slug: string;
-  featured_media_url?: string;
-  yoast_head_json?: {
-    og_image?: Array<{
-      url: string;
-    }>;
-  };
+// Loading skeleton card component
+function LoadingCard() {
+  return (
+    <article className="blog-post-card" style={{ opacity: 0.7 }}>
+      <div style={{ 
+        width: '100%', 
+        height: '18rem', 
+        background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
+        backgroundSize: '200% 100%',
+        animation: 'shimmer 1.5s infinite',
+      }} />
+      <div className="blog-post-content">
+        <div style={{ 
+          height: '24px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '85%'
+        }} />
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.25rem',
+          width: '100%'
+        }} />
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '70%'
+        }} />
+        <div style={{ 
+          height: '14px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          width: '120px',
+          marginTop: '1rem'
+        }} />
+      </div>
+    </article>
+  );
 }
 
 export default function NewsContent() {
   const { language } = useLanguage();
   const t = translations[language];
-  const [newsStories, setNewsStories] = useState<NewsStory[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { newsStories, loading, ensureListDataLoaded, fetchFirstNewsStories } = useWordPressData();
+  const isLoading = loading.newsStories;
+  const [visibleCount, setVisibleCount] = useState(12);
+  const [initialLoadComplete, setInitialLoadComplete] = useState(false);
 
+  // Fetch first 12 news stories immediately, then load the rest
   useEffect(() => {
-    async function fetchNews() {
-      try {
-        const fetchedNews = await getNewsStories();
-        setNewsStories(fetchedNews);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      } finally {
-        setLoading(false);
+    let mounted = true;
+    
+    const loadProgressive = async () => {
+      // First, fetch first 12 news stories quickly
+      const firstStories = await fetchFirstNewsStories(12);
+      if (mounted && firstStories.length > 0) {
+        setInitialLoadComplete(true);
       }
-    }
-    fetchNews();
-  }, []);
+      
+      // Then load all news stories in the background
+      ensureListDataLoaded('newsStories');
+    };
+    
+    loadProgressive();
+    
+    return () => {
+      mounted = false;
+    };
+  }, [fetchFirstNewsStories, ensureListDataLoaded]);
 
   return (
     <div className="blog-container">
@@ -82,13 +123,13 @@ export default function NewsContent() {
         
         {/* Centered Posts Grid */}
         <div className="blog-posts-container">
-          {loading ? (
-            <div className="blog-loading" style={{ textAlign: 'center', padding: '2rem' }}>
-              {t.components.news.loading}
+          {!initialLoadComplete && newsStories.length === 0 ? (
+            <div className="blog-posts-grid">
+              {Array(12).fill(null).map((_, i) => <LoadingCard key={`skeleton-${i}`} />)}
             </div>
           ) : (
             <div className="blog-posts-grid">
-              {newsStories.map(story => (
+              {newsStories.slice(0, visibleCount).map(story => (
                 <article key={story.id} className="blog-post-card">
                   {story.yoast_head_json?.og_image?.[0]?.url && (
                     <img
@@ -126,6 +167,16 @@ export default function NewsContent() {
             </div>
           )}
         </div>
+        {!isLoading && newsStories.length > visibleCount && (
+          <div style={{ textAlign: 'center', marginTop: '3rem', width: '100%' }}>
+            <button
+              onClick={() => setVisibleCount(prev => prev + 12)}
+              className="see-more-button"
+            >
+              {t.components.news.seeMore || 'See More'}
+            </button>
+          </div>
+        )}
       </main>
     </div>
   );

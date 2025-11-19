@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import PodcastBackButton from '@/components/PodcastBackButton';
-import { getPodcastBySlug, fetchPodcasts } from '../app/podcasts/wordpress';
 import { notFound } from 'next/navigation';
 import "../styles/blog.css";
 
@@ -87,50 +87,40 @@ interface PodcastContentProps {
 export default function PodcastContent({ slug }: PodcastContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
+  const { getPodcastBySlug, fetchPodcastBySlug, podcasts } = useWordPressData();
   const [podcast, setPodcast] = useState<Podcast | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
-  const [iframeUrl, setIframeUrl] = useState(podcastIframes[0]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPodcast = async () => {
-      try {
-        setLoading(true);
-        const fetchedPodcast = await getPodcastBySlug(slug);
-        if (!fetchedPodcast) {
-          notFound();
-          return;
-        }
+    // First check cache
+    const cached = getPodcastBySlug(slug);
+    if (cached) {
+      setPodcast(cached as Podcast);
+      setIsLoading(false);
+      return;
+    }
+
+    // Fetch just this one item
+    fetchPodcastBySlug(slug).then((fetchedPodcast) => {
+      if (fetchedPodcast) {
         setPodcast(fetchedPodcast as Podcast);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setLoading(false);
+      } else {
+        notFound();
       }
-    };
+      setIsLoading(false);
+    });
+  }, [slug, getPodcastBySlug, fetchPodcastBySlug]);
 
-    fetchPodcast();
-  }, [slug]);
+  // Find the index of current podcast for iframe matching
+  const iframeUrl = useMemo(() => {
+    if (!podcast) return podcastIframes[0];
+    const podcastIndex = podcasts.findIndex((p) => p.id === podcast.id);
+    return podcastIframes[podcastIndex] || podcastIframes[0];
+  }, [podcast, podcasts]);
 
-  // Get all podcasts to find the index of current podcast for iframe matching
-  useEffect(() => {
-    const getIframeUrl = async () => {
-      if (podcast) {
-        try {
-          const allPodcasts = await fetchPodcasts();
-          const podcastIndex = allPodcasts.findIndex((p: Podcast) => p.id === podcast.id);
-          const url = podcastIframes[podcastIndex] || podcastIframes[0]; // Fallback to first iframe
-          setIframeUrl(url);
-        } catch {
-          setIframeUrl(podcastIframes[0]);
-        }
-      }
-    };
+  const error = !podcast && !isLoading ? new Error('Podcast not found') : null;
 
-    getIframeUrl();
-  }, [podcast]);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>

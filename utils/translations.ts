@@ -559,7 +559,8 @@ const translations = {
         title: "Latest Blog Posts",
         description: "Articles from Sport Endorse team members on what is impacting the sports, marketing and sponsorship world",
         readMore: "Read More →",
-        loading: "Loading posts..."
+        loading: "Loading posts...",
+        seeMore: "See More"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -569,13 +570,15 @@ const translations = {
         featureMe: "Feature Me!",
         featureMeTitle: "Feature Me on a Podcast!",
         readMore: "Read More →",
-        loading: "Loading..."
+        loading: "Loading...",
+        seeMore: "See More"
       },
       news: {
         title: "News",
         description: "The latest news on athletes, brands, companies, and all things Sport Endorse!",
         readMore: "Read More →",
-        loading: "Loading news..."
+        loading: "Loading news...",
+        seeMore: "See More"
       },
       successStoriesContent: {
         title: "Sport Endorse Success Stories",
@@ -584,7 +587,8 @@ const translations = {
         readMore: "Read Story →",
         loading: "Loading success stories...",
         noSummary: "No summary available.",
-        noStories: "No stories found."
+        noStories: "No stories found.",
+        seeMore: "See More"
       }
     }
   },
@@ -1139,7 +1143,8 @@ const translations = {
         title: "Últimas Publicaciones del Blog",
         description: "Artículos de los miembros del equipo de Sport Endorse sobre lo que está impactando el mundo del deporte, marketing y patrocinio",
         readMore: "Leer Más →",
-        loading: "Cargando publicaciones..."
+        loading: "Cargando publicaciones...",
+        seeMore: "Ver Más"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -1149,13 +1154,15 @@ const translations = {
         featureMe: "¡Destacarme!",
         featureMeTitle: "¡Destacarme en un Podcast!",
         readMore: "Leer Más →",
-        loading: "Cargando..."
+        loading: "Cargando...",
+        seeMore: "Ver Más"
       },
       news: {
         title: "Noticias",
         description: "¡Las últimas noticias sobre atletas, marcas, empresas y todo lo relacionado con Sport Endorse!",
         readMore: "Leer Más →",
-        loading: "Cargando noticias..."
+        loading: "Cargando noticias...",
+        seeMore: "Ver Más"
       },
       successStoriesContent: {
         title: "Historias de Éxito de Sport Endorse",
@@ -1164,7 +1171,8 @@ const translations = {
         readMore: "Leer Historia →",
         loading: "Cargando historias de éxito...",
         noSummary: "No hay resumen disponible.",
-        noStories: "No se encontraron historias."
+        noStories: "No se encontraron historias.",
+        seeMore: "Ver Más"
       }
     }
   },
@@ -1728,7 +1736,8 @@ const translations = {
         title: "Neueste Blog-Beiträge",
         description: "Artikel von Sport Endorse Team-Mitgliedern über das, was die Sport-, Marketing- und Sponsoring-Welt beeinflusst",
         readMore: "Mehr Lesen →",
-        loading: "Lade Beiträge..."
+        loading: "Lade Beiträge...",
+        seeMore: "Mehr Sehen"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -1738,13 +1747,15 @@ const translations = {
         featureMe: "Mich Vorstellen!",
         featureMeTitle: "Mich in einem Podcast Vorstellen!",
         readMore: "Mehr Lesen →",
-        loading: "Laden..."
+        loading: "Laden...",
+        seeMore: "Mehr Sehen"
       },
       news: {
         title: "Nachrichten",
         description: "Die neuesten Nachrichten über Athleten, Marken, Unternehmen und alles rund um Sport Endorse!",
         readMore: "Mehr Lesen →",
-        loading: "Lade Nachrichten..."
+        loading: "Lade Nachrichten...",
+        seeMore: "Mehr Sehen"
       },
       successStoriesContent: {
         title: "Sport Endorse Erfolgsgeschichten",
@@ -1753,7 +1764,8 @@ const translations = {
         readMore: "Geschichte Lesen →",
         loading: "Lade Erfolgsgeschichten...",
         noSummary: "Keine Zusammenfassung verfügbar.",
-        noStories: "Keine Geschichten gefunden."
+        noStories: "Keine Geschichten gefunden.",
+        seeMore: "Mehr Sehen"
       }
     }
   },

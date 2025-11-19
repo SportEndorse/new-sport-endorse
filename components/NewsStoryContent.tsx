@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import NewsBackButton from '@/components/NewsBackButton';
-import { getNewsStoryBySlug } from '../app/news/wordpress';
 import { notFound } from 'next/navigation';
 
 import "../styles/blog.css";
@@ -33,31 +33,33 @@ interface NewsContentProps {
 export default function NewsContent({ slug }: NewsContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
+  const { getNewsStoryBySlug, fetchNewsStoryBySlug } = useWordPressData();
   const [newsStory, setNewsStory] = useState<NewsStory | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchNewsStory = async () => {
-      try {
-        setLoading(true);
-        const fetchedStory = await getNewsStoryBySlug(slug);
-        if (!fetchedStory) {
-          notFound();
-          return;
-        }
-        setNewsStory(fetchedStory);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setLoading(false);
+    // First check cache
+    const cached = getNewsStoryBySlug(slug);
+    if (cached) {
+      setNewsStory(cached as NewsStory);
+      setIsLoading(false);
+      return;
+    }
+
+    // Fetch just this one item
+    fetchNewsStoryBySlug(slug).then((fetchedStory) => {
+      if (fetchedStory) {
+        setNewsStory(fetchedStory as NewsStory);
+      } else {
+        notFound();
       }
-    };
+      setIsLoading(false);
+    });
+  }, [slug, getNewsStoryBySlug, fetchNewsStoryBySlug]);
 
-    fetchNewsStory();
-  }, [slug]);
+  const error = !newsStory && !isLoading ? new Error('News story not found') : null;
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>

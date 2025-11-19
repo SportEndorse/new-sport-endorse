@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import BlogBackButton from '@/components/BlogBackButton';
-import { getPostBySlug } from '../app/blog/wordpress';
 import { notFound } from 'next/navigation';
 
 import "../styles/blog.css";
@@ -30,31 +30,33 @@ interface BlogPostContentProps {
 export default function BlogPostContent({ slug }: BlogPostContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
+  const { getBlogPostBySlug, fetchBlogPostBySlug } = useWordPressData();
   const [post, setPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        setLoading(true);
-        const fetchedPost = await getPostBySlug(slug);
-        if (!fetchedPost) {
-          notFound();
-          return;
-        }
-        setPost(fetchedPost);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setLoading(false);
+    // First check cache
+    const cached = getBlogPostBySlug(slug);
+    if (cached) {
+      setPost(cached as BlogPost);
+      setIsLoading(false);
+      return;
+    }
+
+    // Fetch just this one item
+    fetchBlogPostBySlug(slug).then((fetchedPost) => {
+      if (fetchedPost) {
+        setPost(fetchedPost as BlogPost);
+      } else {
+        notFound();
       }
-    };
+      setIsLoading(false);
+    });
+  }, [slug, getBlogPostBySlug, fetchBlogPostBySlug]);
 
-    fetchPost();
-  }, [slug]);
+  const error = !post && !isLoading ? new Error('Post not found') : null;
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>

@@ -1,4 +1,4 @@
-import { fetchPodcasts, getPodcastBySlug } from '../wordpress'
+import { getPodcastSlugs, getPodcastBySlug } from '@/utils/wordpress-api'
 import PodcastContent from '@/components/PodcastContent'
 
 // Function to decode HTML entities
@@ -76,13 +76,15 @@ export async function generateMetadata({ params }) {
   }
 }
 
-// Generate static params for all podcasts
+// Generate static params for all podcasts (lightweight - only fetches slugs)
 export async function generateStaticParams() {
-  const podcasts = await fetchPodcasts()
-  
-  return podcasts.map(podcast => ({
-    slug: podcast.slug
-  }))
+  try {
+    const slugs = await getPodcastSlugs();
+    return slugs.map(slug => ({ slug }));
+  } catch (error) {
+    console.warn('Error generating static params for podcasts:', error);
+    return [];
+  }
 }
 
 export default async function PodcastPost({ params }) {

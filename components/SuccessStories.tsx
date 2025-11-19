@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import "../styles/successStories.css";
 import { useLanguage } from "../context/LanguageContext";
+import { useWordPressData } from "../context/WordPressDataContext";
 import translations from "../utils/translations";
 import Link from "next/link";
 
@@ -59,78 +60,85 @@ function useVisibleCount() {
   return visibleCount;
 }
 
-type Story = {
-  id: number;
-  title: { rendered: string };
-  slug: string;
-  yoast_head_json?: { og_image?: { url: string }[]; description?: string };
-  success_stories_bottom_description?: string;
-  link: string;
-};
+// Loading skeleton component
+function LoadingCard() {
+  return (
+    <div className="success-card" style={{ opacity: 0.7 }}>
+      <div style={{ 
+        width: '100%', 
+        height: '180px', 
+        background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
+        backgroundSize: '200% 100%',
+        animation: 'shimmer 1.5s infinite',
+        borderRadius: '1rem 1rem 0 0'
+      }} />
+      <div className="success-info">
+        <div style={{ 
+          height: '20px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '80%'
+        }} />
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.25rem',
+          width: '100%'
+        }} />
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '60%'
+        }} />
+        <div style={{ 
+          height: '14px', 
+          background: '#0078c1', 
+          borderRadius: '4px', 
+          width: '100px',
+          marginTop: '0.5rem'
+        }} />
+      </div>
+    </div>
+  );
+}
 
 export default function SuccessStories() {
   const { language } = useLanguage();
   const t = translations[language].components.successStories;
-  
-  const [stories, setStories] = useState<Story[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { successStories: stories, ensureListDataLoaded, fetchFirstSuccessStories } = useWordPressData();
   const [startIdx, setStartIdx] = useState(0);
+  const [initialLoadComplete, setInitialLoadComplete] = useState(false);
   const visibleCount = useVisibleCount();
 
+  // Fetch first 3 stories immediately, then load the rest
   useEffect(() => {
-    async function fetchStories() {
-      try {
-        console.log('🎯 SuccessStories component: Starting fetch...');
-        
-        // Try the main endpoint first
-        let res = await fetch(
-          `https://www.sportendorse.com/wp-json/wp/v2/success_stories?_embed&per_page=10&page=1`
-        );
-        
-        console.log('📊 Main endpoint response status:', res.status);
-        
-        // If main endpoint fails, try alternatives
-        if (!res.ok) {
-          console.log('🔄 Main endpoint failed, trying alternatives...');
-          const alternatives = [
-            "https://www.sportendorse.com/wp-json/wp/v2/success-stories?_embed&per_page=10&page=1",
-            "https://www.sportendorse.com/wp-json/wp/v2/successstories?_embed&per_page=10&page=1",
-            "https://www.sportendorse.com/wp-json/wp/v2/posts?_embed&per_page=10&page=1",
-            "https://www.sportendorse.com/wp-json/wp/v2/success?_embed&per_page=10&page=1"
-          ];
-          
-          for (const altUrl of alternatives) {
-            console.log(`🔄 Trying: ${altUrl}`);
-            try {
-              const altRes = await fetch(altUrl);
-              if (altRes.ok) {
-                console.log(`✅ Alternative worked: ${altUrl}`);
-                res = altRes;
-                break;
-              }
-            } catch (error) {
-              console.log(`❌ Alternative failed:`, error);
-            }
-          }
-        }
-        
-        if (!res.ok) throw new Error("Failed to fetch success stories");
-        const data = await res.json();
-        console.log('📋 Success stories data received:', data);
-        console.log('📊 Stories count:', data?.length || 0);
-        setStories(data || []);
-      } catch {
-        setStories([]);
-      } finally {
-        setLoading(false);
+    let mounted = true;
+    
+    const loadProgressive = async () => {
+      // First, fetch first 3 stories quickly
+      const firstStories = await fetchFirstSuccessStories(3);
+      if (mounted && firstStories.length > 0) {
+        setInitialLoadComplete(true);
       }
-    }
-    fetchStories();
-  }, []);
+      
+      // Then load all stories in the background
+      ensureListDataLoaded('successStories');
+    };
+    
+    loadProgressive();
+    
+    return () => {
+      mounted = false;
+    };
+  }, [fetchFirstSuccessStories, ensureListDataLoaded]);
 
   // Reset startIdx if it's out of bounds when visibleCount changes
   useEffect(() => {
-    if (startIdx > Math.max(0, stories.length - visibleCount)) {
+    if (stories.length > 0 && startIdx > Math.max(0, stories.length - visibleCount)) {
       setStartIdx(Math.max(0, stories.length - visibleCount));
     }
   }, [visibleCount, stories.length, startIdx]);
@@ -143,7 +151,13 @@ export default function SuccessStories() {
     setStartIdx((prev) => Math.min(stories.length - visibleCount, prev + 1));
   };
 
-  const visibleStories = stories.slice(startIdx, startIdx + visibleCount);
+  const visibleStories = stories.length > 0 
+    ? stories.slice(startIdx, startIdx + visibleCount)
+    : [];
+
+  // Show loading skeletons if we don't have initial stories yet
+  const showSkeletons = !initialLoadComplete && visibleStories.length === 0;
+  const skeletons = Array(visibleCount).fill(null);
 
   return (
     <section className="success-stories">
@@ -153,14 +167,14 @@ export default function SuccessStories() {
         <button
           className="carousel-arrow left"
           onClick={handlePrev}
-          disabled={startIdx === 0}
+          disabled={startIdx === 0 || showSkeletons}
           aria-label="Previous stories"
         >
           &#8592;
         </button>
         <div className="stories-scroll">
-          {loading ? (
-            <div>{t.loading}</div>
+          {showSkeletons ? (
+            skeletons.map((_, i) => <LoadingCard key={`skeleton-${i}`} />)
           ) : stories.length === 0 ? (
             <div>{t.noStories}</div>
           ) : (
@@ -193,7 +207,7 @@ export default function SuccessStories() {
         <button
           className="carousel-arrow right"
           onClick={handleNext}
-          disabled={startIdx >= Math.max(0, stories.length - visibleCount)}
+          disabled={startIdx >= Math.max(0, stories.length - visibleCount) || showSkeletons}
           aria-label="Next stories"
         >
           &#8594;

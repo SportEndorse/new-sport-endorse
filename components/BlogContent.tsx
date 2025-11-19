@@ -1,10 +1,10 @@
 "use client";
 
-import { getAllPosts } from "../app/blog/wordpress.js";
 import Link from "next/link";
 
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
 import translations from "@/utils/translations";
 import "../styles/blog.css";
 
@@ -35,38 +35,80 @@ function decodeHtmlEntities(text: string): string {
   return decodedText;
 }
 
-interface BlogPost {
-  id: number;
-  title: { rendered: string };
-  excerpt: { rendered: string };
-  date: string;
-  slug: string;
-  _embedded?: {
-    'wp:featuredmedia'?: Array<{
-      source_url: string;
-    }>;
-  };
+// Loading skeleton card component
+function LoadingCard() {
+  return (
+    <article className="blog-post-card" style={{ opacity: 0.7 }}>
+      <div style={{ 
+        width: '100%', 
+        height: '18rem', 
+        background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
+        backgroundSize: '200% 100%',
+        animation: 'shimmer 1.5s infinite',
+      }} />
+      <div className="blog-post-content">
+        <div style={{ 
+          height: '24px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '85%'
+        }} />
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.25rem',
+          width: '100%'
+        }} />
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '70%'
+        }} />
+        <div style={{ 
+          height: '14px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          width: '120px',
+          marginTop: '1rem'
+        }} />
+      </div>
+    </article>
+  );
 }
 
 export default function BlogContent() {
   const { language } = useLanguage();
   const t = translations[language];
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { blogPosts: posts, loading, ensureListDataLoaded, fetchFirstBlogPosts } = useWordPressData();
+  const isLoading = loading.blogPosts;
+  const [visibleCount, setVisibleCount] = useState(12);
+  const [initialLoadComplete, setInitialLoadComplete] = useState(false);
 
+  // Fetch first 12 posts immediately, then load the rest
   useEffect(() => {
-    async function fetchPosts() {
-      try {
-        const fetchedPosts = await getAllPosts();
-        setPosts(fetchedPosts);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      } finally {
-        setLoading(false);
+    let mounted = true;
+    
+    const loadProgressive = async () => {
+      // First, fetch first 12 posts quickly
+      const firstPosts = await fetchFirstBlogPosts(12);
+      if (mounted && firstPosts.length > 0) {
+        setInitialLoadComplete(true);
       }
-    }
-    fetchPosts();
-  }, []);
+      
+      // Then load all posts in the background
+      ensureListDataLoaded('blogPosts');
+    };
+    
+    loadProgressive();
+    
+    return () => {
+      mounted = false;
+    };
+  }, [fetchFirstBlogPosts, ensureListDataLoaded]);
 
   return (
     <div className="blog-container">
@@ -81,13 +123,13 @@ export default function BlogContent() {
         
         {/* Centered Posts Grid */}
         <div className="blog-posts-container">
-          {loading ? (
-            <div className="blog-loading" style={{ textAlign: 'center', padding: '2rem' }}>
-              {t.components.blog.loading}
+          {!initialLoadComplete && posts.length === 0 ? (
+            <div className="blog-posts-grid">
+              {Array(12).fill(null).map((_, i) => <LoadingCard key={`skeleton-${i}`} />)}
             </div>
           ) : (
             <div className="blog-posts-grid">
-              {posts.map(post => (
+              {posts.slice(0, visibleCount).map(post => (
                 <article key={post.id} className="blog-post-card">
                   {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                     <img
@@ -108,14 +150,14 @@ export default function BlogContent() {
                         {decodeHtmlEntities(post.title.rendered)}
                       </Link>
                     </h2>
-                              
+                                
                     <div
                       className="blog-post-excerpt"
                       dangerouslySetInnerHTML={{
                         __html: decodeHtmlEntities(post.excerpt.rendered)
                       }}
                     />
-                              
+                                
                     <time className="blog-post-date">
                       {new Date(post.date).toLocaleDateString()}
                     </time>
@@ -125,6 +167,16 @@ export default function BlogContent() {
             </div>
           )}
         </div>
+        {!isLoading && posts.length > visibleCount && (
+          <div style={{ textAlign: 'center', marginTop: '3rem', width: '100%' }}>
+            <button
+              onClick={() => setVisibleCount(prev => prev + 12)}
+              className="see-more-button"
+            >
+              {t.components.blog.seeMore || 'See More'}
+            </button>
+          </div>
+        )}
       </main>
     </div>
   );

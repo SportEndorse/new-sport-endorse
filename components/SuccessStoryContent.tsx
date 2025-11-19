@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import BackButton from '@/components/BackButton';
-import { getSuccessStoryBySlug } from '../app/success-stories/wordpress';
 import { notFound } from 'next/navigation';
 import "../styles/blog.css";
 
@@ -55,31 +55,33 @@ interface SuccessStoryContentProps {
 export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
+  const { getSuccessStoryBySlug, fetchSuccessStoryBySlug } = useWordPressData();
   const [story, setStory] = useState<SuccessStory | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchStory = async () => {
-      try {
-        setLoading(true);
-        const fetchedStory = await getSuccessStoryBySlug(slug);
-        if (!fetchedStory) {
-          notFound();
-          return;
-        }
-        setStory(fetchedStory);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setLoading(false);
+    // First check cache
+    const cached = getSuccessStoryBySlug(slug);
+    if (cached) {
+      setStory(cached as SuccessStory);
+      setIsLoading(false);
+      return;
+    }
+
+    // Fetch just this one item
+    fetchSuccessStoryBySlug(slug).then((fetchedStory) => {
+      if (fetchedStory) {
+        setStory(fetchedStory as SuccessStory);
+      } else {
+        notFound();
       }
-    };
+      setIsLoading(false);
+    });
+  }, [slug, getSuccessStoryBySlug, fetchSuccessStoryBySlug]);
 
-    fetchStory();
-  }, [slug]);
+  const error = !story && !isLoading ? new Error('Success story not found') : null;
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>
