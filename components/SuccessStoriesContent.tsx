@@ -143,7 +143,7 @@ export default function SuccessStoriesContent() {
                     <div className="blog-post-content">
                       <h2 className="blog-post-title">
                         <Link
-                          href={language === 'en' ? `/success-stories/${story.slug}` : `/${language}/success-stories/${story.slug}`}
+                          href={language === 'en' ? `/success_stories/${story.slug}` : `/${language}/success_stories/${story.slug}`}
                           className="blog-post-link"
                         >
                           {decodeHtmlEntities(story.title.rendered)}
@@ -151,7 +151,7 @@ export default function SuccessStoriesContent() {
                       </h2>
 
                       <Link
-                        href={`/success-stories/${story.slug}`}
+                        href={`/success_stories/${story.slug}`}
                         className="blog-post-link"
                         style={{ textDecoration: 'none' }}
                       >

@@ -105,29 +105,11 @@ export async function fetchItemBySlug(
 
 // Specific functions for each content type
 export async function getSuccessStorySlugs(): Promise<string[]> {
-  try {
-    return await fetchSlugsOnly('/success_stories');
-  } catch {
-    // Try alternatives
-    try {
-      return await fetchSlugsOnly('/success-stories');
-    } catch {
-      return await fetchSlugsOnly('/successstories');
-    }
-  }
+  return await fetchSlugsOnly('/success_stories');
 }
 
 export async function getSuccessStoryBySlug(slug: string): Promise<WordPressPost | null> {
-  try {
-    return await fetchItemBySlug('/success_stories', slug);
-  } catch {
-    // Try alternatives
-    try {
-      return await fetchItemBySlug('/success-stories', slug);
-    } catch {
-      return await fetchItemBySlug('/successstories', slug);
-    }
-  }
+  return await fetchItemBySlug('/success_stories', slug);
 }
 
 export async function getBlogPostSlugs(): Promise<string[]> {

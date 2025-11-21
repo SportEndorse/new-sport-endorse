@@ -161,14 +161,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
         fetchAllPages('/podcasts'),
         fetchAllPages('/posts'),
         fetchAllPages('/presses'),
-        fetchAllPages('/success_stories').catch(() => {
-          // Try alternative endpoints if main one fails
-          return Promise.race([
-            fetchAllPages('/success-stories'),
-            fetchAllPages('/successstories'),
-            Promise.resolve([]),
-          ]);
-        }),
+        fetchAllPages('/success_stories'),
       ]);
 
       setData({
@@ -312,23 +305,11 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
           const existing = data.successStories;
           if (existing.length > 0) {
             // We already have page 1, so fetch remaining pages starting from page 2
-            const remainingItems = await fetchRemainingPages('/success_stories', 2).catch(() => {
-              return Promise.race([
-                fetchRemainingPages('/success-stories', 2),
-                fetchRemainingPages('/successstories', 2),
-                Promise.resolve([]),
-              ]);
-            });
+            const remainingItems = await fetchRemainingPages('/success_stories', 2);
             items = [...existing, ...remainingItems];
           } else {
             // No cached items, fetch all pages from the beginning
-            items = await fetchAllPages('/success_stories').catch(() => {
-              return Promise.race([
-                fetchAllPages('/success-stories'),
-                fetchAllPages('/successstories'),
-                Promise.resolve([]),
-              ]);
-            });
+            items = await fetchAllPages('/success_stories');
           }
           setData(prev => ({ 
             ...prev, 
@@ -359,13 +340,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
       let items: WordPressPost[] = [];
       
       if (type === 'successStories') {
-        items = await fetchFirstNPages('/success_stories', limit).catch(() => {
-          return Promise.race([
-            fetchFirstNPages('/success-stories', limit),
-            fetchFirstNPages('/successstories', limit),
-            Promise.resolve([]),
-          ]);
-        });
+      items = await fetchFirstNPages('/success_stories', limit);
       } else {
         items = await fetchFirstNPages(endpoint, limit);
       }
@@ -509,15 +484,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
   }, [fetchSingleItem]);
 
   const fetchSuccessStoryBySlug = useCallback(async (slug: string): Promise<WordPressPost | null> => {
-    try {
-      return await fetchSingleItem('/success_stories', slug, 'successStories');
-    } catch {
-      try {
-        return await fetchSingleItem('/success-stories', slug, 'successStories');
-      } catch {
-        return await fetchSingleItem('/successstories', slug, 'successStories');
-      }
-    }
+    return await fetchSingleItem('/success_stories', slug, 'successStories');
   }, [fetchSingleItem]);
 
   return (

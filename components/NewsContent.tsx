@@ -144,7 +144,7 @@ export default function NewsContent() {
                   <div className="blog-post-content">
                     <h2 className="blog-post-title">
                       <Link
-                        href={language === 'en' ? `/news/${story.slug}` : `/${language}/news/${story.slug}`}
+                        href={language === 'en' ? `/presses/${story.slug}` : `/${language}/presses/${story.slug}`}
                         className="blog-post-link"
                       >
                         {decodeHtmlEntities(story.title.rendered)}

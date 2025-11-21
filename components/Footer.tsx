@@ -88,10 +88,10 @@ export default function Footer() {
             </div>
             <div>
               {/*<h5>{/* <span className="footer-number">09]</span><Link href={getNavLink("/blog")}>{t.links.blog}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>    */} 
-              <h5>{/* <span className="footer-number">07]</span> */}<Link href={getNavLink("/success-stories")}>{t.links.successStories}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>
+              <h5>{/* <span className="footer-number">07]</span> */}<Link href={getNavLink("/success_stories")}>{t.links.successStories}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>
               <h5>{/* <span className="footer-number">08]</span> */}<Link href={getNavLink("/faqs")}>{t.links.faqs}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} loading="lazy" sizes="16px" /></Link></h5>      
               <h5>{/* <span className="footer-number">10]</span> */}<Link href={getNavLink("/contact-us")}>{t.links.contactUs}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} /></Link></h5>
-              <h5>{/* <span className="footer-number">11]</span> */}<Link href={getNavLink("/news")}>{t.links.news}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} /></Link></h5>
+              <h5>{/* <span className="footer-number">11]</span> */}<Link href={getNavLink("/presses")}>{t.links.news}<img src="/images/yellowArrow.svg" alt="yellow arrow svg" width={16} height={16} /></Link></h5>
             </div>
 
             <span className="footer-app-store-logos">

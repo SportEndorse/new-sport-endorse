@@ -198,7 +198,7 @@ export default function SuccessStories() {
                         ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (story.success_stories_bottom_description.length > 250 ? '...' : '')
                         : "No summary available."}
                   </p>
-                  <Link className="read-more" href="/success-stories" >{t.readMore}</Link>
+                  <Link className="read-more" href="/success_stories" >{t.readMore}</Link>
                 </div>
               </div>
             ))
