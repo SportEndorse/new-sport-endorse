@@ -387,7 +387,8 @@ const translations = {
         categories: {
           brand: "Brand FAQs",
           talent: "Talent FAQs",
-          agency: "Sports Agency FAQs"
+          agency: "Sports Agency FAQs",
+          subscription: "Subscription FAQs"
         },
         emptyMessage: "Coming soon! Check back for updates.",
         questions: [
@@ -980,7 +981,8 @@ const translations = {
         categories: {
           brand: "FAQs de Marcas",
           talent: "FAQs de Talento",
-          agency: "FAQs de Agencias Deportivas"
+          agency: "FAQs de Agencias Deportivas",
+          subscription: "FAQs de Suscripción"
         },
         emptyMessage: "¡Próximamente! Vuelve pronto para actualizaciones.",
         questions: [
@@ -1564,7 +1566,8 @@ const translations = {
         categories: {
           brand: "Marken FAQs",
           talent: "Talent FAQs",
-          agency: "Sportagentur FAQs"
+          agency: "Sportagentur FAQs",
+          subscription: "Abonnement FAQs"
         },
         emptyMessage: "Bald verfügbar! Schauen Sie bald wieder vorbei für Updates.",
         questions: [

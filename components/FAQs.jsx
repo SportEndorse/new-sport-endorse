@@ -5,7 +5,7 @@ import { Plus, Minus, ChevronDown, ChevronUp } from 'lucide-react';
 import "../styles/faqs.css"
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
-import { brandFAQs, talentFAQs, agencyFAQs } from "../utils/faqData";
+import { brandFAQs, talentFAQs, agencyFAQs, subscriptionFAQs } from "../utils/faqData";
 
 export default function FAQs(){
     const { language } = useLanguage();
@@ -33,6 +33,7 @@ export default function FAQs(){
   const currentBrandFAQs = brandFAQs[language] || brandFAQs.en;
   const currentTalentFAQs = talentFAQs[language] || talentFAQs.en;
   const currentAgencyFAQs = agencyFAQs[language] || agencyFAQs.en;
+  const currentSubscriptionFAQs = subscriptionFAQs[language] || subscriptionFAQs.en;
 
   return (
     <div className="faq-container">
@@ -82,6 +83,12 @@ export default function FAQs(){
                 key: 'agencies', 
                 faqs: currentAgencyFAQs,
                 color: '#f59e0b'
+              },
+              {
+                name: t.categories.subscription,
+                key: 'subscription',
+                faqs: currentSubscriptionFAQs,
+                color: '#8b5cf6'
               }
             ].map((category) => (
               <div key={category.key} className="faq-category">

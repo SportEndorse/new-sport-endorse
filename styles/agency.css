@@ -111,13 +111,21 @@
 @media (max-width: 768px) {
   .agency-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
     text-align: center;
   }
   
   .agency-title {
     font-size: 2.5rem;
   }
+
+  
+  .agency-description {
+    text-align: center !important;
+    margin: 0 auto 0 !important;
+    font-size: 1rem;
+  }
+  
   
   .agency-content {
     padding-right: 0;

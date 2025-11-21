@@ -52,9 +52,9 @@ export default function BrandsContent({
           
           <div className="brands-imageContainer">
             <div className="brands-talent-showcase">
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
                 {featuredAthletes}
-              </h3>
+              </p>
               <div className="brands-talent-grid" style={{ 
                 display: 'grid', 
                 gridTemplateColumns: 'repeat(3, 1fr)', 

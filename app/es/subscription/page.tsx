@@ -1,6 +1,6 @@
 import BusinessSubscription from "@/components/BusinessSubscription";
 import CalendlyDemo from "@/components/CalendlyDemo";
-import FAQs from "@/components/FAQs";
+import SubscriptionFAQs from "@/components/SubscriptionFAQs";
 import SuccessStories from "@/components/SuccessStories";
 import { Metadata } from "next";
 
@@ -41,7 +41,7 @@ export default function SubscriptionES(){
 
             <SuccessStories />
 
-            <FAQs />
+            <SubscriptionFAQs />
         
         </main>
     );
