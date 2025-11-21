@@ -19,7 +19,7 @@ export default function BrandReviews() {
     },
     {
       id: 2,
-      image: "/images/donal healy-min.png",
+      image: "/images/ireland-west-airport.jpg",
       alt: "Donal Healy",
       text: "We were delighted to work with Sport Endorse on campaigns involving both Jack Carty and Jason Quigley - two outstanding sporting ambassadors for the West and North West of Ireland.",
       name: "Donal Healy",
@@ -27,7 +27,7 @@ export default function BrandReviews() {
     },
     {
       id: 3,
-      image: "/images/john delves-min.png",
+      image: "/images/magnet-plus-min.jpg",
       alt: "John Delves",
       text: "The team at Sport Endorse were a pleasure to work with, they were on hand in the lead up to our photoshoot and on the day were more than accommodatingwith our requests. A great experience all around and one we will no doubt repeat!”",
       name: "John Delves",
@@ -35,7 +35,7 @@ export default function BrandReviews() {
     },
     {
       id: 4,
-      image: "/images/daithi oconnor-min.png",
+      image: "/images/revive_active-min-square.png",
       alt: "Daithí O'Connor",
       text: "Working with Sport Endorse is a pleasure. We've been very happy with the partnerships we've secured and look forward to driving our business  in the UK with help from the platform.",
       name: "Daithí O'Connor",

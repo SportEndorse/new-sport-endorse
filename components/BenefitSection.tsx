@@ -42,7 +42,7 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
     }
   };
   return (
-    <section className="benefit-section" style={{ background, paddingBottom:  "2rem !important"}}>
+    <section className="benefit-section" style={{ background }}>
       <div className="benefit-left">
         {label && <a href={learnMoreLink}><span className="benefit-label" style={{ color }}>◉ {label}</span></a>}
         <h2 style={label ? undefined: { marginTop: 0 }}>{title}</h2>

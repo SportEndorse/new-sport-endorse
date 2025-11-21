@@ -61,11 +61,11 @@ export const featuredTalentsData = {
       location: "Ohio, USA"
     },
     {
-      name: "Roman Alegre",
-      image: "/images/featuredTalent/roman alegre.png",
-      followingInstagram: "18.4k",
-      sport: "Football",
-      location: "Barcelona"
+      name: "Annabel Dimmock",
+      image: "/images/featuredTalent/Annabel Dimmock.jpg",
+      followingInstagram: "136k",
+      sport: "Golf",
+      location: "UK"
     },
     {
       name: "Peter Plavec",
@@ -314,11 +314,11 @@ export const featuredTalentsData = {
       location: "Valencia"
     },
     {
-      name: "Roman Alegre",
-      image: "/images/featuredTalent/roman alegre.png",
-      followingInstagram: "18.4k",
-      sport: "Fußball",
-      location: "Barcelona"
+      name: "Annabel Dimmock",
+      image: "/images/featuredTalent/Annabel Dimmock.jpg",
+      followingInstagram: "136k",
+      sport: "Golf",
+      location: "UK"
     },
     {
       name: "Abby Berner",
