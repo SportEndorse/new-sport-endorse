@@ -5,8 +5,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Acerca de Sport Endorse | Conectando Atletas con Marcas Mundialmente",
-  description: "Conoce la misión de Sport Endorse de conectar atletas de élite con marcas premium a través de asociaciones auténticas y tecnología innovadora.",
+  title: "Acerca de Sport Endorse - Plataforma Global de Marketing Deportivo",
+  description: "Sport Endorse es una plataforma global de marketing deportivo que apoya la industria deportiva mundial a través de un equipo diverso de expertos que une marcas y atletas.",
   alternates: {
     canonical: "https://www.sportendorse.com/es/about-us",
     languages: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Acerca de Sport Endorse | Conectando Atletas con Marcas Mundialmente",
-    description: "Conoce la misión de Sport Endorse de conectar atletas de élite con marcas premium a través de asociaciones auténticas y tecnología innovadora.",
+    title: "Acerca de Sport Endorse - Plataforma Global de Marketing Deportivo",
+    description: "Sport Endorse es una plataforma global de marketing deportivo que apoya la industria deportiva mundial a través de un equipo diverso de expertos que une marcas y atletas.",
     type: "website",
     locale: "es_ES",
     url: "https://www.sportendorse.com/es/about-us",

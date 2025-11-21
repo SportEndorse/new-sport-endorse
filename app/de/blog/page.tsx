@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import BlogContent from '@/components/BlogContent'
 
 export const metadata: Metadata = {
-  title: "Blogs über Athleten-Sponsoring & Sport-Marketing | Sport Endorse",
-  description: "Erkunden Sie Experten-Blogs über Athleten-Sponsoring, Sport-Influencer und Markenbotschafter. Lernen Sie, wie Sie Ihre Sport-Marketing-Kampagnen mit Elite-Athleten verbessern.",
+  title: "Blog - Sport-Marketing-Einblicke & Sponsoring-Trends",
+  description: "Entdecken Sie Athleten-Sponsoring-Geschichten, Marken-Marketing-Tipps und Influencer-Einblicke von den Experten bei Sport Endorse. Lernen Sie, wie Sie im Sport-Marketing aufsteigen.",
   alternates: {
     canonical: "https://www.sportendorse.com/de/blog",
     languages: {
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Blogs über Athleten-Sponsoring & Sport-Marketing | Sport Endorse",
-    description: "Erkunden Sie Experten-Blogs über Athleten-Sponsoring, Sport-Influencer und Markenbotschafter. Lernen Sie, wie Sie Ihre Sport-Marketing-Kampagnen mit Elite-Athleten verbessern.",
+    title: "Blog - Sport-Marketing-Einblicke & Sponsoring-Trends",
+    description: "Entdecken Sie Athleten-Sponsoring-Geschichten, Marken-Marketing-Tipps und Influencer-Einblicke von den Experten bei Sport Endorse. Lernen Sie, wie Sie im Sport-Marketing aufsteigen.",
     type: "website",
     locale: "de_DE",
     siteName: "Sport Endorse"

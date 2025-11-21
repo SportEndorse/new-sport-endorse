@@ -6,8 +6,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Encuentra Atletas de Élite e Influencers Deportivos para tu Marca | Sport Endorse",
-  description: "Descubre atletas de élite e influencers deportivos para mejorar la visibilidad de tu marca. Sport Endorse te ayuda a gestionar patrocinios de atletas y campañas de marketing deportivo.",
+  title: "Encuentra y Patrocina Atletas para el Marketing de tu Marca",
+  description: "Descubre embajadores de marca atléticos para tus campañas de marketing. Conecta con el mejor talento en Sport Endorse y gestiona patrocinios de atletas para mayor visibilidad",
   alternates: {
     canonical: "https://www.sportendorse.com/es/brands",
     languages: {
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Encuentra Atletas de Élite e Influencers Deportivos para tu Marca | Sport Endorse",
-    description: "Descubre atletas de élite e influencers deportivos para mejorar la visibilidad de tu marca. Sport Endorse te ayuda a gestionar patrocinios de atletas y campañas de marketing deportivo.",
+    title: "Encuentra y Patrocina Atletas para el Marketing de tu Marca",
+    description: "Descubre embajadores de marca atléticos para tus campañas de marketing. Conecta con el mejor talento en Sport Endorse y gestiona patrocinios de atletas para mayor visibilidad",
     type: "website",
     locale: "es_ES",
     url: "https://www.sportendorse.com/es/brands",

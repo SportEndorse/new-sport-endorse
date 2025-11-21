@@ -5,8 +5,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "About Sport Endorse | Connecting Athletes with Brands Worldwide",
-  description: "Learn about Sport Endorse's mission to bridge the gap between elite athletes and premium brands through authentic partnerships and innovative technology.",
+  title: "About Sport Endorse - Global Sports Marketing Platform",
+  description: "Sport Endorse is a global sports marketing platform supporting the sports industry worldwide through a diverse team of experts uniting brands and athletes.",
   alternates: {
     canonical: "https://www.sportendorse.com/about-us",
     languages: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "About Sport Endorse | Connecting Athletes with Brands Worldwide",
-    description: "Learn about Sport Endorse's mission to bridge the gap between elite athletes and premium brands through authentic partnerships and innovative technology.",
+    title: "About Sport Endorse - Global Sports Marketing Platform",
+    description: "Sport Endorse is a global sports marketing platform supporting the sports industry worldwide through a diverse team of experts uniting brands and athletes.",
     type: "website",
     locale: "en_US",
     url: "https://www.sportendorse.com/about-us",

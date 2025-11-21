@@ -5,8 +5,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Atletas e Influencers Deportivos - Obtén Acuerdos Pagados con Marcas | Sport Endorse",
-  description: "Únete a Sport Endorse y conecta con marcas que se alinean con tus valores. Colabora auténticamente, consigue acuerdos pagados y haz crecer tu carrera deportiva.",
+  title: "Únete a Nuestro Mercado de Atletas y Solicita Patrocinios",
+  description: "Regístrate en Sport Endorse para conectar con marcas, encontrar oportunidades de patrocinio de atletas, solicitar acuerdos, conseguir patrocinios y hacer crecer tu influencia en la industria.",
   alternates: {
     canonical: "https://www.sportendorse.com/es/talent/",
     languages: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Atletas e Influencers Deportivos - Obtén Acuerdos Pagados con Marcas | Sport Endorse",
-    description: "Únete a Sport Endorse y conecta con marcas que se alinean con tus valores. Colabora auténticamente, consigue acuerdos pagados y haz crecer tu carrera deportiva.",
+    title: "Únete a Nuestro Mercado de Atletas y Solicita Patrocinios",
+    description: "Regístrate en Sport Endorse para conectar con marcas, encontrar oportunidades de patrocinio de atletas, solicitar acuerdos, conseguir patrocinios y hacer crecer tu influencia en la industria.",
     type: "website",
     locale: "es_ES",
     url: "https://www.sportendorse.com/es/talent/",

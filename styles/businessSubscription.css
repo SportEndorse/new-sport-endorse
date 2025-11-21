@@ -26,11 +26,12 @@
   font-size: 3rem;
   font-weight: 900;
   color: #1e293b;
-  margin-bottom: 1rem;
   background: linear-gradient(135deg, #1e293b 0%, #009ee3 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  max-width: 900px;
+  margin: 0 auto 1rem;
 }
 
 .subscription-subtitle {

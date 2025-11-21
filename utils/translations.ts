@@ -66,6 +66,7 @@ const translations = {
       description: "Sport Endorse is a global sports sponsorship platform helping brands and agencies connect with elite athletes and sports influencers for marketing campaigns and partnerships. Our platform simplifies how you discover, sponsor, and collaborate with verified athletes—creating authentic, measurable, and high-impact brand campaigns that enhance brand visibility and engagement.",
       featuredAthletes: "Featured Global Athletes",
       viewAll: "View All",
+      joinAsBrand: "Join as a Brand",
       sports: {
         freestyle: "Freestyle Football",
         fitness: "Fitness",
@@ -83,6 +84,7 @@ const translations = {
       title: "Maximise Your Roster's Earning Potential",
       description: "Sport Endorse is the all-in-one sports agent platform designed for agencies to manage athlete endorsement deals, secure paid collaborations, and streamline operations at scale. Connect your entire roster with verified brands seeking authentic sponsorships that align with each athlete's profile and passions.",
       imageAlt: "Agency Dashboard - Sport Endorse Platform",
+      bookCallToPartner: "Book a Call to Partner With Us",
       metadata: {
         title: "Book sports celebrities | Sport Endorse",
         description: "Our cutting-edge technological solutions reduce the steps needed to score sensational sponsorship deals for athletes. Sport Endorse is a simple, user-friendly platform connecting agencies with top global athletes and ambassadors guaranteed to take your client's marketing campaigns to the next level."
@@ -660,6 +662,7 @@ const translations = {
       description: "Sport Endorse es una plataforma global de patrocinio deportivo que ayuda a marcas y agencias a conectar con atletas de élite e influencers deportivos para campañas de marketing y asociaciones. Nuestra plataforma simplifica cómo descubres, patrocinas y colaboras con atletas verificados—creando campañas de marca auténticas, medibles y de alto impacto que mejoran la visibilidad y participación de la marca.",
       featuredAthletes: "Atletas Destacados",
       viewAll: "Ver Todos",
+      joinAsBrand: "Únete como Marca",
       sports: {
         freestyle: "Fútbol Freestyle",
         fitness: "Fitness",
@@ -677,6 +680,7 @@ const translations = {
       title: "Asóciate con Atletas",
       description: "Sport Endorse es la plataforma todo-en-uno de agentes deportivos diseñada para que las agencias gestionen acuerdos de endorsement de atletas, aseguren colaboraciones pagadas y optimicen las operaciones a escala. Conecta toda tu lista de talentos con marcas verificadas que buscan patrocinios auténticos que se alineen con el perfil y las pasiones de cada atleta.",
       imageAlt: "Panel de Agencia - Plataforma Sport Endorse",
+      bookCallToPartner: "Reserva Una Llamada Para Asociarte Con Nosotros",
       metadata: {
         title: "Reserva celebridades deportivas | Sport Endorse",
         description: "Nuestras soluciones tecnológicas de vanguardia reducen los pasos necesarios para conseguir acuerdos de patrocinio sensacionales para atletas. Sport Endorse es una plataforma simple y fácil de usar que conecta agencias con atletas y embajadores globales de primer nivel garantizado para llevar las campañas de marketing de tus clientes al siguiente nivel."
@@ -1245,6 +1249,7 @@ const translations = {
       description: "Sport Endorse ist eine globale Sport-Sponsoring-Plattform, die Marken und Agenturen dabei hilft, sich mit Elite-Athleten und Sport-Influencern für Marketing-Kampagnen und Partnerschaften zu verbinden. Unsere Plattform vereinfacht, wie Sie verifizierte Athleten entdecken, sponsern und mit ihnen kollaborieren—und schafft authentische, messbare und wirkungsvolle Markenkampagnen, die Markensichtbarkeit und Engagement steigern.",
       featuredAthletes: "Vorgestellte Athleten",
       viewAll: "Alle Anzeigen",
+      joinAsBrand: "Als Marke beitreten",
       sports: {
         freestyle: "Freestyle Fußball",
         fitness: "Fitness",
@@ -1262,6 +1267,7 @@ const translations = {
       title: "Partner mit Athleten",
       description: "Sport Endorse ist die All-in-One-Sportagenten-Plattform, die für Agenturen entwickelt wurde, um Athleten-Endorsement-Deals zu verwalten, bezahlte Kooperationen zu sichern und den Betrieb im großen Stil zu optimieren. Verbinden Sie Ihre gesamte Liste mit verifizierten Marken, die authentische Sponsorings suchen, die mit dem Profil und den Leidenschaften jedes Athleten übereinstimmen.",
       imageAlt: "Agentur-Dashboard - Sport Endorse Plattform",
+      bookCallToPartner: "Buchen Sie Einen Anruf, Um Partner Zu Werden",
       metadata: {
         title: "Buchen Sie Sport-Prominente | Sport Endorse",
         description: "Unsere hochmodernen technologischen Lösungen reduzieren die Schritte, die erforderlich sind, um sensationelle Sponsoring-Deals für Athleten zu erzielen. Sport Endorse ist eine einfache, benutzerfreundliche Plattform, die Agenturen mit Top-Athleten und Botschaftern weltweit verbindet und garantiert, dass die Marketing-Kampagnen Ihrer Kunden auf die nächste Stufe gebracht werden."

@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import BlogContent from '@/components/BlogContent'
 
 export const metadata: Metadata = {
-  title: "Blogs on Athlete Sponsorship & Sports Marketing | Sport Endorse",
-  description: "Explore expert blogs on athlete sponsorship, sports influencers, and brand ambassadors. Learn how to elevate your sports marketing campaigns with elite athletes.",
+  title: "Blog - Sports Marketing Insights & Sponsorship Trends",
+  description: "Discover athlete sponsorship stories, brand marketing tips, and influencer insights from the experts at Sport Endorse. Learn how to elevate in sports marketing.",
   alternates: {
     canonical: "https://www.sportendorse.com/blog",
     languages: {
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Blogs on Athlete Sponsorship & Sports Marketing | Sport Endorse",
-    description: "Explore expert blogs on athlete sponsorship, sports influencers, and brand ambassadors. Learn how to elevate your sports marketing campaigns with elite athletes.",
+    title: "Blog - Sports Marketing Insights & Sponsorship Trends",
+    description: "Discover athlete sponsorship stories, brand marketing tips, and influencer insights from the experts at Sport Endorse. Learn how to elevate in sports marketing.",
     type: "website",
     locale: "en_US",
     siteName: "Sport Endorse"

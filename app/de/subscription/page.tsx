@@ -9,8 +9,8 @@ export const revalidate = false;
 
 export const metadata: Metadata = {
   //metadataBase: new URL("put the home url here later"),
-  title: "Abonnieren Sie Sport Endorses Athleten-Sponsoring-Plattform | Sport Endorse",
-  description: "Entdecken Sie, wie Sport Endorses Plattform das Sponsoring-Management vereinfacht. Fordern Sie eine Demo an, um sich mit Elite-Athleten, Markenbotschaftern und Sport-Influencern zu verbinden.",
+  title: "Abonnieren Sie Sport Endorses Athleten-Sponsoring-Plattform",
+  description: "Entdecken Sie, wie Sport Endorses Plattform das Sponsoring-Management vereinfacht. Fordern Sie eine KOSTENLOSE Demo an, um sich mit Athleten, Markenbotschaftern und Sport-Influencern zu verbinden.",
   alternates: {
     canonical: "https://www.sportendorse.com/de/subscription",
     languages: {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph:{ // og:title and so on
-    title: "Abonnieren Sie Sport Endorses Athleten-Sponsoring-Plattform | Sport Endorse",
-    description: "Entdecken Sie, wie Sport Endorses Plattform das Sponsoring-Management vereinfacht. Fordern Sie eine Demo an, um sich mit Elite-Athleten, Markenbotschaftern und Sport-Influencern zu verbinden.",
+    title: "Abonnieren Sie Sport Endorses Athleten-Sponsoring-Plattform",
+    description: "Entdecken Sie, wie Sport Endorses Plattform das Sponsoring-Management vereinfacht. Fordern Sie eine KOSTENLOSE Demo an, um sich mit Athleten, Markenbotschaftern und Sport-Influencern zu verbinden.",
     type:"website",
     locale:"de_DE",
     url: "https://www.sportendorse.com/de/subscription",

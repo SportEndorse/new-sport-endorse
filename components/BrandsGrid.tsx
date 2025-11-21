@@ -31,7 +31,7 @@ const brands = [
   { src: "/images/homePageTable/revive_active-min.png", alt: "Revive Active logo" },
   { src: "/images/homePageTable/mini-min.png", alt: "Mini logo" },
   { src: "/images/homePageTable/skins-logo-min.png", alt: "Skins logo" },
-  { src: "/images/homePageTable/solestar-min.gif", alt: "Solestar logo" },
+  { src: "/images/homePageTable/solestar.png", alt: "Solestar logo" },
   { src: "/images/homePageTable/uniphar.png", alt: "AYA/Uniphar logo" },
   { src: "/images/homePageTable/movember-min.png", alt: "Movember logo" },
   { src: "/images/homePageTable/GrantThornton.webp", alt: "Grant Thornton logo" },

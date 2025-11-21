@@ -48,6 +48,12 @@ export default function BrandsContent({
             <p className="brands-description">
               {description}
             </p>
+            <a 
+              href={language === 'en' ? '/subscription' : `/${language}/subscription`}
+              className="brands-cta-button"
+            >
+              {t.brands.joinAsBrand}
+            </a>
           </div>
           
           <div className="brands-imageContainer">

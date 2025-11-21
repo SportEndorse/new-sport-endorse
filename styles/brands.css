@@ -49,6 +49,27 @@
   max-width: 480px;
 }
 
+.brands-cta-button {
+  background: #0078c1;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.brands-cta-button:hover {
+  background: #005a8c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 120, 193, 0.3);
+}
+
 .brands-downloadButtons {
   display: flex;
   gap: 16px;
@@ -128,5 +149,10 @@
   .brands-downloadButtons {
     flex-direction: column;
     align-items: center;
+  }
+
+  .brands-cta-button {
+    width: 100%;
+    text-align: center;
   }
 }

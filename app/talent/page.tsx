@@ -5,8 +5,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Athletes & Influencers: Monetize Your Sports Career | Sport Endorse",
-  description: "Join thousands of athletes earning through brand partnerships. Sport Endorse connects sports talent with premium brands for authentic sponsorship deals.",
+  title: "Join Our Athlete Marketplace and Apply for Sponsorships",
+  description: "Register on Sport Endorse to connect with brands, find athlete sponsorship opportunities, apply for deals, get sponsored, and grow your influence in industry.",
   alternates: {
     canonical: "https://www.sportendorse.com/talent",
     languages: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Athletes & Influencers: Monetize Your Sports Career | Sport Endorse",
-    description: "Join thousands of athletes earning through brand partnerships. Sport Endorse connects sports talent with premium brands for authentic sponsorship deals.",
+    title: "Join Our Athlete Marketplace and Apply for Sponsorships",
+    description: "Register on Sport Endorse to connect with brands, find athlete sponsorship opportunities, apply for deals, get sponsored, and grow your influence in industry.",
     type: "website",
     locale: "en_US",
     url: "https://www.sportendorse.com/talent",

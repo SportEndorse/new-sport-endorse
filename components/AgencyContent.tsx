@@ -34,6 +34,14 @@ export default function AgencyContent() {
             <p className="agency-description">
               {t.agency.description}
             </p>
+            <a 
+              href="https://calendly.com/d/cwcj-xx7-2xn/sport-endorse-demo-agency"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="agency-cta-button"
+            >
+              {t.agency.bookCallToPartner}
+            </a>
           </div>
           
           <div className="agency-imageContainer">

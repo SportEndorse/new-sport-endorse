@@ -5,8 +5,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Agencias Deportivas - Haz Crecer tu Cartera de Atletas | Sport Endorse",
-  description: "Impulsa el crecimiento de tu agencia deportiva con Sport Endorse. Conecta a tus atletas con marcas premium y genera ingresos adicionales a través de colaboraciones auténticas.",
+  title: "Plataforma de Agentes Deportivos para Patrocinios de Atletas | Sport Endorse",
+  description: "La plataforma de gestión de endorsements de Sport Endorse ayuda a los agentes deportivos a gestionar patrocinios de atletas y acuerdos de endorsement con herramientas de comunicación segura y cumplimiento.",
   alternates: {
     canonical: "https://www.sportendorse.com/es/agency/",
     languages: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Agencias Deportivas - Haz Crecer tu Cartera de Atletas | Sport Endorse",
-    description: "Impulsa el crecimiento de tu agencia deportiva con Sport Endorse. Conecta a tus atletas con marcas premium y genera ingresos adicionales a través de colaboraciones auténticas.",
+    title: "Plataforma de Agentes Deportivos para Patrocinios de Atletas | Sport Endorse",
+    description: "La plataforma de gestión de endorsements de Sport Endorse ayuda a los agentes deportivos a gestionar patrocinios de atletas y acuerdos de endorsement con herramientas de comunicación segura y cumplimiento.",
     type: "website",
     locale: "es_ES",
     url: "https://www.sportendorse.com/es/agency/",

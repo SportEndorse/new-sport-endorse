@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import SuccessStoriesContent from '@/components/SuccessStoriesContent'
 
 export const metadata: Metadata = {
-  title: "Athleten-Sponsoring Erfolgsgeschichten | Sport Endorse",
-  description: "Lesen Sie Erfolgsgeschichten von Athleten-Sponsorings, Sport-Influencern und Markenpartnerschaften. Erfahren Sie, wie Elite-Athleten wirkungsvolle Sport-Marketing-Kampagnen angetrieben haben.",
+  title: "Sport-Marketing-Fallstudien & Marken-Erfolgsgeschichten",
+  description: "Erkunden Sie Erfolgsgeschichten von Athleten-Sponsorings, Sport-Influencern und Markenpartnerschaften, die echte Marketing-Ergebnisse durch Sport Endorse erzielt haben.",
   alternates: {
     canonical: "https://www.sportendorse.com/de/success-stories",
     languages: {
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Athleten-Sponsoring Erfolgsgeschichten | Sport Endorse",
-    description: "Lesen Sie Erfolgsgeschichten von Athleten-Sponsorings, Sport-Influencern und Markenpartnerschaften. Erfahren Sie, wie Elite-Athleten wirkungsvolle Sport-Marketing-Kampagnen angetrieben haben.",
+    title: "Sport-Marketing-Fallstudien & Marken-Erfolgsgeschichten",
+    description: "Erkunden Sie Erfolgsgeschichten von Athleten-Sponsorings, Sport-Influencern und Markenpartnerschaften, die echte Marketing-Ergebnisse durch Sport Endorse erzielt haben.",
     type: "website",
     locale: "de_DE",
     siteName: "Sport Endorse"
