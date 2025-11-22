@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import "../styles/blog.css";
 
@@ -84,9 +85,13 @@ export default function BlogContent() {
   const { language } = useLanguage();
   const t = translations[language];
   const { blogPosts: posts, loading, ensureListDataLoaded, fetchFirstBlogPosts } = useWordPressData();
+  const { translatePosts } = useTranslation();
   const isLoading = loading.blogPosts;
   const [visibleCount, setVisibleCount] = useState(12);
   const [initialLoadComplete, setInitialLoadComplete] = useState(false);
+  const [translatedPosts, setTranslatedPosts] = useState<typeof posts>([]);
+  const translatingRef = useRef(false);
+  const lastTranslatedKeyRef = useRef<string>('');
 
   // Fetch first 12 posts immediately, then load the rest
   useEffect(() => {
@@ -110,6 +115,81 @@ export default function BlogContent() {
     };
   }, [fetchFirstBlogPosts, ensureListDataLoaded]);
 
+  // Translate posts when language changes or posts are loaded
+  useEffect(() => {
+    // Early return if no posts or English
+    if (posts.length === 0 || language === 'en') {
+      if (language === 'en') {
+        setTranslatedPosts([]);
+        lastTranslatedKeyRef.current = '';
+      }
+      return;
+    }
+    
+    // Create a unique key based on post slugs and language to prevent duplicate translations
+    const postSlugs = posts
+      .filter(p => p.slug && p.title?.rendered)
+      .map(p => p.slug)
+      .sort()
+      .join(',');
+    const translationKey = `${language}-${postSlugs}`;
+    
+    // Skip if already translating (check first to prevent race conditions)
+    if (translatingRef.current) {
+      return;
+    }
+    
+    // Skip if this exact set was already translated
+    if (lastTranslatedKeyRef.current === translationKey) {
+      return;
+    }
+    
+    // Filter out posts without required fields and map to translation format
+    const postsToTranslate = posts
+      .filter(post => post.slug && post.title?.rendered) // Only translate posts with required fields
+      .map(post => ({
+        slug: post.slug,
+        title: post.title || { rendered: '' },
+        excerpt: post.excerpt || { rendered: '' },
+      }));
+    
+    if (postsToTranslate.length === 0) {
+      return; // No valid posts to translate
+    }
+    
+    // Set flags IMMEDIATELY to prevent duplicate calls (before any async operations)
+    translatingRef.current = true;
+    lastTranslatedKeyRef.current = translationKey;
+    
+    translatePosts(postsToTranslate, 'post').then((translated) => {
+      translatingRef.current = false;
+      if (translated.length > 0) {
+        // Create a map of translated posts by slug for efficient lookup
+        const translatedMap = new Map(
+          translated.map((t, idx) => [postsToTranslate[idx].slug, t])
+        );
+        
+        const updatedPosts = posts.map((post) => {
+          const translatedPost = translatedMap.get(post.slug);
+          if (translatedPost) {
+            return {
+              ...post,
+              title: translatedPost.title,
+              excerpt: translatedPost.excerpt,
+            };
+          }
+          return post;
+        });
+        setTranslatedPosts(updatedPosts);
+      }
+    }).catch(() => {
+      translatingRef.current = false;
+      // Reset key on error so it can retry
+      lastTranslatedKeyRef.current = '';
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [posts, language, translatePosts]);
+
   return (
     <div className="blog-container">
       {/* Main Content */}
@@ -129,41 +209,48 @@ export default function BlogContent() {
             </div>
           ) : (
             <div className="blog-posts-grid">
-              {posts.slice(0, visibleCount).map(post => (
-                <article key={post.id} className="blog-post-card">
-                  {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
-                    <img
-                      src={post._embedded['wp:featuredmedia'][0].source_url}
-                      alt={decodeHtmlEntities(post.title.rendered)}
-                      width={400}
-                      height={250}
-                      className="blog-post-image"
-                      loading="lazy"/>
-                  )}
-                          
-                  <div className="blog-post-content">
-                    <h2 className="blog-post-title">
-                      <Link
-                        href={language === 'en' ? `/blog/${post.slug}` : `/${language}/blog/${post.slug}`}
-                        className="blog-post-link"
-                      >
-                        {decodeHtmlEntities(post.title.rendered)}
-                      </Link>
-                    </h2>
-                                
-                    <div
-                      className="blog-post-excerpt"
-                      dangerouslySetInnerHTML={{
-                        __html: decodeHtmlEntities(post.excerpt.rendered)
-                      }}
-                    />
-                                
-                    <time className="blog-post-date">
-                      {new Date(post.date).toLocaleDateString()}
-                    </time>
-                  </div>
-                </article>
-              ))}
+              {posts.slice(0, visibleCount).map(post => {
+                const translatedPost = translatedPosts.find(tp => tp?.id === post.id);
+                const displayPost = translatedPost || post;
+                
+                return (
+                  <article key={post.id} className="blog-post-card">
+                    {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+                      <img
+                        src={post._embedded['wp:featuredmedia'][0].source_url}
+                        alt={decodeHtmlEntities(displayPost.title.rendered)}
+                        width={400}
+                        height={250}
+                        className="blog-post-image"
+                        loading="lazy"/>
+                    )}
+                            
+                    <div className="blog-post-content">
+                      <h2 className="blog-post-title">
+                        <Link
+                          href={language === 'en' ? `/blog/${post.slug}` : `/${language}/blog/${post.slug}`}
+                          className="blog-post-link"
+                        >
+                          {decodeHtmlEntities(displayPost.title.rendered)}
+                        </Link>
+                      </h2>
+                                  
+                      {displayPost.excerpt?.rendered && (
+                        <div
+                          className="blog-post-excerpt"
+                          dangerouslySetInnerHTML={{
+                            __html: decodeHtmlEntities(displayPost.excerpt.rendered)
+                          }}
+                        />
+                      )}
+                                  
+                      <time className="blog-post-date">
+                        {new Date(post.date).toLocaleDateString()}
+                      </time>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           )}
         </div>

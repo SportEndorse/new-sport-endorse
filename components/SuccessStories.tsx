@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 import "../styles/successStories.css";
 import { useLanguage } from "../context/LanguageContext";
 import { useWordPressData } from "../context/WordPressDataContext";
+import { useTranslation } from "../hooks/useTranslation";
 import translations from "../utils/translations";
 import Link from "next/link";
 
@@ -106,53 +107,113 @@ function LoadingCard() {
   );
 }
 
+const MAX_STORIES = 8; // Limit to 8 most recent stories
+
 export default function SuccessStories() {
   const { language } = useLanguage();
   const t = translations[language].components.successStories;
-  const { successStories: stories, ensureListDataLoaded, fetchFirstSuccessStories } = useWordPressData();
+  const { successStories: stories, fetchFirstSuccessStories } = useWordPressData();
+  const { translatePosts } = useTranslation();
   const [startIdx, setStartIdx] = useState(0);
   const [initialLoadComplete, setInitialLoadComplete] = useState(false);
+  const [translatedStories, setTranslatedStories] = useState<typeof stories>([]);
   const visibleCount = useVisibleCount();
 
-  // Fetch first 3 stories immediately, then load the rest
+  // Fetch first 8 stories (limit to most recent)
   useEffect(() => {
     let mounted = true;
     
-    const loadProgressive = async () => {
-      // First, fetch first 3 stories quickly
-      const firstStories = await fetchFirstSuccessStories(3);
-      if (mounted && firstStories.length > 0) {
+    const loadStories = async () => {
+      // Fetch first 8 stories (we only need 8 for the carousel)
+      const fetchedStories = await fetchFirstSuccessStories(MAX_STORIES);
+      if (mounted && fetchedStories.length > 0) {
         setInitialLoadComplete(true);
       }
-      
-      // Then load all stories in the background
-      ensureListDataLoaded('successStories');
     };
     
-    loadProgressive();
+    loadStories();
     
     return () => {
       mounted = false;
     };
-  }, [fetchFirstSuccessStories, ensureListDataLoaded]);
+  }, [fetchFirstSuccessStories]);
+
+  // Limit stories to 8 most recent (memoized to prevent infinite loops)
+  const limitedStories = useMemo(() => stories.slice(0, MAX_STORIES), [stories]);
 
   // Reset startIdx if it's out of bounds when visibleCount changes
   useEffect(() => {
-    if (stories.length > 0 && startIdx > Math.max(0, stories.length - visibleCount)) {
-      setStartIdx(Math.max(0, stories.length - visibleCount));
+    if (limitedStories.length > 0 && startIdx > Math.max(0, limitedStories.length - visibleCount)) {
+      setStartIdx(Math.max(0, limitedStories.length - visibleCount));
     }
-  }, [visibleCount, stories.length, startIdx]);
+  }, [visibleCount, limitedStories.length, startIdx]);
+
+  // Translate success stories when language changes or stories are loaded
+  useEffect(() => {
+    if (limitedStories && limitedStories.length > 0 && language !== 'en') {
+      // Translate all 8 stories (or fewer if less available)
+      const storiesToTranslate = limitedStories
+        .filter(story => story.slug && story.title?.rendered) // Only translate stories with required fields
+        .map(story => ({
+          slug: story.slug,
+          title: story.title || { rendered: '' },
+          excerpt: story.excerpt || { rendered: '' },
+          yoast_head_json: story.yoast_head_json ? { description: story.yoast_head_json.description } : undefined,
+          success_stories_bottom_description: story.success_stories_bottom_description,
+        }));
+      
+      if (storiesToTranslate.length === 0) {
+        return; // No valid stories to translate
+      }
+      
+      translatePosts(storiesToTranslate, 'success_story').then((translated) => {
+        if (translated.length > 0) {
+          // Create a map of translated stories by slug for efficient lookup
+          const translatedMap = new Map(
+            translated.map((t, idx) => [storiesToTranslate[idx].slug, t])
+          );
+          
+          const updatedStories = limitedStories.map((story) => {
+            const translatedStory = translatedMap.get(story.slug);
+            if (translatedStory) {
+              return {
+                ...story,
+                title: translatedStory.title,
+                excerpt: translatedStory.excerpt,
+                ...(translatedStory.yoast_head_json?.description && {
+                  yoast_head_json: {
+                    ...story.yoast_head_json,
+                    description: translatedStory.yoast_head_json.description,
+                  }
+                }),
+                ...(translatedStory.success_stories_bottom_description && {
+                  success_stories_bottom_description: translatedStory.success_stories_bottom_description
+                }),
+              };
+            }
+            return story;
+          });
+          setTranslatedStories(updatedStories);
+        }
+      });
+    } else if (language === 'en') {
+      // Only clear if there are translated stories to avoid unnecessary updates
+      setTranslatedStories((prev) => prev.length > 0 ? [] : prev);
+    }
+  }, [limitedStories, language, translatePosts]);
 
   const handlePrev = () => {
     setStartIdx((prev) => Math.max(0, prev - 1));
   };
   
   const handleNext = () => {
-    setStartIdx((prev) => Math.min(stories.length - visibleCount, prev + 1));
+    setStartIdx((prev) => Math.min(limitedStories.length - visibleCount, prev + 1));
   };
 
-  const visibleStories = stories.length > 0 
-    ? stories.slice(startIdx, startIdx + visibleCount)
+  // Use translated stories if available, otherwise use original (limited to 8)
+  const displayStories = translatedStories.length > 0 ? translatedStories : limitedStories;
+  const visibleStories = displayStories.length > 0 
+    ? displayStories.slice(startIdx, startIdx + visibleCount)
     : [];
 
   // Show loading skeletons if we don't have initial stories yet
@@ -175,39 +236,46 @@ export default function SuccessStories() {
         <div className="stories-scroll">
           {showSkeletons ? (
             skeletons.map((_, i) => <LoadingCard key={`skeleton-${i}`} />)
-          ) : stories.length === 0 ? (
+          ) : limitedStories.length === 0 ? (
             <div>{t.noStories}</div>
           ) : (
-            visibleStories.map((story, i) => (
-              <div className={`success-card${i === Math.floor(visibleCount / 2) ? " active" : " faded"}`} key={story.id}>
-                {story.yoast_head_json?.og_image?.[0]?.url && (
-                  <img
-                    src={story.yoast_head_json.og_image[0].url}
-                    alt={decodeHtmlEntities(story.title.rendered)}
-                    width="300"
-                    height="200"
-                    style={{ objectFit: 'cover' }}
-                  />
-                )}
-                <div className="success-info">
-                  <p className="success-title">{decodeHtmlEntities(story.title.rendered)}</p>
-                  <p className="success-text">
-                    {story.yoast_head_json?.description 
-                      ? decodeHtmlEntities(story.yoast_head_json.description).slice(0, 250) + (story.yoast_head_json.description.length > 250 ? '...' : '')
-                      : story.success_stories_bottom_description 
-                        ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (story.success_stories_bottom_description.length > 250 ? '...' : '')
-                        : "No summary available."}
-                  </p>
-                  <Link className="read-more" href="/success_stories" >{t.readMore}</Link>
+            visibleStories.map((story, i) => {
+              // Find corresponding original story for image URL (images don't need translation)
+              const originalStory = limitedStories.find(s => s.id === story.id) || story;
+              
+              return (
+                <div className={`success-card${i === Math.floor(visibleCount / 2) ? " active" : " faded"}`} key={story.id}>
+                  {originalStory.yoast_head_json?.og_image?.[0]?.url && (
+                    <img
+                      src={originalStory.yoast_head_json.og_image[0].url}
+                      alt={decodeHtmlEntities(story.title.rendered)}
+                      width="300"
+                      height="200"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  )}
+                  <div className="success-info">
+                    <p className="success-title">{decodeHtmlEntities(story.title?.rendered || '')}</p>
+                    <p className="success-text">
+                      {story.yoast_head_json?.description 
+                        ? decodeHtmlEntities(story.yoast_head_json.description).slice(0, 250) + (story.yoast_head_json.description.length > 250 ? '...' : '')
+                        : story.success_stories_bottom_description 
+                          ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (story.success_stories_bottom_description.length > 250 ? '...' : '')
+                          : story.excerpt?.rendered
+                            ? decodeHtmlEntities(story.excerpt.rendered).replace(/<[^>]*>/g, '').slice(0, 250) + (story.excerpt.rendered.length > 250 ? '...' : '')
+                            : "No summary available."}
+                    </p>
+                    <Link className="read-more" href={language === 'en' ? "/success_stories" : `/${language}/success_stories`}>{t.readMore}</Link>
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
         <button
           className="carousel-arrow right"
           onClick={handleNext}
-          disabled={startIdx >= Math.max(0, stories.length - visibleCount) || showSkeletons}
+          disabled={startIdx >= Math.max(0, limitedStories.length - visibleCount) || showSkeletons}
           aria-label="Next stories"
         >
           &#8594;

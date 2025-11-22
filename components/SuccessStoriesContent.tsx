@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import "../styles/blog.css";
 
@@ -84,9 +85,13 @@ export default function SuccessStoriesContent() {
   const { language } = useLanguage();
   const t = translations[language];
   const { successStories: stories, loading, ensureListDataLoaded, fetchFirstSuccessStories } = useWordPressData();
+  const { translatePosts } = useTranslation();
   const isLoading = loading.successStories;
   const [visibleCount, setVisibleCount] = useState(12);
   const [initialLoadComplete, setInitialLoadComplete] = useState(false);
+  const [translatedStories, setTranslatedStories] = useState<typeof stories>([]);
+  const translatingRef = useRef(false);
+  const lastTranslatedKeyRef = useRef<string>('');
 
   // Fetch first 12 success stories immediately, then load the rest
   useEffect(() => {
@@ -110,6 +115,92 @@ export default function SuccessStoriesContent() {
     };
   }, [fetchFirstSuccessStories, ensureListDataLoaded]);
 
+  // Translate success stories when language changes or stories are loaded
+  useEffect(() => {
+    // Early return if no stories or English
+    if (!stories || stories.length === 0 || language === 'en') {
+      if (language === 'en') {
+        setTranslatedStories([]);
+        lastTranslatedKeyRef.current = '';
+      }
+      return;
+    }
+    
+    // Create a unique key based on story slugs and language to prevent duplicate translations
+    const storySlugs = stories
+      .filter(s => s.slug && s.title?.rendered)
+      .map(s => s.slug)
+      .sort()
+      .join(',');
+    const translationKey = `${language}-${storySlugs}`;
+    
+    // Skip if already translating (check first to prevent race conditions)
+    if (translatingRef.current) {
+      return;
+    }
+    
+    // Skip if this exact set was already translated
+    if (lastTranslatedKeyRef.current === translationKey) {
+      return;
+    }
+    
+    // Filter out stories without required fields and map to translation format
+    const storiesToTranslate = stories
+      .filter(story => story.slug && story.title?.rendered) // Only translate stories with required fields
+      .map(story => ({
+        slug: story.slug,
+        title: story.title || { rendered: '' },
+        excerpt: story.excerpt || { rendered: '' },
+        yoast_head_json: story.yoast_head_json ? { description: story.yoast_head_json.description } : undefined,
+        success_stories_bottom_description: story.success_stories_bottom_description,
+      }));
+    
+    if (storiesToTranslate.length === 0) {
+      return; // No valid stories to translate
+    }
+    
+    // Set flags IMMEDIATELY to prevent duplicate calls (before any async operations)
+    translatingRef.current = true;
+    lastTranslatedKeyRef.current = translationKey;
+    
+    translatePosts(storiesToTranslate, 'success_story').then((translated) => {
+      translatingRef.current = false;
+      if (translated.length > 0) {
+        // Create a map of translated stories by slug for efficient lookup
+        const translatedMap = new Map(
+          translated.map((t, idx) => [storiesToTranslate[idx].slug, t])
+        );
+        
+        const updatedStories = stories.map((story) => {
+          const translatedStory = translatedMap.get(story.slug);
+          if (translatedStory) {
+            return {
+              ...story,
+              title: translatedStory.title,
+              excerpt: translatedStory.excerpt,
+              ...(translatedStory.yoast_head_json?.description && {
+                yoast_head_json: {
+                  ...story.yoast_head_json,
+                  description: translatedStory.yoast_head_json.description,
+                }
+              }),
+              ...(translatedStory.success_stories_bottom_description && {
+                success_stories_bottom_description: translatedStory.success_stories_bottom_description
+              }),
+            };
+          }
+          return story;
+        });
+        setTranslatedStories(updatedStories);
+      }
+    }).catch(() => {
+      translatingRef.current = false;
+      // Reset key on error so it can retry
+      lastTranslatedKeyRef.current = '';
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stories, language, translatePosts]);
+
   return (
     <div className="blog-container">
       <main className="blog-main">
@@ -128,48 +219,60 @@ export default function SuccessStoriesContent() {
           ) : (
             <div className="blog-posts-grid">
               {stories && stories.length > 0 ? (
-                stories.slice(0, visibleCount).map((story) => (
-                  <article key={story.id} className="blog-post-card">
-                    {story.yoast_head_json?.og_image?.[0]?.url && (
-                      <img
-                        src={story.yoast_head_json.og_image[0].url}
-                        alt={decodeHtmlEntities(story.title.rendered)}
-                        width="400"
-                        height="250"
-                        className="blog-post-image"
-                      />
-                    )}
+                // Remove duplicates by slug before mapping (keep first occurrence)
+                Array.from(
+                  new Map(stories.map(story => [story.slug || story.id, story])).values()
+                )
+                .slice(0, visibleCount)
+                .map((story) => {
+                  const translatedStory = translatedStories.find(ts => ts?.slug === story.slug || ts?.id === story.id);
+                  const displayStory = translatedStory || story;
+                  
+                  return (
+                    <article key={`${story.slug || story.id}-${story.id}`} className="blog-post-card">
+                      {story.yoast_head_json?.og_image?.[0]?.url && (
+                        <img
+                          src={story.yoast_head_json.og_image[0].url}
+                          alt={decodeHtmlEntities(displayStory.title.rendered)}
+                          width="400"
+                          height="250"
+                          className="blog-post-image"
+                        />
+                      )}
 
-                    <div className="blog-post-content">
-                      <h2 className="blog-post-title">
+                      <div className="blog-post-content">
+                        <h2 className="blog-post-title">
+                          <Link
+                            href={language === 'en' ? `/success_stories/${story.slug}` : `/${language}/success_stories/${story.slug}`}
+                            className="blog-post-link"
+                          >
+                            {decodeHtmlEntities(displayStory.title.rendered)}
+                          </Link>
+                        </h2>
+
                         <Link
-                          href={language === 'en' ? `/success_stories/${story.slug}` : `/${language}/success_stories/${story.slug}`}
+                          href={`/success_stories/${story.slug}`}
                           className="blog-post-link"
+                          style={{ textDecoration: 'none' }}
                         >
-                          {decodeHtmlEntities(story.title.rendered)}
+                          <p className="blog-post-excerpt">
+                            {displayStory.yoast_head_json?.description 
+                              ? decodeHtmlEntities(displayStory.yoast_head_json.description).slice(0, 250) + (displayStory.yoast_head_json.description.length > 250 ? '...' : '')
+                              : displayStory.success_stories_bottom_description 
+                                ? decodeHtmlEntities(displayStory.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (displayStory.success_stories_bottom_description.length > 250 ? '...' : '')
+                                : displayStory.excerpt?.rendered
+                                  ? decodeHtmlEntities(displayStory.excerpt.rendered).replace(/<[^>]*>/g, '').slice(0, 250) + (displayStory.excerpt.rendered.length > 250 ? '...' : '')
+                                  : t.components.successStoriesContent.noSummary}
+                          </p>
                         </Link>
-                      </h2>
 
-                      <Link
-                        href={`/success_stories/${story.slug}`}
-                        className="blog-post-link"
-                        style={{ textDecoration: 'none' }}
-                      >
-                        <p className="blog-post-excerpt">
-                          {story.yoast_head_json?.description 
-                            ? decodeHtmlEntities(story.yoast_head_json.description).slice(0, 250) + (story.yoast_head_json.description.length > 250 ? '...' : '')
-                            : story.success_stories_bottom_description 
-                              ? decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '').slice(0, 250) + (story.success_stories_bottom_description.length > 250 ? '...' : '')
-                              : t.components.successStoriesContent.noSummary}
-                        </p>
-                      </Link>
-
-                      <time className="blog-post-date">
-                        {new Date(story.date).toLocaleDateString()}
-                      </time>
-                    </div>
-                  </article>
-                ))
+                        <time className="blog-post-date">
+                          {new Date(story.date).toLocaleDateString()}
+                        </time>
+                      </div>
+                    </article>
+                  );
+                })
               ) : (
                 <div style={{ 
                   gridColumn: '1 / -1', 

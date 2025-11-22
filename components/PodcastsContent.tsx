@@ -3,9 +3,10 @@
 import { stripHtml, formatDate, createExcerpt } from "@/utils/wordpress-helpers";
 import Link from "next/link";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import "../styles/blog.css";
 import "../styles/podcasts.css";
@@ -82,9 +83,12 @@ const podcastIframes = [
 ];
 
 // Individual podcast card component
-function PodcastCard({ podcast, index, language, t }: { podcast: Podcast; index: number; language: string; t: typeof translations.en }) {
-  const title = decodeHtmlEntities(stripHtml(podcast.title.rendered));
-  const excerpt = decodeHtmlEntities(createExcerpt(podcast.excerpt.rendered, 250));
+function PodcastCard({ podcast, translatedPodcast, index, language, t }: { podcast: Podcast; translatedPodcast?: Podcast; index: number; language: string; t: typeof translations.en }) {
+  const displayPodcast = translatedPodcast || podcast;
+  const title = decodeHtmlEntities(stripHtml(displayPodcast.title.rendered));
+  const excerpt = displayPodcast.excerpt?.rendered 
+    ? decodeHtmlEntities(createExcerpt(displayPodcast.excerpt.rendered, 250))
+    : '';
   const date = formatDate(podcast.date);
   const iframeUrl = podcastIframes[index] || podcastIframes[0];
   
@@ -213,9 +217,13 @@ export default function PodcastsContent() {
   const { language } = useLanguage();
   const t = translations[language];
   const { podcasts, error, ensureListDataLoaded, fetchFirstPodcasts } = useWordPressData();
+  const { translatePosts } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(6);
   const [initialLoadComplete, setInitialLoadComplete] = useState(false);
+  const [translatedPodcasts, setTranslatedPodcasts] = useState<typeof podcasts>([]);
+  const translatingRef = useRef(false);
+  const lastTranslatedKeyRef = useRef<string>('');
 
   useEffect(() => {
     // Load HubSpot script
@@ -246,6 +254,81 @@ export default function PodcastsContent() {
       mounted = false;
     };
   }, [fetchFirstPodcasts, ensureListDataLoaded]);
+
+  // Translate podcasts when language changes or podcasts are loaded
+  useEffect(() => {
+    // Early return if no podcasts or English
+    if (podcasts.length === 0 || language === 'en') {
+      if (language === 'en') {
+        setTranslatedPodcasts([]);
+        lastTranslatedKeyRef.current = '';
+      }
+      return;
+    }
+    
+    // Create a unique key based on podcast slugs and language to prevent duplicate translations
+    const podcastSlugs = podcasts
+      .filter(p => p.slug && p.title?.rendered)
+      .map(p => p.slug)
+      .sort()
+      .join(',');
+    const translationKey = `${language}-${podcastSlugs}`;
+    
+    // Skip if already translating (check first to prevent race conditions)
+    if (translatingRef.current) {
+      return;
+    }
+    
+    // Skip if this exact set was already translated
+    if (lastTranslatedKeyRef.current === translationKey) {
+      return;
+    }
+    
+    // Filter out podcasts without required fields and map to translation format
+    const podcastsToTranslate = podcasts
+      .filter(podcast => podcast.slug && podcast.title?.rendered) // Only translate podcasts with required fields
+      .map(podcast => ({
+        slug: podcast.slug,
+        title: podcast.title || { rendered: '' },
+        excerpt: podcast.excerpt || { rendered: '' },
+      }));
+    
+    if (podcastsToTranslate.length === 0) {
+      return; // No valid podcasts to translate
+    }
+    
+    // Set flags IMMEDIATELY to prevent duplicate calls (before any async operations)
+    translatingRef.current = true;
+    lastTranslatedKeyRef.current = translationKey;
+    
+    translatePosts(podcastsToTranslate, 'podcast').then((translated) => {
+      translatingRef.current = false;
+      if (translated.length > 0) {
+        // Create a map of translated podcasts by slug for efficient lookup
+        const translatedMap = new Map(
+          translated.map((t, idx) => [podcastsToTranslate[idx].slug, t])
+        );
+        
+        const updatedPodcasts = podcasts.map((podcast) => {
+          const translatedPodcast = translatedMap.get(podcast.slug);
+          if (translatedPodcast) {
+            return {
+              ...podcast,
+              title: translatedPodcast.title,
+              excerpt: translatedPodcast.excerpt,
+            };
+          }
+          return podcast;
+        });
+        setTranslatedPodcasts(updatedPodcasts);
+      }
+    }).catch(() => {
+      translatingRef.current = false;
+      // Reset key on error so it can retry
+      lastTranslatedKeyRef.current = '';
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [podcasts, language, translatePosts]);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -345,9 +428,19 @@ export default function PodcastsContent() {
           <>
             <div className="blog-posts-container">
               <div className="blog-posts-grid">
-                {podcasts.slice(0, visibleCount).map((podcast, index) => (
-                  <PodcastCard key={podcast.id} podcast={podcast} index={index} language={language} t={t} />
-                ))}
+                {podcasts.slice(0, visibleCount).map((podcast, index) => {
+                  const translatedPodcast = translatedPodcasts.find(tp => tp?.id === podcast.id);
+                  return (
+                    <PodcastCard 
+                      key={podcast.id} 
+                      podcast={podcast} 
+                      translatedPodcast={translatedPodcast}
+                      index={index} 
+                      language={language} 
+                      t={t} 
+                    />
+                  );
+                })}
               </div>
             </div>
             {podcasts.length > visibleCount && (

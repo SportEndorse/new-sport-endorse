@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
 import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import PodcastBackButton from '@/components/PodcastBackButton';
@@ -88,7 +89,9 @@ export default function PodcastContent({ slug }: PodcastContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
   const { getPodcastBySlug, fetchPodcastBySlug, podcasts } = useWordPressData();
+  const { translatePost, translating } = useTranslation();
   const [podcast, setPodcast] = useState<Podcast | null>(null);
+  const [translatedPodcast, setTranslatedPodcast] = useState<Podcast | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -111,6 +114,32 @@ export default function PodcastContent({ slug }: PodcastContentProps) {
     });
   }, [slug, getPodcastBySlug, fetchPodcastBySlug]);
 
+  // Translate podcast when language changes or podcast is loaded
+  useEffect(() => {
+    if (podcast && language !== 'en') {
+      translatePost(
+        {
+          slug: podcast.slug,
+          title: podcast.title,
+          excerpt: podcast.excerpt,
+          content: podcast.content,
+        },
+        'podcast'
+      ).then((translated) => {
+        if (translated) {
+          setTranslatedPodcast({
+            ...podcast,
+            title: translated.title,
+            excerpt: translated.excerpt,
+            content: translated.content || podcast.content,
+          });
+        }
+      });
+    } else if (podcast && language === 'en') {
+      setTranslatedPodcast(null);
+    }
+  }, [podcast, language, translatePost]);
+
   // Find the index of current podcast for iframe matching
   const iframeUrl = useMemo(() => {
     if (!podcast) return podcastIframes[0];
@@ -119,8 +148,12 @@ export default function PodcastContent({ slug }: PodcastContentProps) {
   }, [podcast, podcasts]);
 
   const error = !podcast && !isLoading ? new Error('Podcast not found') : null;
+  
+  // Use translated podcast if available, otherwise use original
+  const displayPodcast = translatedPodcast || podcast;
+  const isTranslating = translating && language !== 'en';
 
-  if (isLoading) {
+  if (isLoading || (isTranslating && !translatedPodcast)) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -129,7 +162,7 @@ export default function PodcastContent({ slug }: PodcastContentProps) {
         <main className="blog-main">
           <div className="blog-post-main-container">
             <div style={{ textAlign: 'center', padding: '2rem' }}>
-              {t.components.podcasts.loading}
+              {isTranslating ? (language === 'es' ? 'Traduciendo...' : 'Übersetzen...') : t.components.podcasts.loading}
             </div>
           </div>
         </main>
@@ -166,7 +199,7 @@ export default function PodcastContent({ slug }: PodcastContentProps) {
         <div className="blog-post-main-container">
           <article className="blog-post-article">
             <header className="blog-post-article-header">
-              <h2 className="blog-post-article-title">{decodeHtmlEntities(podcast.title.rendered)}</h2>
+              <h2 className="blog-post-article-title">{decodeHtmlEntities(displayPodcast?.title.rendered || podcast.title.rendered)}</h2>
               
               <div className="blog-post-article-meta">
                 <time>
@@ -201,7 +234,7 @@ export default function PodcastContent({ slug }: PodcastContentProps) {
               <div className="blog-post-prose">
                 <div 
                   dangerouslySetInnerHTML={{ 
-                    __html: podcast.content.rendered 
+                    __html: displayPodcast?.content?.rendered || podcast.content.rendered 
                   }} 
                 />
               </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
 import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import BackButton from '@/components/BackButton';
@@ -56,7 +57,9 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
   const { language } = useLanguage();
   const t = translations[language];
   const { getSuccessStoryBySlug, fetchSuccessStoryBySlug } = useWordPressData();
+  const { translatePost, translating } = useTranslation();
   const [story, setStory] = useState<SuccessStory | null>(null);
+  const [translatedStory, setTranslatedStory] = useState<SuccessStory | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -79,9 +82,50 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
     });
   }, [slug, getSuccessStoryBySlug, fetchSuccessStoryBySlug]);
 
-  const error = !story && !isLoading ? new Error('Success story not found') : null;
+  // Translate success story when language changes or story is loaded
+  useEffect(() => {
+    if (story && language !== 'en') {
+      translatePost(
+        {
+          slug: story.slug,
+          title: story.title,
+          excerpt: story.excerpt,
+          content: story.content,
+          yoast_head_json: story.yoast_head_json ? { description: story.yoast_head_json.description } : undefined,
+          success_stories_bottom_description: story.success_stories_bottom_description,
+        },
+        'success_story'
+      ).then((translated) => {
+        if (translated) {
+          setTranslatedStory({
+            ...story,
+            title: translated.title,
+            excerpt: translated.excerpt,
+            content: translated.content || story.content,
+            ...(translated.yoast_head_json && {
+              yoast_head_json: {
+                ...story.yoast_head_json,
+                description: translated.yoast_head_json.description,
+              }
+            }),
+            ...(translated.success_stories_bottom_description && {
+              success_stories_bottom_description: translated.success_stories_bottom_description
+            }),
+          });
+        }
+      });
+    } else if (story && language === 'en') {
+      setTranslatedStory(null);
+    }
+  }, [story, language, translatePost]);
 
-  if (isLoading) {
+  const error = !story && !isLoading ? new Error('Success story not found') : null;
+  
+  // Use translated story if available, otherwise use original
+  const displayStory = translatedStory || story;
+  const isTranslating = translating && language !== 'en';
+
+  if (isLoading || (isTranslating && !translatedStory)) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -90,7 +134,7 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
         <main className="blog-main">
           <div className="blog-post-main-container">
             <div style={{ textAlign: 'center', padding: '2rem' }}>
-              {t.components.successStories.loading}
+              {isTranslating ? (language === 'es' ? 'Traduciendo...' : 'Übersetzen...') : t.components.successStories.loading}
             </div>
           </div>
         </main>
@@ -115,7 +159,7 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
     );
   }
 
-  const title = decodeHtmlEntities(story.title.rendered);
+  const title = decodeHtmlEntities(displayStory?.title.rendered || story.title.rendered);
   const publishDate = story.date ? new Date(story.date) : null;
 
   return (
@@ -160,7 +204,7 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
             <div className="blog-post-article-content">
               <div className="blog-post-prose">
                 {/* Show description if available */}
-                {story.yoast_head_json?.description && (
+                {(displayStory?.yoast_head_json?.description || story.yoast_head_json?.description) && (
                   <div className="success-story-description" style={{ 
                     fontSize: '1.125rem', 
                     fontStyle: 'italic', 
@@ -170,12 +214,12 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
                     borderLeft: '4px solid #0078c1',
                     borderRadius: '4px'
                   }}>
-                    {decodeHtmlEntities(story.yoast_head_json.description)}
+                    {decodeHtmlEntities(displayStory?.yoast_head_json?.description || story.yoast_head_json?.description || '')}
                   </div>
                 )}
                 
                 {/* Show bottom description if available */}
-                {story.success_stories_bottom_description && (
+                {(displayStory?.success_stories_bottom_description || story.success_stories_bottom_description) && (
                   <div className="success-story-bottom-description" style={{ 
                     fontSize: '1rem', 
                     marginBottom: '2rem',
@@ -184,13 +228,13 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
                     borderLeft: '4px solid #28a745',
                     borderRadius: '4px'
                   }}>
-                    {decodeHtmlEntities(story.success_stories_bottom_description).replace(/<[^>]*>/g, '')}
+                    {decodeHtmlEntities((displayStory?.success_stories_bottom_description || story.success_stories_bottom_description || '').replace(/<[^>]*>/g, ''))}
                   </div>
                 )}
                 
                 <div 
                   dangerouslySetInnerHTML={{ 
-                    __html: story.content.rendered 
+                    __html: displayStory?.content?.rendered || story.content.rendered 
                   }} 
                 />
               </div>
