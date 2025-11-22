@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from "react";
 
-const WORDPRESS_API_URL = 'https://www.sportendorse.com/wp-json/wp/v2';
+const WORDPRESS_API_URL = 'https://www.cms.sportendorse.com/wp-json/wp/v2';
 
 interface WordPressPost {
   id: number;

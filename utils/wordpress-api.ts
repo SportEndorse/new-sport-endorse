@@ -2,7 +2,7 @@
 // These are optimized for server-side use (metadata, static params)
 // and fetch minimal data
 
-const WORDPRESS_API_URL = 'https://www.sportendorse.com/wp-json/wp/v2';
+const WORDPRESS_API_URL = 'https://www.cms.sportendorse.com/wp-json/wp/v2';
 
 interface WordPressSlug {
   slug: string;
