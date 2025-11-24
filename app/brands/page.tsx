@@ -3,8 +3,8 @@ import translations from "@/utils/translations";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Find Elite Athletes & Sports Influencers for Your Brand | Sport Endorse",
-  description: "Discover elite athletes and sports influencers to enhance your brand's visibility. Sport Endorse helps you manage athlete sponsorships and sports marketing campaigns.",
+  title: "Find and Sponsor Athletes for Your Brand Marketing",
+  description: "Discover athlete brand ambassadors for your marketing campaigns. Connect with top talent at Sport Endorse & manage athlete sponsorships for enhanced visibility",
   alternates: {
     canonical: "https://www.sportendorse.com/brands",
     languages: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Find Elite Athletes & Sports Influencers for Your Brand | Sport Endorse",
-    description: "Discover elite athletes and sports influencers to enhance your brand's visibility. Sport Endorse helps you manage athlete sponsorships and sports marketing campaigns.",
+    title: "Find and Sponsor Athletes for Your Brand Marketing",
+    description: "Discover athlete brand ambassadors for your marketing campaigns. Connect with top talent at Sport Endorse & manage athlete sponsorships for enhanced visibility",
     type: "website",
     locale: "en_US",
     url: "https://www.sportendorse.com/brands",

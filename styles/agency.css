@@ -46,8 +46,29 @@
   font-size: 1.125rem;
   line-height: 1.7;
   color: #6b7280;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
   max-width: 480px;
+}
+
+.agency-cta-button {
+  background: #0078c1;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.agency-cta-button:hover {
+  background: #005a8c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 120, 193, 0.3);
 }
 
 .agency-downloadButtons {
@@ -111,13 +132,21 @@
 @media (max-width: 768px) {
   .agency-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
     text-align: center;
   }
   
   .agency-title {
     font-size: 2.5rem;
   }
+
+  
+  .agency-description {
+    text-align: center !important;
+    margin: 0 auto 0 !important;
+    font-size: 1rem;
+  }
+  
   
   .agency-content {
     padding-right: 0;
@@ -150,6 +179,11 @@
   .agency-downloadButtons {
     flex-direction: column;
     align-items: center;
+  }
+
+  .agency-cta-button {
+    width: 100%;
+    text-align: center;
   }
 
   .agency-dashboard-image {

@@ -1,6 +1,6 @@
 import BusinessSubscription from "@/components/BusinessSubscription";
 import CalendlyDemo from "@/components/CalendlyDemo";
-import FAQs from "@/components/FAQs";
+import SubscriptionFAQs from "@/components/SubscriptionFAQs";
 import SuccessStories from "@/components/SuccessStories";
 import { Metadata } from "next";
 
@@ -9,8 +9,8 @@ export const revalidate = false;
 
 export const metadata: Metadata = {
   //metadataBase: new URL("put the home url here later"),
-  title: "Subscribe to Sport Endorse's Athlete Sponsorship Platform | Sport Endorse",
-  description: "Explore how Sport Endorse's platform simplifies sponsorship management. Request a demo to connect with elite athletes, brand ambassadors, and sports influencers.",
+  title: "Subscribe to Sport Endorse's Athlete Sponsorship Platform",
+  description: "Explore how Sport Endorse's platform simplifies sponsorship management. Request a FREE demo to connect with athletes, brand ambassadors, and sports influencers.",
   alternates: {
     canonical: "https://www.sportendorse.com/subscription",
     languages: {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph:{ // og:title and so on
-    title: "Subscribe to Sport Endorse's Athlete Sponsorship Platform | Sport Endorse",
-    description: "Explore how Sport Endorse's platform simplifies sponsorship management. Request a demo to connect with elite athletes, brand ambassadors, and sports influencers.",
+    title: "Subscribe to Sport Endorse's Athlete Sponsorship Platform",
+    description: "Explore how Sport Endorse's platform simplifies sponsorship management. Request a FREE demo to connect with athletes, brand ambassadors, and sports influencers.",
     type:"website",
     locale:"en_US",
     url: "https://www.sportendorse.com/subscription",
@@ -41,7 +41,7 @@ export default function Subscription(){
 
             <SuccessStories />
 
-            <FAQs />
+            <SubscriptionFAQs />
         
         </main>
     );

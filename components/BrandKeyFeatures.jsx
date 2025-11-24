@@ -11,17 +11,17 @@ export default function BrandKeyFeatures() {
   
   const features = [
     {
-      icon: "location.png",
+      icon: "location-min.png",
       title: t.features[0].title,
       description: t.features[0].description,
     },
     {
-      icon: "bullseye.png", 
+      icon: "bullseye-min.png", 
       title: t.features[1].title,
       description: t.features[1].description,
     },
     {
-      icon: "heart_icon.png",
+      icon: "heart_icon-min.png",
       title: t.features[2].title,
       description: t.features[2].description,
     }

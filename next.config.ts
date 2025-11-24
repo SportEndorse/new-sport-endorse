@@ -60,22 +60,7 @@ const config: NextConfig = {
       };
       
       // Optimize chunking for better video loading
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          ...config.optimization?.splitChunks,
-          cacheGroups: {
-            ...config.optimization?.splitChunks?.cacheGroups,
-            // Separate chunk for video utilities
-            video: {
-              name: 'video-utils',
-              chunks: 'all',
-              test: /[\\/]utils[\\/]videoOptimization/,
-              priority: 20,
-            },
-          },
-        },
-      };
+      // ...existing code...
     }
     
     return config;

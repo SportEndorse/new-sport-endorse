@@ -9,7 +9,7 @@ export default function TalentHowItWorks() {
   
   const steps = [
     {
-      image: "031.png",
+      image: "031-min.png",
       title: t.steps[0].title,
       number: "[01]",
       description: t.steps[0].description

@@ -2,6 +2,7 @@ import "../styles/base.css";
 import "../styles/header.css";
 import "../styles/footer.css";
 import { LanguageProvider } from "../context/LanguageContext";
+import { WordPressDataProvider } from "../context/WordPressDataContext";
 import ConditionalLayout from "../components/ConditionalLayout";
 import { Metadata } from "next";
 import Script from "next/script";
@@ -96,9 +97,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
 
         <LanguageProvider>
+          <WordPressDataProvider>
           <ConditionalLayout>
             {children}
           </ConditionalLayout>
+          </WordPressDataProvider>
         </LanguageProvider>
       </body>
     </html>

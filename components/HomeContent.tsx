@@ -32,7 +32,6 @@ export default function HomeContent() {
   // Optimized video source selection with compressed formats
   const getVideoSource = () => {
     if (!isClient) return "/videos/4_3 aspect ratio (wide) .webm";
-    
     if (window.innerWidth <= 480) {
       return "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm";
     } else if (window.innerWidth <= 768) {
@@ -55,8 +54,8 @@ export default function HomeContent() {
             playsInline 
             className="home-backgroundVideo"
             preload="auto"
+            src={undefined}
           >
-            {/* WebM format for better compression */}
             <source src={videoSource} type="video/webm" />
             Your browser does not support the video tag.
           </video>
@@ -74,7 +73,7 @@ export default function HomeContent() {
       </section>
 
       <div className="home-appStoresContainer" style={{display: "flex", justifyContent: "center", padding: "2rem 0"}}>
-        <AppStores />
+        <AppStores pageName="home" />
       </div>
 
       <BrandsGrid variant={isMobile ? "5x4" : "8x4"} label={t.home.tableHeader} />
@@ -85,7 +84,7 @@ export default function HomeContent() {
       <BenefitSection
         title={t.home.benefitSection.brand.title}
         subtitle={t.home.benefitSection.brand.subtitle}
-        image="/images/For-Brands-image.png"
+        image="/images/For-Brands-image-min.png"
         label={t.home.benefitSection.brand.label} 
         background="#E5F1FF"
         item1={t.home.benefitSection.brand.bullet1}
@@ -98,7 +97,7 @@ export default function HomeContent() {
       <BenefitSection
         title={t.home.benefitSection.athlete.title}
         subtitle={t.home.benefitSection.athlete.subtitle}
-        image="/images/talentBenefitPic.png"
+        image="/images/talentBenefitPic-min.png"
         label={t.home.benefitSection.athlete.label}
         background="#E5F1FF"
         item1={t.home.benefitSection.athlete.bullet1}
@@ -111,7 +110,7 @@ export default function HomeContent() {
       <BenefitSection
         title={t.home.benefitSection.agency.title}
         subtitle={t.home.benefitSection.agency.subtitle}
-        image="/images/agency_dashboard.png"
+        image="/images/agency_dashboard-min.png"
         label={t.home.benefitSection.agency.label}
         background="#E5F1FF"
         item1={t.home.benefitSection.agency.bullet1}

@@ -82,7 +82,7 @@ export default function BrandsHeroTalents() {
                 )}
               </div>
               <div className="hero-tags">
-                <span><img src="/images/trophy.png" alt="trophy icon" width={16} height={16} className="hero-tag-icon"/>{talent.sport}</span>
+                <span><img src="/images/trophy-min.png" alt="trophy icon" width={16} height={16} className="hero-tag-icon"/>{talent.sport}</span>
               </div>
             </div>
           </div>

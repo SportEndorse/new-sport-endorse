@@ -5,7 +5,7 @@ import { Plus, Minus, ChevronDown, ChevronUp } from 'lucide-react';
 import "../styles/faqs.css"
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
-import { brandFAQs, talentFAQs, agencyFAQs } from "../utils/faqData";
+import { brandFAQs, talentFAQs, agencyFAQs, subscriptionFAQs } from "../utils/faqData";
 
 export default function FAQs(){
     const { language } = useLanguage();
@@ -33,6 +33,7 @@ export default function FAQs(){
   const currentBrandFAQs = brandFAQs[language] || brandFAQs.en;
   const currentTalentFAQs = talentFAQs[language] || talentFAQs.en;
   const currentAgencyFAQs = agencyFAQs[language] || agencyFAQs.en;
+  const currentSubscriptionFAQs = subscriptionFAQs[language] || subscriptionFAQs.en;
 
   return (
     <div className="faq-container">
@@ -40,18 +41,17 @@ export default function FAQs(){
         <div className="faq-left-section">
           <h2 className="faq-title">{t.leftSection.title}</h2>
           
-          <div className="faq-questions-section">
-            {/*<div className="faq-avatars">
+          {/*<div className="faq-questions-section">
+            <div className="faq-avatars">
               <div className="faq-avatar"></div>
               <div className="faq-avatar"></div>
               <div className="faq-avatar"></div>
-            </div>*/}
+            </div>}
             <span className="faq-questions-text">{t.leftSection.questionsLeft}</span>
           </div>
-          
           <p className="faq-description">
             {t.leftSection.description}
-          </p>
+          </p>*/}
           
           {/*<a target="_blank" href="https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07">
             <button className="faq-schedule-button">
@@ -83,6 +83,12 @@ export default function FAQs(){
                 key: 'agencies', 
                 faqs: currentAgencyFAQs,
                 color: '#f59e0b'
+              },
+              {
+                name: t.categories.subscription,
+                key: 'subscription',
+                faqs: currentSubscriptionFAQs,
+                color: '#8b5cf6'
               }
             ].map((category) => (
               <div key={category.key} className="faq-category">

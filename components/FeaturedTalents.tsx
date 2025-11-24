@@ -68,7 +68,7 @@ export default function FeaturedTalents() {
               </div>
               <div className="tags">
                 <span><img 
-                  src="/images/trophy.png" 
+                  src="/images/trophy-min.png" 
                   alt="trophy icon" 
                   width={16} 
                   height={16} 
@@ -77,7 +77,7 @@ export default function FeaturedTalents() {
                   sizes="16px"
                 />{talent.sport}</span>
                 <span><img 
-                  src="/images/location.png" 
+                  src="/images/location-min.png" 
                   alt="location icon" 
                   width={16} 
                   height={16} 
@@ -91,7 +91,7 @@ export default function FeaturedTalents() {
         {/* CTA Card */}
         <Link href={getSubscriptionLink()} className="cta-card">
           <img 
-            src="/images/SE_logo_lockup_wht.png" 
+            src="/images/SE_logo_lockup_wht-min.png" 
             alt="Sport Endorse logo" 
             width={120} 
             height={160}

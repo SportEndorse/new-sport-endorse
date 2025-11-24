@@ -2,8 +2,8 @@ import HomeContent from "@/components/HomeContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sport Endorse | Connect Brands with Elite Athletes & Sports Influencers",
-  description: "Sport Endorse is the platform that brings brands and athletes together for authentic and impactful partnerships. We make it easy for brands to find and collaborate with the right talent, and for athletes to connect directly with brands and secure paid deals.",
+  title: "Sports Sponsorship Platform for Brand & Athlete Partnerships",
+  description: "Sport Endorse is a sport sponsorship platform where brands and athletes connect, collaborate, and manage authentic sports marketing partnerships.",
   alternates: {
     canonical: "https://www.sportendorse.com/",
     languages: {
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Sport Endorse | Connect Brands with Elite Athletes & Sports Influencers",
-    description: "Sport Endorse is the platform that brings brands and athletes together for authentic and impactful partnerships. We make it easy for brands to find and collaborate with the right talent, and for athletes to connect directly with brands and secure paid deals.",
+    title: "Sports Sponsorship Platform for Brand & Athlete Partnerships",
+    description: "Sport Endorse is a sport sponsorship platform where brands and athletes connect, collaborate, and manage authentic sports marketing partnerships.",
     type: "website",
     locale: "en_US",
     url: "https://www.sportendorse.com/",

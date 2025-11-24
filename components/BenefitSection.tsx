@@ -25,7 +25,7 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
 
   const getPageLink = () => {
     // Determine which page to link to based on the image or other identifiers
-    if (image === "/images/agency_dashboard.png" || label === t.home.benefitSection.agency.label) {
+    if (image === "/images/agency_dashboard-min.png" || label === t.home.benefitSection.agency.label) {
       // Agency section
       if (language === 'en') {
         return '/agency';
@@ -42,27 +42,27 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
     }
   };
   return (
-    <section className="benefit-section" style={{ background, paddingBottom:  "2rem !important"}}>
+    <section className="benefit-section" style={{ background }}>
       <div className="benefit-left">
         {label && <a href={learnMoreLink}><span className="benefit-label" style={{ color }}>◉ {label}</span></a>}
         <h2 style={label ? undefined: { marginTop: 0 }}>{title}</h2>
         <p>{subtitle}</p>
         <div className="icons-row">
-          <img src="/images/gold-heart-icon2.png" alt="heart" width={24} height={24} className="bullet-icon-mobile" />
-          <img src="/images/division_icon.png" alt="division" width={24} height={24} className="bullet-icon-mobile" />
-          <img src="/images/star_icon.png" alt="star" width={24} height={24} className="bullet-icon-mobile" />
+          <img src="/images/gold-heart-icon2-min.png" alt="heart" width={24} height={24} className="bullet-icon-mobile" />
+          <img src="/images/division_icon-min.png" alt="division" width={24} height={24} className="bullet-icon-mobile" />
+          <img src="/images/star_icon-min.png" alt="star" width={24} height={24} className="bullet-icon-mobile" />
         </div>
         <ul>
-          <li><img src="/images/gold-heart-icon2.png" alt="heart" width={16} height={16} className="bullet-icon" /> {item1}</li>
-          <li><img src="/images/division_icon.png" alt="division" width={16} height={16} className="bullet-icon" /> {item2}</li>
-          <li><img src="/images/star_icon.png" alt="star" width={16} height={16} className="bullet-icon" /> {item3}</li>
+          <li><img src="/images/gold-heart-icon2-min.png" alt="heart" width={16} height={16} className="bullet-icon" /> {item1}</li>
+          <li><img src="/images/division_icon-min.png" alt="division" width={16} height={16} className="bullet-icon" /> {item2}</li>
+          <li><img src="/images/star_icon-min.png" alt="star" width={16} height={16} className="bullet-icon" /> {item3}</li>
         </ul>
         <div className="button-group">
-          {image && (image !== "/images/talentBenefitPic.png" && image !== "images/agencyBenefitPic.jpg") ? (
+          {image && (image !== "/images/talentBenefitPic.png" && image !== "/images/talentBenefitPic-min.png" && image !== "images/agencyBenefitPic.jpg" && image !== "/images/agencyBenefitPic.jpg") ? (
             <>
               <Link href={getPageLink()}><button className="benefit-button">{t.common.learnMore}</button></Link>
               <a target="_blank" href={
-                (image === "/images/agency_dashboard.png" || label === t.home.benefitSection.agency.label) 
+                (image === "/images/agency_dashboard.png" || image === "/images/agency_dashboard-min.png" || label === t.home.benefitSection.agency.label) 
                   ? "https://calendly.com/d/cwcj-xx7-2xn/sport-endorse-demo-agency"
                   : "https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07"
               }>
@@ -70,7 +70,7 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
               </a>
             </>
           ) : (
-            <div><AppStores /></div>
+            <div><AppStores pageName="benefit-section" /></div>
           )}
         </div>
       </div>

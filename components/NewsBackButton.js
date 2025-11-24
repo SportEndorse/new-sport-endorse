@@ -10,11 +10,11 @@ export default function NewsBackButton() {
   const handleBack = () => {
     const path = window.location.pathname;
     if (path.startsWith('/es')) {
-      window.location.href = '/es/news';
+      window.location.href = '/es/presses';
     } else if (path.startsWith('/de')) {
-      window.location.href = '/de/news';
+      window.location.href = '/de/presses';
     } else {
-      window.location.href = '/news';
+      window.location.href = '/presses';
     }
   };
 

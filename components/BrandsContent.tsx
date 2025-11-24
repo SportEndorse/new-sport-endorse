@@ -48,13 +48,19 @@ export default function BrandsContent({
             <p className="brands-description">
               {description}
             </p>
+            <a 
+              href={language === 'en' ? '/subscription' : `/${language}/subscription`}
+              className="brands-cta-button"
+            >
+              {t.brands.joinAsBrand}
+            </a>
           </div>
           
           <div className="brands-imageContainer">
             <div className="brands-talent-showcase">
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
                 {featuredAthletes}
-              </h3>
+              </p>
               <div className="brands-talent-grid" style={{ 
                 display: 'grid', 
                 gridTemplateColumns: 'repeat(3, 1fr)', 
@@ -90,7 +96,7 @@ export default function BrandsContent({
                   padding: '1rem',
                   transition: 'background 0.2s ease'
                 }}>
-                  <img src="/images/SE_logo_lockup_wht.png" alt="Sport Endorse logo" width={120} height={100} style={{ maxWidth: '80px', marginBottom: '0.0' }} />
+                  <img src="/images/SE_logo_lockup_wht-min.png" alt="Sport Endorse logo" width={120} height={100} style={{ maxWidth: '80px', marginBottom: '0.0' }} />
                   <p style={{ fontSize: '0.85rem', fontWeight: '600', margin: '0', textTransform: 'uppercase' }}>
                     {viewAll}
                   </p>

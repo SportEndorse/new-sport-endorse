@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import NewsBackButton from '@/components/NewsBackButton';
-import { getNewsStoryBySlug } from '../app/news/wordpress';
 import { notFound } from 'next/navigation';
 
 import "../styles/blog.css";
@@ -33,31 +34,65 @@ interface NewsContentProps {
 export default function NewsContent({ slug }: NewsContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
+  const { getNewsStoryBySlug, fetchNewsStoryBySlug } = useWordPressData();
+  const { translatePost, translating } = useTranslation();
   const [newsStory, setNewsStory] = useState<NewsStory | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [translatedNewsStory, setTranslatedNewsStory] = useState<NewsStory | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchNewsStory = async () => {
-      try {
-        setLoading(true);
-        const fetchedStory = await getNewsStoryBySlug(slug);
-        if (!fetchedStory) {
-          notFound();
-          return;
-        }
-        setNewsStory(fetchedStory);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setLoading(false);
+    // First check cache
+    const cached = getNewsStoryBySlug(slug);
+    if (cached) {
+      setNewsStory(cached as NewsStory);
+      setIsLoading(false);
+      return;
+    }
+
+    // Fetch just this one item
+    fetchNewsStoryBySlug(slug).then((fetchedStory) => {
+      if (fetchedStory) {
+        setNewsStory(fetchedStory as NewsStory);
+      } else {
+        notFound();
       }
-    };
+      setIsLoading(false);
+    });
+  }, [slug, getNewsStoryBySlug, fetchNewsStoryBySlug]);
 
-    fetchNewsStory();
-  }, [slug]);
+  // Translate news story when language changes or story is loaded
+  useEffect(() => {
+    if (newsStory && language !== 'en') {
+      translatePost(
+        {
+          slug: newsStory.slug,
+          title: newsStory.title,
+          excerpt: newsStory.excerpt,
+          content: newsStory.content,
+        },
+        'press'
+      ).then((translated) => {
+        if (translated) {
+          setTranslatedNewsStory({
+            ...newsStory,
+            title: translated.title,
+            excerpt: translated.excerpt,
+            content: translated.content || newsStory.content,
+          });
+        }
+      });
+    } else if (newsStory && language === 'en') {
+      setTranslatedNewsStory(null);
+    }
+  }, [newsStory, language, translatePost]);
 
-  if (loading) {
+  const error = !newsStory && !isLoading ? new Error('News story not found') : null;
+  
+  // Use translated news story if available, otherwise use original
+  const displayNewsStory = translatedNewsStory || newsStory;
+  const isTranslating = translating && language !== 'en';
+
+  if (isLoading || (isTranslating && !translatedNewsStory)) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -66,7 +101,7 @@ export default function NewsContent({ slug }: NewsContentProps) {
         <main className="blog-main">
           <div className="blog-post-main-container">
             <div style={{ textAlign: 'center', padding: '2rem' }}>
-              {t.components.news.loading}
+              {isTranslating ? (language === 'es' ? 'Traduciendo...' : 'Übersetzen...') : t.components.news.loading}
             </div>
           </div>
         </main>
@@ -103,7 +138,7 @@ export default function NewsContent({ slug }: NewsContentProps) {
         <div className="blog-post-main-container">
           <article className="blog-post-article">
             <header className="blog-post-article-header">
-              <h1 className="blog-post-article-title">{newsStory.title.rendered}</h1>
+              <h1 className="blog-post-article-title">{displayNewsStory?.title.rendered || newsStory.title.rendered}</h1>
               
               <div className="blog-post-article-meta">
                 <time>
@@ -121,7 +156,7 @@ export default function NewsContent({ slug }: NewsContentProps) {
               {newsStory.yoast_head_json?.og_image?.[0]?.url && (
                 <img 
                   src={newsStory.yoast_head_json.og_image[0].url} 
-                  alt={newsStory.title.rendered}
+                  alt={displayNewsStory?.title.rendered || newsStory.title.rendered}
                   className="blog-post-article-image"
                   width={1200}
                   height={630}
@@ -134,7 +169,7 @@ export default function NewsContent({ slug }: NewsContentProps) {
               <div 
                 className="blog-post-prose"
                 dangerouslySetInnerHTML={{ 
-                  __html: newsStory.content.rendered 
+                  __html: displayNewsStory?.content?.rendered || newsStory.content.rendered 
                 }} 
               />
             </div>

@@ -9,9 +9,7 @@ export default function LanguageSwitcher() {
   const { language } = useLanguage();
 
   const switchLanguage = (newLang: string) => {
-    // Set preference cookie to override geo-detection
-    document.cookie = `preferred-language=${newLang}; path=/; max-age=31536000`; // 1 year
-    
+    // No cookies needed - URL path maintains language preference (GDPR/CCPA compliant)
     let newPath = '';
     
     if (pathname.startsWith('/es') || pathname.startsWith('/de')) {

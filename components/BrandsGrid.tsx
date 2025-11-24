@@ -31,7 +31,7 @@ const brands = [
   { src: "/images/homePageTable/revive_active-min.png", alt: "Revive Active logo" },
   { src: "/images/homePageTable/mini-min.png", alt: "Mini logo" },
   { src: "/images/homePageTable/skins-logo-min.png", alt: "Skins logo" },
-  { src: "/images/homePageTable/solestar-min.gif", alt: "Solestar logo" },
+  { src: "/images/homePageTable/solestar.png", alt: "Solestar logo" },
   { src: "/images/homePageTable/uniphar.png", alt: "AYA/Uniphar logo" },
   { src: "/images/homePageTable/movember-min.png", alt: "Movember logo" },
   { src: "/images/homePageTable/GrantThornton.webp", alt: "Grant Thornton logo" },
@@ -44,7 +44,7 @@ const brands = [
   { src: "/images/homePageTable/BBC-news-min.png", alt: "BBC logo" },
   { src: "/images/homePageTable/popeyes-supplements-min.png", alt: "Popeyes Supplements logo"},
   
-  { src: "/images/SE_logo_lockup_wht1.png", alt: "sport endorse logo", isButton: true }
+  { src: "/images/SE_logo_lockup_wht1-min.png", alt: "sport endorse logo", isButton: true }
 ];
 
 export default function BrandsGrid({ variant = "8x4", label }: BrandsGridProps) {

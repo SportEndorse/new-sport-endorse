@@ -17,7 +17,7 @@ export default function WhyAthletesChooseUs() {
           <div className="why-athletes-features">
             <div className="why-athletes-feature-item">
               <div className="why-athletes-feature-icon-container">
-                <img src="/images/trophy.png" alt="dollar" className="why-athletes-feature-icon" />
+                <img src="/images/trophy-min.png" alt="dollar" className="why-athletes-feature-icon" />
               </div>
               <div className="why-athletes-feature-text">
                 <h3 className="why-athletes-feature-title">
@@ -31,7 +31,7 @@ export default function WhyAthletesChooseUs() {
 
             <div className="why-athletes-feature-item">
               <div className="why-athletes-feature-icon-container">
-                <img src="/images/heart_icon.png" alt="trophy" className="why-athletes-feature-icon" />
+                <img src="/images/heart_icon-min.png" alt="trophy" className="why-athletes-feature-icon" />
               </div>
               <div className="why-athletes-feature-text">
                 <h3 className="why-athletes-feature-title">
@@ -45,7 +45,7 @@ export default function WhyAthletesChooseUs() {
 
             <div className="why-athletes-feature-item">
               <div className="why-athletes-feature-icon-container">
-                <img src="/images/smartphone.png" alt="phone" className="why-athletes-feature-icon" /> {/* <a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Freepik - Flaticon</a> */}
+                <img src="/images/smartphone-min.png" alt="phone" className="why-athletes-feature-icon" /> {/* <a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Freepik - Flaticon</a> */}
               </div>
               <div className="why-athletes-feature-text">
                 <h3 className="why-athletes-feature-title">
@@ -61,7 +61,7 @@ export default function WhyAthletesChooseUs() {
 
         <div className="why-athletes-cta-section">
           <p className="why-athletes-cta-text">{t.ctaText}</p>
-          <AppStores />
+          <AppStores pageName="why-athletes" />
         </div>
       </div>
     </section>

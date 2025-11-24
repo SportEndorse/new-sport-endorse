@@ -1,4 +1,3 @@
-
 const translations = {
   en: {
     footer: {
@@ -67,6 +66,7 @@ const translations = {
       description: "Sport Endorse is a global sports sponsorship platform helping brands and agencies connect with elite athletes and sports influencers for marketing campaigns and partnerships. Our platform simplifies how you discover, sponsor, and collaborate with verified athletes—creating authentic, measurable, and high-impact brand campaigns that enhance brand visibility and engagement.",
       featuredAthletes: "Featured Global Athletes",
       viewAll: "View All",
+      joinAsBrand: "Join as a Brand",
       sports: {
         freestyle: "Freestyle Football",
         fitness: "Fitness",
@@ -81,9 +81,10 @@ const translations = {
     },
     agency: {
       badge: "FOR SPORTS AGENCIES",
-      title: "Partner with Athletes",
+      title: "Maximise Your Roster's Earning Potential",
       description: "Sport Endorse is the all-in-one sports agent platform designed for agencies to manage athlete endorsement deals, secure paid collaborations, and streamline operations at scale. Connect your entire roster with verified brands seeking authentic sponsorships that align with each athlete's profile and passions.",
       imageAlt: "Agency Dashboard - Sport Endorse Platform",
+      bookCallToPartner: "Book a Call to Partner With Us",
       metadata: {
         title: "Book sports celebrities | Sport Endorse",
         description: "Our cutting-edge technological solutions reduce the steps needed to score sensational sponsorship deals for athletes. Sport Endorse is a simple, user-friendly platform connecting agencies with top global athletes and ambassadors guaranteed to take your client's marketing campaigns to the next level."
@@ -105,7 +106,7 @@ const translations = {
       }
     },
     home:{
-      welcome: "The Ultimate Sports Sponsorship Platform",
+      welcome: "TESTESTTEST The Ultimate Sports Sponsorship Platform",
       description: "Sport Endorse is the leading sports sponsorship platform connecting brands, athletes, and sports influencers for authentic, data-driven, and impactful partnerships. We simplify every stage of sports sponsorship management — making it easy for brands to discover the right athletes and for athletes to connect directly with brands for verified, paid collaborations. Trusted by global organisations, Sport Endorse is the most reliable sports sponsorship marketplace in the industry.",
       tableHeader:"Brands That Trust Our Sports Marketing Platform",
       benefitSection:{
@@ -363,11 +364,12 @@ const translations = {
           annualInfo: "*Paid every 12 months, +VAT"
         },
         buttons: {
+          getStarted: "Get Started", // Added translation
           startFreeTrial: "START FREE TRIAL",
           subscribeNow: "SUBSCRIBE NOW",
           save35: "SAVE 35%",
-          getStarted: "Get Started",
-          talkToSales: "Talk to Sales"
+          seeMore: "SEE MORE", // Added translation
+          talkToSales: "Talk to Sales" // Added translation
         },
         customPackage: {
           title: "Custom Package",
@@ -387,7 +389,8 @@ const translations = {
         categories: {
           brand: "Brand FAQs",
           talent: "Talent FAQs",
-          agency: "Sports Agency FAQs"
+          agency: "Sports Agency FAQs",
+          subscription: "Subscription FAQs"
         },
         emptyMessage: "Coming soon! Check back for updates.",
         questions: [
@@ -470,7 +473,7 @@ const translations = {
             sport: "Triathlete",
             region: "UK",
             quote: "I've been a long-time fan of MINI. It's a brand that for me is so British and carries this heritage through its design over the years. My favourite film is the 1969 The Italian Job, and I mean how can you just not love this brand and the cars. I was delighted when through Sport Endorse I was made a Friend of the Brand for MINI UK. I'm lucky enough to be driving a new MINI Countryman, and even better, it fits my TT bike in the boot without needing to take any wheels off!",
-            image: "/images/laura-siddal.png",
+            image: "/images/laura-siddal-min.png",
             alt: "Laura Siddall, Professional Triathlete"
           },
           {
@@ -479,7 +482,7 @@ const translations = {
             sport: "Boxing",
             region: "Ireland",
             quote: "When you're on your way to become world champion, you need a good team in your corner, and Sport Endorse has been setting me up to knock out the competition for brands I work with.",
-            image: "/images/jason-quigley.png",
+            image: "/images/jason-quigley-min.png",
             alt: "Jason Quigley, Professional Boxer"
           },
           {
@@ -488,7 +491,7 @@ const translations = {
             sport: "Diving",
             region: "UK",
             quote: "I loved the concept when I first heard about Sport Endorse, but I wasn't sure how quickly it would lead to opportunities. From the moment I signed up, the team were in regular contact, asking about the type of collaboration that would be ideal for me. Within just a month or two, I landed exactly the kind of collab I'd hoped for! Fantastic experience — great communication, great people, and it really works.",
-            image: "/images/freddie_woodward.png",
+            image: "/images/freddie_woodward-min.png",
             alt: "Freddie Woodward, Diving Olympian"
           },
           {
@@ -497,7 +500,7 @@ const translations = {
             sport: "Athletics",
             region: "USA",
             quote: "Amazing platform! Very easy and right to the point! I can talk directly to brands and even favorite the ones I love!",
-            image: "/images/Marquis-Dendy.jpeg",
+            image: "/images/Marquis-Dendy-min.jpeg",
             alt: "Marquis Dendy, Athletics"
           },
           {
@@ -506,7 +509,7 @@ const translations = {
             sport: "Boxing",
             region: "UK",
             quote: "It's been a delight to work with Sports Endorse on social media campaigns. I've successfully had 1 paid promotion and 1 product promotion exchange. I look forward to working with more brands with the support of Sports Endorses influential network.",
-            image: "/images/nicola_barke.png",
+            image: "/images/nicola_barke-min.png",
             alt: "Nicola Barke, Boxing"
           },
           {
@@ -559,7 +562,8 @@ const translations = {
         title: "Latest Blog Posts",
         description: "Articles from Sport Endorse team members on what is impacting the sports, marketing and sponsorship world",
         readMore: "Read More →",
-        loading: "Loading posts..."
+        loading: "Loading posts...",
+        seeMore: "See More"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -569,13 +573,15 @@ const translations = {
         featureMe: "Feature Me!",
         featureMeTitle: "Feature Me on a Podcast!",
         readMore: "Read More →",
-        loading: "Loading..."
+        loading: "Loading...",
+        seeMore: "See More"
       },
       news: {
         title: "News",
         description: "The latest news on athletes, brands, companies, and all things Sport Endorse!",
         readMore: "Read More →",
-        loading: "Loading news..."
+        loading: "Loading news...",
+        seeMore: "See More"
       },
       successStoriesContent: {
         title: "Sport Endorse Success Stories",
@@ -584,7 +590,8 @@ const translations = {
         readMore: "Read Story →",
         loading: "Loading success stories...",
         noSummary: "No summary available.",
-        noStories: "No stories found."
+        noStories: "No stories found.",
+        seeMore: "See More"
       }
     }
   },
@@ -655,6 +662,7 @@ const translations = {
       description: "Sport Endorse es una plataforma global de patrocinio deportivo que ayuda a marcas y agencias a conectar con atletas de élite e influencers deportivos para campañas de marketing y asociaciones. Nuestra plataforma simplifica cómo descubres, patrocinas y colaboras con atletas verificados—creando campañas de marca auténticas, medibles y de alto impacto que mejoran la visibilidad y participación de la marca.",
       featuredAthletes: "Atletas Destacados",
       viewAll: "Ver Todos",
+      joinAsBrand: "Únete como Marca",
       sports: {
         freestyle: "Fútbol Freestyle",
         fitness: "Fitness",
@@ -672,6 +680,7 @@ const translations = {
       title: "Asóciate con Atletas",
       description: "Sport Endorse es la plataforma todo-en-uno de agentes deportivos diseñada para que las agencias gestionen acuerdos de endorsement de atletas, aseguren colaboraciones pagadas y optimicen las operaciones a escala. Conecta toda tu lista de talentos con marcas verificadas que buscan patrocinios auténticos que se alineen con el perfil y las pasiones de cada atleta.",
       imageAlt: "Panel de Agencia - Plataforma Sport Endorse",
+      bookCallToPartner: "Reserva Una Llamada Para Asociarte Con Nosotros",
       metadata: {
         title: "Reserva celebridades deportivas | Sport Endorse",
         description: "Nuestras soluciones tecnológicas de vanguardia reducen los pasos necesarios para conseguir acuerdos de patrocinio sensacionales para atletas. Sport Endorse es una plataforma simple y fácil de usar que conecta agencias con atletas y embajadores globales de primer nivel garantizado para llevar las campañas de marketing de tus clientes al siguiente nivel."
@@ -856,7 +865,7 @@ const translations = {
           },
           {
             title: "Orientación Precisa",
-            description: "Apunta a deportes específicos, demografías y mercados para descubrir influencers atletas que se alineen con los objetivos de tu campaña."
+            description: "Apunta a deportes específicos, demografías y mercados para descubrir influencers atletas que se alinee con los objetivos de tu campaña."
           },
           {
             title: "Soporte Dedicado para Marcas",
@@ -896,7 +905,7 @@ const translations = {
           },
           {
             title: "Elige a los Atletas Correctos",
-            description: "Conéctate directamente con atletas, revisa propuestas y selecciona el talento que mejor se adapte a la audiencia y objetivos de tu marca."
+            description: "Conéctate directamente con atletas, revisa propuestas y selecciona el talento que mejor se adapte a la audiencia y los objetivos de tu marca."
           },
           {
             title: "Completa Tu Campaña",
@@ -951,11 +960,12 @@ const translations = {
           annualInfo: "*Pagado cada 12 meses, +IVA"
         },
         buttons: {
+          getStarted: "Comenzar", // Added translation
           startFreeTrial: "INICIAR PRUEBA GRATUITA",
           subscribeNow: "SUSCRIBIRSE AHORA",
           save35: "AHORRA 35%",
-          getStarted: "Empezar",
-          talkToSales: "Hablar con Ventas"
+          seeMore: "VER MÁS", // Added translation
+          talkToSales: "Hablar con ventas" // Added translation
         },
         customPackage: {
           title: "Paquete Personalizado",
@@ -975,7 +985,8 @@ const translations = {
         categories: {
           brand: "FAQs de Marcas",
           talent: "FAQs de Talento",
-          agency: "FAQs de Agencias Deportivas"
+          agency: "FAQs de Agencias Deportivas",
+          subscription: "FAQs de Suscripción"
         },
         emptyMessage: "¡Próximamente! Vuelve pronto para actualizaciones.",
         questions: [
@@ -1000,7 +1011,7 @@ const translations = {
       trustedSportAgencyPartners: {
         label: "SOCIOS DE AGENCIA DE CONFIANZA",
         title: "Socios de Agencia Deportiva de Confianza",
-        description: "Navegar contratos y asuntos legales puede ser complejo. Aunque solo nos enfocamos en oportunidades comerciales, podemos conectarte con socios de agencia deportiva de confianza en tu deporte y región para ayudar con tu carrera y contratos. Dinos tu deporte y región, y haremos una referencia.",
+        description: "Navegar contratos y asuntos legales puede ser complejo. Aunque nos enfocamos solo en oportunidades comerciales, podemos conectarte con socios de agencia deportiva de confianza en tu deporte y región para ayudar con tu carrera y contratos. Dinos tu deporte y región, y haremos una referencia.",
         disclaimer: "*Las referencias solo están disponibles para atletas no representados, sujeto a disponibilidad de agencia socia en tu región o deporte.",
         buttonText: "Obtener una Referencia",
         popup: {
@@ -1058,7 +1069,7 @@ const translations = {
             sport: "Roller Sports",
             region: "España",
             quote: "La verdad que vuestra aplicación es una pasada, la colaboración con Hover Air fue increíble. No puedo esperar a poder encontrar otra colaboración para acceder ya que facilita mucho para contactar con las marcas. Espero que haya mas disponibilidades para españa y poder hacer mas colaboraciones 💕",
-            image: "/images/Carla-Martin.jpg",
+            image: "/images/Carla-Martin-min.jpg",
             alt: "Carla Martin, Roller Sports"
           },
           {
@@ -1067,7 +1078,7 @@ const translations = {
             sport: "Mountain Running",
             region: "España",
             quote: "Buena plataforma para entablar relación con marcas y colaborar",
-            image: "/images/Marcos-Pascual.jpg",
+            image: "/images/Marcos-Pascual-min.jpg",
             alt: "Marcos Pascual, Mountain Running"
           },
           {
@@ -1076,7 +1087,7 @@ const translations = {
             sport: "Fotógrafo",
             region: "España",
             quote: "Una plataforma muy bien pensada para deportistas y con seguimiento real con personas reales, muy importante. Hacen un gran trabajo de seguimiento.",
-            image: "/images/Alvaro-Postigo.jpg",
+            image: "/images/Alvaro-Postigo-min.jpg",
             alt: "Alvaro Postigo Armendariz, Fotógrafo"
           },
           {
@@ -1085,7 +1096,7 @@ const translations = {
             sport: "Artist",
             region: "España",
             quote: "Plataforma para creadores de contenido muy recomendada.",
-            image: "/images/Adan.jpg",
+            image: "/images/Adan-min.jpg",
             alt: "Adan Ramírez, Artist"
           },
           {
@@ -1138,7 +1149,8 @@ const translations = {
         title: "Últimas Publicaciones del Blog",
         description: "Artículos de los miembros del equipo de Sport Endorse sobre lo que está impactando el mundo del deporte, marketing y patrocinio",
         readMore: "Leer Más →",
-        loading: "Cargando publicaciones..."
+        loading: "Cargando publicaciones...",
+        seeMore: "Ver Más"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -1148,13 +1160,15 @@ const translations = {
         featureMe: "¡Destacarme!",
         featureMeTitle: "¡Destacarme en un Podcast!",
         readMore: "Leer Más →",
-        loading: "Cargando..."
+        loading: "Cargando...",
+        seeMore: "Ver Más"
       },
       news: {
         title: "Noticias",
         description: "¡Las últimas noticias sobre atletas, marcas, empresas y todo lo relacionado con Sport Endorse!",
         readMore: "Leer Más →",
-        loading: "Cargando noticias..."
+        loading: "Cargando noticias...",
+        seeMore: "Ver Más"
       },
       successStoriesContent: {
         title: "Historias de Éxito de Sport Endorse",
@@ -1163,7 +1177,8 @@ const translations = {
         readMore: "Leer Historia →",
         loading: "Cargando historias de éxito...",
         noSummary: "No hay resumen disponible.",
-        noStories: "No se encontraron historias."
+        noStories: "No se encontraron historias.",
+        seeMore: "Ver Más"
       }
     }
   },
@@ -1234,6 +1249,7 @@ const translations = {
       description: "Sport Endorse ist eine globale Sport-Sponsoring-Plattform, die Marken und Agenturen dabei hilft, sich mit Elite-Athleten und Sport-Influencern für Marketing-Kampagnen und Partnerschaften zu verbinden. Unsere Plattform vereinfacht, wie Sie verifizierte Athleten entdecken, sponsern und mit ihnen kollaborieren—und schafft authentische, messbare und wirkungsvolle Markenkampagnen, die Markensichtbarkeit und Engagement steigern.",
       featuredAthletes: "Vorgestellte Athleten",
       viewAll: "Alle Anzeigen",
+      joinAsBrand: "Als Marke beitreten",
       sports: {
         freestyle: "Freestyle Fußball",
         fitness: "Fitness",
@@ -1251,6 +1267,7 @@ const translations = {
       title: "Partner mit Athleten",
       description: "Sport Endorse ist die All-in-One-Sportagenten-Plattform, die für Agenturen entwickelt wurde, um Athleten-Endorsement-Deals zu verwalten, bezahlte Kooperationen zu sichern und den Betrieb im großen Stil zu optimieren. Verbinden Sie Ihre gesamte Liste mit verifizierten Marken, die authentische Sponsorings suchen, die mit dem Profil und den Leidenschaften jedes Athleten übereinstimmen.",
       imageAlt: "Agentur-Dashboard - Sport Endorse Plattform",
+      bookCallToPartner: "Buchen Sie Einen Anruf, Um Partner Zu Werden",
       metadata: {
         title: "Buchen Sie Sport-Prominente | Sport Endorse",
         description: "Unsere hochmodernen technologischen Lösungen reduzieren die Schritte, die erforderlich sind, um sensationelle Sponsoring-Deals für Athleten zu erzielen. Sport Endorse ist eine einfache, benutzerfreundliche Plattform, die Agenturen mit Top-Athleten und Botschaftern weltweit verbindet und garantiert, dass die Marketing-Kampagnen Ihrer Kunden auf die nächste Stufe gebracht werden."
@@ -1273,7 +1290,7 @@ const translations = {
     },
     home:{
       welcome: "Die Ultimative Sport-Sponsoring-Plattform",
-      description: "Sport Endorse ist die führende Sport-Sponsoring-Plattform, die Marken, Athleten und Sport-Influencer für authentische, datengestützte und wirkungsvolle Partnerschaften verbindet. Wir vereinfachen jede Stufe des Sport-Sponsoring-Managements — und machen es Marken einfach, die richtigen Athleten zu entdecken und Athleten, sich direkt mit Marken für verifizierte, bezahlte Kooperationen zu verbinden. Vertraut von globalen Organisationen ist Sport Endorse der zuverlässigste Sport-Sponsoring-Marktplatz der Branche.",
+      description: "Sport Endorse ist die führende Sport-Sponsoring-Plattform, die Marken, Athleten und Sport-Influencer für authentische, datengestützte und wirkungsvolle Partnerschaften verbindet. Wir vereinfachen jede Stufe des Sport-Sponsoring-Managements — und machen es einfach für Marken, die richtigen Athleten zu entdecken und für Athleten, sich direkt mit Marken für verifizierte, bezahlte Kooperationen zu verbinden. Vertraut von globalen Organisationen ist Sport Endorse der zuverlässigste Sport-Sponsoring-Marktplatz der Branche.",
       tableHeader: "Marken, Die Unserer Sport-Marketing-Plattform Vertrauen",
       benefitSection: {
         athlete: {
@@ -1310,7 +1327,7 @@ const translations = {
       hero: {
         title: "Über",
         titleSpan: " Sport Endorse",
-        subtitle: "Sport Endorse ist eine Online-Sportmarketing-Plattform, die die Art und Weise verändert, wie Marken und Athleten sich verbinden. Unsere leistungsstarke Plattform erleichtert authentische kommerzielle Partnerschaften und unterstützt die gesamte Sportwelt - von den Athleten, die ihn spielen, bis zu den Marken und Unternehmen, die ihn unterstützen.",
+        subtitle: "Sport Endorse ist eine Online-Sportmarketing-Plattform, die die Art und Weise verändert, wie Marken und Athleten sich verbinden. Unsere leistungsstarke Plattform erleichtert authentische kommerzielle Partnerschaften, unterstützt die gesamte Sportwelt - von den Athleten, die ihn spielen, bis zu den Marken und Unternehmen, die ihn unterstützen.",
         description: "Unser globales Team bringt jahrzehntelange Sportmarketing-Expertise mit. Als Spiegelbild der Vielfalt und Inklusivität unserer Plattform kommen unsere Teammitglieder aus einer breiten Palette von Sportarten und Hintergründen. Wir sind leidenschaftlich daran interessiert, unser tiefes Branchenwissen mit unserer exzellenten Technologie zu kombinieren, um Erfolg für unsere Kunden zu liefern und eine wirklich globale und inklusive Erfahrung für Marken und Athleten in jeder Art von Sport zu schaffen."
       },
       values: {
@@ -1530,11 +1547,12 @@ const translations = {
           annualInfo: "*Zahlung alle 12 Monate, +MwSt"
         },
         buttons: {
+          getStarted: "Loslegen", // Added translation
           startFreeTrial: "KOSTENLOSE TESTVERSION STARTEN",
           subscribeNow: "JETZT ABONNIEREN", 
           save35: "35% SPAREN",
-          getStarted: "Loslegen",
-          talkToSales: "Mit Vertrieb sprechen"
+          seeMore: "MEHR SEHEN", // Added translation
+          talkToSales: "Vertrieb kontaktieren" // Added translation
         },
         customPackage: {
           title: "Individuelles Paket",
@@ -1554,7 +1572,8 @@ const translations = {
         categories: {
           brand: "Marken FAQs",
           talent: "Talent FAQs",
-          agency: "Sportagentur FAQs"
+          agency: "Sportagentur FAQs",
+          subscription: "Abonnement FAQs"
         },
         emptyMessage: "Bald verfügbar! Schauen Sie bald wieder vorbei für Updates.",
         questions: [
@@ -1637,7 +1656,7 @@ const translations = {
             sport: "Triathlet",
             region: "Vereinigtes Königreich",
             quote: "Ich bin schon lange ein Fan von MINI. Es ist eine Marke, die für mich so britisch ist und dieses Erbe durch ihr Design über die Jahre trägt. Mein Lieblingsfilm ist The Italian Job von 1969, und ich meine, wie kann man diese Marke und die Autos einfach nicht lieben. Ich war begeistert, als ich durch Sport Endorse zu einem Friend of the Brand für MINI UK wurde. Ich habe das Glück, einen neuen MINI Countryman zu fahren, und noch besser, mein TT-Bike passt in den Kofferraum, ohne dass ich Räder abnehmen muss!",
-            image: "/images/laura-siddal.png",
+            image: "/images/laura-siddal-min.png",
             alt: "Laura Siddall, Professionelle Triathletin"
           },
           {
@@ -1646,7 +1665,7 @@ const translations = {
             sport: "Boxen",
             region: "Irland",
             quote: "Wenn man auf dem Weg zum Weltmeister ist, braucht man ein gutes Team in seiner Ecke, und Sport Endorse hat mich darauf vorbereitet, die Konkurrenz für Marken auszuschalten, mit denen ich arbeite.",
-            image: "/images/jason-quigley.png",
+            image: "/images/jason-quigley-min.png",
             alt: "Jason Quigley, Profiboxer"
           },
           {
@@ -1655,7 +1674,7 @@ const translations = {
             sport: "Wasserspringen",
             region: "Vereinigtes Königreich",
             quote: "Ich liebte das Konzept, als ich zum ersten Mal von Sport Endorse hörte, aber ich war mir nicht sicher, wie schnell es zu Möglichkeiten führen würde. Vom Moment der Anmeldung an war das Team in regelmäßigem Kontakt und fragte nach der Art von Zusammenarbeit, die für mich ideal wäre. Innerhalb von nur ein oder zwei Monaten landete ich genau die Art von Kooperation, die ich mir erhofft hatte! Fantastische Erfahrung — großartige Kommunikation, großartige Menschen, und es funktioniert wirklich.",
-            image: "/images/freddie_woodward.png",
+            image: "/images/freddie_woodward-min.png",
             alt: "Freddie Woodward, Wasserspringen Olympionike"
           },
           {
@@ -1664,7 +1683,7 @@ const translations = {
             sport: "Leichtathletik",
             region: "USA",
             quote: "Erstaunliche Plattform! Sehr einfach und direkt auf den Punkt! Ich kann direkt mit Marken sprechen und sogar die favorisieren, die ich liebe!",
-            image: "/images/Marquis-Dendy.jpeg",
+            image: "/images/Marquis-Dendy-min.jpeg",
             alt: "Marquis Dendy, Leichtathletik"
           },
           {
@@ -1673,7 +1692,7 @@ const translations = {
             sport: "Boxen",
             region: "Vereinigtes Königreich",
             quote: "Es war eine Freude, mit Sports Endorse an Social Media Kampagnen zu arbeiten. Ich hatte erfolgreich 1 bezahlte Promotion und 1 Produktpromotion-Austausch. Ich freue mich darauf, mit mehr Marken mit der Unterstützung von Sports Endorses einflussreichem Netzwerk zu arbeiten.",
-            image: "/images/nicola_barke.png",
+            image: "/images/nicola_barke-min.png",
             alt: "Nicola Barke, Boxen"
           },
           {
@@ -1726,7 +1745,8 @@ const translations = {
         title: "Neueste Blog-Beiträge",
         description: "Artikel von Sport Endorse Team-Mitgliedern über das, was die Sport-, Marketing- und Sponsoring-Welt beeinflusst",
         readMore: "Mehr Lesen →",
-        loading: "Lade Beiträge..."
+        loading: "Lade Beiträge...",
+        seeMore: "Mehr Sehen"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -1736,13 +1756,15 @@ const translations = {
         featureMe: "Mich Vorstellen!",
         featureMeTitle: "Mich in einem Podcast Vorstellen!",
         readMore: "Mehr Lesen →",
-        loading: "Laden..."
+        loading: "Laden...",
+        seeMore: "Mehr Sehen"
       },
       news: {
         title: "Nachrichten",
         description: "Die neuesten Nachrichten über Athleten, Marken, Unternehmen und alles rund um Sport Endorse!",
         readMore: "Mehr Lesen →",
-        loading: "Lade Nachrichten..."
+        loading: "Lade Nachrichten...",
+        seeMore: "Mehr Sehen"
       },
       successStoriesContent: {
         title: "Sport Endorse Erfolgsgeschichten",
@@ -1751,7 +1773,8 @@ const translations = {
         readMore: "Geschichte Lesen →",
         loading: "Lade Erfolgsgeschichten...",
         noSummary: "Keine Zusammenfassung verfügbar.",
-        noStories: "Keine Geschichten gefunden."
+        noStories: "Keine Geschichten gefunden.",
+        seeMore: "Mehr Sehen"
       }
     }
   },

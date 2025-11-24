@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import MainLogo from '@/components/MainLogo';
 import BlogBackButton from '@/components/BlogBackButton';
-import { getPostBySlug } from '../app/blog/wordpress';
 import { notFound } from 'next/navigation';
 
 import "../styles/blog.css";
@@ -30,31 +31,65 @@ interface BlogPostContentProps {
 export default function BlogPostContent({ slug }: BlogPostContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
+  const { getBlogPostBySlug, fetchBlogPostBySlug } = useWordPressData();
+  const { translatePost, translating } = useTranslation();
   const [post, setPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [translatedPost, setTranslatedPost] = useState<BlogPost | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        setLoading(true);
-        const fetchedPost = await getPostBySlug(slug);
-        if (!fetchedPost) {
-          notFound();
-          return;
-        }
-        setPost(fetchedPost);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setLoading(false);
+    // First check cache
+    const cached = getBlogPostBySlug(slug);
+    if (cached) {
+      setPost(cached as BlogPost);
+      setIsLoading(false);
+      return;
+    }
+
+    // Fetch just this one item
+    fetchBlogPostBySlug(slug).then((fetchedPost) => {
+      if (fetchedPost) {
+        setPost(fetchedPost as BlogPost);
+      } else {
+        notFound();
       }
-    };
+      setIsLoading(false);
+    });
+  }, [slug, getBlogPostBySlug, fetchBlogPostBySlug]);
 
-    fetchPost();
-  }, [slug]);
+  // Translate post when language changes or post is loaded
+  useEffect(() => {
+    if (post && language !== 'en') {
+      translatePost(
+        {
+          slug: post.slug,
+          title: post.title,
+          excerpt: post.excerpt,
+          content: post.content,
+        },
+        'post'
+      ).then((translated) => {
+        if (translated) {
+          setTranslatedPost({
+            ...post,
+            title: translated.title,
+            excerpt: translated.excerpt,
+            content: translated.content || post.content,
+          });
+        }
+      });
+    } else if (post && language === 'en') {
+      setTranslatedPost(null);
+    }
+  }, [post, language, translatePost]);
 
-  if (loading) {
+  const error = !post && !isLoading ? new Error('Post not found') : null;
+  
+  // Use translated post if available, otherwise use original
+  const displayPost = translatedPost || post;
+  const isTranslating = translating && language !== 'en';
+
+  if (isLoading || (isTranslating && !translatedPost)) {
     return (
       <div className="blog-container">
         <div style={{ padding: '1rem 1rem 0 1rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -63,7 +98,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
         <main className="blog-main">
           <div className="blog-post-main-container">
             <div style={{ textAlign: 'center', padding: '2rem' }}>
-              {t.components.blog.loading}
+              {isTranslating ? (language === 'es' ? 'Traduciendo...' : 'Übersetzen...') : t.components.blog.loading}
             </div>
           </div>
         </main>
@@ -100,7 +135,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
         <div className="blog-post-main-container">
           <article className="blog-post-article">
             <header className="blog-post-article-header">
-              <h1 className="blog-post-article-title">{post.title.rendered}</h1>
+              <h1 className="blog-post-article-title">{displayPost?.title.rendered || post.title.rendered}</h1>
               
               <div className="blog-post-article-meta">
                 <time>
@@ -118,7 +153,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
               {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                 <img 
                   src={post._embedded['wp:featuredmedia'][0].source_url} 
-                  alt={post.title.rendered}
+                  alt={displayPost?.title.rendered || post.title.rendered}
                   className="blog-post-article-image"
                   width={1200}
                   height={630}
@@ -131,7 +166,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
               <div 
                 className="blog-post-prose"
                 dangerouslySetInnerHTML={{ 
-                  __html: post.content.rendered 
+                  __html: displayPost?.content?.rendered || post.content.rendered 
                 }} 
               />
             </div>

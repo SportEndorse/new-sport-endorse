@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../styles/brandReviews.css';
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
@@ -11,7 +11,7 @@ export default function BrandReviews() {
   const reviews = [
     {
       id: 1,
-      image: "/images/shuzgroup_logo.png",
+      image: "/images/shuzgroup_logo-min.png",
       alt: "Shuz Group company logo",
       text: "Sport Endorse has revolutionised the way ShuzGroup approaches sports brand ambassador marketing. This platform has not only simplified the process of connecting with sports talent across the nation but has also given us the freedom to choose the perfect ambassadors for our brand. This platform has truly enhanced our ability to make informed decisions when selecting sports talent and we would gladly recommend Sport Endorse.",
       name: "Rebecca Quinlan",
@@ -19,7 +19,7 @@ export default function BrandReviews() {
     },
     {
       id: 2,
-      image: "/images/donal healy.png",
+      image: "/images/ireland-west-airport.jpg",
       alt: "Donal Healy",
       text: "We were delighted to work with Sport Endorse on campaigns involving both Jack Carty and Jason Quigley - two outstanding sporting ambassadors for the West and North West of Ireland.",
       name: "Donal Healy",
@@ -27,7 +27,7 @@ export default function BrandReviews() {
     },
     {
       id: 3,
-      image: "/images/john delves.png",
+      image: "/images/magnet-plus-min.jpg",
       alt: "John Delves",
       text: "The team at Sport Endorse were a pleasure to work with, they were on hand in the lead up to our photoshoot and on the day were more than accommodatingwith our requests. A great experience all around and one we will no doubt repeat!”",
       name: "John Delves",
@@ -35,7 +35,7 @@ export default function BrandReviews() {
     },
     {
       id: 4,
-      image: "/images/daithi oconnor.png",
+      image: "/images/revive_active-min-square.png",
       alt: "Daithí O'Connor",
       text: "Working with Sport Endorse is a pleasure. We've been very happy with the partnerships we've secured and look forward to driving our business  in the UK with help from the platform.",
       name: "Daithí O'Connor",
@@ -43,7 +43,7 @@ export default function BrandReviews() {
     },
     {
       id: 5,
-      image: "/images/perform_nutrition.png",
+      image: "/images/perform_nutrition-min.png",
       alt: "Perfom nutrition logo",
       text: "Sport Endorse is doing fantastic work in looking after athletes and helping them achieve their potential on and off the field. We are delighted to work with the Sport Endorse team to secure brand partnerships that, without them, would not have been possible.",
       name: "Aoife Cassidy",
@@ -101,14 +101,31 @@ export default function BrandReviews() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef(null);
+
+  const resetInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }, 5000);
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 5000); // Change every 5 seconds
-
-    return () => clearInterval(interval);
+    resetInterval();
+    return () => clearInterval(intervalRef.current);
   }, [reviews.length]);
+
+  const handlePrevClick = () => {
+    resetInterval();
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
+  };
+
+  const handleNextClick = () => {
+    resetInterval();
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+  };
 
   const currentReview = reviews[currentIndex];
 
@@ -149,13 +166,13 @@ export default function BrandReviews() {
         <div className="review-navigation">
           <button 
             className="nav-arrow prev"
-            onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length)}
+            onClick={handlePrevClick}
           >
             ←
           </button>
           <button 
             className="nav-arrow next"
-            onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length)}
+            onClick={handleNextClick}
           >
             →
           </button>

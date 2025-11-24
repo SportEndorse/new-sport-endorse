@@ -5,8 +5,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Sport Endorse | Verbinde Marken mit Elite-Athleten & Sport-Influencern",
-  description: "Sport Endorse ist die Plattform, die Marken und Athleten für authentische und wirkungsvolle Partnerschaften zusammenbringt. Wir machen es einfach für Marken, das richtige Talent zu finden und mit ihm zu kollaborieren, und für Athleten, sich direkt mit Marken zu verbinden und bezahlte Deals zu sichern.",
+  title: "Sport-Sponsoring-Plattform für Marken- und Athleten-Partnerschaften",
+  description: "Sport Endorse ist eine Sport-Sponsoring-Plattform, auf der Marken und Athleten sich verbinden, zusammenarbeiten und authentische Sport-Marketing-Partnerschaften verwalten.",
   alternates: {
     canonical: "https://www.sportendorse.com/de/",
     languages: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Sport Endorse | Verbinde Marken mit Elite-Athleten & Sport-Influencern",
-    description: "Sport Endorse ist die Plattform, die Marken und Athleten für authentische und wirkungsvolle Partnerschaften zusammenbringt. Wir machen es einfach für Marken, das richtige Talent zu finden und mit ihm zu kollaborieren, und für Athleten, sich direkt mit Marken zu verbinden und bezahlte Deals zu sichern.",
+    title: "Sport-Sponsoring-Plattform für Marken- und Athleten-Partnerschaften",
+    description: "Sport Endorse ist eine Sport-Sponsoring-Plattform, auf der Marken und Athleten sich verbinden, zusammenarbeiten und authentische Sport-Marketing-Partnerschaften verwalten.",
     type: "website",
     locale: "de_DE",
     url: "https://www.sportendorse.com/de/",

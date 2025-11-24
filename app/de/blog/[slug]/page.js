@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug } from '../../../blog/wordpress.js'
+import { getBlogPostSlugs, getBlogPostBySlug } from '@/utils/wordpress-api'
 import BlogPostContent from '@/components/BlogPostContent'
 
 // Function to decode HTML entities
@@ -29,7 +29,7 @@ function decodeHtmlEntities(text) {
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const resolvedParams = await params
-  const post = await getPostBySlug(resolvedParams.slug)
+  const post = await getBlogPostBySlug(resolvedParams.slug)
   
   if (!post) {
     return {
@@ -78,13 +78,15 @@ export async function generateMetadata({ params }) {
   }
 }
 
-// Generate static params for all posts
+// Generate static params for all posts (lightweight - only fetches slugs)
 export async function generateStaticParams() {
-  const posts = await getAllPosts()
-  
-  return posts.map(post => ({
-    slug: post.slug
-  }))
+  try {
+    const slugs = await getBlogPostSlugs();
+    return slugs.map(slug => ({ slug }));
+  } catch (error) {
+    console.warn('Error generating static params for blog posts:', error);
+    return [];
+  }
 }
 
 export default async function BlogPost({ params }) {

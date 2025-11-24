@@ -10,11 +10,11 @@ export default function BackButton() {
   const handleBack = () => {
     const path = window.location.pathname;
     if (path.startsWith('/es')) {
-      window.location.href = '/es/success-stories';
+      window.location.href = '/es/success_stories';
     } else if (path.startsWith('/de')) {
-      window.location.href = '/de/success-stories';
+      window.location.href = '/de/success_stories';
     } else {
-      window.location.href = '/success-stories';
+      window.location.href = '/success_stories';
     }
   };
 

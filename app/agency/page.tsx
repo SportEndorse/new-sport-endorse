@@ -5,8 +5,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Partner with Sport Endorse | Sports Agency Solutions",
-  description: "Join Sport Endorse as a sports agency partner. Connect your athletes with premium brands and unlock new revenue opportunities through our platform.",
+  title: "Sports Agent Platform for Athlete Sponsorships | Sport Endorse",
+  description: "Sport Endorse's endorsement management platform helps sports agents manage athlete sponsorships and endorsement deals with secure communication and compliance tools.",
   alternates: {
     canonical: "https://www.sportendorse.com/agency",
     languages: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Partner with Sport Endorse | Sports Agency Solutions",
-    description: "Join Sport Endorse as a sports agency partner. Connect your athletes with premium brands and unlock new revenue opportunities through our platform.",
+    title: "Sports Agent Platform for Athlete Sponsorships | Sport Endorse",
+    description: "Sport Endorse's endorsement management platform helps sports agents manage athlete sponsorships and endorsement deals with secure communication and compliance tools.",
     type: "website",
     locale: "en_US",
     url: "https://www.sportendorse.com/agency",

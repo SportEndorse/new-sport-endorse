@@ -1,10 +1,12 @@
 "use client";
 
-import { fetchPodcasts, stripHtml, formatDate, createExcerpt } from "../app/podcasts/wordpress.js";
+import { stripHtml, formatDate, createExcerpt } from "@/utils/wordpress-helpers";
 import Link from "next/link";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useWordPressData } from "@/context/WordPressDataContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import "../styles/blog.css";
 import "../styles/podcasts.css";
@@ -81,9 +83,12 @@ const podcastIframes = [
 ];
 
 // Individual podcast card component
-function PodcastCard({ podcast, index, language, t }: { podcast: Podcast; index: number; language: string; t: typeof translations.en }) {
-  const title = decodeHtmlEntities(stripHtml(podcast.title.rendered));
-  const excerpt = decodeHtmlEntities(createExcerpt(podcast.excerpt.rendered, 250));
+function PodcastCard({ podcast, translatedPodcast, index, language, t }: { podcast: Podcast; translatedPodcast?: Podcast; index: number; language: string; t: typeof translations.en }) {
+  const displayPodcast = translatedPodcast || podcast;
+  const title = decodeHtmlEntities(stripHtml(displayPodcast.title.rendered));
+  const excerpt = displayPodcast.excerpt?.rendered 
+    ? decodeHtmlEntities(createExcerpt(displayPodcast.excerpt.rendered, 250))
+    : '';
   const date = formatDate(podcast.date);
   const iframeUrl = podcastIframes[index] || podcastIframes[0];
   
@@ -140,13 +145,85 @@ function PodcastCard({ podcast, index, language, t }: { podcast: Podcast; index:
   );
 }
 
+// Loading skeleton card component for podcasts
+function PodcastLoadingCard() {
+  return (
+    <article className="blog-post-card podcasts-card" style={{ opacity: 0.7 }}>
+      <div className="podcasts-card-content">
+        <div className="podcasts-card-header">
+          <div style={{ 
+            height: '16px', 
+            background: '#e0e0e0', 
+            borderRadius: '4px', 
+            width: '100px'
+          }} />
+          <div style={{ 
+            height: '20px', 
+            background: '#e0e0e0', 
+            borderRadius: '4px', 
+            width: '80px'
+          }} />
+        </div>
+        
+        <div style={{ 
+          height: '24px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '90%'
+        }} />
+        
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.25rem',
+          width: '100%'
+        }} />
+        <div style={{ 
+          height: '16px', 
+          background: '#e0e0e0', 
+          borderRadius: '4px', 
+          marginBottom: '0.5rem',
+          width: '75%'
+        }} />
+
+        {/* iframe skeleton */}
+        <div style={{ 
+          width: '100%', 
+          height: '208px', 
+          background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
+          backgroundSize: '200% 100%',
+          animation: 'shimmer 1.5s infinite',
+          borderRadius: '4px',
+          marginBottom: '1rem'
+        }} />
+        
+        <div className="podcasts-card-footer">
+          <div style={{ width: '24px', height: '24px', background: '#e0e0e0', borderRadius: '50%' }} />
+          <div style={{ 
+            height: '32px', 
+            background: '#e0e0e0', 
+            borderRadius: '4px', 
+            width: '120px'
+          }} />
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function PodcastsContent() {
   const { language } = useLanguage();
   const t = translations[language];
-  const [podcasts, setPodcasts] = useState<Podcast[]>([]);
+  const { podcasts, error, ensureListDataLoaded, fetchFirstPodcasts } = useWordPressData();
+  const { translatePosts } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [initialLoadComplete, setInitialLoadComplete] = useState(false);
+  const [translatedPodcasts, setTranslatedPodcasts] = useState<typeof podcasts>([]);
+  const translatingRef = useRef(false);
+  const lastTranslatedKeyRef = useRef<string>('');
 
   useEffect(() => {
     // Load HubSpot script
@@ -156,18 +233,102 @@ export default function PodcastsContent() {
       script.defer = true;
       document.head.appendChild(script);
     }
+    
+    // Fetch first 6 podcasts immediately, then load the rest
+    let mounted = true;
+    
+    const loadProgressive = async () => {
+      // First, fetch first 6 podcasts quickly
+      const firstPodcasts = await fetchFirstPodcasts(6);
+      if (mounted && firstPodcasts.length > 0) {
+        setInitialLoadComplete(true);
+      }
+      
+      // Then load all podcasts in the background
+      ensureListDataLoaded('podcasts');
+    };
+    
+    loadProgressive();
+    
+    return () => {
+      mounted = false;
+    };
+  }, [fetchFirstPodcasts, ensureListDataLoaded]);
 
-    // Fetch podcasts
-    fetchPodcasts()
-      .then(data => {
-        setPodcasts(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError(err);
-        setLoading(false);
-      });
-  }, []);
+  // Translate podcasts when language changes or podcasts are loaded
+  useEffect(() => {
+    // Early return if no podcasts or English
+    if (podcasts.length === 0 || language === 'en') {
+      if (language === 'en') {
+        setTranslatedPodcasts([]);
+        lastTranslatedKeyRef.current = '';
+      }
+      return;
+    }
+    
+    // Create a unique key based on podcast slugs and language to prevent duplicate translations
+    const podcastSlugs = podcasts
+      .filter(p => p.slug && p.title?.rendered)
+      .map(p => p.slug)
+      .sort()
+      .join(',');
+    const translationKey = `${language}-${podcastSlugs}`;
+    
+    // Skip if already translating (check first to prevent race conditions)
+    if (translatingRef.current) {
+      return;
+    }
+    
+    // Skip if this exact set was already translated
+    if (lastTranslatedKeyRef.current === translationKey) {
+      return;
+    }
+    
+    // Filter out podcasts without required fields and map to translation format
+    const podcastsToTranslate = podcasts
+      .filter(podcast => podcast.slug && podcast.title?.rendered) // Only translate podcasts with required fields
+      .map(podcast => ({
+        slug: podcast.slug,
+        title: podcast.title || { rendered: '' },
+        excerpt: podcast.excerpt || { rendered: '' },
+      }));
+    
+    if (podcastsToTranslate.length === 0) {
+      return; // No valid podcasts to translate
+    }
+    
+    // Set flags IMMEDIATELY to prevent duplicate calls (before any async operations)
+    translatingRef.current = true;
+    lastTranslatedKeyRef.current = translationKey;
+    
+    translatePosts(podcastsToTranslate, 'podcast').then((translated) => {
+      translatingRef.current = false;
+      if (translated.length > 0) {
+        // Create a map of translated podcasts by slug for efficient lookup
+        const translatedMap = new Map(
+          translated.map((t, idx) => [podcastsToTranslate[idx].slug, t])
+        );
+        
+        const updatedPodcasts = podcasts.map((podcast) => {
+          const translatedPodcast = translatedMap.get(podcast.slug);
+          if (translatedPodcast) {
+            return {
+              ...podcast,
+              title: translatedPodcast.title,
+              excerpt: translatedPodcast.excerpt,
+            };
+          }
+          return podcast;
+        });
+        setTranslatedPodcasts(updatedPodcasts);
+      }
+    }).catch(() => {
+      translatingRef.current = false;
+      // Reset key on error so it can retry
+      lastTranslatedKeyRef.current = '';
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [podcasts, language, translatePosts]);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -226,7 +387,7 @@ export default function PodcastsContent() {
                 <svg className="podcasts-info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                 </svg>
-                {loading ? '...' : `${podcasts.length}`} {t.components.podcasts.episodes}
+                30 {t.components.podcasts.episodes}
               </span>
               <span className="podcasts-info-separator">•</span>
               <span>{t.components.podcasts.discoverText}</span>
@@ -243,20 +404,18 @@ export default function PodcastsContent() {
 
       {/* Main Content */}
       <main className="blog-main">
-        {loading ? (
-          <div className="blog-posts-container">
-            <div className="podcasts-loading-content">
-              <br/>
-              <br/>
-              <div className="podcasts-loading-text">{t.components.podcasts.loading}</div>
-            </div>
-          </div>
-        ) : error ? (
+        {error ? (
           <div className="podcasts-error-container">
             <div className="podcasts-error-content">
               <div className="podcasts-error-icon">⚠️</div>
               <h2 className="podcasts-error-title">Something went wrong</h2>
               <p className="podcasts-error-message">{error.message}</p>
+            </div>
+          </div>
+        ) : !initialLoadComplete && podcasts.length === 0 ? (
+          <div className="blog-posts-container">
+            <div className="blog-posts-grid">
+              {Array(6).fill(null).map((_, i) => <PodcastLoadingCard key={`skeleton-${i}`} />)}
             </div>
           </div>
         ) : podcasts.length === 0 ? (
@@ -266,13 +425,35 @@ export default function PodcastsContent() {
             <p className="podcasts-empty-message">Check back later for new episodes!</p>
           </div>
         ) : (
-          <div className="blog-posts-container">
-            <div className="blog-posts-grid">
-              {podcasts.map((podcast, index) => (
-                <PodcastCard key={podcast.id} podcast={podcast} index={index} language={language} t={t} />
-              ))}
+          <>
+            <div className="blog-posts-container">
+              <div className="blog-posts-grid">
+                {podcasts.slice(0, visibleCount).map((podcast, index) => {
+                  const translatedPodcast = translatedPodcasts.find(tp => tp?.id === podcast.id);
+                  return (
+                    <PodcastCard 
+                      key={podcast.id} 
+                      podcast={podcast} 
+                      translatedPodcast={translatedPodcast}
+                      index={index} 
+                      language={language} 
+                      t={t} 
+                    />
+                  );
+                })}
+              </div>
             </div>
-          </div>
+            {podcasts.length > visibleCount && (
+              <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+                <button
+                  onClick={() => setVisibleCount(prev => prev + 6)}
+                  className="see-more-button"
+                >
+                  {t.components.podcasts.seeMore || 'See More'}
+                </button>
+              </div>
+            )}
+          </>
         )}
       </main>
 

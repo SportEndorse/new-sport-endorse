@@ -1,6 +1,6 @@
 import BusinessSubscription from "@/components/BusinessSubscription";
 import CalendlyDemo from "@/components/CalendlyDemo";
-import FAQs from "@/components/FAQs";
+import SubscriptionFAQs from "@/components/SubscriptionFAQs";
 import SuccessStories from "@/components/SuccessStories";
 import { Metadata } from "next";
 
@@ -9,8 +9,8 @@ export const revalidate = false;
 
 export const metadata: Metadata = {
   //metadataBase: new URL("put the home url here later"),
-  title: "Suscríbete a la Plataforma de Patrocinio de Atletas de Sport Endorse | Sport Endorse",
-  description: "Explora cómo la plataforma de Sport Endorse simplifica la gestión de patrocinios. Solicita una demostración para conectar con atletas de élite, embajadores de marca e influencers deportivos.",
+  title: "Suscríbete a la Plataforma de Patrocinio de Atletas de Sport Endorse",
+  description: "Explora cómo la plataforma de Sport Endorse simplifica la gestión de patrocinios. Solicita una demostración GRATUITA para conectar con atletas, embajadores de marca e influencers deportivos.",
   alternates: {
     canonical: "https://www.sportendorse.com/es/subscription",
     languages: {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph:{ // og:title and so on
-    title: "Suscríbete a la Plataforma de Patrocinio de Atletas de Sport Endorse | Sport Endorse",
-    description: "Explora cómo la plataforma de Sport Endorse simplifica la gestión de patrocinios. Solicita una demostración para conectar con atletas de élite, embajadores de marca e influencers deportivos.",
+    title: "Suscríbete a la Plataforma de Patrocinio de Atletas de Sport Endorse",
+    description: "Explora cómo la plataforma de Sport Endorse simplifica la gestión de patrocinios. Solicita una demostración GRATUITA para conectar con atletas, embajadores de marca e influencers deportivos.",
     type:"website",
     locale:"es_ES",
     url: "https://www.sportendorse.com/es/subscription",
@@ -41,7 +41,7 @@ export default function SubscriptionES(){
 
             <SuccessStories />
 
-            <FAQs />
+            <SubscriptionFAQs />
         
         </main>
     );
