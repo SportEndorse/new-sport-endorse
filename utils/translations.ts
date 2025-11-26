@@ -563,7 +563,10 @@ const translations = {
         description: "Articles from Sport Endorse team members on what is impacting the sports, marketing and sponsorship world",
         readMore: "Read More →",
         loading: "Loading posts...",
-        seeMore: "See More"
+        seeMore: "See More",
+        by: "By",
+        translating: "Translating...",
+        errorLoading: "Error loading blog post"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -1150,7 +1153,10 @@ const translations = {
         description: "Artículos de los miembros del equipo de Sport Endorse sobre lo que está impactando el mundo del deporte, marketing y patrocinio",
         readMore: "Leer Más →",
         loading: "Cargando publicaciones...",
-        seeMore: "Ver Más"
+        seeMore: "Ver Más",
+        by: "Por",
+        translating: "Traduciendo...",
+        errorLoading: "Error al cargar la publicación del blog"
       },
       podcasts: {
         title: "The Athlete Sitdown",
@@ -1746,7 +1752,10 @@ const translations = {
         description: "Artikel von Sport Endorse Team-Mitgliedern über das, was die Sport-, Marketing- und Sponsoring-Welt beeinflusst",
         readMore: "Mehr Lesen →",
         loading: "Lade Beiträge...",
-        seeMore: "Mehr Sehen"
+        seeMore: "Mehr Sehen",
+        by: "Von",
+        translating: "Übersetzen...",
+        errorLoading: "Fehler beim Laden des Blog-Beitrags"
       },
       podcasts: {
         title: "The Athlete Sitdown",

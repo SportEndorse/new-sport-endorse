@@ -24,7 +24,7 @@ export default function BlogBackButton() {
       onClick={handleBack}
     >
       <span className="back-button-icon">←</span>
-      {t.common.back}
+      {t.common?.back || 'Back'}
     </button>
   );
 }

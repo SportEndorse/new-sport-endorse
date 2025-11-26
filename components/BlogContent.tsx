@@ -9,6 +9,9 @@ import { useTranslation } from "@/hooks/useTranslation";
 import translations from "@/utils/translations";
 import "../styles/blog.css";
 
+// Fallback image for blog posts without featured media
+const FALLBACK_IMAGE = '/images/sportEndorseLogo-min.png';
+
 // Function to decode HTML entities
 function decodeHtmlEntities(text: string): string {
   if (!text) return text;
@@ -215,20 +218,25 @@ export default function BlogContent() {
                 
                 return (
                   <article key={post.id} className="blog-post-card">
-                    {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
-                      <img
-                        src={post._embedded['wp:featuredmedia'][0].source_url}
-                        alt={decodeHtmlEntities(displayPost.title.rendered)}
-                        width={400}
-                        height={250}
-                        className="blog-post-image"
-                        loading="lazy"/>
-                    )}
+                    <img
+                      src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url || FALLBACK_IMAGE}
+                      alt={decodeHtmlEntities(displayPost.title.rendered)}
+                      width={400}
+                      height={250}
+                      className="blog-post-image"
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        if (target.src !== FALLBACK_IMAGE) {
+                          target.src = FALLBACK_IMAGE;
+                        }
+                      }}
+                    />
                             
                     <div className="blog-post-content">
                       <h2 className="blog-post-title">
                         <Link
-                          href={language === 'en' ? `/blog/${post.slug}` : `/${language}/blog/${post.slug}`}
+                          href={language === 'en' ? `/${post.slug}` : `/${language}/${post.slug}`}
                           className="blog-post-link"
                         >
                           {decodeHtmlEntities(displayPost.title.rendered)}
