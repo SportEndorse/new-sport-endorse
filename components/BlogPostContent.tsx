@@ -11,6 +11,9 @@ import { notFound } from 'next/navigation';
 
 import "../styles/blog.css";
 
+// Fallback image for blog posts without featured media
+const FALLBACK_IMAGE = '/images/sportEndorseLogo-min.png';
+
 interface BlogPost {
   id: number;
   title: { rendered: string };
@@ -98,7 +101,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
         <main className="blog-main">
           <div className="blog-post-main-container">
             <div style={{ textAlign: 'center', padding: '2rem' }}>
-              {isTranslating ? (language === 'es' ? 'Traduciendo...' : 'Übersetzen...') : t.components.blog.loading}
+              {isTranslating ? t.components.blog.translating : t.components.blog.loading}
             </div>
           </div>
         </main>
@@ -115,7 +118,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
         <main className="blog-main">
           <div className="blog-post-main-container">
             <div style={{ textAlign: 'center', padding: '2rem' }}>
-              Error loading blog post
+              {t.components.blog.errorLoading}
             </div>
           </div>
         </main>
@@ -145,21 +148,25 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
                 </time>
                 {post._embedded?.author?.[0] && (
                   <span>
-                    {language === 'es' ? 'Por' : language === 'de' ? 'Von' : 'By'} {post._embedded.author[0].name}
+                    {t.components.blog.by} {post._embedded.author[0].name}
                   </span>
                 )}
               </div>
               
-              {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
-                <img 
-                  src={post._embedded['wp:featuredmedia'][0].source_url} 
-                  alt={displayPost?.title.rendered || post.title.rendered}
-                  className="blog-post-article-image"
-                  width={1200}
-                  height={630}
-                  style={{width:"auto", maxWidth:"1200px"}}
-                />
-              )}
+              <img 
+                src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url || FALLBACK_IMAGE} 
+                alt={displayPost?.title.rendered || post.title.rendered}
+                className="blog-post-article-image"
+                width={1200}
+                height={630}
+                style={{width:"auto", maxWidth:"1200px"}}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (target.src !== FALLBACK_IMAGE) {
+                    target.src = FALLBACK_IMAGE;
+                  }
+                }}
+              />
             </header>
             
             <div className="blog-post-article-content">
