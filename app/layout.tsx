@@ -39,12 +39,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         {/* DNS prefetch for potential video CDN */}
         <link rel="dns-prefetch" href="//cdn.sportendorse.com" />
+        {/* DNS prefetch for Cookiebot */}
+        <link rel="dns-prefetch" href="//consent.cookiebot.com" />
+
+        {/* Dataships Cookiebot Consent Banner - Must be first script */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="45651459-eed5-4834-bedb-ffba4870893a"
+          data-blockingmode="auto"
+          type="text/javascript"
+        />
 
         {/*<!-- Start of HubSpot Embed Code -->*/}
         <Script
           id="hs-script-loader"
           src="//js.hs-scripts.com/4025606.js"
-          strategy="afterInteractive" // This ensures Dataships can intercept it
+          strategy="afterInteractive"
         />
         {/*<!-- End of HubSpot Embed Code -->*/}
 
@@ -76,12 +88,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        
-        {/* Dataships Cookie Script */}
-        <Script
-          src="https://core-api.dataships.io/v1/code-snippets/cookie-script?apikey=YDf7ngeS_q4cFkPgNcinQ_IqQ2rJBKT1"
-          strategy="afterInteractive"
-        />
         
         <noscript>
           <div style={{margin:"70px 20px", backgroundColor:"white"}}>
