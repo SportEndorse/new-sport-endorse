@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+.talent-name{
+  color: black;
+}
+
 .featured-talents .header {
   display: flex;
   justify-content: space-between;

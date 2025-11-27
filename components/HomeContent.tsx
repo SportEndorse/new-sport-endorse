@@ -16,11 +16,23 @@ export default function HomeContent() {
   const t = translations[language];
   const [isMobile, setIsMobile] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [screenSize, setScreenSize] = useState<'small' | 'medium' | 'large'>('large');
 
   useEffect(() => {
     setIsClient(true);
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 480);
+      const width = window.innerWidth;
+      setIsMobile(width <= 480);
+      
+      // Determine screen size for placeholder image
+      if (width <= 480) {
+        setScreenSize('small'); // Use pic3
+      } else if (width <= 768) {
+        setScreenSize('medium'); // Use pic1
+      } else {
+        setScreenSize('large'); // Use pic2
+      }
     };
 
     checkScreenSize();
@@ -41,12 +53,55 @@ export default function HomeContent() {
     }
   };
 
+   // Get placeholder image based on screen size
+  const getPlaceholderImage = () => {
+    switch (screenSize) {
+      case 'large': // Biggest screens
+        return "/images/home-vid-pic2.webp";
+      case 'medium': // Middle screens
+        return "/images/home-vid-pic1.webp";
+      case 'small': // Smallest screens
+        return "/images/home-vid-pic3.webp";
+      default:
+        return "/images/home-vid-pic2.webp";
+    }
+  };
+
   const videoSource = getVideoSource();
+  const placeholderImage = getPlaceholderImage();
+
+  const handleVideoLoaded = () => {
+    setIsVideoLoaded(true);
+  };
+
+  const handleVideoLoadStart = () => {
+    setIsVideoLoaded(false);
+  };
 
   return (
     <>
       <section className="home-heroSection">
         <div className="home-videoBackground">
+          {/* Placeholder image shown while video loads */}
+          <img
+            key={`placeholder-${screenSize}`}
+            src={placeholderImage}
+            alt=""
+            className="home-videoPlaceholder"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              zIndex: 0,
+              opacity: isVideoLoaded ? 0 : 1,
+              transition: 'opacity 0.5s ease-in-out',
+              pointerEvents: 'none',
+            }}
+          />
           <video 
             autoPlay 
             muted 
@@ -55,6 +110,13 @@ export default function HomeContent() {
             className="home-backgroundVideo"
             preload="auto"
             src={undefined}
+            onLoadedData={handleVideoLoaded}
+            onCanPlay={handleVideoLoaded}
+            onLoadStart={handleVideoLoadStart}
+            style={{
+              opacity: isVideoLoaded ? 1 : 0,
+              transition: 'opacity 0.5s ease-in-out',
+            }}
           >
             <source src={videoSource} type="video/webm" />
             Your browser does not support the video tag.
