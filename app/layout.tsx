@@ -31,6 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="keywords" content="SportEndorse, Talent, Brands, Subscription, Agencies, Success Stories"></meta>
         <meta name="author" content="SportEndorse"></meta>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        
+        <meta name="google-site-verification" content="V3RsFg1wKDoP4lztleoJGFT3VgUz29GKbK2SUz_uWFw" />
 
         <link rel="icon" type="image/ico" href="favicon.ico" />
         
