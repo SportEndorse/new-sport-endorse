@@ -196,7 +196,10 @@ const translations = {
     common: {
       learnMore: "LEARN MORE",
       bookDemo: "BOOK A DEMO",
-      back: "Back"
+      back: "Back",
+      exploreAthletePartnerships: "EXPLORE ATHLETE PARTNERSHIPS",
+      signUpForFree: "SIGN UP FOR FREE",
+      viewAgencyFeatures: "VIEW AGENCY FEATURES"
     },
     components: {
       agencyHowItWorks: {
@@ -795,7 +798,10 @@ const translations = {
     common: {
       learnMore: "SABER MÁS",
       bookDemo: "RESERVAR DEMO",
-      back: "Atrás"
+      back: "Atrás",
+      exploreAthletePartnerships: "EXPLORAR ASOCIACIONES CON ATLETAS",
+      signUpForFree: "REGÍSTRATE GRATIS",
+      viewAgencyFeatures: "VER FUNCIONES DE LA AGENCIA"
     },
     components: {
       agencyHowItWorks: {
@@ -1385,7 +1391,10 @@ const translations = {
     common: {
       learnMore: "MEHR ERFAHREN",
       bookDemo: "DEMO BUCHEN",
-      back: "Zurück"
+      back: "Zurück",
+      exploreAthletePartnerships: "ATHLETENPARTNERSCHAFTEN ERKUNDEN",
+      signUpForFree: "KOSTENLOS ANMELDEN",
+      viewAgencyFeatures: "AGENTURFUNKTIONEN ANZEIGEN"
     },
     components: {
       agencyHowItWorks: {

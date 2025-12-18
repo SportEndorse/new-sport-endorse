@@ -17,9 +17,11 @@ interface BenefitProps {
   item3?: string;
   color?: string;
   learnMoreLink?: string;
+  customButtonText?: string;
+  showSignUpButton?: boolean;
 }
 
-export default function BenefitSection({ title, subtitle, image, label, background = "#e8f2fd", item1="item1", item2="item2", item3="item3", color="#009ee3", learnMoreLink = "/talent" }: BenefitProps) {
+export default function BenefitSection({ title, subtitle, image, label, background = "#e8f2fd", item1="item1", item2="item2", item3="item3", color="#009ee3", learnMoreLink = "/talent", customButtonText, showSignUpButton }: BenefitProps) {
   const { language } = useLanguage();
   const t = translations[language];
 
@@ -60,7 +62,7 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
         <div className="button-group">
           {image && (image !== "/images/talentBenefitPic.png" && image !== "/images/talentBenefitPic-min.png" && image !== "images/agencyBenefitPic.jpg" && image !== "/images/agencyBenefitPic.jpg") ? (
             <>
-              <Link href={getPageLink()}><button className="benefit-button">{t.common.learnMore}</button></Link>
+              <Link href={getPageLink()}><button className="benefit-button">{customButtonText || t.common.learnMore}</button></Link>
               <a target="_blank" href={
                 (image === "/images/agency_dashboard.png" || image === "/images/agency_dashboard-min.png" || label === t.home.benefitSection.agency.label) 
                   ? "https://calendly.com/d/cwcj-xx7-2xn/sport-endorse-demo-agency"
@@ -70,7 +72,14 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
               </a>
             </>
           ) : (
-            <div><AppStores pageName="benefit-section" /></div>
+            <>
+              {showSignUpButton && (
+                <Link href={learnMoreLink}><button className="benefit-button">{customButtonText || t.common.signUpForFree}</button></Link>
+              )}
+              <div><AppStores pageName="benefit-section" /></div>
+            </>
+
+            
           )}
         </div>
       </div>

@@ -134,6 +134,8 @@ export default function HomeContent() {
         </div>
       </section>
 
+      
+
       <div className="home-appStoresContainer" style={{display: "flex", justifyContent: "center", padding: "2rem 0"}}>
         <AppStores pageName="home" />
       </div>
@@ -143,7 +145,8 @@ export default function HomeContent() {
       <br/>
       <FeaturedTalents />
 
-      <BenefitSection
+
+      <BenefitSection  
         title={t.home.benefitSection.brand.title}
         subtitle={t.home.benefitSection.brand.subtitle}
         image="/images/For-Brands-image-min.png"
@@ -153,6 +156,7 @@ export default function HomeContent() {
         item2={t.home.benefitSection.brand.bullet2}
         item3={t.home.benefitSection.brand.bullet3}
         color="#009ee3"
+          customButtonText={t.common.exploreAthletePartnerships}
         learnMoreLink={language === 'es' ? "/es/brands" : language === 'de' ? "/de/brands" : "/brands"}
       />
 
@@ -165,6 +169,8 @@ export default function HomeContent() {
         item1={t.home.benefitSection.athlete.bullet1}
         item2={t.home.benefitSection.athlete.bullet2}
         item3={t.home.benefitSection.athlete.bullet3}
+          customButtonText={t.common.signUpForFree}
+          showSignUpButton={true}
         color="#009ee3"
         learnMoreLink={language === 'es' ? "/es/talent" : language === 'de' ? "/de/talent" : "/talent"}
       />
@@ -178,6 +184,7 @@ export default function HomeContent() {
         item1={t.home.benefitSection.agency.bullet1}
         item2={t.home.benefitSection.agency.bullet2}
         item3={t.home.benefitSection.agency.bullet3}
+          customButtonText={t.common.viewAgencyFeatures}
         color="#009ee3"
         learnMoreLink={language === 'es' ? "/es/agency" : language === 'de' ? "/de/agency" : "/agency"}
       />
