@@ -17,7 +17,16 @@ export const metadata: Metadata = {
     description: "Entdecken Sie Athleten-Sponsoring-Geschichten, Marken-Marketing-Tipps und Influencer-Einblicke von den Experten bei Sport Endorse. Lernen Sie, wie Sie im Sport-Marketing aufsteigen.",
     type: "website",
     locale: "de_DE",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/de/blog",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 

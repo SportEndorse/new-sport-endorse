@@ -20,7 +20,16 @@ export const metadata: Metadata = {
     description: "Sport Endorse Limited Terms And Conditions Updated: November 2024",
     type: "website",
     locale: "es_ES",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/es/terms-and-conditions",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 };
 

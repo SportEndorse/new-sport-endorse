@@ -12,7 +12,16 @@ export const metadata: Metadata = {
     description: "Manage your privacy preferences and data settings with Sport Endorse. Control how your information is collected and used on our athlete sponsorship platform.",
     type: "website",
     locale: "en_US",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/privacy-center",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   },
 };
 

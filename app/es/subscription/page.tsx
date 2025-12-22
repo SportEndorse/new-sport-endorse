@@ -20,13 +20,21 @@ export const metadata: Metadata = {
       'x-default': 'https://www.sportendorse.com/subscription'
     }
   },
-  openGraph:{ // og:title and so on
+  openGraph: {
     title: "Suscríbete a la Plataforma de Patrocinio de Atletas de Sport Endorse",
     description: "Explora cómo la plataforma de Sport Endorse simplifica la gestión de patrocinios. Solicita una demostración GRATUITA para conectar con atletas, embajadores de marca e influencers deportivos.",
-    type:"website",
-    locale:"es_ES",
+    type: "website",
+    locale: "es_ES",
     url: "https://www.sportendorse.com/es/subscription",
-    siteName:"Sport Endorse"
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   },
 };
 

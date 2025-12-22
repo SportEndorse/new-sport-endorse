@@ -17,7 +17,16 @@ export const metadata: Metadata = {
     description: "Escucha discusiones de expertos sobre marketing deportivo, asociaciones de atletas e insights de la industria. Mantente al día con nuestros podcasts de patrocinio deportivo.",
     type: "website",
     locale: "es_ES",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/es/podcasts",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 

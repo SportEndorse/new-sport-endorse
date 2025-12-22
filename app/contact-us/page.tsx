@@ -20,7 +20,16 @@ export const metadata: Metadata = {
     description: 'Contact Sport Endorse to learn how our sports sponsorship platform connects brands with elite athletes. Get in touch with our team for partnerships and opportunities.',
     type: "website",
     locale: "en_US",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/contact-us",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 

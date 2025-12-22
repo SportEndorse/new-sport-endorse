@@ -17,7 +17,16 @@ export const metadata: Metadata = {
     description: "Stay updated with the latest news and press releases from Sport Endorse, covering athlete sponsorships, sports marketing, and brand partnerships.",
     type: "website",
     locale: "en_US",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/presses",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 

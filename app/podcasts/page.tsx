@@ -17,7 +17,16 @@ export const metadata: Metadata = {
     description: "Listen to expert discussions on sports marketing, athlete partnerships, and industry insights. Stay ahead with our sports sponsorship podcasts.",
     type: "website",
     locale: "en_US",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/podcasts",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 

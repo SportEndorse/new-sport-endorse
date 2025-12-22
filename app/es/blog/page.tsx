@@ -17,7 +17,16 @@ export const metadata: Metadata = {
     description: "Descubre historias de patrocinio de atletas, consejos de marketing de marca e ideas de influencers de los expertos en Sport Endorse. Aprende cómo elevar tu marketing deportivo.",
     type: "website",
     locale: "es_ES",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/es/blog",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 

@@ -9,16 +9,24 @@ import Script from "next/script";
 
 
 export const metadata: Metadata = {
-  //metadataBase: new URL("put the home url here later"),
+  metadataBase: new URL("https://www.sportendorse.com/"),
   title: "Sport Endorse: Connecting Elite Athletes & Brand Ambassadors for Sports Sponsorship",
   description: "Sport Endorse is your platform for sports marketing, linking brands with elite athletes and sports influencers for sponsorship management and authentic partnerships.",
-  openGraph:{ // og:title and so on
+  openGraph: {
     title: "Sport Endorse: Connecting Elite Athletes & Brand Ambassadors for Sports Sponsorship",
     description: "Sport Endorse is your platform for sports marketing, linking brands with elite athletes and sports influencers for sponsorship management and authentic partnerships.",
-    type:"website",
-    locale:"en_US",
-    //url:"" to be added later
-    siteName:"Sport Endorse"
+    type: "website",
+    locale: "en_US",
+    url: "https://www.sportendorse.com/",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   },
 };
 

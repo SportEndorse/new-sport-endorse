@@ -24,7 +24,15 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://www.sportendorse.com/es/faqs",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'de_DE']
+    alternateLocale: ['en_US', 'de_DE'],
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   },
 };
 

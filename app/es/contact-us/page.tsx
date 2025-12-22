@@ -20,7 +20,16 @@ export const metadata: Metadata = {
     description: 'Contacta Sport Endorse para aprender cómo nuestra plataforma de patrocinio deportivo conecta marcas con atletas de élite. Ponte en contacto con nuestro equipo para asociaciones y oportunidades.',
     type: "website",
     locale: "es_ES",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/es/contact-us",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 

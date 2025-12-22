@@ -17,7 +17,16 @@ export const metadata: Metadata = {
     description: "Explore success stories of athlete sponsorships, sports influencers, and brand partnerships that powered real marketing results through Sport Endorse.",
     type: "website",
     locale: "en_US",
-    siteName: "Sport Endorse"
+    url: "https://www.sportendorse.com/success-stories",
+    siteName: "Sport Endorse",
+    images: [
+      {
+        url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
+        width: 1200,
+        height: 630,
+        alt: "Sport Endorse logo",
+      },
+    ],
   }
 }
 
