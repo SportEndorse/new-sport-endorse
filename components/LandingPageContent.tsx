@@ -2,12 +2,7 @@
 
 import BrandHowItWorks from "@/components/BrandHowItWorks";
 import BrandKeyFeatures from "@/components/BrandKeyFeatures";  
-import SuccessStories from "@/components/SuccessStories";
 import BusinessSubscription from "@/components/BusinessSubscription";
-import CalendlyDemo from "@/components/CalendlyDemo";
-import BrandReviews from "@/components/BrandReviews";
-import CategoryDropdownFAQ from "@/components/CategoryDropdownFAQ";
-import { brandFAQs } from "@/utils/faqData";
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "@/utils/translations";
 import { getTopFeaturedTalents } from "@/utils/featuredTalentsData";
@@ -31,7 +26,6 @@ export default function LandingPageContent({
 }: BrandsContentProps) {
   const { language } = useLanguage();
   const t = translations[language];
-  const currentBrandFAQs = brandFAQs[language] || brandFAQs.en;
   const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de');
 
   return (
