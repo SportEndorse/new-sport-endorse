@@ -28,7 +28,7 @@ export const featuredTalentsData = {
       image: "/images/featuredTalent/Kira_Toussaint.png",
       followingInstagram: "179k",
       sport: "Swimming",
-      location: "Netherlands"
+      location: "Amsterdam, Netherlands"
     },
     {
       name: "Danny Simpson",
@@ -65,14 +65,14 @@ export const featuredTalentsData = {
       image: "/images/featuredTalent/Annabel Dimmock.jpg",
       followingInstagram: "136k",
       sport: "Golf",
-      location: "UK"
+      location: "London, UK"
     },
     {
       name: "Peter Plavec",
       image: "/images/featuredTalent/peter plavec.png",
       followingInstagram: "102k",
       sport: "Ice and Open Water Marathon Swimming",
-      location: "Vienna"
+      location: "Vienna, Austria"
     },
     {
       name: "Noble Johnson",
@@ -87,14 +87,14 @@ export const featuredTalentsData = {
       image: "/images/featuredTalent/javante mccoy.png",
       followingInstagram: "9.3k",
       sport: "Basketball",
-      location: "LA, USA"
+      location: "Los Angeles, USA"
     },
     {
       name: "Matthias Bühler",
       image: "/images/featuredTalent/mattias buhler.png",
       followingInstagram: "130k",
       sport: "Athletics",
-      location: "Stuttgart"
+      location: "Stuttgart, Germany"
     },
     {
       name: "Greg Gurenlian",
@@ -119,28 +119,28 @@ export const featuredTalentsData = {
       followingInstagram: "137k",
       followingTiktok: "146.2k",
       sport: "Fútbol",
-      location: "Barcelona"
+      location: "Barcelona, Spain"
     },
     {
       name: "Jordi Garcia",
       image: "/images/featuredTalent/jordi garcia.png",
       followingInstagram: "10.5k",
       sport: "Triatlón",
-      location: "Barcelona"
+      location: "Barcelona, Spain"
     },
     {
       name: "Roman Alegre",
       image: "/images/featuredTalent/roman alegre.png",
       followingInstagram: "18.4k",
       sport: "Fútbol",
-      location: "Barcelona"
+      location: "Barcelona, Spain"
     },
     {
       name: "Jose Manuel Ruiz",
       image: "/images/featuredTalent/jose manuel ruiz.png",
       followingInstagram: "10.1k",
       sport: "Navegación",
-      location: "Murcia"
+      location: "Murcia, Spain"
     },
     {
       name: "Martí Ruiz García",
@@ -148,21 +148,21 @@ export const featuredTalentsData = {
       followingInstagram: "12.5k",
       followingTiktok: "1.5k",
       sport: "Presentador de Eventos",
-      location: "Barcelona"
+      location: "Barcelona, Spain"
     },
     {
       name: "Javier Mira",
       image: "/images/featuredTalent/javier mira.png",
       followingInstagram: "12.7k",
       sport: "Triatlón",
-      location: "Valencia"
+      location: "Valencia, Spain"
     },
     {
       name: "Amir Abedzadeh",
       image: "/images/featuredTalent/amir abedzadeh.png",
       followingInstagram: "874k",
       sport: "Fútbol",
-      location: "Valencia"
+      location: "Valencia, Spain"
     },
     {
       name: "Fabian Pecher",
@@ -170,7 +170,7 @@ export const featuredTalentsData = {
       followingInstagram: "257k",
       followingTiktok: "643k",
       sport: "Fútbol Freestyle",
-      location: "Augsburgo"
+      location: "Augsburg, Germany"
     },
     {
       name: "Abby Berner",
@@ -200,7 +200,7 @@ export const featuredTalentsData = {
       image: "/images/featuredTalent/john dawe.png",
       followingInstagram: "1.4k",
       sport: "Rugby 7s",
-      location: "Heidelberg"
+      location: "Heidelberg, Germany"
     },
     {
       name: "Kayden McDonald",
@@ -214,7 +214,7 @@ export const featuredTalentsData = {
       image: "/images/featuredTalent/peter plavec.png",
       followingInstagram: "102k",
       sport: "Natación de Maratón en Hielo y Aguas Abiertas",
-      location: "Viena"
+      location: "Vienna, Austria"
     },
     {
       name: "Noble Johnson",
@@ -275,21 +275,21 @@ export const featuredTalentsData = {
       followingInstagram: "257k",
       followingTiktok: "643k",
       sport: "Freestyle Fußball",
-      location: "Augsburg"
+      location: "Augsburg, Germany"
     },
     {
       name: "Peter Plavec",
       image: "/images/featuredTalent/peter plavec.png",
       followingInstagram: "102k",
       sport: "Eis- und Freiwasser-Marathon-Schwimmen",
-      location: "Wien"
+      location: "Vienna, Austria"
     },
     {
       name: "Matthias Bühler",
       image: "/images/featuredTalent/mattias buhler.png",
       followingInstagram: "130k",
       sport: "Leichtathletik",
-      location: "Stuttgart"
+      location: "Stuttgart, Germany"
     },
     {
       name: "Sergio Sanchez",
@@ -297,28 +297,28 @@ export const featuredTalentsData = {
       followingInstagram: "137k",
       followingTiktok: "146.2k",
       sport: "Fußball",
-      location: "Barcelona"
+      location: "Barcelona, Spain"
     },
     {
       name: "Jordi Garcia",
       image: "/images/featuredTalent/jordi garcia.png",
       followingInstagram: "10.5k",
       sport: "Triathlon",
-      location: "Barcelona"
+      location: "Barcelona, Spain"
     },
     {
       name: "Amir Abedzadeh",
       image: "/images/featuredTalent/amir abedzadeh.png",
       followingInstagram: "874k",
       sport: "Fußball",
-      location: "Valencia"
+      location: "Valencia, Spain"
     },
     {
       name: "Annabel Dimmock",
       image: "/images/featuredTalent/Annabel Dimmock.jpg",
       followingInstagram: "136k",
       sport: "Golf",
-      location: "UK"
+      location: "London, UK"
     },
     {
       name: "Abby Berner",
@@ -364,7 +364,7 @@ export const featuredTalentsData = {
       image: "/images/featuredTalent/javante mccoy.png",
       followingInstagram: "9.3k",
       sport: "Basketball",
-      location: "LA, USA"
+      location: "Los Angeles, USA"
     },
     {
       name: "Greg Gurenlian",
