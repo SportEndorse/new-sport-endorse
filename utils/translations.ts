@@ -190,7 +190,37 @@ const translations = {
       partners: {
         title: "Our",
         titleSpan: "Partners",
-        subtitle: "We collaborate with industry leaders to deliver exceptional results"
+        subtitle: "We collaborate with industry leaders to deliver exceptional results",
+        addVictor: {
+          name: "add-victor",
+          url: "https://www.add-victor.com/",
+          description: "As a valued partner of Sport Endorse, add-victor is at the forefront of connecting high-performing athletes & military individuals with exceptional career opportunities. With a growing talent pool of over 5,500 individuals, spanning from Olympians, Paralympians, and Student-Athletes to Military Veterans, add-victor plays a pivotal role in bridging the gap between sporting experience, military expertise, and the corporate world - elevating organisations culture & performance.",
+          descriptionSecondary: "add-victor's mission aligns with Sport Endorse commitment to excellence, empowering individuals to find their ideal career paths and assisting brands in discovering top-tier talent that can excel, both in marketing campaigns and within their organisations. Together with Sport Endorse, we're reshaping the future of talent acquisition and career advancement."
+        },
+        threeBigWheels: {
+          name: "3 Big Wheels",
+          url: "https://3bigwheels.com/",
+          description: "As a valued partner of Sport Endorse, 3 Big Wheels is a creative international marketing agency that helps brands expand their reach. Their expertise in blending creativity with strategic planning ensures campaigns not only look great but also deliver measurable results.",
+          descriptionSecondary: "3 Big Wheels' mission to empower businesses to thrive globally aligns with Sport Endorse's commitment to excellence, assisting brands in discovering top-tier talent and elevating their marketing campaigns. Together, we are bridging the gap between talent acquisition and international market success."
+        },
+        sportingClubIreland: {
+          name: "The Sporting Club Ireland",
+          url: "https://thesportingclub.ie/",
+          description: "As a valued partner of Sport Endorse, The Sporting Club Ireland is at the forefront of connecting leaders in sport and business. Their community brings together decision-makers, entrepreneurs, and sports personalities to create a platform for meaningful connections and new opportunities.",
+          descriptionSecondary: "Their expertise in building relationships aligns with Sport Endorse's commitment to empowering individuals and brands. By bringing together influential professionals who share a passion for sport, The Sporting Club Ireland plays a pivotal role in expanding networks and driving new business ventures. Together, we are reshaping how the sports industry does business."
+        },
+        fortyNorth: {
+          name: "40 North",
+          url: "https://40north.agency/",
+          description: "As a valued partner of Sport Endorse, 40 North (40XFORTY) is a creative production agency built for broadcast, cinematic, and live environments. Specialising in end-to-end Live Broadcast and CTV Advertising, they move beyond simple coverage to create immersive, technically complex experiences.",
+          descriptionSecondary: "At their core, 40 North is driven by purposeful storytelling—putting people at the heart of the narrative. They create video content designed to \"work\" for your specific business goals, ensuring every frame delivers real impact. Together with Sport Endorse, 40 North empowers brands to elevate their athlete collaborations through world-class production and storytelling."
+        },
+        careerFit: {
+          name: "CareerFit",
+          url: "https://careerfit.com/",
+          description: "As a valued partner of Sport Endorse, CareerFit is driven by a powerful mission: To make the world a better place with happy people in fulfilling, rewarding careers. Through their innovative platform, they help individuals align their natural interests and abilities with the right professional path.",
+          descriptionSecondary: "Crucially for our network, CareerFit supports athletes and student-athletes in identifying their ideal industry—whether building a dual career alongside sport or transitioning into life after competition. Together with Sport Endorse, CareerFit provides the tools and guidance to ensure that an athlete's future off the field is as successful as their time on it."
+        }
       }
     },
     common: {
@@ -792,7 +822,37 @@ const translations = {
       partners: {
         title: "Nuestros",
         titleSpan: "Socios",
-        subtitle: "Colaboramos con líderes de la industria para entregar resultados excepcionales"
+        subtitle: "Colaboramos con líderes de la industria para ofrecer resultados excepcionales",
+        addVictor: {
+          name: "add-victor",
+          url: "https://www.add-victor.com/",
+          description: "Como socio valioso de Sport Endorse, add-victor está a la vanguardia de conectar a atletas de alto rendimiento y a personal militar con oportunidades profesionales excepcionales. Con una creciente base de más de 5.500 personas, que abarca desde olímpicos, paralímpicos y estudiantes-atletas hasta veteranos militares, add-victor desempeña un papel fundamental al cerrar la brecha entre la experiencia deportiva, la experiencia militar y el mundo corporativo, elevando la cultura y el rendimiento de las organizaciones.",
+          descriptionSecondary: "La misión de add-victor se alinea con el compromiso de Sport Endorse con la excelencia, empoderando a las personas para que encuentren su trayectoria profesional ideal y ayudando a las marcas a descubrir talento de primer nivel que pueda destacar tanto en campañas de marketing como dentro de sus organizaciones. Junto con Sport Endorse, estamos redefiniendo el futuro de la adquisición de talento y el desarrollo profesional."
+        },
+        threeBigWheels: {
+          name: "3 Big Wheels",
+          url: "https://3bigwheels.com/",
+          description: "Como socio valioso de Sport Endorse, 3 Big Wheels es una agencia internacional de marketing creativo que ayuda a las marcas a ampliar su alcance. Su experiencia combinando creatividad con planificación estratégica garantiza campañas que no solo se ven increíbles, sino que también ofrecen resultados medibles.",
+          descriptionSecondary: "La misión de 3 Big Wheels de ayudar a las empresas a prosperar a nivel global se alinea con el compromiso de excelencia de Sport Endorse, apoyando a las marcas en el descubrimiento de talento de primer nivel y en la elevación de sus campañas de marketing. Juntos estamos cerrando la brecha entre la captación de talento y el éxito en los mercados internacionales."
+        },
+        sportingClubIreland: {
+          name: "The Sporting Club Ireland",
+          url: "https://thesportingclub.ie/",
+          description: "Como socio valioso de Sport Endorse, The Sporting Club Ireland está a la vanguardia de la conexión entre líderes del deporte y de los negocios. Su comunidad reúne a responsables de decisiones, emprendedores y figuras del deporte para crear una plataforma de conexiones significativas y nuevas oportunidades.",
+          descriptionSecondary: "Su experiencia en la construcción de relaciones se alinea con el compromiso de Sport Endorse de empoderar a personas y marcas. Al reunir a profesionales influyentes que comparten una pasión por el deporte, The Sporting Club Ireland desempeña un papel clave en la expansión de redes y en el impulso de nuevos negocios. Juntos, estamos transformando la forma en que la industria del deporte hace negocios."
+        },
+        fortyNorth: {
+          name: "40 North",
+          url: "https://40north.agency/",
+          description: "Como socio valioso de Sport Endorse, 40 North (40XFORTY) es una agencia de producción creativa especializada en entornos de broadcast, cine y eventos en vivo. Especializada en producción integral de retransmisiones en directo y publicidad CTV, va más allá de la simple cobertura para crear experiencias inmersivas y técnicamente complejas.",
+          descriptionSecondary: "En esencia, 40 North está impulsada por la narrativa con propósito, situando a las personas en el centro de la historia. Crean contenido de vídeo diseñado para \"funcionar\" según los objetivos específicos de tu negocio, garantizando que cada fotograma tenga un impacto real. Junto con Sport Endorse, 40 North ayuda a las marcas a elevar sus colaboraciones con deportistas mediante una producción y un storytelling de primer nivel mundial."
+        },
+        careerFit: {
+          name: "CareerFit",
+          url: "https://careerfit.com/",
+          description: "Como socio valioso de Sport Endorse, CareerFit está impulsada por una poderosa misión: hacer del mundo un lugar mejor con personas felices en carreras plenas y gratificantes. A través de su plataforma innovadora, ayuda a las personas a alinear sus intereses y habilidades naturales con la trayectoria profesional adecuada.",
+          descriptionSecondary: "De forma clave para nuestra red, CareerFit apoya a deportistas y estudiantes-atletas a identificar el sector ideal para ellos, ya sea construyendo una carrera dual junto al deporte o preparando su transición a la vida después de la competición. Junto con Sport Endorse, CareerFit proporciona las herramientas y la orientación necesarias para que el futuro de un atleta fuera del campo sea tan exitoso como su carrera deportiva."
+        }
       }
     },
     common: {
@@ -1385,7 +1445,37 @@ const translations = {
       partners: {
         title: "Unsere",
         titleSpan: "Partner",
-        subtitle: "Wir arbeiten mit Branchenführern zusammen, um außergewöhnliche Ergebnisse zu liefern"
+        subtitle: "Wir arbeiten mit Branchenführern zusammen, um außergewöhnliche Ergebnisse zu erzielen",
+        addVictor: {
+          name: "add-victor",
+          url: "https://www.add-victor.com/",
+          description: "Als geschätzter Partner von Sport Endorse steht add-victor an der Spitze, wenn es darum geht, Hochleistungsathleten und Militärangehörige mit herausragenden Karrierechancen zu verbinden. Mit einer wachsenden Community von über 5.500 Personen – von Olympia- und Paralympics-Teilnehmern über College-Athleten bis hin zu Militärveteranen – schließt add-victor die Lücke zwischen sportlicher bzw. militärischer Erfahrung und der Unternehmenswelt und stärkt damit Kultur und Performance in Organisationen.",
+          descriptionSecondary: "Die Mission von add-victor passt perfekt zu Sport Endorses Anspruch auf Spitzenleistung: Menschen dabei zu unterstützen, ihre ideale berufliche Laufbahn zu finden, und Marken Zugang zu erstklassigen Talenten zu verschaffen, die sowohl in Marketingkampagnen als auch innerhalb von Unternehmen überzeugen. Gemeinsam mit Sport Endorse gestalten wir die Zukunft von Talentgewinnung und Karriereentwicklung neu."
+        },
+        threeBigWheels: {
+          name: "3 Big Wheels",
+          url: "https://3bigwheels.com/",
+          description: "Als geschätzter Partner von Sport Endorse ist 3 Big Wheels eine internationale Kreativ- und Marketingagentur, die Marken hilft, ihre Reichweite auszubauen. Ihre Fähigkeit, Kreativität mit strategischer Planung zu verbinden, sorgt für Kampagnen, die nicht nur beeindruckend aussehen, sondern auch messbare Ergebnisse liefern.",
+          descriptionSecondary: "Die Mission von 3 Big Wheels, Unternehmen weltweit beim Wachstum zu unterstützen, steht im Einklang mit dem Qualitätsanspruch von Sport Endorse. Gemeinsam helfen wir Marken, Top-Talente zu entdecken und ihre Marketingkampagnen zu stärken. So überbrücken wir die Lücke zwischen Talentgewinnung und nachhaltigem Erfolg auf internationalen Märkten."
+        },
+        sportingClubIreland: {
+          name: "The Sporting Club Ireland",
+          url: "https://thesportingclub.ie/",
+          description: "Als geschätzter Partner von Sport Endorse steht The Sporting Club Ireland an der Spitze, wenn es darum geht, führende Persönlichkeiten aus Sport und Wirtschaft miteinander zu vernetzen. Seine Community bringt Entscheidungsträger, Unternehmer und Sportpersönlichkeiten zusammen und schafft so eine Plattform für wertvolle Kontakte und neue Chancen.",
+          descriptionSecondary: "Die Expertise des Clubs im Beziehungsaufbau ergänzt Sport Endorses Ziel, Menschen und Marken zu stärken. Indem The Sporting Club Ireland ein Netzwerk einflussreicher Persönlichkeiten vereint, die eine Leidenschaft für Sport teilen, spielt er eine Schlüsselrolle beim Ausbau von Netzwerken und der Anbahnung neuer Geschäfte. Gemeinsam verändern wir, wie die Sportbranche Business macht."
+        },
+        fortyNorth: {
+          name: "40 North",
+          url: "https://40north.agency/",
+          description: "Als geschätzter Partner von Sport Endorse ist 40 North (40XFORTY) eine Kreativ-Produktionsagentur für Broadcast-, Kino- und Live-Umgebungen. Mit Spezialisierung auf End-to-End-Live-Übertragungen und CTV-Werbung geht das Team weit über reine Berichterstattung hinaus und schafft immersive, technisch anspruchsvolle Erlebnisse.",
+          descriptionSecondary: "Im Kern wird 40 North von zielgerichtetem Storytelling angetrieben – Menschen stehen im Mittelpunkt jeder Geschichte. Sie produzieren Videoinhalte, die gezielt auf die Geschäftsziele ihrer Kunden ausgerichtet sind und mit jedem Bild Wirkung erzielen. Gemeinsam mit Sport Endorse hilft 40 North Marken dabei, ihre Kooperationen mit Athletinnen und Athleten durch erstklassige Produktion und Storytelling auf ein neues Niveau zu heben."
+        },
+        careerFit: {
+          name: "CareerFit",
+          url: "https://careerfit.com/",
+          description: "Als geschätzter Partner von Sport Endorse verfolgt CareerFit eine starke Mission: Die Welt zu einem besseren Ort zu machen – mit Menschen, die in erfüllenden und lohnenden Berufen arbeiten. Über ihre innovative Plattform helfen sie Menschen dabei, ihre natürlichen Interessen und Stärken mit dem passenden Karriereweg in Einklang zu bringen.",
+          descriptionSecondary: "Für unser Netzwerk ist besonders wichtig, dass CareerFit Athletinnen, Athleten und Studierenden im Sport dabei unterstützt, ihre ideale Branche zu finden – sei es für eine duale Karriere neben dem Sport oder für den Übergang in das Leben nach der aktiven Laufbahn. Gemeinsam mit Sport Endorse stellt CareerFit sicher, dass die Zukunft von Athletinnen und Athleten abseits des Spielfelds genauso erfolgreich sein kann wie ihre sportliche Karriere."
+        }
       }
     },
     common: {

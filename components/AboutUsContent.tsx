@@ -273,7 +273,7 @@ export default function AboutUsContent() {
               <div className="about-us-partner-card">
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
-                    <a href="https://www.add-victor.com/" target="_blank" rel="noopener">
+                    <a href={t.partners.addVictor.url} target="_blank" rel="noopener">
                       <img 
                         src="/images/add-victor.webp" 
                         alt="add-victor logo" 
@@ -285,13 +285,13 @@ export default function AboutUsContent() {
                   </div>
                   <div className="about-us-partner-info">
                     <h3 className="about-us-partner-name">
-                      add-victor
+                      {t.partners.addVictor.name}
                     </h3>
                     <p className="about-us-partner-description">
-                      As a valued partner of Sport Endorse, <strong>add-victor</strong> is at the forefront of connecting high-performing athletes & military individuals with exceptional career opportunities. With a growing talent pool of over 5,500 individuals, spanning from Olympians, Paralympians, and Student-Athletes to Military Veterans, add-victor plays a pivotal role in bridging the gap between sporting experience, military expertise, and the corporate world - elevating organisations culture & performance.
+                      {t.partners.addVictor.description}
                     </p>
                     <p className="about-us-partner-description-secondary">
-                      <strong>add-victor&apos;s</strong> mission aligns with Sport Endorse commitment to excellence, empowering individuals to find their ideal career paths and assisting brands in discovering top-tier talent that can excel, both in marketing campaigns and within their organisations. Together with Sport Endorse, we&apos;re reshaping the future of talent acquisition and career advancement.
+                      {t.partners.addVictor.descriptionSecondary}
                     </p>
                   </div>
                 </div>
@@ -300,7 +300,7 @@ export default function AboutUsContent() {
               <div className="about-us-partner-card">
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
-                    <a href="https://3bigwheels.com/" target="_blank" rel="noopener">
+                    <a href={t.partners.threeBigWheels.url} target="_blank" rel="noopener">
                       <img 
                         src="/images/3 big wheels-min.png" 
                         alt="3 big wheels logo" 
@@ -312,13 +312,13 @@ export default function AboutUsContent() {
                   </div>
                   <div className="about-us-partner-info">
                     <h3 className="about-us-partner-name">
-                      3 Big Wheels
+                      {t.partners.threeBigWheels.name}
                     </h3>
                     <p className="about-us-partner-description">
-                      As a valued partner of Sport Endorse, <strong>3 Big Wheels</strong> is a creative international marketing agency that helps brands expand their reach. Their expertise in blending creativity with strategic planning ensures campaigns not only look great but also deliver measurable results.
+                      {t.partners.threeBigWheels.description}
                     </p>
                     <p className="about-us-partner-description-secondary">
-                      <strong>3 Big Wheels&apos;</strong> mission to empower businesses to thrive globally aligns with Sport Endorse&apos;s commitment to excellence, assisting brands in discovering top-tier talent and elevating their marketing campaigns. Together, we are bridging the gap between talent acquisition and international market success.
+                      {t.partners.threeBigWheels.descriptionSecondary}
                     </p>
                   </div>
                 </div>
@@ -327,7 +327,7 @@ export default function AboutUsContent() {
               <div className="about-us-partner-card">
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo" style={{ backgroundColor:"black"}}>
-                    <a href="https://thesportingclub.ie/" target="_blank" rel="noopener">
+                    <a href={t.partners.sportingClubIreland.url} target="_blank" rel="noopener">
                       <img 
                         src="/images/The Sporting Club Ireland.webp" 
                         alt="The Sporting Club Ireland logo" 
@@ -339,17 +339,72 @@ export default function AboutUsContent() {
                   </div>
                   <div className="about-us-partner-info">
                     <h3 className="about-us-partner-name">
-                      The Sporting Club Ireland
+                      {t.partners.sportingClubIreland.name}
                     </h3>
                     <p className="about-us-partner-description">
-                      As a valued partner of Sport Endorse, <strong>The Sporting Club Ireland</strong> is at the forefront of connecting leaders in sport and business. Their community brings together decision-makers, entrepreneurs, and sports personalities to create a platform for meaningful connections and new opportunities.
+                      {t.partners.sportingClubIreland.description}
                     </p>
                     <p className="about-us-partner-description-secondary">
-                      Their expertise in building relationships aligns with Sport Endorse&apos;s commitment to empowering individuals and brands. By bringing together influential professionals who share a passion for sport, <strong>The Sporting Club Ireland</strong> plays a pivotal role in expanding networks and driving new business ventures. Together, we are reshaping how the sports industry does business.
+                      {t.partners.sportingClubIreland.descriptionSecondary}
                     </p>
                   </div>
                 </div>
               </div>
+
+              <div className="about-us-partner-card">
+                <div className="about-us-partner-content">
+                  <div className="about-us-partner-logo">
+                    <a href={t.partners.fortyNorth.url} target="_blank" rel="noopener">
+                      <img 
+                        src="/images/40northlogo.png" 
+                        alt="40north logo" 
+                        width={150} 
+                        height={150} 
+                        style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
+                        loading="lazy"/>
+                    </a>
+                  </div>
+                  <div className="about-us-partner-info">
+                    <h3 className="about-us-partner-name">
+                      {t.partners.fortyNorth.name}
+                    </h3>
+                    <p className="about-us-partner-description">
+                      {t.partners.fortyNorth.description}
+                    </p>
+                    <p className="about-us-partner-description-secondary">
+                      {t.partners.fortyNorth.descriptionSecondary}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="about-us-partner-card">
+                <div className="about-us-partner-content">
+                  <div className="about-us-partner-logo">
+                    <a href={t.partners.careerFit.url} target="_blank" rel="noopener">
+                      <img 
+                        src="/images/CareerFit.png" 
+                        alt="careerfit logo" 
+                        width={150} 
+                        height={150} 
+                        style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '16px' }}
+                        loading="lazy"/>
+                    </a>
+                  </div>
+                  <div className="about-us-partner-info">
+                    <h3 className="about-us-partner-name">
+                      {t.partners.careerFit.name}
+                    </h3>
+                    <p className="about-us-partner-description">
+                      {t.partners.careerFit.description}
+                    </p>
+                    <p className="about-us-partner-description-secondary">
+                      {t.partners.careerFit.descriptionSecondary}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
