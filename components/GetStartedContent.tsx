@@ -1,16 +1,15 @@
 "use client";
 
 import BrandHowItWorks from "@/components/BrandHowItWorks";
-import BusinessSubscription from "@/components/BusinessSubscription";
+import LPBusinessSubscription from "@/components/LPBusinessSubscription";
 import BrandReviews from "@/components/BrandReviews";
+import LPBrandKeyFeatures from "@/components/LPBrandKeyFeatures";
+import LPBrandsGrid from "@/components/LPBrandsGrid";
 import { useLanguage } from "@/context/LanguageContext";
-import translations from "@/utils/translations";
 import { getTopFeaturedTalents } from "@/utils/featuredTalentsData";
 
 import "../styles/brands.css";
 import Community from "./Community";
-import BrandsGrid from "./BrandsGrid";
-import BrandKeyFeatures from "./BrandKeyFeatures";
 
 
 interface BrandsContentProps {
@@ -29,7 +28,6 @@ export default function GetStartedContent({
   buttonTitle
 }: BrandsContentProps) {
   const { language } = useLanguage();
-  const t = translations[language];
   const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de');
 
 
@@ -37,8 +35,9 @@ export default function GetStartedContent({
         <>
             <div style={{ 
                 position: "relative",
-                margin: "0",
-                padding: "0"
+                margin: "0 auto",
+                padding: "0",
+                maxWidth: "1400px"
             }}>
                 <div style={{ 
                     display: "flex", 
@@ -189,23 +188,13 @@ export default function GetStartedContent({
 
         <Community />
 
-        <BrandKeyFeatures />
-
-        <div style={{ textAlign: "center", margin: "0rem auto 3rem" }}>
-          <a
-            href="https://platform.sportendorse.com/signup/brand?subscription=trial"
-            className="brands-cta-button"
-            style={{ display: "inline-block" }}
-          >
-            1 Month Free Trial
-          </a>
-        </div>
+        <LPBrandKeyFeatures />
 
         <BrandHowItWorks />
 
-        <BrandsGrid variant={"8x4"} label={t.home.tableHeader} />
+        <LPBrandsGrid variant={"8x4"} label="Brands That Trust Our Sports Marketing Platform" />
 
-        <div style={{ textAlign: "center", margin: "0rem auto 3rem" }}>
+        <div style={{ textAlign: "center", margin: "3rem auto" }}>
           <a
             href="https://platform.sportendorse.com/signup/brand?subscription=trial"
             className="brands-cta-button"
@@ -215,7 +204,7 @@ export default function GetStartedContent({
           </a>
         </div>
 
-        <BusinessSubscription titleLevel="h1" />
+        <LPBusinessSubscription />
 
         <BrandReviews />
 
