@@ -1,7 +1,7 @@
 "use client";
 
 import BrandHowItWorks from "@/components/BrandHowItWorks";
-import LPBusinessSubscription from "@/components/LPBusinessSubscription";
+import UKBusinessSubscription from "@/components/UKBusinessSubscription";
 import BrandReviews from "@/components/BrandReviews";
 import LPBrandKeyFeatures from "@/components/LPBrandKeyFeatures";
 import LPBrandsGrid from "@/components/LPBrandsGrid";
@@ -10,6 +10,7 @@ import { getTopFeaturedTalents } from "@/utils/featuredTalentsData";
 
 import "../styles/brands.css";
 import Community from "./Community";
+import UKFooter from "./UKFooter";
 
 
 interface BrandsContentProps {
@@ -33,50 +34,35 @@ export default function GetStartedContent({
 
     return (
         <>
+            <div style={{
+                backgroundColor:"white", 
+                width:"100%", 
+                margin:"1rem auto",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                minHeight: "50px"
+            }}>
+                <img src="/images/lp/sport-endorse-square-img.png" style={{display: "block", maxWidth: "200px", height: "auto"}}/>
+                
+            </div>
+
             <div style={{ 
                 position: "relative",
                 margin: "0 auto",
                 padding: "0",
                 maxWidth: "1400px"
             }}>
-                <div style={{ 
-                    display: "flex", 
-                    justifyContent: "center",
-                    gap: "0",
-                    margin: "0",
-                    overflow: "hidden"
-                }}>
-                    <img 
-                        src="/images/lp/Marc Messori 2.jpeg" 
-                        alt="Athlete 2" 
-                        style={{ 
-                            width: "33.333%", 
-                            height: "auto",
-                            objectFit: "cover",
-                            display: "block"
-                        }} 
-                    />
-                    <img 
-                        src="/images/lp/IMG_1817.jpeg" 
-                        alt="Athlete 1" 
-                        style={{ 
-                            width: "33.333%", 
-                            height: "auto",
-                            objectFit: "cover",
-                            display: "block"
-                        }} 
-                    />
-                    <img 
-                        src="/images/lp/IMG_6539.jpeg" 
-                        alt="Athlete 3" 
-                        style={{ 
-                            width: "33.333%", 
-                            height: "auto",
-                            objectFit: "cover",
-                            display: "block"
-                        }} 
-                    />
-                </div>
+                <img 
+                    src="/images/lp/SE-Landingpage_HeroImage.jpg" 
+                    alt="Hero Image" 
+                    style={{ 
+                        width: "100%", 
+                        height: "auto",
+                        objectFit: "cover",
+                        display: "block"
+                    }} 
+                />
                 <div style={{
                     position: "absolute",
                     top: "50%",
@@ -204,9 +190,11 @@ export default function GetStartedContent({
           </a>
         </div>
 
-        <LPBusinessSubscription />
+        <UKBusinessSubscription />
 
         <BrandReviews />
+
+        <UKFooter />
 
         </>
     );
