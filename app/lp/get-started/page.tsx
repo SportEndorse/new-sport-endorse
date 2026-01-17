@@ -6,6 +6,10 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sports Agent Platform for Athlete Sponsorships | Sport Endorse",
   description: "Sport Endorse's endorsement management platform helps sports agents manage athlete sponsorships and endorsement deals with secure communication and compliance tools.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "https://www.sportendorse.com/lp/get-started",
     languages: {
