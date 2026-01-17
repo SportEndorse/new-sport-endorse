@@ -275,7 +275,8 @@
 @media (max-width: 400px){
   
   .statistics-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.5rem;
     row-gap: 0.75rem;
   }
 }
