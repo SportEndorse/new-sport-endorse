@@ -37,14 +37,23 @@ export default function GetStartedContent({
             <div style={{
                 backgroundColor:"white", 
                 width:"100%", 
-                margin:"1rem auto",
+                margin:"0 auto",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                padding: "0.75rem",
                 minHeight: "50px"
             }}>
-                <img src="/images/lp/sport-endorse-square-img.png" style={{display: "block", maxWidth: "200px", height: "auto"}}/>
-                
+                <img 
+                    src="/images/lp/sport-endorse-square-img.png" 
+                    alt="Sport Endorse Logo" 
+                    style={{
+                        display: "block", 
+                        maxWidth: "60px", 
+                        width: "100%", 
+                        height: "auto"
+                    }}
+                />
             </div>
 
             <div style={{ 
@@ -60,7 +69,9 @@ export default function GetStartedContent({
                         width: "100%", 
                         height: "auto",
                         objectFit: "cover",
-                        display: "block"
+                        display: "block",
+                        minHeight: "180px"
+                        
                     }} 
                 />
                 <div style={{
@@ -70,32 +81,36 @@ export default function GetStartedContent({
                     transform: "translate(-50%, -50%)",
                     textAlign: "center",
                     width: "100%",
-                    padding: "0 1rem"
+                    padding: "1rem"
                 }}>
+                    <title>The Ultimate Sports<br/>Sponsorship Platform</title>
                     <h1 style={{ 
-                        fontSize: "3rem", 
+                        fontSize: "clamp(1.25rem, 4vw, 2.75rem)", 
                         fontWeight: "800", 
                         color: "white",
-                        marginBottom: "1rem",
+                        marginBottom: "clamp(0.75rem, 2vw, 1rem)",
                         lineHeight: "1.2",
-                        textShadow: "2px 2px 8px rgba(0,0,0,0.7)"
+                        textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
+                        fontFamily: "inherit"
                     }}>
                         The Ultimate Sports<br/>Sponsorship Platform
                     </h1>
                     <p style={{ 
-                        fontSize: "1.25rem", 
+                        fontSize: "clamp(0.85rem, 2vw, 1.15rem)", 
                         color: "white",
-                        marginBottom: "2rem",
-                        maxWidth: "800px",
-                        margin: "0 auto 2rem",
-                        textShadow: "2px 2px 6px rgba(0,0,0,0.7)"
+                        marginBottom: "clamp(1rem, 3vw, 1.5rem)",
+                        maxWidth: "min(800px, 90%)",
+                        margin: "0 auto",
+                        textShadow: "2px 2px 6px rgba(0,0,0,0.7)",
+                        fontFamily: "inherit",
+                        lineHeight: "1.5"
                     }}>
                         Connecting Brands, Athletes, and Sports Influencers for impactful partnerships
                     </p>
                     <a
-                        href="https://platform.sportendorse.com/signup/brand?subscription=trial"
+                        href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
                         className="brands-cta-button"
-                        style={{ display: "inline-block" }}
+                        style={{ display: "inline-block", fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
                     >
                         Start Free Trial
                     </a>
@@ -108,13 +123,13 @@ export default function GetStartedContent({
             <div className="brands-container">
             <div className="brands-content">
                 
-                <h1 className="brands-title" style={{fontSize: "2rem !important"}} dangerouslySetInnerHTML={{ __html: title }}></h1>
+                <h2 className="brands-title" style={{fontSize: "clamp(1.25rem, 4vw, 2.75rem)", fontFamily: "inherit"}} dangerouslySetInnerHTML={{ __html: title }}></h2>
                 
-                <p className="brands-description">
+                <p className="brands-description" style={{fontFamily: "inherit"}}>
                 {description}
                 </p>
                 <a 
-                href={language === 'en' ? '/subscription' : `/${language}/subscription`}
+                href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
                 className="brands-cta-button"
                 >
                 {buttonTitle}
@@ -123,9 +138,9 @@ export default function GetStartedContent({
             
             <div className="brands-imageContainer">
                 <div className="brands-talent-showcase">
-                <p style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
+                <h2 style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', fontWeight: '700', color: '#333', marginBottom: '1rem', margin: '0 0 1rem 0', fontFamily: 'inherit' }}>
                     {featuredAthletes}
-                </p>
+                </h2>
                 <div className="brands-talent-grid" style={{ 
                     display: 'grid', 
                     gridTemplateColumns: 'repeat(3, 1fr)', 
@@ -143,8 +158,8 @@ export default function GetStartedContent({
                     }}>
                         <img src={talent.image} alt={talent.name} width={200} height={120} style={{ width: '100%', height: '120px', objectFit: 'cover' }} />
                         <div style={{ padding: '0.75rem' }}>
-                        <p style={{ fontSize: '0.85rem', fontWeight: '600', margin: '0 0 0.5rem 0' }}>{talent.name}</p>
-                        <p style={{ fontSize: '0.75rem', color: '#666', margin: '0' }}>{talent.sport}</p>
+                        <p style={{ fontSize: '0.85rem', fontWeight: '600', margin: '0 0 0.5rem 0', fontFamily: 'inherit' }}>{talent.name}</p>
+                        <p style={{ fontSize: '0.75rem', color: '#666', margin: '0', fontFamily: 'inherit' }}>{talent.sport}</p>
                         </div>
                     </div>
                     ))}
@@ -159,10 +174,11 @@ export default function GetStartedContent({
                     color: 'white',
                     textAlign: 'center',
                     padding: '1rem',
-                    transition: 'background 0.2s ease'
+                    transition: 'background 0.2s ease',
+                    minHeight: '100%'
                     }}>
-                    <img src="/images/SE_logo_lockup_wht-min.png" alt="Sport Endorse logo" width={120} height={100} style={{ maxWidth: '80px', marginBottom: '0.0' }} />
-                    <p style={{ fontSize: '0.85rem', fontWeight: '600', margin: '0', textTransform: 'uppercase' }}>
+                    <img src="/images/SE_logo_lockup_wht-min.png" alt="Sport Endorse logo" width={120} height={100} style={{ maxWidth: '80px', width: '100%', height: 'auto', marginBottom: '0.5rem' }} />
+                    <p style={{ fontSize: '0.85rem', fontWeight: '600', margin: '0', textTransform: 'uppercase', fontFamily: 'inherit' }}>
                         {viewAll}
                     </p>
                     </a>
@@ -180,11 +196,11 @@ export default function GetStartedContent({
 
         <LPBrandsGrid variant={"8x4"} label="Brands That Trust Our Sports Marketing Platform" />
 
-        <div style={{ textAlign: "center", margin: "3rem auto" }}>
+        <div style={{ textAlign: "center", margin: "3rem auto", padding: "0 1rem" }}>
           <a
-            href="https://platform.sportendorse.com/signup/brand?subscription=trial"
+            href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
             className="brands-cta-button"
-            style={{ display: "inline-block" }}
+            style={{ display: "inline-block", maxWidth: "100%" }}
           >
             Join Now
           </a>

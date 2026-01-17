@@ -114,19 +114,21 @@
     grid-template-columns: 1fr;
     gap: 0;
     text-align: center;
-    padding-top: 1rem;
+    padding: 1rem;
   }
   .brands-description{
     margin: 0 auto;
+    padding: 0 1rem;
   }
   
   .brands-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 1rem;
+    padding: 0 1rem;
   }
   
   .brands-content {
-    padding-right: 0;
+    padding: 0 1rem;
     margin-bottom: 2rem;
   }
   
@@ -134,16 +136,32 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .brands-talent-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 1rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .brands-talent-showcase {
+    padding: 0 1rem;
+  }
+
+  .brands-imageContainer {
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   
   .brands-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin: 0.75rem 0;
   }
   
   .brands-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
   }
   
   .brands-downloadButtons {
@@ -152,7 +170,24 @@
   }
 
   .brands-cta-button {
-    width: 100%;
+    width: calc(100% - 2rem);
+    max-width: 400px;
     text-align: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .brands-talent-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 0.75rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .brands-content {
+    padding: 0 0.5rem;
+  }
+
+  .brands-container {
+    padding: 0.5rem;
   }
 }
