@@ -29,7 +29,7 @@ export default function GetStartedContent({
   buttonTitle
 }: BrandsContentProps) {
   const { language } = useLanguage();
-  const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de');
+  const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de' | 'fr');
 
 
     return (

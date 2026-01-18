@@ -280,6 +280,100 @@ export const brandFAQs = {
       question: "Kann ich mein Profil zurücksetzen?",
       answer: "Ja, Sie haben vollständiges Eigentum über Ihr Markenprofil, sodass Sie es so oft bearbeiten und aktualisieren können, wie Sie möchten, um laufende Athleten-Sponsoring-Kampagnen zu verwalten."
     }
+  ],
+  fr: [
+    {
+      question: "Comment Sport Endorse aide-t-il à trouver des athlètes pour le parrainage?",
+      answer: "Nous fournissons une plateforme intuitive avec des outils de filtrage puissants qui vous permettent de découvrir des influenceurs athlètes en fonction du sport, de la région, de la démographie et de la portée sociale. Cela élimine les conjectures, vous aidant à trouver rapidement des athlètes pour le parrainage qui s'alignent parfaitement avec les valeurs de votre campagne et les partenariats marque-athlète."
+    },
+    {
+      question: "Quels types de partenariats pouvons-nous créer en tant que marque?",
+      answer: "Vous pouvez créer une grande variété de partenariats marque-athlète, allant des contrats à long terme pour le parrainage d'athlètes aux campagnes de médias sociaux à court terme, aux interventions en tant qu'orateur invité, aux cadeaux de produits et aux apparitions lors d'événements qui aident à parrainer efficacement les athlètes."
+    },
+    {
+      question: "Pourquoi devrais-je rejoindre Sport Endorse?",
+      answer: "En rejoignant Sport Endorse, vous aurez accès à plus de 7 000 athlètes vérifiés, qui peuvent tous vous aider à promouvoir votre marque en utilisant leurs larges audiences. Ces collaborations génèrent de la notoriété et plus de ventes grâce à des opportunités authentiques de parrainage d'athlètes."
+    },
+    {
+      question: "Je suis une petite entreprise. Le parrainage est-il également possible pour les petits budgets?",
+      answer: "Oui, Sport Endorse offre des opportunités de parrainage d'athlètes pour tous les types d'entreprises et de budgets. Notre vision est de créer \"Un monde meilleur de représentation sportive pour tous grâce à une technologie accessible.\""
+    },
+    {
+      question: "Avons-nous accès à la base de données complète des athlètes?",
+      answer: "Oui. Dès que vous vous inscrivez à un abonnement, vous aurez un accès complet à une base de données complète de talents d'élite actuels et anciens disponibles pour les partenariats marque-athlète."
+    },
+    {
+      question: "Comment votre agence d'influenceurs sportifs vérifie-t-elle les talents?",
+      answer: "Tous les talents qui rejoignent notre réseau de parrainage d'athlètes passent par un processus de vérification. Nous confirmons leur identité, leur statut professionnel et nous assurons qu'ils répondent aux critères pour être considérés comme des talents d'élite — vous donnant confiance lorsque vous parrainez des athlètes ou découvrez des influenceurs athlètes pour votre marque."
+    },
+    {
+      question: "Pouvez-vous fournir des informations sur les campagnes?",
+      answer: "Oui, notre équipe peut fournir des informations sur les résultats de vos campagnes sur les médias sociaux. De plus, nous fournissons des informations analytiques sur votre athlète potentiellement choisi avant de confirmer un partenariat, vous aidant à prendre les décisions de parrainage d'athlètes les plus éclairées."
+    },
+    {
+      question: "Votre équipe peut-elle examiner le contenu créé par les talents avant qu'il ne soit publié?",
+      answer: "Oui. Si votre marque le demande dans le cadre de l'accord de parrainage d'athlètes, notre équipe de réussite client peut examiner tout contenu de campagne créé par les talents avant la publication pour s'assurer qu'il répond à vos exigences."
+    },
+    {
+      question: "Quels sont les frais recommandés à payer pour qu'un athlète obtienne les meilleurs résultats sur la plateforme?",
+      answer: "En fonction de l'athlète et des livrables de la campagne, notre expérience recommande des frais minimaux de 500 € pour une collaboration payante. Pour les campagnes de cadeaux, nous recommandons une valeur minimale de cadeau de 150 €. Offrir ces niveaux de frais augmente considérablement le volume de candidatures que vous recevez lorsque vous parrainez des athlètes."
+    },
+    {
+      question: "Combien coûte un abonnement pour les marques?",
+      answer: "Un abonnement coûte $£€700 (+TVA le cas échéant) pour 3 mois, ou $£€1 799 (+TVA le cas échéant) pour 12 mois, donnant à votre marque un accès complet aux fonctionnalités de parrainage d'athlètes."
+    },
+    {
+      question: "Combien coûte le parrainage d'athlètes sur votre plateforme?",
+      answer: "Le coût final d'une opportunité est le budget que vous fixez pour le parrainage (+TVA le cas échéant), plus tous les frais de traitement bancaire pertinents. Vous pouvez également choisir de payer partiellement l'athlète avec certains de vos produits ou services — idéal pour des partenariats marque-athlète flexibles."
+    },
+    {
+      question: "Quel système de paiement est utilisé?",
+      answer: "Nous offrons des options de paiement flexibles par carte de crédit d'entreprise via Stripe (une société de services financiers irlando-américaine spécialisée dans le traitement des paiements en ligne). Les paiements peuvent également être effectués par virement bancaire. Dans les deux cas, la plateforme génère automatiquement une facture pour chaque parrainage d'athlète."
+    },
+    {
+      question: "Quelles sont les conditions de paiement de Sport Endorse?",
+      answer: "Les paiements d'abonnement sont requis immédiatement et conformément au type d'abonnement spécifique sélectionné. Les paiements requis pour toute collaboration via notre plateforme sont requis immédiatement après que les livrables aient été complétés par le talent. Pour tout autre problème de paiement, veuillez contacter accounts@sportendorse.com."
+    },
+    {
+      question: "Le support multi-devises coûte-t-il un supplément?",
+      answer: "Non, il n'y a pas de coût supplémentaire pour l'utilisation du support multi-devises. Cette fonctionnalité vous permet de définir votre budget en USD ($), GBP (£) ou EUR (€) lors de la publication d'opportunités de parrainage d'athlètes. Les seuls coûts sont votre plan d'abonnement et le budget de l'opportunité."
+    },
+    {
+      question: "Qu'est-ce que la sélection multi-talents?",
+      answer: "La sélection multi-talents vous permet de sélectionner et de réserver plusieurs athlètes pour une seule opportunité de parrainage. Cette fonctionnalité est parfaite pour les campagnes multi-talents ou pour atteindre des audiences plus larges avec une campagne de parrainage d'athlètes. Il n'y a pas de coût supplémentaire pour l'utilisation de cette fonctionnalité."
+    },
+    {
+      question: "J'ai beaucoup de candidatures. Comment décider avec qui aller de l'avant?",
+      answer: "Excellentes nouvelles sur l'obtention d'un fort intérêt! Les critères préférés incluent: un engagement élevé, une présentation solide personnalisée pour votre campagne, un rapport qualité-prix et une pertinence géographique. Nous mettons également en évidence les athlètes actifs sur Sport Endorse et leurs notes des partenariats marque-athlète précédents."
+    },
+    {
+      question: "Puis-je écrire des conditions spéciales ou des demandes personnelles?",
+      answer: "Oui, cela peut être fait dans la description de l'opportunité ou discuté directement avec le talent via la messagerie intégrée à la plateforme. Veuillez noter que certains athlètes peuvent avoir leurs propres restrictions en raison d'accords de parrainage d'athlètes existants."
+    },
+    {
+      question: "Puis-je cibler des talents individuels via la plateforme sans créer une opportunité en direct?",
+      answer: "Actuellement, non — mais cette capacité est sur la feuille de route de développement pour une version future. Cependant, lors de la création d'une opportunité, vous pouvez cibler des athlètes en fonction du sport, du sexe, de l'âge et du pays. Vous pouvez également \"mettre en favori\" des talents pour suivre des profils appropriés pour de futurs partenariats marque-athlète."
+    },
+    {
+      question: "Que se passe-t-il en cas d'annulation ou de non-présentation d'un talent?",
+      answer: "Veuillez contacter le support client à platform.hello@sportendorse.com. Si une star annule et que Sport Endorse ne peut pas trouver de remplacement approprié, nous rembourserons le montant total payé. Si l'athlète ne se présente pas à l'événement, Sport Endorse fournira un remboursement complet pour le parrainage d'athlète."
+    },
+    {
+      question: "Que se passe-t-il si mon entreprise ou mon lieu doit annuler l'événement en raison de circonstances imprévues?",
+      answer: "Veuillez contacter le support client à platform.hello@sportendorse.com, et nous vous aiderons avec nos politiques d'annulation liées aux parrainages d'athlètes."
+    },
+    {
+      question: "Que faire si j'ai une plainte?",
+      answer: "Nous offrons un système de support complet en cas de plaintes ou de questions. De plus, il y a une fonctionnalité de système de notation pour les commentaires sur la plateforme afin de maintenir la transparence pour tous les partenariats marque-athlète."
+    },
+    {
+      question: "Puis-je réinitialiser mon mot de passe?",
+      answer: "Oui, vous pouvez réinitialiser votre mot de passe à tout moment en utilisant le lien \"Mot de passe oublié?\" sur la page de connexion."
+    },
+    {
+      question: "Puis-je réinitialiser mon profil?",
+      answer: "Oui, vous avez une pleine propriété sur votre profil de marque, vous pouvez donc modifier et mettre à jour aussi souvent que vous le souhaitez pour gérer des campagnes de parrainage d'athlètes en cours."
+    }
   ]
 };
 
@@ -553,6 +647,96 @@ export const talentFAQs = {
       question: "Wie sicher sind meine Informationen online?",
       answer: "Alle Athleten- und Sponsor-Daten werden sicher gespeichert, vollständig GDPR-konform, um sichere Verwaltung von Athleten-Sponsorings zu gewährleisten."
     }
+  ],
+  fr: [
+    {
+      question: "Sport Endorse est-il une agence de gestion de talents?",
+      answer: "Non. Nous sommes une plateforme de parrainage d'athlètes et un marché de promotion d'athlètes qui vous connecte (vous et votre direction) directement avec des opportunités de parrainage d'athlètes. Nous gérons les réservations, les paiements et la visibilité — mais nous n'avons pas d'accords exclusifs avec les talents."
+    },
+    {
+      question: "Qui peut s'inscrire sur Sport Endorse? Est-ce que je me qualifie en tant que talent?",
+      answer: "Pour compléter votre inscription d'athlète pour les parrainages, vous devez être considéré comme un talent d'élite dans votre sport — un professionnel ou quelqu'un qui a participé à des compétitions au niveau national ou international. Nous accueillons également les personnalités des médias sportifs, les conférenciers et les influenceurs fitness à la recherche de parrainages sportifs pour athlètes ou d'accords de promotion payants."
+    },
+    {
+      question: "Y a-t-il un âge minimum pour s'inscrire?",
+      answer: "Oui, l'âge minimum pour créer un profil pour les parrainages d'athlètes est de 16 ans."
+    },
+    {
+      question: "Comment devenir un athlète parrainé ou trouver un parrain?",
+      answer: "Pour être parrainé en tant qu'athlète, complétez votre profil, vérifiez votre compte et définissez votre profil sur \"visible\". Vous pouvez ensuite postuler aux opportunités de parrainage sportif publiées par les marques."
+    },
+    {
+      question: "Comment les marques me verront-elles sur Sport Endorse?",
+      answer: "Les profils vérifiés apparaissent dans les résultats de recherche pour les marques recherchant des parrainages d'athlètes. Pour augmenter la visibilité, assurez-vous que votre compte est vérifié et que les détails du profil sont complets — cela aide les marques à trouver des parrains pour leurs campagnes plus efficacement."
+    },
+    {
+      question: "Puis-je m'inscrire au nom d'un talent?",
+      answer: "Actuellement, non. Cependant, une fois qu'un talent a configuré son profil, il peut accorder à un tiers l'accès pour la gestion du parrainage."
+    },
+    {
+      question: "Quelle commission Sport Endorse facture-t-il sur les transactions?",
+      answer: "Notre commission est compétitive et transparente: Opportunités de plateforme (traitées via l'application/plateforme): $/£/€ 0-500 @ 14% de commission; $/£/€ 500-2 000 @ 16%; $/£/€ 2 000+ @ 18%. Transactions hors plateforme (traditionnelles): 20%. Cela fait de Sport Endorse l'une des plateformes de parrainage d'athlètes les plus rentables."
+    },
+    {
+      question: "Quel avantage Sport Endorse offre-t-il par rapport à une agence traditionnelle?",
+      answer: "Sport Endorse donne aux athlètes une autonomie complète sur les parrainages d'athlètes auxquels ils postulent. Avec une commission maximale de 18% et un accès aux marques mondiales, c'est un moyen efficace de trouver des parrains pour des équipes sportives ou des athlètes individuels sans restrictions d'agence."
+    },
+    {
+      question: "Quelle forme de parrainage est disponible?",
+      answer: "De nombreuses opportunités de parrainage d'athlètes existent, comme devenir ambassadeur rémunéré, conférencier principal, promoteur de produits ou participant à des événements. Les marques peuvent également offrir des collaborations de produits ou de services (\"accords contra\")."
+    },
+    {
+      question: "Y a-t-il une liste visible complète de toutes les marques/entreprises sur la plateforme?",
+      answer: "Vous pouvez voir toutes les marques visibles et utiliser la fonction de recherche pour trouver rapidement des parrains par nom ou catégorie."
+    },
+    {
+      question: "Puis-je être parrainé par des marques que j'aime?",
+      answer: "Oui! Postulez directement à toute opportunité en direct. Pour améliorer la correspondance, complétez l'enquête sur les talents pour lister les marques que vous utilisez et avec lesquelles vous souhaitez travailler."
+    },
+    {
+      question: "Comment entendre parler de nouvelles opportunités?",
+      answer: "Activez les notifications de l'application pour recevoir des mises à jour sur les nouvelles opportunités de promotion d'athlètes et les accords de parrainage au fur et à mesure qu'ils sont publiés."
+    },
+    {
+      question: "Puis-je utiliser l'IA pour créer rapidement ma biographie?",
+      answer: "Oui! Notre plateforme de parrainage d'athlètes utilise des outils d'IA pour aider à créer et optimiser votre biographie professionnelle — idéal pour les athlètes qui postulent à des parrainages ou des promotions."
+    },
+    {
+      question: "Comment être payé sur Sport Endorse?",
+      answer: "Connectez votre compte à Stripe pour recevoir des paiements sécurisés et directs pour les parrainages d'athlètes terminés."
+    },
+    {
+      question: "Quelles méthodes de traitement des paiements sont utilisées et à quelle vitesse le paiement est-il traité?",
+      answer: "Les paiements sont traités via Stripe dans les 14 jours ouvrables après la confirmation de la marque. Cela garantit un paiement en temps opportun pour chaque opportunité de parrainage d'athlète que vous complétez."
+    },
+    {
+      question: "Qu'est-ce que la vérification KYC via Stripe et cela coûte-t-il quelque chose?",
+      answer: "La vérification KYC est une vérification d'identité gratuite et sécurisée requise pour tous les athlètes inscrits pour les parrainages. Elle renforce la confiance et est conforme aux réglementations internationales en matière de paiement."
+    },
+    {
+      question: "Y a-t-il une application mobile disponible?",
+      answer: "Oui, l'application mobile Sport Endorse vous permet de gérer les opportunités de promotion d'athlètes et les paiements de n'importe où."
+    },
+    {
+      question: "Y a-t-il une limite au nombre d'opportunités auxquelles je peux postuler?",
+      answer: "Non. Vous pouvez parcourir et postuler à des opportunités de parrainage sportif aussi souvent que vous le souhaitez."
+    },
+    {
+      question: "Que se passe-t-il si je dois annuler à la dernière minute?",
+      answer: "Vous pouvez annuler en ligne, mais si c'est dans les 48 heures, contactez les services clients à platform.hello@sportendorse.com immédiatement pour protéger votre accord de parrainage d'athlète."
+    },
+    {
+      question: "Que se passe-t-il si l'organisateur/le lieu annule une opportunité?",
+      answer: "Contactez notre équipe d'assistance à platform.hello@sportendorse.com, et nous vous aiderons avec les prochaines étapes pour votre parrainage d'athlète."
+    },
+    {
+      question: "Sport Endorse est-il une plateforme d'égalité des chances?",
+      answer: "Oui, Sport Endorse est une plateforme de parrainage d'athlètes offrant l'égalité des chances."
+    },
+    {
+      question: "Dans quelle mesure mes informations sont-elles sécurisées en ligne?",
+      answer: "Toutes les données des athlètes et des parrains sont stockées en toute sécurité, entièrement conformes au RGPD, garantissant une gestion sûre des parrainages d'athlètes."
+    }
   ]
 };
 
@@ -645,6 +829,36 @@ export const agencyFAQs = {
     {
       question: "Wie handhabt die Plattform den Zahlungs- und Vertragsprozess?",
       answer: "Unser System erleichtert sichere Zahlungen über Stripe und erstellt automatisch Rechnungen. Dieser nahtlose Prozess vereinfacht das Management von Sponsoring-Deals und die Buchhaltung für Ihre Agentur, sodass Sie sich auf die Athleten konzentrieren können, anstatt auf den Papierkram."
+    }
+  ],
+  fr: [
+    {
+      question: "Comment Sport Endorse fonctionne-t-il en tant que plateforme de gestion d'athlètes pour les agents?",
+      answer: "Sport Endorse sert de plateforme intégrée de gestion d'athlètes conçue pour maximiser l'efficacité. Elle fournit à votre agence d'agents sportifs un centre sécurisé pour gérer l'ensemble de votre liste, suivre la communication, soumettre des candidatures et gérer les paiements pour tous les accords de promotion d'athlètes."
+    },
+    {
+      question: "Quel est l'avantage d'utiliser Sport Endorse par rapport aux méthodes traditionnelles?",
+      answer: "En rationalisant le processus de découverte et de paiement, nous vous aidons à trouver beaucoup plus d'opportunités commerciales pour l'ensemble de votre liste. Notre plateforme pour agents sportifs vous donne un accès direct et évolutif à un volume plus élevé d'accords de marque pré-vérifiés, faisant de nous la meilleure plateforme de gestion de promotion pour développer votre entreprise."
+    },
+    {
+      question: "La répartition des commissions pour les accords conclus via la plateforme est-elle transparente?",
+      answer: "Oui, la transparence absolue est un pilier fondamental de notre partenariat. Nous sommes clairs sur notre répartition des commissions sur chaque accord que vos athlètes trouvent via notre plateforme. Nous opérons en tant que partenaire de votre agence d'agents sportifs, vous assurant de toujours connaître les termes exacts de chaque collaboration réussie."
+    },
+    {
+      question: "Quel type de support est disponible pour m'aider à trouver des accords pour ma liste?",
+      answer: "Notre équipe dédiée agit comme une extension de votre agence. Nous vous aidons activement à tirer parti de la plateforme pour agents sportifs pour identifier et conclure des accords de promotion d'athlètes plus appropriés, garantissant que vos clients restent satisfaits et pleinement engagés."
+    },
+    {
+      question: "Puis-je intégrer l'ensemble de ma liste de clients dans la plateforme?",
+      answer: "Oui. La plateforme de gestion d'athlètes est conçue pour vous aider à intégrer et gérer facilement les accords de promotion d'athlètes pour l'ensemble de votre liste, quelle que soit sa taille, offrant un aperçu complet unique de toutes leurs activités commerciales."
+    },
+    {
+      question: "Comment puis-je devenir agent partenaire avec Sport Endorse?",
+      answer: "Vous pouvez demander à devenir une agence partenaire pour un sport ou une région spécifique en cliquant sur le bouton 'Devenez partenaire'. Ce partenariat unique signifie que nous vous référerons directement les athlètes non représentés sur notre plateforme qui ont besoin d'aide contractuelle ou juridique."
+    },
+    {
+      question: "Comment la plateforme gère-t-elle le processus de paiement et de contrat?",
+      answer: "Notre système facilite les paiements sécurisés via Stripe et génère automatiquement des factures. Ce processus transparent simplifie la gestion de promotion et la comptabilité pour votre agence, vous permettant de vous concentrer sur les athlètes plutôt que sur la paperasse."
     }
   ]
 };
@@ -870,6 +1084,80 @@ export const subscriptionFAQs = {
     {
       question: "Kann ich mein Passwort zurücksetzen?",
       answer: "Ja, über den Link \"Passwort vergessen?\""
+    }
+  ],
+  fr: [
+    {
+      question: "À quoi ai-je accès pendant l'essai gratuit?",
+      answer: "Pendant l'essai gratuit de 30 jours, vous pouvez: voir jusqu'à 50 profils d'athlètes, accéder aux talents uniquement dans le marché sélectionné, et publier des opportunités sur le même marché sélectionné. Après 30 jours, votre compte d'essai se verrouillera automatiquement à moins que vous ne passiez à un abonnement payant."
+    },
+    {
+      question: "À quoi ai-je accès avec un abonnement payant?",
+      answer: "Les abonnés trimestriels et annuels reçoivent un accès complet et illimité à: tous les profils d'athlètes sur la plateforme, tous les marchés mondiaux, vues de profil illimitées, recherches illimitées et opportunités illimitées."
+    },
+    {
+      question: "Puis-je effectuer des recherches dans plusieurs pays avec un plan payant?",
+      answer: "Oui. Les abonnés payants peuvent cibler des régions illimitées pour des campagnes multi-marchés ou mondiales."
+    },
+    {
+      question: "Puis-je publier des opportunités pendant l'essai gratuit?",
+      answer: "Oui — mais uniquement sur votre marché d'essai sélectionné. Les abonnés payants peuvent publier des opportunités illimitées dans le monde entier."
+    },
+    {
+      question: "Quels types de partenariats puis-je créer?",
+      answer: "Tous les abonnés peuvent configurer des campagnes telles que: partenariats sur les médias sociaux, collaborations payantes, campagnes de cadeaux, apparitions, interventions en tant qu'orateur invité et contrats d'ambassadeur à long terme."
+    },
+    {
+      question: "Puis-je envoyer des messages directement aux athlètes?",
+      answer: "Oui. La messagerie directe est activée pour les plans d'essai gratuit et payants."
+    },
+    {
+      question: "Puis-je réserver plusieurs athlètes pour une campagne?",
+      answer: "Oui. La sélection multi-talents est disponible pour tous les abonnés payants sans frais supplémentaires."
+    },
+    {
+      question: "Comment Sport Endorse vérifie-t-il les athlètes?",
+      answer: "Tous les athlètes passent par une vérification d'identité et professionnelle avant d'apparaître sur la plateforme."
+    },
+    {
+      question: "Fournissez-vous des informations sur les campagnes?",
+      answer: "Oui. Notre équipe peut vous accompagner avec des informations sur les performances et des analyses de pré-sélection pour aider à évaluer l'adéquation de l'athlète."
+    },
+    {
+      question: "Les abonnés bénéficient-ils d'un support d'intégration?",
+      answer: "Abonnés payants: intégration dédiée + Responsable de la réussite client. Utilisateurs de l'essai gratuit: ressources d'intégration guidées."
+    },
+    {
+      question: "Combien coûte la collaboration avec un athlète?",
+      answer: "Vous fixez le budget. Le montant final comprend: votre budget de campagne alloué et la TVA applicable."
+    },
+    {
+      question: "Quel budget offre les meilleurs résultats?",
+      answer: "Sur la base des performances historiques: Campagnes payantes: minimum 500 €. Campagnes de cadeaux: minimum 150 € de valeur de produit."
+    },
+    {
+      question: "Quelles méthodes de paiement sont prises en charge?",
+      answer: "Cartes de crédit d'entreprise via Stripe ou virement bancaire standard. Les factures sont générées automatiquement."
+    },
+    {
+      question: "Quand dois-je payer?",
+      answer: "Abonnements: payés immédiatement en fonction de votre plan. Paiements de campagne: payés une fois que l'athlète a terminé les livrables."
+    },
+    {
+      question: "Le support multi-devises coûte-t-il un supplément?",
+      answer: "Non. Vous pouvez définir des budgets de campagne en USD, GBP ou EUR sans frais supplémentaires."
+    },
+    {
+      question: "Que se passe-t-il lorsque mon essai gratuit se termine?",
+      answer: "Après 30 jours, le compte d'essai est automatiquement verrouillé. Passez à un abonnement trimestriel, annuel ou personnalisé pour continuer à utiliser la plateforme."
+    },
+    {
+      question: "Puis-je modifier mon profil de marque?",
+      answer: "Oui, vous pouvez mettre à jour votre profil à tout moment."
+    },
+    {
+      question: "Puis-je réinitialiser mon mot de passe?",
+      answer: "Oui, via le lien \"Mot de passe oublié?\"."
     }
   ]
 };

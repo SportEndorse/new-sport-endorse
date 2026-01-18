@@ -5,10 +5,10 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Sport-Sponsoring-Plattform für Marken- und Athleten-Partnerschaften",
-  description: "Sport Endorse ist eine Sport-Sponsoring-Plattform, auf der Marken und Athleten sich verbinden, zusammenarbeiten und authentische Sport-Marketing-Partnerschaften verwalten.",
+  title: "Plateforme de parrainage sportif pour les marques et les athlètes",
+  description: "Sport Endorse est une plateforme de parrainage sportif où les marques et les athlètes se connectent, collaborent et gèrent des partenariats de marketing sportif authentiques.",
   alternates: {
-    canonical: "https://www.sportendorse.com/de/",
+    canonical: "https://www.sportendorse.com/fr/",
     languages: {
       'en-gb': 'https://www.sportendorse.com/',
       'es-es': 'https://www.sportendorse.com/es/',
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Sport-Sponsoring-Plattform für Marken- und Athleten-Partnerschaften",
-    description: "Sport Endorse ist eine Sport-Sponsoring-Plattform, auf der Marken und Athleten sich verbinden, zusammenarbeiten und authentische Sport-Marketing-Partnerschaften verwalten.",
+    title: "Plateforme de parrainage sportif pour les marques et les athlètes",
+    description: "Sport Endorse est une plateforme de parrainage sportif où les marques et les athlètes se connectent, collaborent et gèrent des partenariats de marketing sportif authentiques.",
     type: "website",
-    locale: "de_DE",
-    url: "https://www.sportendorse.com/de/",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'es_ES', 'fr_FR'],
+    alternateLocale: ['en_US', 'es_ES', 'de_DE'],
     images: [
       {
         url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
@@ -36,6 +36,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePageDE() {
+export default function HomePageFR() {
   return <HomeContent />;
 }

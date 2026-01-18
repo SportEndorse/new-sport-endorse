@@ -9,7 +9,7 @@ import Link from 'next/link';
 export default function FeaturedTalents() {
   const { language } = useLanguage();
   const t = translations[language].components.featuredTalents;
-  const talents = getAllFeaturedTalents(language as 'en' | 'es' | 'de');
+  const talents = getAllFeaturedTalents(language as 'en' | 'es' | 'de' | 'fr');
 
   const getSubscriptionLink = () => {
     if (language === 'en') {

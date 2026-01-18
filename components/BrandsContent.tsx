@@ -32,7 +32,7 @@ export default function BrandsContent({
   const { language } = useLanguage();
   const t = translations[language];
   const currentBrandFAQs = brandFAQs[language] || brandFAQs.en;
-  const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de');
+  const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de' | 'fr');
 
   return (
     <>

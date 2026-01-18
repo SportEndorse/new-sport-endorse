@@ -19,7 +19,7 @@ interface CachedTranslation {
 function getCacheKey(
   postType: 'post' | 'podcast' | 'press' | 'success_story',
   slug: string,
-  language: 'es' | 'de',
+  language: 'es' | 'de' | 'fr',
   contentHash: string
 ): string {
   return `${CACHE_PREFIX}${postType}_${slug}_${language}_${contentHash}`;
@@ -72,7 +72,7 @@ export function getCachedTranslation(
     success_stories_bottom_description?: string;
   },
   postType: 'post' | 'podcast' | 'press' | 'success_story',
-  language: 'es' | 'de'
+  language: 'es' | 'de' | 'fr'
 ): any | null {
   if (typeof window === 'undefined') return null;
   
@@ -117,7 +117,7 @@ export function saveCachedTranslation(
     success_stories_bottom_description?: string;
   },
   postType: 'post' | 'podcast' | 'press' | 'success_story',
-  language: 'es' | 'de',
+  language: 'es' | 'de' | 'fr',
   translated: any
 ): void {
   if (typeof window === 'undefined') return;

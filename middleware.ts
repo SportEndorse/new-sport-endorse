@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
   // OPTIMIZATION: Respect user's manual language choice (path takes priority)
   // If path already has a language prefix, skip geo-detection entirely
   // This is GDPR/CCPA compliant - no cookies needed, URL-based preference
-  if (pathname.startsWith('/es') || pathname.startsWith('/de')) {
+  if (pathname.startsWith('/es') || pathname.startsWith('/de') || pathname.startsWith('/fr')) {
     return NextResponse.next();
   }
 
@@ -43,12 +43,16 @@ export function middleware(request: NextRequest) {
     targetLocale = 'es';
   } else if (country === 'DE') {
     targetLocale = 'de';
+  } else if (country === 'FR') {
+    targetLocale = 'fr';
   } else if (acceptLanguage) {
-    // Check accept-language header for Spanish or German
+    // Check accept-language header for Spanish, German, or French
     if (acceptLanguage.includes('es')) {
       targetLocale = 'es';
     } else if (acceptLanguage.includes('de')) {
       targetLocale = 'de';
+    } else if (acceptLanguage.includes('fr')) {
+      targetLocale = 'fr';
     }
   }
 
