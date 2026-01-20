@@ -1,6 +1,20 @@
 "use client";
 
+import { useEffect } from "react";
 import BrandHowItWorks from "@/components/BrandHowItWorks";
+
+// Extend Window interface for HubSpot
+declare global {
+  interface Window {
+    HubSpotConversations?: {
+      widget: {
+        remove: () => void;
+        load: () => void;
+      };
+    };
+    hsConversationsOnReady?: Array<() => void>;
+  }
+}
 import UKBusinessSubscription from "@/components/UKBusinessSubscription";
 import BrandReviews from "@/components/BrandReviews";
 import LPBrandKeyFeatures from "@/components/LPBrandKeyFeatures";
@@ -31,6 +45,34 @@ export default function GetStartedContent({
   const { language } = useLanguage();
   const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de' | 'fr');
 
+  // Remove HubSpot chatbot widget from this landing page
+  useEffect(() => {
+    const hideHubSpotWidget = () => {
+      // Use HubSpot's official API to hide the widget
+      if (window.HubSpotConversations?.widget) {
+        window.HubSpotConversations.widget.remove();
+      }
+    };
+
+    // Check if HubSpot is already loaded
+    if (window.HubSpotConversations) {
+      hideHubSpotWidget();
+    } else {
+      // Wait for HubSpot to load
+      window.hsConversationsOnReady = [
+        () => {
+          hideHubSpotWidget();
+        },
+      ];
+    }
+
+    // Cleanup: show widget again when leaving this page
+    return () => {
+      if (window.HubSpotConversations?.widget) {
+        window.HubSpotConversations.widget.load();
+      }
+    };
+  }, []);
 
     return (
         <>
@@ -45,7 +87,7 @@ export default function GetStartedContent({
                 minHeight: "50px"
             }}>
                 <img 
-                    src="/images/lp/sport-endorse-square-img.png" 
+                    src="/images/lp/Airbrush-IMAGE-ENHANCER-1768941753487-1768941753487.png" 
                     alt="Sport Endorse Logo" 
                     style={{
                         display: "block", 
@@ -192,7 +234,7 @@ export default function GetStartedContent({
 
         <LPBrandKeyFeatures />
 
-        <BrandHowItWorks />
+        <BrandHowItWorks ctaUrl="https://platform.sportendorse.com/signup/brand?subscription=trial" />
 
         <LPBrandsGrid variant={"8x4"} label="Brands That Trust Our Sports Marketing Platform" />
 
