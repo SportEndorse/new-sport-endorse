@@ -107,7 +107,7 @@ export default function BrandsContent({
         </div>
       </section>
 
-      <BrandHowItWorks />
+      <BrandHowItWorks ctaUrl={language === 'en' ? '/subscription' : `/${language}/subscription`} />
       <BrandKeyFeatures />
       <SuccessStories />
       <BusinessSubscription shortened={true}/>
