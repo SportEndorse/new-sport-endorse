@@ -222,7 +222,7 @@ export default function GetStartedContent({
                         </div>
                     </div>
                     ))}
-                    <a href={language === 'en' ? '/subscription' : `/${language}/subscription`} className="brands-cta-card" style={{ 
+                    <a href="https://platform.sportendorse.com/signup/brand?subscription=trial" className="brands-cta-card" style={{ 
                     background: '#0078c1', 
                     borderRadius: '0.75rem',
                     display: 'flex',
