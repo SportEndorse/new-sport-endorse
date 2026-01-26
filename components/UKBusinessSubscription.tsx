@@ -131,8 +131,6 @@ export default function UKBusinessSubscription() {
               <td style={{ borderBottom: "none", textAlign: "center" }}>
                 <a 
                   href="https://platform.sportendorse.com/signup/brand?subscription=trial" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
                   className="subscription-cta-button"
                   style={{
                     backgroundColor: "#10b981",

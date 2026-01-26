@@ -51,26 +51,39 @@ export default function GetStartedContent({
 
   // Remove HubSpot chatbot widget from this landing page
   useEffect(() => {
+    let removed = false;
+
     const hideHubSpotWidget = () => {
-      // Use HubSpot's official API to hide the widget
+      if (removed) return true;
+      //console.log("Attempting to remove HubSpot widget...");
       if (window.HubSpotConversations?.widget) {
         window.HubSpotConversations.widget.remove();
+        //console.log("HubSpot widget removed on Get Started page.");
+        removed = true;
+        return true;
       }
+      return false;
     };
 
-    // Check if HubSpot is already loaded
-    if (window.HubSpotConversations) {
-      hideHubSpotWidget();
-    } else {
-      // Wait for HubSpot to load
-      window.hsConversationsOnReady = [
-        () => {
-          hideHubSpotWidget();
-        },
-      ];
+    // Try immediately and once after load/ready; no infinite polling
+    if (!hideHubSpotWidget()) {
+      const onLoad = () => hideHubSpotWidget();
+      window.addEventListener("load", onLoad, { once: true });
+
+      window.hsConversationsOnReady = window.hsConversationsOnReady || [];
+      window.hsConversationsOnReady.push(hideHubSpotWidget);
+
+      const timeoutId = window.setTimeout(() => hideHubSpotWidget(), 1200);
+
+      return () => {
+        window.clearTimeout(timeoutId);
+        window.removeEventListener("load", onLoad);
+        if (window.HubSpotConversations?.widget) {
+          window.HubSpotConversations.widget.load();
+        }
+      };
     }
 
-    // Cleanup: show widget again when leaving this page
     return () => {
       if (window.HubSpotConversations?.widget) {
         window.HubSpotConversations.widget.load();
@@ -154,7 +167,7 @@ export default function GetStartedContent({
                         Connecting Brands, Athletes, and Sports Influencers for impactful partnerships
                     </p>
                     <a
-                        href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
+                        href="https://platform.sportendorse.com/signup/brand?subscription=trial"
                         className="brands-cta-button"
                         style={{ display: "inline-block", fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
                     >
@@ -175,7 +188,7 @@ export default function GetStartedContent({
                 {description}
                 </p>
                 <a 
-                href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
+                href="https://platform.sportendorse.com/signup/brand?subscription=trial"
                 className="brands-cta-button"
                 >
                 {buttonTitle}
@@ -244,7 +257,7 @@ export default function GetStartedContent({
 
         <div style={{ textAlign: "center", margin: "3rem auto", padding: "0 1rem" }}>
           <a
-            href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
+            href="https://platform.sportendorse.com/signup/brand?subscription=trial"
             className="brands-cta-button"
             style={{ display: "inline-block", maxWidth: "100%" }}
           >
