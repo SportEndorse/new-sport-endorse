@@ -694,8 +694,8 @@ const translations = {
     },
     brands: {
       badge: "PARA MARCAS",
-      title: "Encuentra y Patrocina Atletas para Campañas de Marca y Asociaciones",
-      description: "Sport Endorse es una plataforma global de patrocinio deportivo que ayuda a marcas y agencias a conectar con atletas de élite e influencers deportivos para campañas de marketing y asociaciones. Nuestra plataforma simplifica cómo descubres, patrocinas y colaboras con atletas verificados—creando campañas de marca auténticas, medibles y de alto impacto que mejoran la visibilidad y participación de la marca.",
+      title: "Trouvez et Sponsorisez des Athlètes pour vos Campagnes et Partenariats de Marque y Asociaciones",
+      description: "Sport Endorse est une plateforme mondiale de sponsoring sportif qui aide les marques et les agences à se connecter avec des athlètes d’élite et des influenceurs sportifs pour des campagnes marketing et des partenariats. Notre plateforme simplifie la manière dont vous découvrez, sponsorisez et collaborez avec des athlètes vérifiés en créant des campagnes de marque authentiques, mesurables et à fort impact qui renforcent la visibilité et l’engagement de la marque.",
       featuredAthletes: "Atletas Destacados",
       viewAll: "Ver Todos",
       joinAsBrand: "Únete como Marca",
@@ -1907,7 +1907,7 @@ const translations = {
         news: "Actualités",
         careers: "Carrières",
         signUpTalent: "S'inscrire en tant que talent",
-        successStories: "Histoires de succès",
+        successStories: "Les Success Stories",
         faqs: "Questions fréquemment posées",
         blog: "Blog",
         aboutUs: "À propos de nous",
@@ -1939,7 +1939,7 @@ const translations = {
       demoBtn: "DÉMO POUR ENTREPRISES",
       login: "Connexion",
       bookDemo: "Réserver une démo",
-      successStories: "Histoires de succès",
+      successStories: "Les Success Stories",
       faqs: "Questions fréquemment posées",
       contactUs: "Nous contacter",
       podcasts: "Podcasts",
@@ -1969,9 +1969,9 @@ const translations = {
     agency: {
       badge: "POUR LES AGENCES SPORTIVES",
       title: "Maximisez le potentiel de gains de votre effectif",
-      description: "Sport Endorse est la plateforme tout-en-un des agents sportifs conçue pour que les agences gèrent les accords d'approbation des athlètes, sécurisent les collaborations rémunérées et rationalisent les opérations à grande échelle. Connectez votre effectif entier avec des marques vérifiées à la recherche de parrainages authentiques qui correspondent au profil et aux passions de chaque athlète.",
+      description: "Sport Endorse est la plateforme tout-en-un de gestion du sponsoring sportif, conçue pour permettre aux agences de gérer les partenariats d’athlètes, de sécuriser des collaborations rémunérées et d’optimiser leurs opérations à grande échelle. Connectez l’ensemble de votre roster à des marques vérifiées à la recherche de sponsoring authentiques, en phase avec le profil et les passions de chaque athlète.",
       imageAlt: "Tableau de bord d'agence - Plateforme Sport Endorse",
-      bookCallToPartner: "Réservez un appel pour nous partenariat",
+      bookCallToPartner: "Planifiez un appel pour devenir partenaire",
       metadata: {
         title: "Réservez des célébrités du sport | Sport Endorse",
         description: "Nos solutions technologiques de pointe réduisent les étapes nécessaires pour conclure des accords de parrainage sensationnels pour les athlètes. Sport Endorse est une plateforme simple et conviviale qui relie les agences aux meilleurs athlètes mondiaux et aux ambassadeurs garantis pour faire passer les campagnes de marketing de vos clients au niveau supérieur."
@@ -1979,13 +1979,13 @@ const translations = {
     },
     talent: {
       badge: "POUR LES TALENTS",
-      title: "Comment obtenir un parrainage en tant qu'athlète",
-      description: "Bienvenue sur le marché d'approbation d'athlètes leader. Sport Endorse est la plateforme tout-en-un qui vous relie directement avec les marques pour les parrainages d'athlètes et les collaborations rémunérées qui correspondent à votre profil et vos passions. C'est le moyen le plus simple de trouver et de gérer les parrainages pour les athlètes",
+      title: "Comment trouver des sponsors en tant qu'athlète",
+      description: "Bienvenue sur le marché principal du sponsoring pour athlètes. Sport Endorse est la plateforme tout-en-un qui vous connecte directement aux marques pour des sponsoring et collaborations rémunérées en phase avec votre profil et vos passions. C'est la manière la plus simple de trouver et de gérer vos partenariats de sponsoring.",
       sponsorshipSection: {
         title: "Trouvez votre prochaine opportunité de parrainage",
-        lead: "Rejoignez des milliers d'athlètes vérifiés qui utilisent Sport Endorse — une plateforme de confiance des grandes marques mondiales — pour postuler aux parrainages sportifs et être découverts par les sponsors à la recherche de talents sportifs.",
-        description: "Trouvez des opportunités de parrainage d'athlètes qui correspondent à votre sport, vos réalisations et votre personnalité, des collaborations sur les médias sociaux aux apparitions à des événements et aux approbations de produits.",
-        benefits: "Notre plateforme de parrainage sportif pour les athlètes facilite la recherche de sponsors, la connexion directe avec des entreprises vérifiées et la gestion de chaque étape de vos partenariats rémunérés — tout en un seul endroit."
+        lead: "Rejoignez des milliers d'athlètes vérifiés qui utilisent Sport Endorse — une plateforme de confiance pour les plus grandes marques internationales — afin de postuler à des opportunités de sponsoring et d'être repérés par des sponsors à la recherche de talents sportifs.",
+        description: "Trouvez des opportunités de sponsoring qui correspondent à votre sport, à vos performances et à votre personnalité, allant des collaborations sur les réseaux sociaux aux apparitions lors d'événements et aux partenariats de promotion de produits.",
+        benefits: "Notre plateforme de parrainage sportif pour les athlètes facilite la recherche de sponsors, la connexion directe avec des entreprises vérifiées et la gestion de chaque étape de vos sponsoring rémunérés — tout en un seul endroit."
       },
       metadata: {
         title: "Athlètes d'élite: Boostez votre marque avec des parrainages | Rejoignez Sport Endorse",
@@ -1993,31 +1993,31 @@ const translations = {
       }
     },
     home:{
-      welcome: "La plateforme ultime de parrainage sportif",
-      description: "Sport Endorse est la plateforme leader de parrainage sportif qui relie les marques, les athlètes et les influenceurs sportifs pour des partenariats authentiques, basés sur les données et impactants. Nous simplifions chaque étape de la gestion du parrainage sportif — facilitant la découverte des bons athlètes pour les marques et la connexion directe des athlètes avec les marques pour des collaborations vérifiées et rémunérées. Approuvée par les organisations mondiales, Sport Endorse est le marché de parrainage sportif le plus fiable de l'industrie.",
-      tableHeader: "Les marques qui font confiance à notre plateforme de marketing sportif",
+      welcome: "La plateforme ultime de sponsoring sportif",
+      description: "Sport Endorse est la première plateforme de sponsoring sportif connectant marques, athlètes et influenceurs sportifs pour des partenariats authentiques, pilotés par la donnée et à fort impact. Nous simplifions chaque étape de la gestion du sponsoring sportif, permettant aux marques de trouver facilement les bons athlètes et aux athlètes de collaborer directement avec les marques via des partenariats vérifiés et rémunérés. Plébiscitée par des organisations internationales, Sport Endorse est la marketplace de sponsoring sportif la plus fiable du secteur.",
+      tableHeader: "Les marques qui nous font confiance",
       benefitSection: {
         athlete: {
           label: "Pour les talents",
           title: "Collaborez avec les marques. Soyez payé.",
-          subtitle: "Pour les athlètes, Sport Endorse est plus qu'un réseau d'approbation d'athlètes — c'est où les opportunités de carrière rencontrent la commodité. Nous offrons un accès direct aux marques vérifiées prêtes à payer pour votre influence. Notre plateforme de parrainage sportif vous aide à postuler pour des accords qui vous conviennent, pour que vous puissiez vous concentrer sur votre carrière.",
+          subtitle: "“Pour les athlètes, Sport Endorse est bien plus qu'un réseau de sponsoring — c'est là où les opportunités de carrière rencontrent la simplicité. Nous vous offrons un accès direct à des marques vérifiées, prêtes à rémunérer votre influence. Notre plateforme de sponsoring sportif vous permet de postuler à des partenariats qui vous correspondent, afin que vous puissiez vous concentrer sur votre carrière.",
           bullet1: "Postulez pour des accords qui vous conviennent.",
           bullet2: "Gérez vos opportunités directement depuis notre application mobile.",
           bullet3: "Soyez payé en toute sécurité et transparence, sans frais cachés.",
         },
         brand: {
           label: "Pour les marques",
-          title: "Trouver votre prochain ambassadeur athlétique n'a jamais été aussi facile",
-          subtitle: "Découvrez, évaluez et collaborez avec les meilleurs athlètes et influenceurs sportifs pour atteindre vos objectifs de campagne. Notre plateforme de marketing d'ambassadeur de marque sportive rationalise l'ensemble du processus — de la découverte à l'achèvement de l'accord — en aidant les marques à gérer les approbations d'athlètes et les parrainages sans effort.",
+          title: "Trouver votre prochain ambassadeur sportif n'a jamais été aussi simple.",
+          subtitle: "Découvrez, évaluez et collaborez avec des athlètes de haut niveau et des influenceurs sportifs pour atteindre vos objectifs de campagne. Notre plateforme de marketing d'ambassadeurs sportifs simplifie l'ensemble du processus, de la recherche à la conclusion des partenariats en aidant les marques à gérer facilement leurs partenariats et sponsoring avec des athlètes.",
           bullet1: "Découvrez et communiquez facilement avec des talents dans tous les sports.",
-          bullet2: "Choisissez le partenariat qui vous convient, des ambassadeurs de marque aux campagnes sur les médias sociaux aux conférenciers invités.",
+          bullet2: "Choisissez le partenariat qui vous convient, des ambassadeurs de marque aux campagnes sur les réseaux sociaux jusqu'aux conferences.",
           bullet3: "Gérez les accords avec des prix transparents et une communication directe.",
         },
         agency: {
           label: "Pour les agences sportives",
           title: "Maximisez le potentiel de votre effectif",
-          subtitle: "Sport Endorse est votre plateforme intégrée de gestion des parrainages pour sécuriser et gérer les collaborations rémunérées pour votre effectif entier.",
-          bullet1: "Un pipeline d'opportunités pour vous aider à sécuriser plus d'accords rémunérés.",
+          subtitle: "Sport Endorse est votre plateforme tout-en-un de gestion du sponsoring pour sécuriser et gérer des collaborations rémunérées pour l'ensemble de votre effectif.”",
+          bullet1: "Un flux continu d'opportunités pour vous aider à conclure davantage de partenariats rémunérés.",
           bullet2: "Gérez tous les accords commerciaux de votre effectif depuis un hub sécurisé.",
           bullet3: "Nous sommes un partenaire dédié, non un concurrent, avec des divisions de commission transparentes.",
         },
@@ -2031,7 +2031,7 @@ const translations = {
       hero: {
         title: "À propos de",
         titleSpan: " Sport Endorse",
-        subtitle: "Sport Endorse est une plateforme de marketing sportif en ligne qui remodèle la façon dont les marques et les athlètes se connectent. Notre plateforme puissante facilite les partenariats commerciaux authentiques, soutenant le monde entier du sport—des athlètes qui le jouent aux marques et entreprises qui le soutiennent.",
+        subtitle: "Sport Endorse est une plateforme de marketing sportif en ligne qui redéfinit la manière dont les marques et les athlètes se connectent. Notre plateforme performante facilite des partenariats commerciaux authentiques et soutient l’ensemble de l’écosystème sportif — des athlètes qui pratiquent le sport aux marques et entreprises qui le soutiennent.",
         description: "Notre équipe mondiale apporte des décennies d'expertise en marketing sportif à la table. Reflétant la diversité et l'inclusivité de notre plateforme, les membres de notre équipe proviennent d'une large gamme de sports et d'horizons. Nous sommes passionnés par la combinaison de notre connaissance approfondie de l'industrie avec notre excellente technologie pour livrer le succès à nos clients, créant une expérience véritablement mondiale et inclusive pour les marques et les athlètes de tous types de sports."
       },
       values: {
@@ -2046,7 +2046,7 @@ const translations = {
           },
           {
             icon: "II",
-            title: "Implacabilité",
+            title: "Ténacité",
             description: "Nous voyons cette valeur chez les athlètes d'élite, les marques de premier plan et les agences avec lesquelles nous travaillons. En tant qu'équipe, nous avons un biais vers l'action et présentons toujours un sentiment d'urgence pour faire les choses. Nous NE renonçons JAMAIS. Jamais imprudent, toujours implacable. Et oui, c'est un incontournable!"
           },
           {
@@ -2057,7 +2057,7 @@ const translations = {
           {
             icon: "IV",
             title: "Diversité",
-            description: "Nous sommes immensément fiers des cultures et des peuples diversifiés avec lesquels nous travaillons quotidiennement chez Sport Endorse. Notre équipe est géographiquement dispersée, ce qui réunit des individus de diverses cultures et origines diverses. Nous nous efforçons d'assurer que nous fournissons un environnement de travail dans lequel chaque employé se sent apprécié et inclus dans toutes les décisions, opportunités et défis."
+            description: "Nous sommes extrêmement fiers de la diversité des cultures et des personnes avec lesquelles nous travaillons chaque jour chez Sport Endorse. Notre équipe est répartie à l’international, rassemblant des profils issus de cultures et d’horizons variés. Nous nous engageons à offrir un environnement de travail dans lequel chaque collaborateur se sent valorisé et inclus dans l’ensemble des décisions, opportunités et défis."
           }
         ]
       },
@@ -2072,7 +2072,7 @@ const translations = {
         subtitle: "Êtes-vous passionné par le marketing sportif et voulez-vous faire partie de notre équipe en croissance? Nous recherchons toujours des individus talentueux qui partagent nos valeurs et notre vision.",
         cardTitle: "Prêt à créer un impact?",
         cardDescription: "Chez Sport Endorse, nous croyons en développer les talents et fournir des opportunités de croissance. Si vous recherchez un environnement dynamique où vous pouvez contribuer à connecter les athlètes avec les marques et faire une réelle différence dans l'industrie du sport, nous adorerions vous entendre.",
-        buttonText: "Entrer en contact"
+        buttonText: "Contactez-nous"
       },
       partners: {
         title: "Nos",
@@ -2081,20 +2081,20 @@ const translations = {
         addVictor: {
           name: "add-victor",
           url: "https://www.add-victor.com/",
-          description: "En tant que partenaire précieux de Sport Endorse, add-victor est à l'avant-garde de la connexion des athlètes hautes performances et des militaires avec des opportunités de carrière exceptionnelles. Avec un bassin de talents croissant de plus de 5 500 individus, allant des Olympiens et Paralympiens aux étudiants-athlètes et aux vétérans militaires, add-victor joue un rôle essentiel en comblant le fossé entre l'expérience sportive, l'expertise militaire et le monde corporatif - élevant la culture et la performance des organisations.",
-          descriptionSecondary: "La mission d'add-victor s'aligne avec l'engagement de Sport Endorse envers l'excellence, en autonomisant les individus à trouver leurs trajectoires professionnelles idéales et en aidant les marques à découvrir les talents de premier plan qui peuvent exceller, à la fois dans les campagnes de marketing et au sein de leurs organisations. Ensemble avec Sport Endorse, nous remodelons l'avenir de l'acquisition de talents et de l'avancement professionnel."
+          description: "En tant que partenaire précieux de Sport Endorse, add-victor est à l'avant-garde de la connexion des athlètes de haute niveau performances et des militaires avec des opportunités de carrière exceptionnelles. Avec un bassin de talents croissant de plus de 5 500 individus, allant des Olympiens et Paralympiens aux étudiants-athlètes et aux vétérans militaires, add-victor joue un rôle essentiel en comblant le fossé entre l'expérience sportive, l'expertise militaire et le monde corporatif - élevant la culture et la performance des organisations.",
+          descriptionSecondary: "La mission d'add-victor s'aligne avec l'engagement de Sport Endorse envers l'excellence, en accompagnant les individus à trouver leurs trajectoires professionnelles idéales et en aidant les marques à découvrir les talents de premier plan qui peuvent exceller, à la fois dans les campagnes de marketing et au sein de leurs organisations. Ensemble avec Sport Endorse, nous remodelons l'avenir de l'acquisition de talents et de l'avancement professionnel."
         },
         threeBigWheels: {
           name: "3 Big Wheels",
           url: "https://3bigwheels.com/",
-          description: "En tant que partenaire précieux de Sport Endorse, 3 Big Wheels est une agence internationale de marketing créatif qui aide les marques à élargir leur portée. Leur expertise en matière de fusion créativité avec planification stratégique garantit des campagnes qui non seulement ont une belle apparence mais livrent également des résultats mesurables.",
-          descriptionSecondary: "La mission de 3 Big Wheels d'autonomiser les entreprises à prospérer à l'échelle mondiale s'aligne avec l'engagement de Sport Endorse envers l'excellence, en aidant les marques à découvrir les talents de premier plan et à élever leurs campagnes de marketing. Ensemble, nous comblons le fossé entre l'acquisition de talents et la réussite internationale du marché."
+          description: "En tant que partenaire clé de Sport Endorse, 3 Big Wheels est une agence internationale de marketing créatif qui aide les marques à étendre leur portée. Son expertise dans l’alliance de la créativité et de la stratégie garantit des campagnes qui ne se contentent pas d’être esthétiques, mais qui génèrent également des résultats mesurables.",
+          descriptionSecondary: "La mission de 3 Big Wheels, qui vise à aider les entreprises à se développer à l’échelle mondiale, s’aligne avec l’engagement de Sport Endorse envers l’excellence, en accompagnant les marques dans la découverte de talents de premier plan et dans l’optimisation de leurs campagnes marketing. Ensemble, nous rapprochons l’acquisition de talents de la réussite sur les marchés internationaux."
         },
         sportingClubIreland: {
           name: "The Sporting Club Ireland",
           url: "https://thesportingclub.ie/",
-          description: "En tant que partenaire précieux de Sport Endorse, The Sporting Club Ireland est à l'avant-garde de la connexion des leaders du sport et des affaires. Leur communauté rassemble les décideurs, les entrepreneurs et les personnalités du sport pour créer une plateforme pour des connexions significatives et de nouvelles opportunités.",
-          descriptionSecondary: "Leur expertise en matière de construction de relations s'aligne avec l'engagement de Sport Endorse à autonomiser les individus et les marques. En réunissant des professionnels influents qui partagent une passion pour le sport, The Sporting Club Ireland joue un rôle essentiel dans l'expansion des réseaux et la conduite de nouvelles entreprises commerciales. Ensemble, nous remodelons la façon dont l'industrie du sport fait des affaires."
+          description: "En tant que partenaire clé de Sport Endorse, The Sporting Club Ireland est à l’avant-garde de la mise en relation des leaders du sport et du monde des affaires. Sa communauté réunit décideurs, entrepreneurs et figures du sport afin de créer une plateforme favorisant des connexions stratégiques et de nouvelles opportunités.",
+          descriptionSecondary: "Son expertise dans la création de relations durables s’aligne avec l’engagement de Sport Endorse à soutenir aussi bien les individus que les marques. En rassemblant des professionnels influents partageant une passion commune pour le sport, The Sporting Club Ireland joue un rôle essentiel dans l’expansion des réseaux et le développement de nouvelles opportunités commerciales. Ensemble, nous transformons la manière dont l’industrie du sport développe ses activités."
         },
         fortyNorth: {
           name: "40 North",
@@ -2121,11 +2121,11 @@ const translations = {
     components: {
       agencyHowItWorks: {
         title: "Pourquoi les agents sportifs choisissent Sport Endorse",
-        subtitle: "Nous sommes plus qu'une simple plateforme de gestion des approbations — nous sommes votre partenaire à long terme du succès.",
+        subtitle: "Nous sommes bien plus qu'une simple plateforme de gestion des partenariats — nous sommes votre partenaire de confiance sur le long terme.",
         steps: [
           {
             title: "Élargir votre potentiel de gains",
-            description: "Accédez à un pipeline continu d'opportunités d'approbation d'athlètes et de collaborations commerciales pour aider vos clients à sécuriser plus d'accords rémunérés et à augmenter les revenus de votre agence."
+            description: "Accédez à un flux continu d’opportunités de sponsoring et de collaborations commerciales afin d’aider vos clients à sécuriser davantage de contrats rémunérés et à développer le chiffre d’affaires de votre agence."
           },
           {
             title: "Un partenaire, pas un concurrent",
@@ -2140,11 +2140,11 @@ const translations = {
       },
       talentHowItWorks: {
         title: "Comment ça marche",
-        subtitle: "Rejoignez des milliers d'athlètes d'élite qui monétisent leur marque personnelle et construisent des partenariats significatifs avec les meilleures marques du monde.",
+        subtitle: "Rejoignez des milliers d'athlètes d'élite qui monétisent leur image de marque et construisent des partenariats significatifs avec les meilleures marques du monde.",
         steps: [
           {
             title: "Créez votre profil",
-            description: "Construisez un profil d'athlète convaincant présentant vos réalisations, statistiques et marque personnelle pour attirer les sponsors."
+            description: "Créez un profil d'athlète attractif mettant en valeur vos performances, vos statistiques et votre image de marque afin d’attirer des sponsors."
           },
           {
             title: "Parcourez les opportunités",
@@ -2156,17 +2156,17 @@ const translations = {
           },
           {
             title: "Soyez payé",
-            description: "Terminez les campagnes, livrez les résultats et recevez des paiements sécurisés via notre plateforme de confiance."
+            description: "Réalisez vos campagnes, obtenez des résultats et recevez vos paiements en toute sécurité via notre plateforme de confiance."
           }
         ],
-        buttonText: "COMMENCER MAINTENANT"
+        buttonText: "S'INSCRIRE DÈS MAINTENANT"
       },
       whyAthletesChooseUs: {
         title: "Pourquoi les athlètes choisissent Sport Endorse",
         features: [
           {
             title: "Accords rémunérés sécurisés",
-            description: "Notre plateforme de parrainage d'athlètes donne un accès direct aux marques mondiales à la recherche d'ambassadeurs pour les campagnes, les approbations et les événements."
+            description: "Notre plateforme de sponsoring pour athlètes vous donne un accès direct à des marques internationales à la recherche d’ambassadeurs pour des campagnes, des partenariats de promotion et des événements."
           },
           {
             title: "Conseils d'experts",
@@ -2224,8 +2224,8 @@ const translations = {
             description: "Parlez-nous de votre marque, industrie, localisation et objectifs de campagne pour construire un profil qui attire les athlètes alignés sur vos valeurs."
           },
           {
-            title: "Lancez votre opportunité de parrainage",
-            description: "Définissez votre campagne de parrainage d'athlètes — spécifiez le type d'athlètes ou d'influenceurs avec lesquels vous voulez travailler, décrivez les livrables et définissez votre budget."
+            title: "Lancez votre opportunité de sponsoring",
+            description: "Définissez votre campagne de sponsoring avec des athletes, précisez le type d’athlètes ou d’influenceurs avec lesquels vous souhaitez collaborer, décrivez les contenus et activations attendus et fixez votre budget."
           },
           {
             title: "Choisissez les bons athlètes",
@@ -2233,20 +2233,20 @@ const translations = {
           },
           {
             title: "Complétez votre campagne",
-            description: "Finalisez les contrats, gérez les livrables et traitez les paiements de manière sécurisée via le système intégré de Sport Endorse."
+            description: "Finalisez les contrats, gérez les contenus et activations, et effectuez les paiements en toute sécurité via le système intégré de Sport Endorse."
           }
         ],
         buttonText: "COMMENCER MAINTENANT"
       },
       successStories: {
-        title: "Histoires de succès",
+        title: "Nos Success Stories",
         subtitle: "Découvrez comment les marques et les athlètes gagnent ensemble",
         loading: "Chargement...",
         noStories: "Aucune histoire trouvée.",
         readMore: "EN SAVOIR PLUS →"
       },
       featuredTalents: {
-        title: "Découvrez notre talent chez Sport Endorse",
+        title: "Découvrez nos talents sur Sport Endorse",
         subtitle: "Nous travaillons avec une sélection diversifiée de 7000+ athlètes mondiaux et 280 disciplines sportives.",
         viewAll: "Inscrivez-vous pour voir plus!",
         location: "Localisation"
@@ -2289,7 +2289,7 @@ const translations = {
           subscribeNow: "S'ABONNER MAINTENANT",
           save35: "ÉCONOMISER 35%",
           seeMore: "VOIR PLUS",
-          talkToSales: "Parler aux ventes"
+          talkToSales: "Parler à nos équipes"
         },
         customPackage: {
           title: "Forfait personnalisé",
@@ -2335,7 +2335,7 @@ const translations = {
       trustedSportAgencyPartners: {
         label: "PARTENAIRES D'AGENCE DE CONFIANCE",
         title: "Partenaires d'agence sportive de confiance",
-        description: "Naviguer les contrats et les questions juridiques peut être complexe. Bien que nous nous concentrions uniquement sur les opportunités commerciales, nous pouvons vous connecter avec des partenaires d'agence sportive de confiance dans votre sport et votre région pour vous aider avec votre carrière et vos contrats. Dites-nous votre sport et votre région, et nous ferons un renvoi.",
+        description: "La gestion des contrats et des aspects juridiques peut être complexe. Bien que nous nous concentrions uniquement sur les opportunités commerciales, nous pouvons vous mettre en relation avec des agences sportives de confiance dans votre sport et votre région pour vous accompagner dans votre carrière et vos contrats. Indiquez-nous votre sport et votre zone géographique, et nous vous ferons une recommandation.",
         disclaimer: "*Les renvois ne sont disponibles que pour les athlètes non représentés, sous réserve de la disponibilité de l'agence partenaire dans votre région ou sport.",
         buttonText: "Obtenir un renvoi",
         popup: {
@@ -2507,11 +2507,11 @@ const translations = {
         seeMore: "Voir plus"
       },
       successStoriesContent: {
-        title: "Histoires de succès de Sport Endorse",
+        title: "Les Success Stories de Sport Endorse",
         subtitle: "Découvrez comment nos athlètes et marques ont réalisé un succès remarquable grâce à des partenariats stratégiques",
         description: "Découvrez comment nos athlètes et marques ont réalisé un succès remarquable grâce à des partenariats stratégiques",
         readMore: "Lire l'histoire →",
-        loading: "Chargement des histoires de succès...",
+        loading: "Chargement des success stories...",
         noSummary: "Aucun résumé disponible.",
         noStories: "Aucune histoire trouvée.",
         seeMore: "Voir plus"
