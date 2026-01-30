@@ -14,17 +14,18 @@ export const metadata: Metadata = {
       'en-gb': 'https://www.sportendorse.com/faqs',
       'es-es': 'https://www.sportendorse.com/es/faqs',
       'de-de': 'https://www.sportendorse.com/de/faqs',
+      'fr-fr': 'https://www.sportendorse.com/fr/faqs',
       'x-default': 'https://www.sportendorse.com/faqs'
     }
   },
   openGraph: {
-    title: "Häufig Gestellte Fragen | Sport Endorse",
-    description: "Finden Sie Antworten auf häufige Fragen zur Athleten-Sponsoring-Plattform von Sport Endorse. Erfahren Sie über Preise, Zahlungsbedingungen und wie Sie sich mit Elite-Athleten verbinden.",
+    title: "Häufig gestellte Fragen | Sport Endorse",
+    description: "Finden Sie Antworten auf häufige Fragen zur Athleten-Sponsoring-Plattform von Sport Endorse. Erfahren Sie mehr über Preise, Zahlungsbedingungen und wie Sie sich mit Elite-Athleten verbinden können.",
     type: "website",
     locale: "de_DE",
     url: "https://www.sportendorse.com/de/faqs",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'es_ES'],
+    alternateLocale: ['en_US', 'es_ES', 'fr_FR'],
     images: [
       {
         url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",

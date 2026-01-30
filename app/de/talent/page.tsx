@@ -13,17 +13,18 @@ export const metadata: Metadata = {
       'en-gb': 'https://www.sportendorse.com/talent/',
       'es-es': 'https://www.sportendorse.com/es/talent/',
       'de-de': 'https://www.sportendorse.com/de/talent/',
+      'fr-fr': 'https://www.sportendorse.com/fr/talent',
       'x-default': 'https://www.sportendorse.com/talent/'
     }
   },
   openGraph: {
-    title: "Treten Sie Unserem Athleten-Marktplatz Bei Und Bewerben Sie Sich Für Sponsorings",
-    description: "Registrieren Sie sich bei Sport Endorse, um sich mit Marken zu verbinden, Athleten-Sponsoring-Möglichkeiten zu finden, sich auf Deals zu bewerben, gesponsert zu werden und Ihren Einfluss in der Branche zu steigern.",
+    title: "Treten Sie unserem Athleten-Marktplatz bei und bewerben Sie sich für Sponsorings",
+    description: "Registrieren Sie sich bei Sport Endorse, um sich mit Marken zu verbinden, Athleten-Sponsoring-Möglichkeiten zu finden, sich für Deals zu bewerben, Sponsorings zu erhalten und Ihren Einfluss in der Branche zu vergrößern.",
     type: "website",
     locale: "de_DE",
     url: "https://www.sportendorse.com/de/talent/",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'es_ES'],
+    alternateLocale: ['en_US', 'es_ES', 'fr_FR'],
     images: [
       {
         url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",

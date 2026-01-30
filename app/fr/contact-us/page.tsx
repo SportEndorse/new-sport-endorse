@@ -5,22 +5,23 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'Contactar Sport Endorse | Ponte en Contacto con Nuestro Equipo',
-  description: 'Contacta Sport Endorse para aprender cómo nuestra plataforma de patrocinio deportivo conecta marcas con atletas de élite. Ponte en contacto con nuestro equipo para asociaciones y oportunidades.',
+  title: 'Contacter Sport Endorse | Contactez notre équipe',
+  description: 'Contactez Sport Endorse pour découvrir comment notre plateforme de parrainage sportif connecte les marques avec des athlètes d’élite. Contactez notre équipe pour des partenariats et des opportunités.',
   alternates: {
-    canonical: "https://www.sportendorse.com/es/contact-us",
+    canonical: "https://www.sportendorse.com/fr/contact-us",
     languages: {
       'en': '/contact-us',
       'es': '/es/contact-us',
-      'de': '/de/contact-us'
+      'de': '/de/contact-us',
+      'fr': '/fr/contact-us'
     }
   },
   openGraph: {
-    title: 'Contactar Sport Endorse | Ponte en Contacto con Nuestro Equipo',
-    description: 'Contacta Sport Endorse para aprender cómo nuestra plataforma de patrocinio deportivo conecta marcas con atletas de élite. Ponte en contacto con nuestro equipo para asociaciones y oportunidades.',
+    title: 'Contacter Sport Endorse | Contactez notre équipe',
+    description: 'Contactez Sport Endorse pour découvrir comment notre plateforme de parrainage sportif connecte les marques avec des athlètes d’élite. Contactez notre équipe pour des partenariats et des opportunités.',
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/contact-us",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/contact-us",
     siteName: "Sport Endorse",
     images: [
       {

@@ -2,22 +2,23 @@ import { Metadata } from 'next'
 import SuccessStoriesContent from '@/components/SuccessStoriesContent'
 
 export const metadata: Metadata = {
-  title: "Estudios de Caso de Marketing Deportivo e Historias de Éxito de Marcas",
-  description: "Explora historias de éxito de patrocinios de atletas, influencers deportivos y asociaciones de marca que generaron resultados de marketing reales a través de Sport Endorse.",
+  title: "Études de cas en marketing sportif et success stories de marques",
+  description: "Explorez des success stories de parrainages d'athlètes, d'influenceurs sportifs et de partenariats de marque ayant généré de vrais résultats marketing avec Sport Endorse.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/success_stories",
+    canonical: "https://www.sportendorse.com/fr/success_stories",
     languages: {
       'en': '/success_stories',
       'es': '/es/success_stories',
-      'de': '/de/success_stories'
+      'de': '/de/success_stories',
+      'fr': '/fr/success_stories'
     }
   },
   openGraph: {
-    title: "Estudios de Caso de Marketing Deportivo e Historias de Éxito de Marcas",
-    description: "Explora historias de éxito de patrocinios de atletas, influencers deportivos y asociaciones de marca que generaron resultados de marketing reales a través de Sport Endorse.",
+    title: "Études de cas en marketing sportif et success stories de marques",
+    description: "Explorez des success stories de parrainages d'athlètes, d'influenceurs sportifs et de partenariats de marque ayant généré de vrais résultats marketing avec Sport Endorse.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/success-stories",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/success-stories",
     siteName: "Sport Endorse",
     images: [
       {

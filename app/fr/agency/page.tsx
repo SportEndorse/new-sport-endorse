@@ -5,25 +5,26 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Plataforma de Agentes Deportivos para Patrocinios de Atletas | Sport Endorse",
-  description: "La plataforma de gestión de endorsements de Sport Endorse ayuda a los agentes deportivos a gestionar patrocinios de atletas y acuerdos de endorsement con herramientas de comunicación segura y cumplimiento.",
+  title: "Plateforme d'agents sportifs pour les parrainages d'athlètes | Sport Endorse",
+  description: "La plateforme de gestion des endorsements de Sport Endorse aide les agents sportifs à gérer les parrainages d'athlètes et les contrats d'endorsement avec des outils de communication sécurisée et de conformité.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/agency/",
+    canonical: "https://www.sportendorse.com/fr/agency",
     languages: {
-      'en-gb': 'https://www.sportendorse.com/agency/',
-      'es-es': 'https://www.sportendorse.com/es/agency/',
-      'de-de': 'https://www.sportendorse.com/de/agency/',
-      'x-default': 'https://www.sportendorse.com/agency/'
+      'en-gb': 'https://www.sportendorse.com/agency',
+      'es-es': 'https://www.sportendorse.com/es/agency',
+      'de-de': 'https://www.sportendorse.com/de/agency',
+      'fr-fr': 'https://www.sportendorse.com/fr/agency',
+      'x-default': 'https://www.sportendorse.com/agency'
     }
   },
   openGraph: {
-    title: "Plataforma de Agentes Deportivos para Patrocinios de Atletas | Sport Endorse",
-    description: "La plataforma de gestión de endorsements de Sport Endorse ayuda a los agentes deportivos a gestionar patrocinios de atletas y acuerdos de endorsement con herramientas de comunicación segura y cumplimiento.",
+    title: "Plateforme d'agents sportifs pour les parrainages d'athlètes | Sport Endorse",
+    description: "La plateforme de gestion des endorsements de Sport Endorse aide les agents sportifs à gérer les parrainages d'athlètes et les contrats d'endorsement avec des outils de communication sécurisée et de conformité.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/agency/",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/agency",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'de_DE'],
+    alternateLocale: ['en_US', 'es_ES', 'de_DE'],
     images: [
       {
         url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
@@ -35,6 +36,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AgencyPageES() {
+export default function AgencyPageFR() {
   return <AgencyContent />;
 }

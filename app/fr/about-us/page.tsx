@@ -5,25 +5,26 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Acerca de Sport Endorse - Plataforma Global de Marketing Deportivo",
-  description: "Sport Endorse es una plataforma global de marketing deportivo que apoya la industria deportiva mundial a través de un equipo diverso de expertos que une marcas y atletas.",
+  title: "À propos de Sport Endorse - Plateforme mondiale de marketing sportif",
+  description: "Sport Endorse est une plateforme mondiale de marketing sportif qui soutient l'industrie du sport dans le monde entier grâce à une équipe diversifiée d'experts réunissant marques et athlètes.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/about-us",
+    canonical: "https://www.sportendorse.com/fr/about-us",
     languages: {
       'en-gb': 'https://www.sportendorse.com/about-us',
       'es-es': 'https://www.sportendorse.com/es/about-us',
       'de-de': 'https://www.sportendorse.com/de/about-us',
+      'fr-fr': 'https://www.sportendorse.com/fr/about-us',
       'x-default': 'https://www.sportendorse.com/about-us'
     }
   },
   openGraph: {
-    title: "Acerca de Sport Endorse - Plataforma Global de Marketing Deportivo",
-    description: "Sport Endorse es una plataforma global de marketing deportivo que apoya la industria deportiva mundial a través de un equipo diverso de expertos que une marcas y atletas.",
+    title: "À propos de Sport Endorse - Plateforme mondiale de marketing sportif",
+    description: "Sport Endorse est une plateforme mondiale de marketing sportif qui soutient l'industrie du sport dans le monde entier grâce à une équipe diversifiée d'experts réunissant marques et athlètes.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/about-us",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/about-us",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'de_DE'],
+    alternateLocale: ['en_US', 'es_ES', 'de_DE'],
     images: [
       {
         url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
@@ -35,6 +36,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutUsES() {
+export default function AboutUsFR() {
   return <AboutUsContent />;
 }

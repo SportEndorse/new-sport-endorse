@@ -2,22 +2,23 @@ import { Metadata } from 'next'
 import PodcastsContent from '@/components/PodcastsContent'
 
 export const metadata: Metadata = {
-  title: "Podcasts de Marketing Deportivo e Insights de Expertos | Sport Endorse",
-  description: "Escucha discusiones de expertos sobre marketing deportivo, asociaciones de atletas e insights de la industria. Mantente al día con nuestros podcasts de patrocinio deportivo.",
+  title: "Podcasts de marketing sportif et insights d'experts | Sport Endorse",
+  description: "Écoutez des discussions d'experts sur le marketing sportif, les partenariats d'athlètes et les tendances du secteur. Gardez une longueur d'avance avec nos podcasts de sponsoring sportif.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/podcasts",
+    canonical: "https://www.sportendorse.com/fr/podcasts",
     languages: {
       'en': '/podcasts',
       'es': '/es/podcasts',
-      'de': '/de/podcasts'
+      'de': '/de/podcasts',
+      'fr': '/fr/podcasts'
     }
   },
   openGraph: {
-    title: "Podcasts de Marketing Deportivo e Insights de Expertos | Sport Endorse",
-    description: "Escucha discusiones de expertos sobre marketing deportivo, asociaciones de atletas e insights de la industria. Mantente al día con nuestros podcasts de patrocinio deportivo.",
+    title: "Podcasts de marketing sportif et insights d'experts | Sport Endorse",
+    description: "Écoutez des discussions d'experts sur le marketing sportif, les partenariats d'athlètes et les tendances du secteur. Gardez une longueur d'avance avec nos podcasts de sponsoring sportif.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/podcasts",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/podcasts",
     siteName: "Sport Endorse",
     images: [
       {

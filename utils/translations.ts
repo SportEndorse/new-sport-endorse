@@ -1949,9 +1949,9 @@ const translations = {
     },
     brands: {
       badge: "POUR LES MARQUES",
-      title: "Trouvez et sponsorisez des athlètes pour vos campagnes de marque et partenariats",
+      title: "Trouvez et sponsorisez des athlètes pour vos campagnes et partenariats de marque",
       description: "Sport Endorse est une plateforme mondiale de parrainage sportif qui aide les marques et les agences à se connecter avec des athlètes d'élite et des influenceurs sportifs pour les campagnes de marketing et les partenariats. Notre plateforme simplifie la façon dont vous découvrez, sponsorisez et collaborez avec les athlètes vérifiés—créant des campagnes de marque authentiques, mesurables et à fort impact qui améliorent la visibilité et l'engagement de la marque.",
-      featuredAthletes: "Athlètes mondiaux vedettes",
+      featuredAthletes: "Athlètes à l'honneur",
       viewAll: "Voir tout",
       joinAsBrand: "Rejoignez en tant que marque",
       sports: {

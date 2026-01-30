@@ -78,7 +78,7 @@ export default function BrandsContent({
                   }}>
                     <img src={talent.image} alt={talent.name} width={200} height={120} style={{ width: '100%', height: '120px', objectFit: 'cover' }} />
                     <div style={{ padding: '0.75rem' }}>
-                      <p style={{ fontSize: '0.85rem', fontWeight: '600', margin: '0 0 0.5rem 0' }}>{talent.name}</p>
+                      <p style={{ fontSize: '0.85rem', color: "black", fontWeight: '600', margin: '0 0 0.5rem 0' }}>{talent.name}</p>
                       <p style={{ fontSize: '0.75rem', color: '#666', margin: '0' }}>{talent.sport}</p>
                     </div>
                   </div>

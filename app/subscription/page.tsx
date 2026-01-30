@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       'en': 'https://www.sportendorse.com/subscription',
       'es': 'https://www.sportendorse.com/es/subscription',
       'de': 'https://www.sportendorse.com/de/subscription',
+      'fr': 'https://www.sportendorse.com/fr/subscription',
       'x-default': 'https://www.sportendorse.com/subscription'
     }
   },

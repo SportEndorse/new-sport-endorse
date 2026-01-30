@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     languages: {
       'en': '/presses',
       'es': '/es/presses',
-      'de': '/de/presses'
+      'de': '/de/presses',
+      'fr': '/fr/presses'
     }
   },
   openGraph: {

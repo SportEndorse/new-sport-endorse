@@ -5,25 +5,26 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Únete a Nuestro Mercado de Atletas y Solicita Patrocinios",
-  description: "Regístrate en Sport Endorse para conectar con marcas, encontrar oportunidades de patrocinio de atletas, solicitar acuerdos, conseguir patrocinios y hacer crecer tu influencia en la industria.",
+  title: "Rejoignez notre marketplace d'athlètes et postulez à des parrainages",
+  description: "Inscrivez-vous sur Sport Endorse pour vous connecter avec des marques, trouver des opportunités de parrainage d'athlètes, postuler à des accords, obtenir des sponsors et développer votre influence dans l'industrie.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/talent/",
+    canonical: "https://www.sportendorse.com/fr/talent",
     languages: {
-      'en-gb': 'https://www.sportendorse.com/talent/',
-      'es-es': 'https://www.sportendorse.com/es/talent/',
-      'de-de': 'https://www.sportendorse.com/de/talent/',
-      'x-default': 'https://www.sportendorse.com/talent/'
+      'en-gb': 'https://www.sportendorse.com/talent',
+      'es-es': 'https://www.sportendorse.com/es/talent',
+      'de-de': 'https://www.sportendorse.com/de/talent',
+      'fr-fr': 'https://www.sportendorse.com/fr/talent',
+      'x-default': 'https://www.sportendorse.com/talent'
     }
   },
   openGraph: {
-    title: "Únete a Nuestro Mercado de Atletas y Solicita Patrocinios",
-    description: "Regístrate en Sport Endorse para conectar con marcas, encontrar oportunidades de patrocinio de atletas, solicitar acuerdos, conseguir patrocinios y hacer crecer tu influencia en la industria.",
+    title: "Rejoignez notre marketplace d'athlètes et postulez à des parrainages",
+    description: "Inscrivez-vous sur Sport Endorse pour vous connecter avec des marques, trouver des opportunités de parrainage d'athlètes, postuler à des accords, obtenir des sponsors et développer votre influence dans l'industrie.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/talent/",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/talent",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'de_DE'],
+    alternateLocale: ['en_US', 'es_ES', 'de_DE'],
     images: [
       {
         url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
@@ -35,6 +36,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TalentPageES() {
+export default function TalentPageFR() {
   return <TalentContent />;
 }

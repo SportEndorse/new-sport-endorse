@@ -9,23 +9,24 @@ export const revalidate = false;
 
 export const metadata: Metadata = {
   //metadataBase: new URL("put the home url here later"),
-  title: "Suscríbete a la Plataforma de Patrocinio de Atletas de Sport Endorse",
-  description: "Explora cómo la plataforma de Sport Endorse simplifica la gestión de patrocinios. Solicita una demostración GRATUITA para conectar con atletas, embajadores de marca e influencers deportivos.",
+  title: "Abonnez-vous à la plateforme de parrainage d'athlètes de Sport Endorse",
+  description: "Découvrez comment la plateforme de Sport Endorse simplifie la gestion des parrainages. Demandez une démo GRATUITE pour vous connecter avec des athlètes, des ambassadeurs de marque et des influenceurs sportifs.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/subscription",
+    canonical: "https://www.sportendorse.com/fr/subscription",
     languages: {
       'en': 'https://www.sportendorse.com/subscription',
       'es': 'https://www.sportendorse.com/es/subscription',
       'de': 'https://www.sportendorse.com/de/subscription',
+      'fr': 'https://www.sportendorse.com/fr/subscription',
       'x-default': 'https://www.sportendorse.com/subscription'
     }
   },
   openGraph: {
-    title: "Suscríbete a la Plataforma de Patrocinio de Atletas de Sport Endorse",
-    description: "Explora cómo la plataforma de Sport Endorse simplifica la gestión de patrocinios. Solicita una demostración GRATUITA para conectar con atletas, embajadores de marca e influencers deportivos.",
+    title: "Abonnez-vous à la plateforme de parrainage d'athlètes de Sport Endorse",
+    description: "Découvrez comment la plateforme de Sport Endorse simplifie la gestion des parrainages. Demandez une démo GRATUITE pour vous connecter avec des athlètes, des ambassadeurs de marque et des influenceurs sportifs.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/subscription",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/subscription",
     siteName: "Sport Endorse",
     images: [
       {
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 
-export default function SubscriptionES(){
+export default function SubscriptionFR(){
     return (
         <main style={{maxWidth:"1200px", margin:"0 auto"}}>
             <br/>

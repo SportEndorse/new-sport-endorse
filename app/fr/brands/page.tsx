@@ -6,25 +6,26 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Encuentra y Patrocina Atletas para el Marketing de tu Marca",
-  description: "Descubre embajadores de marca atléticos para tus campañas de marketing. Conecta con el mejor talento en Sport Endorse y gestiona patrocinios de atletas para mayor visibilidad",
+  title: "Trouvez des athlètes d'élite et des influenceurs sportifs pour votre marque | Sport Endorse",
+  description: "Découvrez des athlètes d'élite et des influenceurs sportifs pour améliorer la visibilité de votre marque. Sport Endorse vous aide à gérer les parrainages d'athlètes et les campagnes de marketing sportif.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/brands",
+    canonical: "https://www.sportendorse.com/fr/brands",
     languages: {
       'en-gb': 'https://www.sportendorse.com/brands',
       'es-es': 'https://www.sportendorse.com/es/brands',
       'de-de': 'https://www.sportendorse.com/de/brands',
+      'fr-fr': 'https://www.sportendorse.com/fr/brands',
       'x-default': 'https://www.sportendorse.com/brands'
     }
   },
   openGraph: {
-    title: "Encuentra y Patrocina Atletas para el Marketing de tu Marca",
-    description: "Descubre embajadores de marca atléticos para tus campañas de marketing. Conecta con el mejor talento en Sport Endorse y gestiona patrocinios de atletas para mayor visibilidad",
+    title: "Trouvez des athlètes d'élite et des influenceurs sportifs pour votre marque | Sport Endorse",
+    description: "Découvrez des athlètes d'élite et des influenceurs sportifs pour améliorer la visibilité de votre marque. Sport Endorse vous aide à gérer les parrainages d'athlètes et les campagnes de marketing sportif.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/brands",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/brands",
     siteName: "Sport Endorse",
-    alternateLocale: ['en_US', 'de_DE'],
+    alternateLocale: ['en_US', 'es_ES', 'de_DE'],
     images: [
       {
         url: "https://www.sportendorse.com/images/sportEndorseLogo-min.png",
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BrandsPageSpanish() {
-  const t = translations.es.brands;
+export default function BrandsPageFrench() {
+  const t = translations.fr.brands;
   
   return (
     <BrandsContent 

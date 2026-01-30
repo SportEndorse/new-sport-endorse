@@ -2,22 +2,23 @@ import { Metadata } from 'next'
 import NewsContent from '@/components/NewsContent'
 
 export const metadata: Metadata = {
-  title: "Últimas Noticias Deportivas y Comunicados de Prensa | Sport Endorse",
-  description: "Mantente actualizado con las últimas noticias y comunicados de prensa de Sport Endorse, cubriendo patrocinios de atletas, marketing deportivo y asociaciones de marca.",
+  title: "Dernières actualités sportives et communiqués de presse | Sport Endorse",
+  description: "Restez informé des dernières actualités et communiqués de presse de Sport Endorse, couvrant les parrainages d'athlètes, le marketing sportif et les partenariats de marque.",
   alternates: {
-    canonical: "https://www.sportendorse.com/es/presses",
+    canonical: "https://www.sportendorse.com/fr/presses",
     languages: {
       'en': '/presses',
       'es': '/es/presses',
-      'de': '/de/presses'
+      'de': '/de/presses',
+      'fr': '/fr/presses'
     }
   },
   openGraph: {
-    title: "Últimas Noticias Deportivas y Comunicados de Prensa | Sport Endorse",
-    description: "Mantente actualizado con las últimas noticias y comunicados de prensa de Sport Endorse, cubriendo patrocinios de atletas, marketing deportivo y asociaciones de marca.",
+    title: "Dernières actualités sportives et communiqués de presse | Sport Endorse",
+    description: "Restez informé des dernières actualités et communiqués de presse de Sport Endorse, couvrant les parrainages d'athlètes, le marketing sportif et les partenariats de marque.",
     type: "website",
-    locale: "es_ES",
-    url: "https://www.sportendorse.com/es/presses",
+    locale: "fr_FR",
+    url: "https://www.sportendorse.com/fr/presses",
     siteName: "Sport Endorse",
     images: [
       {
