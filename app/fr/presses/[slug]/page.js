@@ -33,31 +33,32 @@ export async function generateMetadata({ params }) {
   
   if (!newsStory) {
     return {
-      title: 'Noticia No Encontrada | Sport Endorse',
-      description: 'La noticia solicitada no se pudo encontrar.'
+      title: 'Actualité Non Trouvée | Sport Endorse',
+      description: 'L\'actualité demandée n\'a pas pu être trouvée.'
     }
   }
   
-  const title = decodeHtmlEntities(newsStory.title?.rendered || 'Noticia')
+  const title = decodeHtmlEntities(newsStory.title?.rendered || 'Actualité')
   const description = newsStory.yoast_head_json?.description || 
-    (newsStory.excerpt?.rendered ? newsStory.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Lee esta noticia en Sport Endorse.')
+    (newsStory.excerpt?.rendered ? newsStory.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Lisez cette actualité sur Sport Endorse.')
   
   return {
     title: `${title} | Sport Endorse`,
     description: decodeHtmlEntities(description),
       alternates: {
-        canonical: `https://www.sportendorse.com/es/presses/${resolvedParams.slug}`,
+        canonical: `https://www.sportendorse.com/fr/presses/${resolvedParams.slug}`,
         languages: {
           'en': `/presses/${resolvedParams.slug}`,
           'es': `/es/presses/${resolvedParams.slug}`,
-          'de': `/de/presses/${resolvedParams.slug}`
+          'de': `/de/presses/${resolvedParams.slug}`,
+          'fr': `/fr/presses/${resolvedParams.slug}`
         }
       },
     openGraph: {
       title,
       description: decodeHtmlEntities(description),
       type: 'article',
-      locale: 'es_ES',
+      locale: 'fr_FR',
       publishedTime: newsStory.date,
       authors: newsStory._embedded?.author?.[0]?.name ? [newsStory._embedded.author[0].name] : undefined,
       images: newsStory.yoast_head_json?.og_image?.[0]?.url ? [

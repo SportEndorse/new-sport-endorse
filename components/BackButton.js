@@ -13,6 +13,8 @@ export default function BackButton() {
       window.location.href = '/es/success_stories';
     } else if (path.startsWith('/de')) {
       window.location.href = '/de/success_stories';
+    } else if (path.startsWith('/fr')) {
+      window.location.href = '/fr/success_stories';
     } else {
       window.location.href = '/success_stories';
     }

@@ -86,7 +86,7 @@ function generateContextKey(
  */
 async function getCachedTranslation(
   contextKey: string,
-  language: 'es' | 'de',
+  language: 'es' | 'de' | 'fr',
   sourceHash: string
 ): Promise<string | null> {
   try {
@@ -119,7 +119,7 @@ async function getCachedTranslation(
  */
 async function getCachedTranslationsBatch(
   contextKeys: Array<{ key: string; hash: string }>,
-  language: 'es' | 'de'
+  language: 'es' | 'de' | 'fr'
 ): Promise<Map<string, string>> {
   const cache = new Map<string, string>();
   
@@ -153,7 +153,7 @@ async function getCachedTranslationsBatch(
  */
 async function saveTranslation(
   contextKey: string,
-  language: 'es' | 'de',
+  language: 'es' | 'de' | 'fr',
   sourceHash: string,
   translatedText: string
 ): Promise<void> {
@@ -178,7 +178,7 @@ async function saveTranslation(
  */
 export async function translateText(
   text: string,
-  targetLanguage: 'es' | 'de',
+  targetLanguage: 'es' | 'de' | 'fr',
   contextKey: string
 ): Promise<string> {
   if (!text || text.trim().length === 0) {
@@ -273,7 +273,7 @@ export async function translateWordPressPost(
     success_stories_bottom_description?: string;
   },
   postType: 'post' | 'podcast' | 'press' | 'success_story',
-  targetLanguage: 'es' | 'de'
+  targetLanguage: 'es' | 'de' | 'fr'
 ): Promise<{
   title: { rendered: string };
   excerpt: { rendered: string };

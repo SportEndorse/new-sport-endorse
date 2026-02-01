@@ -13,6 +13,8 @@ export default function PodcastBackButton() {
       window.location.href = '/es/podcasts';
     } else if (path.startsWith('/de')) {
       window.location.href = '/de/podcasts';
+    } else if (path.startsWith('/fr')) {
+    window.location.href = '/fr/podcasts';
     } else {
       window.location.href = '/podcasts';
     }

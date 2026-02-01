@@ -34,31 +34,32 @@ export async function generateMetadata({ params }) {
     
     if (!story) {
       return {
-        title: 'Historia de Éxito No Encontrada | Sport Endorse',
-        description: 'La historia de éxito solicitada no se pudo encontrar.'
+        title: 'Histoire de Succès Non Trouvée | Sport Endorse',
+        description: 'L\'histoire de succès demandée n\'a pas pu être trouvée.'
       }
     }
     
-    const title = decodeHtmlEntities(story.title?.rendered || 'Historia de Éxito')
+    const title = decodeHtmlEntities(story.title?.rendered || 'Histoire de Succès')
     const description = story.yoast_head_json?.description || 
-      (story.excerpt?.rendered ? story.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Lea esta historia de éxito inspiradora.')
+      (story.excerpt?.rendered ? story.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Lisez cette histoire de succès inspirante.')
     
     return {
       title: `${title} | Sport Endorse`,
       description: decodeHtmlEntities(description),
       alternates: {
-        canonical: `https://www.sportendorse.com/es/success_stories/${resolvedParams.slug}`,
+        canonical: `https://www.sportendorse.com/fr/success_stories/${resolvedParams.slug}`,
         languages: {
           'en': `/success_stories/${resolvedParams.slug}`,
           'es': `/es/success_stories/${resolvedParams.slug}`,
-          'de': `/de/success_stories/${resolvedParams.slug}`
+          'de': `/de/success_stories/${resolvedParams.slug}`,
+          'fr': `/fr/success_stories/${resolvedParams.slug}`
         }
       },
       openGraph: {
         title,
         description: decodeHtmlEntities(description),
         type: 'article',
-        locale: 'es_ES',
+        locale: 'fr_FR',
         publishedTime: story.date,
         images: story.yoast_head_json?.og_image?.[0]?.url ? [
           {
@@ -79,8 +80,8 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.warn('Error generating metadata for success story:', error)
     return {
-      title: 'Historia de Éxito | Sport Endorse',
-      description: 'Lea historias de éxito inspiradoras en Sport Endorse.'
+      title: 'Histoire de Succès | Sport Endorse',
+      description: 'Lisez des histoires de succès inspirantes sur Sport Endorse.'
     }
   }
 }

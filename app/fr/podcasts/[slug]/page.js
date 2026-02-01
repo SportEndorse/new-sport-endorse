@@ -33,31 +33,32 @@ export async function generateMetadata({ params }) {
   
   if (!podcast) {
     return {
-      title: 'Podcast No Encontrado | Sport Endorse',
-      description: 'El episodio de podcast solicitado no se pudo encontrar.'
+      title: 'Podcast Non Trouvé | Sport Endorse',
+      description: 'L\'épisode de podcast demandé n\'a pas pu être trouvé.'
     }
   }
   
-  const title = decodeHtmlEntities(podcast.title?.rendered || 'Episodio de Podcast')
+  const title = decodeHtmlEntities(podcast.title?.rendered || 'Épisode de Podcast')
   const description = podcast.yoast_head_json?.description || 
-    (podcast.excerpt?.rendered ? podcast.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Escucha este episodio de podcast en Sport Endorse.')
+    (podcast.excerpt?.rendered ? podcast.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Écoutez cet épisode de podcast sur Sport Endorse.')
   
   return {
     title: `${title} | Sport Endorse`,
     description: decodeHtmlEntities(description),
     alternates: {
-      canonical: `https://www.sportendorse.com/es/podcasts/${resolvedParams.slug}`,
+      canonical: `https://www.sportendorse.com/fr/podcasts/${resolvedParams.slug}`,
       languages: {
         'en': `/podcasts/${resolvedParams.slug}`,
         'es': `/es/podcasts/${resolvedParams.slug}`,
-        'de': `/de/podcasts/${resolvedParams.slug}`
+        'de': `/de/podcasts/${resolvedParams.slug}`,
+        'fr': `/fr/podcasts/${resolvedParams.slug}`
       }
     },
     openGraph: {
       title,
       description: decodeHtmlEntities(description),
       type: 'article',
-      locale: 'es_ES',
+      locale: 'fr_FR',
       publishedTime: podcast.date,
       images: podcast.yoast_head_json?.og_image?.[0]?.url ? [
         {

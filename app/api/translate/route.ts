@@ -15,7 +15,7 @@ interface TranslateRequest {
     success_stories_bottom_description?: string;
   };
   postType?: 'post' | 'podcast' | 'press' | 'success_story';
-  language: 'es' | 'de';
+  language: 'es' | 'de' | 'fr';
   contextKey?: string;
 }
 
@@ -25,9 +25,9 @@ export async function POST(request: NextRequest) {
     const { text, post, postType, language, contextKey } = body;
 
     // Validate language
-    if (language !== 'es' && language !== 'de') {
+    if (language !== 'es' && language !== 'de' && language !== 'fr') {
       return NextResponse.json(
-        { error: 'Invalid language. Must be "es" or "de"' },
+        { error: 'Invalid language. Must be "es", "de", or "fr"' },
         { status: 400 }
       );
     }

@@ -50,7 +50,8 @@ export async function generateMetadata({ params }) {
       languages: {
         'en': `/podcasts/${resolvedParams.slug}`,
         'es': `/es/podcasts/${resolvedParams.slug}`,
-        'de': `/de/podcasts/${resolvedParams.slug}`
+        'de': `/de/podcasts/${resolvedParams.slug}`,
+        'fr': `/fr/podcasts/${resolvedParams.slug}`
       }
     },
     openGraph: {

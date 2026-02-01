@@ -1,10 +1,10 @@
 import { redirect } from 'next/navigation'
 import { getBlogPostSlugs } from '@/utils/wordpress-api'
 
-// Redirect old /es/blog/[slug] URLs to new /es/[slug] URLs
+// Redirect old /fr/blog/[slug] URLs to new /fr/[slug] URLs
 export default async function BlogPostRedirect({ params }) {
   const resolvedParams = await params
-  redirect(`/es/${resolvedParams.slug}`)
+  redirect(`/fr/${resolvedParams.slug}`)
 }
 
 // Generate static params for all posts
