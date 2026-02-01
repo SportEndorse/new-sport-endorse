@@ -12,6 +12,7 @@
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
     "@next/third-parties": "^15.5.3",
+    "@vercel/blob": "^2.0.1",
     "@vercel/postgres": "^0.10.0",
     "google-translate-api-x": "^10.7.2",
     "lucide-react": "^0.525.0",

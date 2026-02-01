@@ -1908,7 +1908,7 @@ const translations = {
         careers: "Carrières",
         signUpTalent: "S'inscrire en tant que talent",
         successStories: "Les Success Stories",
-        faqs: "Questions fréquemment posées",
+        faqs: "Questions fréquemment",
         blog: "Blog",
         aboutUs: "À propos de nous",
         contactUs: "Nous contacter"
