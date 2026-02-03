@@ -26,6 +26,9 @@ import "../styles/brands.css";
 import Community from "./Community";
 import UKFooter from "./UKFooter";
 
+type BrandHowItWorksProps = { ctaUrl?: string };
+const BrandHowItWorksTyped = BrandHowItWorks as unknown as ComponentType<BrandHowItWorksProps>;
+
 
 interface BrandsContentProps {
   title: string;
@@ -150,7 +153,7 @@ export default function GetStartedContent({
                         Connecting Brands, Athletes, and Sports Influencers for impactful partnerships
                     </p>
                     <a
-                        href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
+                        href="https://platform.sportendorse.com/signup/brand?subscription=trial"
                         className="brands-cta-button"
                         style={{ display: "inline-block", fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
                     >
@@ -171,7 +174,7 @@ export default function GetStartedContent({
                 {description}
                 </p>
                 <a 
-                href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
+                href="https://platform.sportendorse.com/signup/brand?subscription=trial"
                 className="brands-cta-button"
                 >
                 {buttonTitle}
@@ -205,7 +208,7 @@ export default function GetStartedContent({
                         </div>
                     </div>
                     ))}
-                    <a href={language === 'en' ? '/subscription' : `/${language}/subscription`} className="brands-cta-card" style={{ 
+                    <a href="https://platform.sportendorse.com/signup/brand?subscription=trial" className="brands-cta-card" style={{ 
                     background: '#0078c1', 
                     borderRadius: '0.75rem',
                     display: 'flex',
@@ -240,7 +243,7 @@ export default function GetStartedContent({
 
         <div style={{ textAlign: "center", margin: "3rem auto", padding: "0 1rem" }}>
           <a
-            href="https://platform.sportendorse.com/signup/brand?subscription=trial&utm_source=website&utm_medium=landing-page&utm_campaign=get-started"
+            href="https://platform.sportendorse.com/signup/brand?subscription=trial"
             className="brands-cta-button"
             style={{ display: "inline-block", maxWidth: "100%" }}
           >

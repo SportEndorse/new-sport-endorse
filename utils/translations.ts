@@ -10,7 +10,7 @@ const translations = {
       termsConditions: "Terms and Conditions.",
       contactUsTitle: "Contact Us!",
       supportedBy: "We have been supported by:",
-      copyright: "©Copyright 2025 Sport Endorse. All Rights Reserved",
+      copyright: "©Copyright 2026 Sport Endorse. All Rights Reserved",
       privacyCentre: "Privacy Centre",
       links: {
         signUpBrand: "Sign up as Brand",
@@ -642,7 +642,7 @@ const translations = {
       termsConditions: "Términos y Condiciones de Sport Endorse.",
       contactUsTitle: "¡Contáctanos!",
       supportedBy: "Hemos sido apoyados por:",
-      copyright: "©Copyright 2025 Sport Endorse. Todos los Derechos Reservados",
+      copyright: "©Copyright 2026 Sport Endorse. Todos los Derechos Reservados",
       privacyCentre: "Centro de Privacidad",
       links: {
         signUpBrand: "Registrarse como Marca",
@@ -1265,7 +1265,7 @@ const translations = {
       termsConditions: "Allgemeinen Geschäftsbedingungen zu.",
       contactUsTitle: "Kontaktieren Sie uns!",
       supportedBy: "Wir wurden unterstützt von:",
-      copyright: "©Copyright 2025 Sport Endorse. Alle Rechte vorbehalten",
+      copyright: "©Copyright 2026 Sport Endorse. Alle Rechte vorbehalten",
       privacyCentre: "Datenschutzzentrum",
       links: {
         signUpBrand: "Als Marke anmelden",
