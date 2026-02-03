@@ -26,7 +26,6 @@ import "../styles/brands.css";
 import Community from "./Community";
 import UKFooter from "./UKFooter";
 
-type BrandHowItWorksProps = { ctaUrl?: string };
 
 
 interface BrandsContentProps {
