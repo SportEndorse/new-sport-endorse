@@ -27,7 +27,6 @@ import Community from "./Community";
 import UKFooter from "./UKFooter";
 
 type BrandHowItWorksProps = { ctaUrl?: string };
-const BrandHowItWorksTyped = BrandHowItWorks as unknown as ComponentType<BrandHowItWorksProps>;
 
 
 interface BrandsContentProps {
