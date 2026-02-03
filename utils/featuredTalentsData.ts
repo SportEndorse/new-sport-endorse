@@ -381,15 +381,163 @@ export const featuredTalentsData = {
       sport: "Softball",
       location: "Florida, USA"
     }
+  ],
+  fr: [
+    {
+      name: "Marquis Dendy",
+      image: "/images/Marquis-Dendy-Featured-min.jpeg",
+      followingInstagram: "57.7k",
+      sport: "Athlétisme",
+      location: "Floride, États-Unis"
+    },
+    {
+      name: "James Lowe",
+      image: "/images/featuredTalent/James-Lowe.jpg",
+      followingInstagram: "137k",
+      sport: "Rugby",
+      location: "Dublin, Irlande"
+    },
+    {
+      name: "Kira Toussaint",
+      image: "/images/featuredTalent/Kira_Toussaint.png",
+      followingInstagram: "179k",
+      sport: "Natation",
+      location: "Amsterdam, Pays-Bas"
+    },
+    {
+      name: "Danny Simpson",
+      image: "/images/featuredTalent/Danny-Simpson.png",
+      followingInstagram: "170k",
+      sport: "Football",
+      location: "Leicester, Royaume-Uni"
+    },
+    {
+      name: "Emily Cole",
+      image: "/images/featuredTalent/emily cole.webp",
+      followingInstagram: "192k",
+      followingTiktok: "328k",
+      sport: "Athlétisme",
+      location: "Caroline du Nord, États-Unis"
+    },
+    {
+      name: "Tyler Sandoval",
+      image: "/images/featuredTalent/tyler sandoval.webp",
+      followingInstagram: "300k",
+      followingTiktok: "294.4k",
+      sport: "Lacrosse",
+      location: "New Jersey, États-Unis"
+    },
+    {
+      name: "Fabian Pecher",
+      image: "/images/featuredTalent/fabian pecher.png",
+      followingInstagram: "257k",
+      followingTiktok: "643k",
+      sport: "Football Freestyle",
+      location: "Augsbourg, Allemagne"
+    },
+    {
+      name: "Annabel Dimmock",
+      image: "/images/featuredTalent/Annabel Dimmock.jpg",
+      followingInstagram: "136k",
+      sport: "Golf",
+      location: "Londres, Royaume-Uni"
+    },
+    {
+      name: "Abby Berner",
+      image: "/images/featuredTalent/abby berner.png",
+      followingInstagram: "2.6M",
+      followingTiktok: "6M",
+      sport: "Fitness",
+      location: "Kansas, États-Unis"
+    },
+    {
+      name: "Nicole Onyewu",
+      image: "/images/featuredTalent/nicole onyewu.png",
+      followingInstagram: "32.8k",
+      sport: "Football Américain",
+      location: "Pennsylvanie, États-Unis"
+    },
+    {
+      name: "John Dawe",
+      image: "/images/featuredTalent/john dawe.png",
+      followingInstagram: "1.4k",
+      sport: "Rugby à 7",
+      location: "Heidelberg, Allemagne"
+    },
+    {
+      name: "Kayden McDonald",
+      image: "/images/featuredTalent/kayden mcdonald.png",
+      followingInstagram: "14.7k",
+      sport: "Football Américain",
+      location: "Ohio, États-Unis"
+    },
+    {
+      name: "Peter Plavec",
+      image: "/images/featuredTalent/peter plavec.png",
+      followingInstagram: "102k",
+      sport: "Natation en eau glacée et eau libre",
+      location: "Vienne, Autriche"
+    },
+    {
+      name: "Noble Johnson",
+      image: "/images/featuredTalent/noble johnson.png",
+      followingInstagram: "34k",
+      followingTiktok: "12.0k",
+      sport: "Football Américain",
+      location: "Caroline du Sud, États-Unis"
+    },
+    {
+      name: "Javante McCoy",
+      image: "/images/featuredTalent/javante mccoy.png",
+      followingInstagram: "9.3k",
+      sport: "Basketball",
+      location: "Los Angeles, États-Unis"
+    },
+    {
+      name: "Matthias Bühler",
+      image: "/images/featuredTalent/mattias buhler.png",
+      followingInstagram: "130k",
+      sport: "Athlétisme",
+      location: "Stuttgart, Allemagne"
+    },
+    {
+      name: "Greg Gurenlian",
+      image: "/images/featuredTalent/greg gurenlian.png",
+      followingInstagram: "204k",
+      followingTiktok: "8.5k",
+      sport: "Lacrosse",
+      location: "New York, États-Unis"
+    },
+    {
+      name: "Alex Adams",
+      image: "/images/featuredTalent/alex adams.webp",
+      followingInstagram: "9.3k",
+      sport: "Football Américain",
+      location: "Ohio, États-Unis"
+    },
+    {
+      name: "Akeem Dent",
+      image: "/images/featuredTalent/akeem dent.webp",
+      followingInstagram: "10.4k",
+      sport: "Football Américain",
+      location: "Floride, États-Unis"
+    },
+    {
+      name: "Amaya Gainer",
+      image: "/images/featuredTalent/amaya gainer.png",
+      followingInstagram: "9.4k",
+      sport: "Softball",
+      location: "Floride, États-Unis"
+    }
   ]
 };
 
 // Helper function to get top 5 featured talents for the brands page
-export const getTopFeaturedTalents = (language: 'en' | 'es' | 'de') => {
+export const getTopFeaturedTalents = (language: 'en' | 'es' | 'de' | 'fr') => {
   return featuredTalentsData[language].slice(0, 5);
 };
 
 // Helper function to get all featured talents for the featured talents component
-export const getAllFeaturedTalents = (language: 'en' | 'es' | 'de') => {
+export const getAllFeaturedTalents = (language: 'en' | 'es' | 'de' | 'fr') => {
   return featuredTalentsData[language];
 };

@@ -51,7 +51,8 @@ export async function generateMetadata({ params }) {
         languages: {
           'en': `/success_stories/${resolvedParams.slug}`,
           'es': `/es/success_stories/${resolvedParams.slug}`,
-          'de': `/de/success_stories/${resolvedParams.slug}`
+          'de': `/de/success_stories/${resolvedParams.slug}`,
+          'fr': `/fr/success_stories/${resolvedParams.slug}`
         }
       },
       openGraph: {

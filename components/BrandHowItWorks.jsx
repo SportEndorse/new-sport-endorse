@@ -3,9 +3,10 @@ import '../styles/brandHowItWorks.css';
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../utils/translations";
 
-export default function BrandHowItWorks({ ctaUrl } = {}) {
+export default function BrandHowItWorks({ ctaUrl }) {
     const { language } = useLanguage();
     const t = translations[language].components.brandHowItWorks;
+    const targetHref = ctaUrl || (language === 'en' ? '/subscription' : `/${language}/subscription`);
     
     const steps = [
         {
@@ -59,7 +60,7 @@ export default function BrandHowItWorks({ ctaUrl } = {}) {
                     </div>
                 ))}
                 </div>
-                <a href={ctaUrl || (language === 'en' ? '/subscription' : `/${language}/subscription`)} className="brand-how-start-link">
+                <a href={targetHref} className="brand-how-start-link">
                     <button className="brand-how-start-button">{t.buttonText}</button>
                 </a>
             </div>

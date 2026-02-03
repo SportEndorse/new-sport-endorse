@@ -1,6 +1,5 @@
 "use client";
 
-import type { ComponentType } from "react";
 import { useEffect } from "react";
 import BrandHowItWorks from "@/components/BrandHowItWorks";
 
@@ -47,43 +46,30 @@ export default function GetStartedContent({
   buttonTitle
 }: BrandsContentProps) {
   const { language } = useLanguage();
-  const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de' );
+  const topTalents = getTopFeaturedTalents(language as 'en' | 'es' | 'de' | 'fr');
 
   // Remove HubSpot chatbot widget from this landing page
   useEffect(() => {
-    let removed = false;
-
     const hideHubSpotWidget = () => {
-      if (removed) return true;
-      //console.log("Attempting to remove HubSpot widget...");
+      // Use HubSpot's official API to hide the widget
       if (window.HubSpotConversations?.widget) {
         window.HubSpotConversations.widget.remove();
-        //console.log("HubSpot widget removed on Get Started page.");
-        removed = true;
-        return true;
       }
-      return false;
     };
 
-    // Try immediately and once after load/ready; no infinite polling
-    if (!hideHubSpotWidget()) {
-      const onLoad = () => hideHubSpotWidget();
-      window.addEventListener("load", onLoad, { once: true });
-
-      window.hsConversationsOnReady = window.hsConversationsOnReady || [];
-      window.hsConversationsOnReady.push(hideHubSpotWidget);
-
-      const timeoutId = window.setTimeout(() => hideHubSpotWidget(), 1200);
-
-      return () => {
-        window.clearTimeout(timeoutId);
-        window.removeEventListener("load", onLoad);
-        if (window.HubSpotConversations?.widget) {
-          window.HubSpotConversations.widget.load();
-        }
-      };
+    // Check if HubSpot is already loaded
+    if (window.HubSpotConversations) {
+      hideHubSpotWidget();
+    } else {
+      // Wait for HubSpot to load
+      window.hsConversationsOnReady = [
+        () => {
+          hideHubSpotWidget();
+        },
+      ];
     }
 
+    // Cleanup: show widget again when leaving this page
     return () => {
       if (window.HubSpotConversations?.widget) {
         window.HubSpotConversations.widget.load();
@@ -251,7 +237,7 @@ export default function GetStartedContent({
 
         <LPBrandKeyFeatures />
 
-        <BrandHowItWorksTyped ctaUrl="https://platform.sportendorse.com/signup/brand?subscription=trial" />
+        <BrandHowItWorks ctaUrl="https://platform.sportendorse.com/signup/brand?subscription=trial" />
 
         <LPBrandsGrid variant={"8x4"} label="Brands That Trust Our Sports Marketing Platform" />
 

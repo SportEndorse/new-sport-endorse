@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     languages: {
       'en': '/contact-us',
       'es': '/es/contact-us',
-      'de': '/de/contact-us'
+      'de': '/de/contact-us',
+      'fr': '/fr/contact-us'
     }
   },
   openGraph: {

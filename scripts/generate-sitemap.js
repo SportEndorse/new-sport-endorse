@@ -76,9 +76,11 @@ async function main() {
         const enLoc = `${SITE_ROOT}${prefix}/${slug}`;
         const esLoc = `${SITE_ROOT}/es${prefix}/${slug}`;
         const deLoc = `${SITE_ROOT}/de${prefix}/${slug}`;
+        const frLoc = `${SITE_ROOT}/fr${prefix}/${slug}`;
         urls.push(buildUrlElem(enLoc, today, '0.64'));
         urls.push(buildUrlElem(esLoc, today, '0.64'));
         urls.push(buildUrlElem(deLoc, today, '0.64'));
+        urls.push(buildUrlElem(frLoc, today, '0.64'));
       }
     } catch (err) {
       console.warn('Skipping', s.endpoint, err);

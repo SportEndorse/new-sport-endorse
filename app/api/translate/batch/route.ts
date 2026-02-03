@@ -14,7 +14,7 @@ interface BatchTranslateRequest {
     success_stories_bottom_description?: string;
   }>;
   postType: 'post' | 'podcast' | 'press' | 'success_story';
-  language: 'es' | 'de';
+  language: 'es' | 'de' | 'fr';
 }
 
 export async function POST(request: NextRequest) {
@@ -23,9 +23,9 @@ export async function POST(request: NextRequest) {
     const { posts, postType, language } = body;
 
     // Validate language
-    if (language !== 'es' && language !== 'de') {
+    if (language !== 'es' && language !== 'de' && language !== 'fr') {
       return NextResponse.json(
-        { error: 'Invalid language. Must be "es" or "de"' },
+        { error: 'Invalid language. Must be "es", "de", or "fr"' },
         { status: 400 }
       );
     }

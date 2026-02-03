@@ -65,6 +65,8 @@ export default function Header() {
       detectedLanguage = 'es';
     } else if (firstSegment === 'de') {
       detectedLanguage = 'de';
+    } else if (firstSegment === 'fr') {
+      detectedLanguage = 'fr';
     }
     
     if (detectedLanguage !== language) {
@@ -77,13 +79,14 @@ export default function Header() {
       case 'en': return '/images/flags/UK_flag.png';
       case 'es': return '/images/flags/spanish_flag.svg';
       case 'de': return '/images/flags/german_flag.png';
+      case 'fr': return '/images/flags/french-flag.svg';
       default: return '/images/flags/UK_flag.png';
     }
   };
 
   const getLocalizedPath = (newLanguage: Language, currentPath: string) => {
-    // Handle root pages (/, /es, /de) - these should map to language roots, not /home
-    if (currentPath === '/' || currentPath === '/es' || currentPath === '/de') {
+    // Handle root pages (/, /es, /de, /fr) - these should map to language roots, not /home
+    if (currentPath === '/' || currentPath === '/es' || currentPath === '/de' || currentPath === '/fr') {
       if (newLanguage === 'en') {
         return '/';
       } else {
@@ -99,6 +102,8 @@ export default function Header() {
       cleanPath = cleanPath.substring(3);
     } else if (cleanPath.startsWith('/de/')) {
       cleanPath = cleanPath.substring(3);
+    } else if (cleanPath.startsWith('/fr/')) {
+      cleanPath = cleanPath.substring(3);
     }
     
     // Ensure cleanPath starts with / if it's not empty
@@ -106,7 +111,7 @@ export default function Header() {
       cleanPath = '/' + cleanPath;
     }
     
-    // Special handling for home page (/home, /es/home, /de/home) - redirect to root
+    // Special handling for home page (/home, /es/home, /de/home, /fr/home) - redirect to root
     if (cleanPath === '/home') {
       if (newLanguage === 'en') {
         return '/';
@@ -179,6 +184,9 @@ export default function Header() {
               </button>
               <button onClick={() => handleLanguageChange('de')}>
                 <img src="/images/flags/german_flag.png" alt="Deutsch" width={30} height={20} />
+              </button>
+              <button onClick={() => handleLanguageChange('fr')}>
+                <img src="/images/flags/french-flag.svg" alt="Français" width={30} height={20} />
               </button>
             </div>
           )}

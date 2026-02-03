@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
     // No cookies needed - URL path maintains language preference (GDPR/CCPA compliant)
     let newPath = '';
     
-    if (pathname.startsWith('/es') || pathname.startsWith('/de')) {
+    if (pathname.startsWith('/es') || pathname.startsWith('/de') || pathname.startsWith('/fr')) {
       // Remove current language prefix and add new one
       const pathWithoutLang = pathname.substring(3);
       newPath = newLang === 'en' ? pathWithoutLang || '/' : `/${newLang}${pathWithoutLang}`;
@@ -74,6 +74,22 @@ export default function LanguageSwitcher() {
       >
         DE
       </button>
-    </div>
+      <button
+        onClick={() => switchLanguage('fr')}
+        className={language === 'fr' ? 'active' : ''}
+        style={{
+          padding: '0.25rem 0.5rem',
+          border: '1px solid #ccc',
+          borderRadius: '4px',
+          backgroundColor: language === 'fr' ? '#0078c1' : 'transparent',
+          color: language === 'fr' ? 'white' : '#333',
+          cursor: 'pointer',
+          fontSize: '0.875rem',
+          fontWeight: language === 'fr' ? 'bold' : 'normal'
+        }}
+      >
+        FR
+      </button>
+      </div>
   );
 }

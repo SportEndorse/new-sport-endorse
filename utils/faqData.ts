@@ -280,6 +280,100 @@ export const brandFAQs = {
       question: "Kann ich mein Profil zurücksetzen?",
       answer: "Ja, Sie haben vollständiges Eigentum über Ihr Markenprofil, sodass Sie es so oft bearbeiten und aktualisieren können, wie Sie möchten, um laufende Athleten-Sponsoring-Kampagnen zu verwalten."
     }
+  ],
+  fr: [
+    {
+      question: "Comment Sport Endorse aide-t-il à trouver des athlètes pour le sponsoring ?",
+      answer: "Nous proposons une plateforme intuitive avec de puissants outils de filtrage vous permettant de découvrir des athlètes et influenceurs selon le sport, la région, la démographie et la portée sur les réseaux sociaux. Cela vous aide à trouver rapidement des talents alignés avec les valeurs de votre marque et vos objectifs de campagne."
+    },
+    {
+      question: "Quels types de partenariats pouvons-nous créer en tant que marque ?",
+      answer: "Vous pouvez créer une grande variété de partenariats marque-athlète, allant des contrats de sponsoring à long terme aux campagnes sur les réseaux sociaux à court terme, en passant par des interventions en tant que conférencier, des envois de produits et des participations à des événements."
+    },
+    {
+      question: "Pourquoi devrais-je rejoindre Sport Endorse ?",
+      answer: "En rejoignant Sport Endorse, vous accédez à plus de 7 000 athlètes vérifiés capables de promouvoir votre marque auprès de leurs audiences. Ces collaborations génèrent une notoriété accrue et davantage de ventes grâce à des opportunités de sponsoring authentiques et mesurables."
+    },
+    {
+      question: "Je suis une petite entreprise. Le sponsoring est-il également possible pour les petits budgets ?",
+      answer: "Oui, Sport Endorse propose des opportunités de sponsoring adaptées à tous les types d'entreprises et à tous les budgets. Notre vision est de rendre le sponsoring sportif accessible grâce à une technologie performante et simple d'utilisation."
+    },
+    {
+      question: "Avons-nous accès à la base de données complète des athlètes ?",
+      answer: "Oui. Dès que vous souscrivez à un abonnement, vous bénéficiez d'un accès complet à la base de données de talents actuels et anciens disponibles pour des partenariats marque-athlète."
+    },
+    {
+      question: "Comment Sport Endorse vérifie-t-il les talents ?",
+      answer: "Tous les talents rejoignant le réseau de sponsoring sportif passent par un processus de vérification. Nous confirmons leur identité, leur statut professionnel et nous nous assurons qu'ils répondent aux critères requis pour être considérés comme des talents d'élite, vous offrant ainsi une totale confiance lors de la sélection de vos partenaires."
+    },
+    {
+      question: "Pouvez-vous fournir des informations sur les campagnes ?",
+      answer: "Oui, notre équipe peut fournir des analyses sur les résultats de vos campagnes sur les réseaux sociaux. Nous proposons également des données analytiques sur les talents potentiels avant la validation d'un partenariat afin de vous aider à prendre des décisions éclairées."
+    },
+    {
+      question: "Votre équipe peut-elle examiner le contenu créé par les talents avant qu'il ne soit publié ?",
+      answer: "Oui. Si votre marque le demande dans le cadre de l'accord de sponsoring, notre équipe de Customer Success peut examiner les contenus avant publication afin de s'assurer qu'ils respectent vos exigences."
+    },
+    {
+      question: "Quels sont les frais recommandés pour obtenir de bons résultats sur la plateforme ?",
+      answer: "Selon le talent et les contenus attendus, notre expérience recommande un minimum de 500 € pour une collaboration rémunérée. Pour les campagnes basées sur l'envoi de produits, nous recommandons une valeur minimale de 150 €. Proposer des budgets plus élevés augmente considérablement le nombre de candidatures reçues."
+    },
+    {
+      question: "Combien coûte un abonnement pour les marques ?",
+      answer: "Un abonnement coûte 700 $/£/€ (+ TVA si applicable) pour 3 mois, ou 1 799 $/£/€ (+ TVA si applicable) pour 12 mois, donnant accès à l'ensemble des fonctionnalités de sponsoring de la plateforme."
+    },
+    {
+      question: "Combien coûte le sponsoring d'athlètes sur votre plateforme ?",
+      answer: "Le coût final d'une collaboration dépend du budget que vous définissez pour l'opportunité de sponsoring (TVA applicable le cas échéant), ainsi que des frais bancaires éventuels. Vous pouvez également choisir de rémunérer partiellement l'athlète avec vos produits ou services — idéal pour des partenariats marque-athlète flexibles."
+    },
+    {
+      question: "Quel système de paiement est utilisé ?",
+      answer: "Nous proposons des options de paiement flexibles par carte bancaire via Stripe, ainsi que par virement bancaire. Dans les deux cas, la plateforme génère automatiquement une facture pour chaque collaboration de sponsoring."
+    },
+    {
+      question: "Quelles sont les conditions de paiement de Sport Endorse ?",
+      answer: "Les paiements d'abonnement sont exigibles immédiatement, conformément à la formule sélectionnée. Les paiements liés aux collaborations sont exigibles une fois que les contenus et activations ont été réalisés par le talent. Pour toute question liée aux paiements, veuillez contacter accounts@sportendorse.com."
+    },
+    {
+      question: "Le support multi-devises coûte-t-il un supplément ?",
+      answer: "Non, le support multi-devises est inclus sans coût supplémentaire. Cette fonctionnalité vous permet de définir vos budgets en USD, GBP ou EUR lors de la publication d'opportunités de sponsoring. Les seuls coûts sont ceux liés à votre abonnement et au budget de chaque opportunité."
+    },
+    {
+      question: "Qu'est-ce que la sélection multi-talents ?",
+      answer: "La sélection multi-talents vous permet de sélectionner et de réserver plusieurs athlètes pour une seule opportunité de sponsoring. Cette fonctionnalité est idéale pour les campagnes multi-talents ou pour toucher des audiences plus larges. Aucun coût supplémentaire n'est appliqué pour son utilisation."
+    },
+    {
+      question: "J'ai beaucoup de candidatures. Comment décider avec qui aller de l'avant ?",
+      answer: "Un fort taux d'engagement, une proposition personnalisée pour votre campagne, un bon rapport qualité-prix et une pertinence géographique sont des critères importants. Nous mettons également en avant les athlètes actifs sur Sport Endorse ainsi que leurs évaluations issues de précédents partenariats marque-athlète."
+    },
+    {
+      question: "Puis-je écrire des conditions spéciales ou des demandes personnelles ?",
+      answer: "Oui, vous pouvez les indiquer dans la description de l'opportunité ou en discuter directement avec le talent via la messagerie intégrée à la plateforme. Veuillez noter que certains talents peuvent avoir des restrictions en raison d'accords de sponsoring existants."
+    },
+    {
+      question: "Puis-je cibler des talents individuels via la plateforme sans créer une opportunité en direct ?",
+      answer: "Actuellement non, mais cette fonctionnalité est prévue dans une future mise à jour. Lors de la création d'une opportunité, vous pouvez déjà cibler les talents par sport, sexe, âge et pays. Vous pouvez également ajouter des talents en favoris afin de suivre des profils pertinents pour de futurs partenariats marque-athlète."
+    },
+    {
+      question: "Que se passe-t-il en cas d'annulation ou de non-présentation d'un talent ?",
+      answer: "Veuillez contacter le support client à platform.hello@sportendorse.com. Si un talent annule et qu'aucun remplacement approprié ne peut être proposé, nous procéderons à un remboursement du montant payé. Si le talent ne se présente pas à l'événement, Sport Endorse effectuera un remboursement intégral."
+    },
+    {
+      question: "Que se passe-t-il si mon entreprise ou mon lieu doit annuler l'événement en raison de circonstances imprévues ?",
+      answer: "Veuillez contacter le support client à platform.hello@sportendorse.com et nous vous accompagnerons conformément à nos politiques d'annulation applicables aux collaborations de sponsoring."
+    },
+    {
+      question: "Que faire si j'ai une plainte ?",
+      answer: "Nous proposons un support client complet pour toute réclamation ou question. De plus, un système d'évaluation et de commentaires est disponible sur la plateforme afin de garantir la transparence et la qualité des partenariats marque-athlète."
+    },
+    {
+      question: "Puis-je réinitialiser mon mot de passe ?",
+      answer: "Oui, vous pouvez réinitialiser votre mot de passe à tout moment en utilisant le lien \"Mot de passe oublié ?\" sur la page de connexion."
+    },
+    {
+      question: "Puis-je réinitialiser mon profil ?",
+      answer: "Oui, vous avez le contrôle total de votre profil de marque et pouvez le modifier et le mettre à jour aussi souvent que nécessaire pour gérer vos campagnes de sponsoring en cours."
+    }
   ]
 };
 
@@ -553,6 +647,96 @@ export const talentFAQs = {
       question: "Wie sicher sind meine Informationen online?",
       answer: "Alle Athleten- und Sponsor-Daten werden sicher gespeichert, vollständig GDPR-konform, um sichere Verwaltung von Athleten-Sponsorings zu gewährleisten."
     }
+  ],
+  fr: [
+    {
+      question: "Sport Endorse est-elle une agence de gestion de talents ?",
+      answer: "Non. Nous sommes une plateforme de sponsoring sportif et une marketplace de partenariats avec des athlètes, qui vous connecte directement (vous et votre management) à des opportunités de sponsoring. Nous gérons les réservations, les paiements et la visibilité — mais nous ne détenons aucun accord d'exclusivité avec les talents."
+    },
+    {
+      question: "Qui peut s'inscrire sur Sport Endorse ? Est-ce que je me qualifie en tant que talent ?",
+      answer: "Pour vous inscrire en tant qu'athlète pour le sponsoring, vous devez être considéré comme un talent d'élite dans votre sport — un professionnel ou une personne ayant participé à des compétitions au niveau national ou international. Nous accueillons également des personnalités des médias sportifs, des conférenciers et des influenceurs fitness recherchant des collaborations rémunérées et des partenariats de sponsoring."
+    },
+    {
+      question: "Y a-t-il un âge minimum pour s'inscrire ?",
+      answer: "Oui, l'âge minimum pour créer un profil est de 16 ans."
+    },
+    {
+      question: "Comment devenir un athlète sponsorisé ou trouver un sponsor ?",
+      answer: "Pour être sponsorisé en tant qu'athlète, complétez votre profil, vérifiez votre compte et définissez votre profil comme « visible ». Vous pourrez ensuite postuler aux opportunités de sponsoring publiées par les marques."
+    },
+    {
+      question: "Comment les marques me verront-elles sur Sport Endorse ?",
+      answer: "Les profils vérifiés apparaissent dans les résultats de recherche des marques à la recherche d'athlètes à sponsoriser. Pour augmenter votre visibilité, assurez-vous que votre compte est vérifié et que votre profil est complet — cela aide les marques à trouver plus facilement les talents pour leurs campagnes."
+    },
+    {
+      question: "Puis-je m'inscrire au nom d'un talent ?",
+      answer: "Actuellement, non. Cependant, une fois qu'un talent a configuré son profil, il peut accorder un accès à un tiers pour la gestion de ses partenariats de sponsoring."
+    },
+    {
+      question: "Quelle commission Sport Endorse facture-t-il sur les transactions ?",
+      answer: "Notre commission est compétitive et transparente: Opportunités de plateforme (traitées via l'application/plateforme): $/£/€ 0-500 @ 14% de commission; $/£/€ 500-2 000 @ 16%; $/£/€ 2 000+ @ 18%. Transactions hors plateforme (traditionnelles): 20%. Cela fait de Sport Endorse l'une des plateformes de sponsoring sportif les plus rentables pour les athletes."
+    },
+    {
+      question: "Quel avantage Sport Endorse offre-t-il par rapport à une agence traditionnelle ?",
+      answer: "Sport Endorse offre aux athlètes une autonomie totale sur les opportunités de sponsoring auxquelles ils postulent. Avec une commission maximale de 18 % et un accès direct à des marques internationales, c'est un moyen efficace de trouver des sponsors sans les contraintes d'une agence."
+    },
+    {
+      question: "Quelle forme de sponsoring est disponible ?",
+      answer: "De nombreuses formes de sponsoring sont proposées : ambassadeur de marque, conférencier, promotion de produits, participation à des événements et collaborations de services (contrats de type « contra »)."
+    },
+    {
+      question: "Existe-t-il une liste complète des marques présentes sur la plateforme ?",
+      answer: "Vous pouvez consulter toutes les marques visibles et utiliser la fonction de recherche pour trouver rapidement des sponsors par nom ou par catégorie."
+    },
+    {
+      question: "Puis-je être sponsorisé par des marques que j'apprécie ?",
+      answer: "Oui. Postulez directement aux opportunités disponibles. Pour améliorer la pertinence des propositions, complétez le questionnaire Talent afin d'indiquer les marques avec lesquelles vous souhaitez collaborer."
+    },
+    {
+      question: "Comment entendre parler de nouvelles opportunités?",
+      answer: "Activez les notifications de l'application pour recevoir des mises à jour sur les nouvelles opportunités de promotion d'athlètes et les accords de parrainage au fur et à mesure qu'ils sont publiés."
+    },
+    {
+      question: "Puis-je utiliser l'IA pour créer rapidement ma biographie?",
+      answer: "Oui! Notre plateforme de parrainage d'athlètes utilise des outils d'IA pour aider à créer et optimiser votre biographie professionnelle — idéal pour les athlètes qui postulent à des parrainages ou des promotions."
+    },
+    {
+      question: "Comment être payé sur Sport Endorse ?",
+      answer: "Connectez votre compte à Stripe pour recevoir des paiements sécurisés et directs pour vos collaborations de sponsoring finalisées."
+    },
+    {
+      question: "Quelles méthodes de traitement des paiements sont utilisées et à quelle vitesse le paiement est-il traité ?",
+      answer: "Les paiements sont traités via Stripe dans les 14 jours ouvrables après la confirmation de la marque. Cela garantit un paiement rapide pour chaque opportunité de sponsoring que vous complétez."
+    },
+    {
+      question: "Qu'est-ce que la vérification KYC via Stripe et cela coûte-t-il quelque chose ?",
+      answer: "La vérification KYC est un contrôle d'identité gratuit et sécurisé, requis pour tous les athlètes inscrits. Elle renforce la confiance et respecte les réglementations internationales en matière de paiement."
+    },
+    {
+      question: "Y a-t-il une application mobile disponible ?",
+      answer: "Oui, l'application mobile Sport Endorse vous permet de gérer vos opportunités de sponsoring et vos paiements où que vous soyez."
+    },
+    {
+      question: "Y a-t-il une limite au nombre d'opportunités auxquelles je peux postuler ?",
+      answer: "Non. Vous pouvez parcourir et postuler à des opportunités de sponsoring sportif aussi souvent que vous le souhaitez."
+    },
+    {
+      question: "Que se passe-t-il si je dois annuler à la dernière minute ?",
+      answer: "Vous pouvez annuler en ligne, mais si l'annulation a lieu dans les 48 heures, contactez immédiatement le service client à platform.hello@sportendorse.com afin de protéger votre accord de sponsoring."
+    },
+    {
+      question: "Que se passe-t-il si l'organisateur / le lieu annule une opportunité ?",
+      answer: "Contactez notre équipe d'assistance à platform.hello@sportendorse.com et nous vous accompagnerons dans les prochaines étapes concernant votre sponsoring."
+    },
+    {
+      question: "Sport Endorse est-elle une plateforme d'égalité des chances ?",
+      answer: "Oui, Sport Endorse est une plateforme de sponsoring sportif fondée sur l'égalité des chances."
+    },
+    {
+      question: "Dans quelle mesure mes informations sont-elles sécurisées en ligne ?",
+      answer: "Toutes les données des athlètes et des marques sont stockées en toute sécurité et entièrement conformes au RGPD, garantissant une gestion sécurisée des partenariats de sponsoring."
+    }
   ]
 };
 
@@ -645,6 +829,36 @@ export const agencyFAQs = {
     {
       question: "Wie handhabt die Plattform den Zahlungs- und Vertragsprozess?",
       answer: "Unser System erleichtert sichere Zahlungen über Stripe und erstellt automatisch Rechnungen. Dieser nahtlose Prozess vereinfacht das Management von Sponsoring-Deals und die Buchhaltung für Ihre Agentur, sodass Sie sich auf die Athleten konzentrieren können, anstatt auf den Papierkram."
+    }
+  ],
+  fr: [
+    {
+      question: "Comment Sport Endorse fonctionne-t-il en tant que plateforme de gestion d'athlètes pour les agents?",
+      answer: "Sport Endorse sert de plateforme intégrée de gestion d'athlètes conçue pour maximiser l'efficacité. Elle fournit à votre agence d'agents sportifs un centre sécurisé pour gérer l'ensemble de votre liste, suivre la communication, soumettre des candidatures et gérer les paiements pour tous les accords de promotion d'athlètes."
+    },
+    {
+      question: "Quel est l'avantage d'utiliser Sport Endorse par rapport aux méthodes traditionnelles?",
+      answer: "En rationalisant le processus de découverte et de paiement, nous vous aidons à trouver beaucoup plus d'opportunités commerciales pour l'ensemble de votre liste. Notre plateforme pour agents sportifs vous donne un accès direct et évolutif à un volume plus élevé d'accords de marque pré-vérifiés, faisant de nous la meilleure plateforme de gestion de promotion pour développer votre entreprise."
+    },
+    {
+      question: "La répartition des commissions pour les accords conclus via la plateforme est-elle transparente?",
+      answer: "Oui, la transparence absolue est un pilier fondamental de notre partenariat. Nous sommes clairs sur notre répartition des commissions sur chaque accord que vos athlètes trouvent via notre plateforme. Nous opérons en tant que partenaire de votre agence d'agents sportifs, vous assurant de toujours connaître les termes exacts de chaque collaboration réussie."
+    },
+    {
+      question: "Quel type de support est disponible pour m'aider à trouver des accords pour ma liste?",
+      answer: "Notre équipe dédiée agit comme une extension de votre agence. Nous vous aidons activement à tirer parti de la plateforme pour agents sportifs pour identifier et conclure des accords de promotion d'athlètes plus appropriés, garantissant que vos clients restent satisfaits et pleinement engagés."
+    },
+    {
+      question: "Puis-je intégrer l'ensemble de ma liste de clients dans la plateforme?",
+      answer: "Oui. La plateforme de gestion d'athlètes est conçue pour vous aider à intégrer et gérer facilement les accords de promotion d'athlètes pour l'ensemble de votre liste, quelle que soit sa taille, offrant un aperçu complet unique de toutes leurs activités commerciales."
+    },
+    {
+      question: "Comment puis-je devenir agent partenaire avec Sport Endorse?",
+      answer: "Vous pouvez demander à devenir une agence partenaire pour un sport ou une région spécifique en cliquant sur le bouton 'Devenez partenaire'. Ce partenariat unique signifie que nous vous référerons directement les athlètes non représentés sur notre plateforme qui ont besoin d'aide contractuelle ou juridique."
+    },
+    {
+      question: "Comment la plateforme gère-t-elle le processus de paiement et de contrat?",
+      answer: "Notre système facilite les paiements sécurisés via Stripe et génère automatiquement des factures. Ce processus transparent simplifie la gestion de promotion et la comptabilité pour votre agence, vous permettant de vous concentrer sur les athlètes plutôt que sur la paperasse."
     }
   ]
 };
@@ -870,6 +1084,80 @@ export const subscriptionFAQs = {
     {
       question: "Kann ich mein Passwort zurücksetzen?",
       answer: "Ja, über den Link \"Passwort vergessen?\""
+    }
+  ],
+  fr: [
+    {
+      question: "À quoi ai-je accès pendant l'essai gratuit?",
+      answer: "Pendant l'essai gratuit de 30 jours, vous pouvez: voir jusqu'à 50 profils d'athlètes, accéder aux talents uniquement dans le marché sélectionné, et publier des opportunités sur le même marché sélectionné. Après 30 jours, votre compte d'essai se verrouillera automatiquement à moins que vous ne passiez à un abonnement payant."
+    },
+    {
+      question: "À quoi ai-je accès avec un abonnement payant?",
+      answer: "Les abonnés trimestriels et annuels reçoivent un accès complet et illimité à: tous les profils d'athlètes sur la plateforme, tous les marchés mondiaux, vues de profil illimitées, recherches illimitées et opportunités illimitées."
+    },
+    {
+      question: "Puis-je effectuer des recherches dans plusieurs pays avec un plan payant?",
+      answer: "Oui. Les abonnés payants peuvent cibler des régions illimitées pour des campagnes multi-marchés ou mondiales."
+    },
+    {
+      question: "Puis-je publier des opportunités pendant l'essai gratuit?",
+      answer: "Oui — mais uniquement sur votre marché d'essai sélectionné. Les abonnés payants peuvent publier des opportunités illimitées dans le monde entier."
+    },
+    {
+      question: "Quels types de partenariats puis-je créer?",
+      answer: "Tous les abonnés peuvent créer des campagnes telles que : partenariats sur les réseaux sociaux, collaborations rémunérées, campagnes d’envoi de produits, apparitions lors d’événements, interventions en tant que conférencier et contrats d’ambassadeur de marque à long terme."
+    },
+    {
+      question: "Puis-je envoyer des messages directement aux athlètes?",
+      answer: "Oui. La messagerie directe est activée pour les plans d'essai gratuit et payants."
+    },
+    {
+      question: "Puis-je réserver plusieurs athlètes pour une campagne?",
+      answer: "Oui. La sélection multi-talents est disponible pour tous les abonnés payants sans frais supplémentaires."
+    },
+    {
+      question: "Comment Sport Endorse vérifie-t-il les athlètes?",
+      answer: "Tous les athlètes passent par une vérification d'identité et professionnelle avant d'apparaître sur la plateforme."
+    },
+    {
+      question: "Fournissez-vous des informations sur les campagnes?",
+      answer: "Oui. Notre équipe peut vous accompagner avec des informations sur les performances et des analyses de pré-sélection pour aider à évaluer l'adéquation de l'athlète."
+    },
+    {
+      question: "Les abonnés bénéficient-ils d'un support d'intégration?",
+      answer: "Abonnés payants: intégration dédiée + Responsable de la réussite client. Utilisateurs de l'essai gratuit: ressources d'intégration guidées."
+    },
+    {
+      question: "Combien coûte la collaboration avec un athlète?",
+      answer: "Vous fixez le budget. Le montant final comprend: votre budget de campagne alloué et la TVA applicable."
+    },
+    {
+      question: "Quel budget offre les meilleurs résultats?",
+      answer: "Sur la base des performances historiques: Campagnes payantes: minimum 500 €. Campagnes de cadeaux: minimum 150 € de valeur de produit."
+    },
+    {
+      question: "Quelles méthodes de paiement sont prises en charge?",
+      answer: "Cartes de crédit d'entreprise via Stripe ou virement bancaire standard. Les factures sont générées automatiquement."
+    },
+    {
+      question: "Quand dois-je payer?",
+      answer: "Abonnements: payés immédiatement en fonction de votre plan. Paiements de campagne: payés une fois que l'athlète a terminé les livrables."
+    },
+    {
+      question: "Le support multi-devises coûte-t-il un supplément?",
+      answer: "Non. Vous pouvez définir des budgets de campagne en USD, GBP ou EUR sans frais supplémentaires."
+    },
+    {
+      question: "Que se passe-t-il lorsque mon essai gratuit se termine?",
+      answer: "Après 30 jours, le compte d'essai est automatiquement verrouillé. Passez à un abonnement trimestriel, annuel ou personnalisé pour continuer à utiliser la plateforme."
+    },
+    {
+      question: "Puis-je modifier mon profil de marque?",
+      answer: "Oui, vous pouvez mettre à jour votre profil à tout moment."
+    },
+    {
+      question: "Puis-je réinitialiser mon mot de passe?",
+      answer: "Oui, via le lien \"Mot de passe oublié?\"."
     }
   ]
 };

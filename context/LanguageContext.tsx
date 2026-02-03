@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-export type Language = "en" | "es" | "de";
+export type Language = "en" | "es" | "de" | "fr";
 
 interface LanguageContextType {
   language: Language;
@@ -15,6 +15,7 @@ function detectLanguageFromPath(): Language {
     const path = window.location.pathname;
     if (path.startsWith("/es")) return "es";
     if (path.startsWith("/de")) return "de";
+    if (path.startsWith("/fr")) return "fr";
   }
   return "en";
 }

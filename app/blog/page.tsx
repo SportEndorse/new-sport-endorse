@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     languages: {
       'en': '/blog',
       'es': '/es/blog',
-      'de': '/de/blog'
+      'de': '/de/blog',
+      'fr': '/fr/blog'
     }
   },
   openGraph: {

@@ -13,6 +13,8 @@ export default function NewsBackButton() {
       window.location.href = '/es/presses';
     } else if (path.startsWith('/de')) {
       window.location.href = '/de/presses';
+    } else if (path.startsWith('/fr')) {
+      window.location.href = '/fr/presses';
     } else {
       window.location.href = '/presses';
     }
