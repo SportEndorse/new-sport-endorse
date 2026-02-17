@@ -15,7 +15,7 @@ declare global {
     hsConversationsOnReady?: Array<() => void>;
   }
 }
-import UKBusinessSubscription from "@/components/UKBusinessSubscription";
+//import UKBusinessSubscription from "@/components/UKBusinessSubscription";
 import BrandReviews from "@/components/BrandReviews";
 import LPBrandKeyFeatures from "@/components/LPBrandKeyFeatures";
 import LPBrandsGrid from "@/components/LPBrandsGrid";
@@ -126,7 +126,7 @@ export default function GetStartedContent({
                     width: "100%",
                     padding: "1rem"
                 }}>
-                    <title>The Ultimate Sports<br/>Sponsorship Platform</title>
+                    <title>FIND THE RIGHT ATHLETES<br/>FOR YOUR BRAND</title>
                     <h1 style={{ 
                         fontSize: "clamp(1.25rem, 4vw, 2.75rem)", 
                         fontWeight: "800", 
@@ -136,7 +136,7 @@ export default function GetStartedContent({
                         textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
                         fontFamily: "inherit"
                     }}>
-                        The Ultimate Sports<br/>Sponsorship Platform
+                        FIND THE RIGHT ATHLETES<br/>FOR YOUR BRAND
                     </h1>
                     <p style={{ 
                         fontSize: "clamp(0.85rem, 2vw, 1.15rem)", 
@@ -148,7 +148,7 @@ export default function GetStartedContent({
                         fontFamily: "inherit",
                         lineHeight: "1.5"
                     }}>
-                        Connecting Brands, Athletes, and Sports Influencers for impactful partnerships
+                        Sport Endorse connects you with verified athletes.
                     </p>
                     <a
                         href="https://platform.sportendorse.com/signup/brand?subscription=trial"
@@ -249,7 +249,7 @@ export default function GetStartedContent({
           </a>
         </div>
 
-        <UKBusinessSubscription />
+        {/* <UKBusinessSubscription /> */}
 
         <BrandReviews />
 
