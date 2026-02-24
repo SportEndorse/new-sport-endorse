@@ -2,7 +2,14 @@
 
 import { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from "react";
 
-const WORDPRESS_API_URL = 'https://cms.sportendorse.com/wp-json/wp/v2';
+type ContentListType = 'podcasts' | 'blogPosts' | 'newsStories' | 'successStories';
+
+const API_TYPE: Record<ContentListType, string> = {
+  podcasts: 'podcast',
+  blogPosts: 'blog',
+  newsStories: 'press',
+  successStories: 'success_story',
+};
 
 interface WordPressPost {
   id: number;
@@ -57,73 +64,28 @@ interface WordPressDataContextType extends WordPressData {
 
 const WordPressDataContext = createContext<WordPressDataContextType | undefined>(undefined);
 
-// Helper function to fetch all pages from a WordPress endpoint
-async function fetchAllPages(endpoint: string): Promise<WordPressPost[]> {
-  let allItems: WordPressPost[] = [];
-  let page = 1;
-  let hasMore = true;
-
-  while (hasMore) {
-    try {
-      const response = await fetch(`${WORDPRESS_API_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}_embed&page=${page}`, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        // Cache for 24 hours - but we'll only fetch once per session
-        cache: 'force-cache',
-      });
-
-      if (!response.ok) {
-        if (response.status === 404) {
-          hasMore = false;
-          break;
-        }
-        console.warn(`Failed to fetch ${endpoint} page ${page}: ${response.status}`);
-        break;
-      }
-
-      const items = await response.json();
-
-      if (!items || items.length === 0) {
-        hasMore = false;
-        break;
-      }
-
-      allItems = allItems.concat(items);
-      page++;
-
-      // Check if there are more pages
-      const totalPages = response.headers.get('X-WP-TotalPages');
-      if (totalPages && page > parseInt(totalPages)) {
-        hasMore = false;
-      }
-    } catch (error) {
-      console.error(`Error fetching ${endpoint} page ${page}:`, error);
-      break;
-    }
+// Fetch list data from the Neon-backed content API
+async function fetchAllFromContent(type: ContentListType): Promise<WordPressPost[]> {
+  try {
+    const response = await fetch(`/api/content?type=${API_TYPE[type]}`);
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data.posts || [];
+  } catch (error) {
+    console.error(`Error fetching content for ${type}:`, error);
+    return [];
   }
-
-  return allItems;
 }
 
 // Fetch first N items quickly (for progressive loading)
-async function fetchFirstNPages(endpoint: string, limit: number = 3): Promise<WordPressPost[]> {
+async function fetchFirstN(type: ContentListType, limit: number = 3): Promise<WordPressPost[]> {
   try {
-    const response = await fetch(`${WORDPRESS_API_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}_embed&per_page=${limit}&page=1`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      cache: 'force-cache',
-    });
-
-    if (!response.ok) {
-      return [];
-    }
-
-    const items = await response.json();
-    return items || [];
+    const response = await fetch(`/api/content?type=${API_TYPE[type]}&limit=${limit}`);
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data.posts || [];
   } catch (error) {
-    console.error(`Error fetching first ${limit} items from ${endpoint}:`, error);
+    console.error(`Error fetching first ${limit} items for ${type}:`, error);
     return [];
   }
 }
@@ -156,13 +118,13 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
         error: null 
       }));
 
-      // Fetch all endpoints in parallel for efficiency
-      const [podcasts, blogPosts, newsStories, successStories] = await Promise.all([
-        fetchAllPages('/podcasts'),
-        fetchAllPages('/posts'),
-        fetchAllPages('/presses'),
-        fetchAllPages('/success_stories'),
-      ]);
+        // Fetch all endpoints in parallel for efficiency
+        const [podcasts, blogPosts, newsStories, successStories] = await Promise.all([
+          fetchAllFromContent('podcasts'),
+          fetchAllFromContent('blogPosts'),
+          fetchAllFromContent('newsStories'),
+          fetchAllFromContent('successStories'),
+        ]);
 
       setData({
         podcasts: podcasts || [],
@@ -196,50 +158,9 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
   const loadedTypesRef = useRef<Set<string>>(new Set());
 
   // Fetch remaining pages starting from a specific page (for progressive loading)
-  async function fetchRemainingPages(endpoint: string, startPage: number = 2): Promise<WordPressPost[]> {
-    let allItems: WordPressPost[] = [];
-    let page = startPage;
-    let hasMore = true;
-
-    while (hasMore) {
-      try {
-        const response = await fetch(`${WORDPRESS_API_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}_embed&page=${page}`, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          cache: 'force-cache',
-        });
-
-        if (!response.ok) {
-          if (response.status === 404) {
-            hasMore = false;
-            break;
-          }
-          console.warn(`Failed to fetch ${endpoint} page ${page}: ${response.status}`);
-          break;
-        }
-
-        const items = await response.json();
-
-        if (!items || items.length === 0) {
-          hasMore = false;
-          break;
-        }
-
-        allItems = allItems.concat(items);
-        page++;
-
-        const totalPages = response.headers.get('X-WP-TotalPages');
-        if (totalPages && page > parseInt(totalPages)) {
-          hasMore = false;
-        }
-      } catch (error) {
-        console.error(`Error fetching ${endpoint} page ${page}:`, error);
-        break;
-      }
-    }
-
-    return allItems;
+  async function fetchRemainingPages(listType: ContentListType, startPage: number = 2): Promise<WordPressPost[]> {
+    // With Neon content we fetch full list at once, so just reuse fetchAllFromContent
+    return fetchAllFromContent(listType);
   }
 
   // Only fetch list data when needed (lazy loading)
@@ -259,13 +180,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
       let items: WordPressPost[] = [];
       switch (type) {
         case 'podcasts':
-          const existingPodcasts = data.podcasts;
-          if (existingPodcasts.length > 0) {
-            const remainingPodcasts = await fetchRemainingPages('/podcasts', 2);
-            items = [...existingPodcasts, ...remainingPodcasts];
-          } else {
-            items = await fetchAllPages('/podcasts');
-          }
+          items = await fetchAllFromContent('podcasts');
           setData(prev => ({ 
             ...prev, 
             podcasts: items, 
@@ -273,13 +188,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
           }));
           break;
         case 'blogPosts':
-          const existingBlogPosts = data.blogPosts;
-          if (existingBlogPosts.length > 0) {
-            const remainingBlogPosts = await fetchRemainingPages('/posts', 2);
-            items = [...existingBlogPosts, ...remainingBlogPosts];
-          } else {
-            items = await fetchAllPages('/posts');
-          }
+          items = await fetchAllFromContent('blogPosts');
           setData(prev => ({ 
             ...prev, 
             blogPosts: items, 
@@ -287,13 +196,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
           }));
           break;
         case 'newsStories':
-          const existingNewsStories = data.newsStories;
-          if (existingNewsStories.length > 0) {
-            const remainingNewsStories = await fetchRemainingPages('/presses', 2);
-            items = [...existingNewsStories, ...remainingNewsStories];
-          } else {
-            items = await fetchAllPages('/presses');
-          }
+          items = await fetchAllFromContent('newsStories');
           setData(prev => ({ 
             ...prev, 
             newsStories: items, 
@@ -301,16 +204,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
           }));
           break;
         case 'successStories':
-          // Check if we already have some items cached (from progressive loading)
-          const existing = data.successStories;
-          if (existing.length > 0) {
-            // We already have page 1, so fetch remaining pages starting from page 2
-            const remainingItems = await fetchRemainingPages('/success_stories', 2);
-            items = [...existing, ...remainingItems];
-          } else {
-            // No cached items, fetch all pages from the beginning
-            items = await fetchAllPages('/success_stories');
-          }
+          items = await fetchAllFromContent('successStories');
           setData(prev => ({ 
             ...prev, 
             successStories: items, 
@@ -332,18 +226,13 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
 
   // Generic helper to fetch first N items and update cache
   const fetchFirstItems = useCallback(async (
-    endpoint: string,
+    listType: ContentListType,
     type: 'podcasts' | 'blogPosts' | 'newsStories' | 'successStories',
     limit: number
   ): Promise<WordPressPost[]> => {
     try {
       let items: WordPressPost[] = [];
-      
-      if (type === 'successStories') {
-      items = await fetchFirstNPages('/success_stories', limit);
-      } else {
-        items = await fetchFirstNPages(endpoint, limit);
-      }
+      items = await fetchFirstN(listType, limit);
       
       // Update the cache with these items
       if (items.length > 0) {
@@ -376,22 +265,22 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
 
   // Fetch first N success stories quickly (for progressive loading)
   const fetchFirstSuccessStories = useCallback(async (limit: number = 3): Promise<WordPressPost[]> => {
-    return fetchFirstItems('/success_stories', 'successStories', limit);
+    return fetchFirstItems('successStories', 'successStories', limit);
   }, [fetchFirstItems]);
 
   // Fetch first N blog posts quickly (for progressive loading)
   const fetchFirstBlogPosts = useCallback(async (limit: number = 12): Promise<WordPressPost[]> => {
-    return fetchFirstItems('/posts', 'blogPosts', limit);
+    return fetchFirstItems('blogPosts', 'blogPosts', limit);
   }, [fetchFirstItems]);
 
   // Fetch first N news stories quickly (for progressive loading)
   const fetchFirstNewsStories = useCallback(async (limit: number = 12): Promise<WordPressPost[]> => {
-    return fetchFirstItems('/presses', 'newsStories', limit);
+    return fetchFirstItems('newsStories', 'newsStories', limit);
   }, [fetchFirstItems]);
 
   // Fetch first N podcasts quickly (for progressive loading)
   const fetchFirstPodcasts = useCallback(async (limit: number = 6): Promise<WordPressPost[]> => {
-    return fetchFirstItems('/podcasts', 'podcasts', limit);
+    return fetchFirstItems('podcasts', 'podcasts', limit);
   }, [fetchFirstItems]);
 
   const getCachedItem = useCallback((type: 'podcasts' | 'blogPosts' | 'newsStories' | 'successStories', slug: string): WordPressPost | null => {
@@ -401,7 +290,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
 
   // Fetch a single item by slug (for slug pages)
   const fetchSingleItem = useCallback(async (
-    endpoint: string,
+    listType: ContentListType,
     slug: string,
     type: 'podcasts' | 'blogPosts' | 'newsStories' | 'successStories'
   ): Promise<WordPressPost | null> => {
@@ -412,23 +301,10 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
         return cached;
       }
 
-      // Fetch just this one item
-      const response = await fetch(
-        `${WORDPRESS_API_URL}${endpoint}?slug=${slug}&_embed`,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          cache: 'force-cache',
-        }
-      );
-
-      if (!response.ok) {
-        return null;
-      }
-
-      const items = await response.json();
-      const item = items[0] || null;
+      const response = await fetch(`/api/content?type=${API_TYPE[listType]}&slug=${slug}`);
+      if (!response.ok) return null;
+      const data = await response.json();
+      const item = data.post || null;
 
       if (item) {
         // Add to cache
@@ -472,19 +348,19 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
   }, [getCachedItem]);
 
   const fetchPodcastBySlug = useCallback(async (slug: string): Promise<WordPressPost | null> => {
-    return fetchSingleItem('/podcasts', slug, 'podcasts');
+    return fetchSingleItem('podcasts', slug, 'podcasts');
   }, [fetchSingleItem]);
 
   const fetchBlogPostBySlug = useCallback(async (slug: string): Promise<WordPressPost | null> => {
-    return fetchSingleItem('/posts', slug, 'blogPosts');
+    return fetchSingleItem('blogPosts', slug, 'blogPosts');
   }, [fetchSingleItem]);
 
   const fetchNewsStoryBySlug = useCallback(async (slug: string): Promise<WordPressPost | null> => {
-    return fetchSingleItem('/presses', slug, 'newsStories');
+    return fetchSingleItem('newsStories', slug, 'newsStories');
   }, [fetchSingleItem]);
 
   const fetchSuccessStoryBySlug = useCallback(async (slug: string): Promise<WordPressPost | null> => {
-    return await fetchSingleItem('/success_stories', slug, 'successStories');
+    return await fetchSingleItem('successStories', slug, 'successStories');
   }, [fetchSingleItem]);
 
   return (

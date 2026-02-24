@@ -1,6 +1,29 @@
 import { translate } from 'google-translate-api-x';
 import { sql } from '@vercel/postgres';
 import crypto from 'crypto';
+import {
+  ContentLanguage,
+  ContentType,
+  getPostBySlugFromDb,
+  upsertPostContent,
+} from './content-repository';
+
+function mapPostTypeToContentType(
+  postType: 'post' | 'podcast' | 'press' | 'success_story'
+): ContentType {
+  switch (postType) {
+    case 'post':
+      return 'blog';
+    case 'podcast':
+      return 'podcast';
+    case 'press':
+      return 'press';
+    case 'success_story':
+      return 'success_story';
+    default:
+      throw new Error(`Unsupported post type ${postType}`);
+  }
+}
 
 /**
  * Clean HTML content to protect code structure from translation
@@ -327,6 +350,27 @@ export async function translateWordPressPost(
     throw new Error(`Post ${post.slug} has empty title.rendered`);
   }
 
+  const dbType = mapPostTypeToContentType(postType);
+  const localizedFromDb = await getPostBySlugFromDb({
+    type: dbType,
+    slug: post.slug,
+    language: targetLanguage as ContentLanguage,
+  });
+
+  if (localizedFromDb) {
+    return {
+      title: localizedFromDb.title,
+      excerpt: localizedFromDb.excerpt || { rendered: '' },
+      ...(localizedFromDb.content && { content: localizedFromDb.content }),
+      ...(localizedFromDb.yoast_head_json?.description && {
+        yoast_head_json: { description: localizedFromDb.yoast_head_json.description },
+      }),
+      ...(localizedFromDb.success_stories_bottom_description && {
+        success_stories_bottom_description: localizedFromDb.success_stories_bottom_description,
+      }),
+    };
+  }
+
   // Check cache for all fields first (batch lookup for efficiency)
   const titleKey = generateContextKey(postType, post.slug, 'title');
   const titleHash = generateSourceHash(titleText);
@@ -416,16 +460,39 @@ export async function translateWordPressPost(
     }
   }
   
-  return {
+  const translatedPayload = {
     title: { rendered: translatedTitle },
     excerpt: { rendered: translatedExcerpt },
     ...(translatedContent && { content: { rendered: translatedContent } }),
-    ...(translatedYoastDescription && { 
-      yoast_head_json: { description: translatedYoastDescription } 
+    ...(translatedYoastDescription && {
+      yoast_head_json: { description: translatedYoastDescription },
     }),
-    ...(translatedBottomDescription && { 
-      success_stories_bottom_description: translatedBottomDescription 
+    ...(translatedBottomDescription && {
+      success_stories_bottom_description: translatedBottomDescription,
     }),
+  } as {
+    title: { rendered: string };
+    excerpt: { rendered: string };
+    content?: { rendered: string };
+    yoast_head_json?: { description?: string };
+    success_stories_bottom_description?: string;
   };
+
+  try {
+    await upsertPostContent({
+      type: dbType,
+      slug: post.slug,
+      language: targetLanguage as ContentLanguage,
+      title: translatedTitle,
+      excerpt: translatedExcerpt,
+      content: translatedContent,
+      yoastDescription: translatedYoastDescription,
+      bottomDescription: translatedBottomDescription,
+    });
+  } catch (error) {
+    console.error('Failed to persist translated content to posts_content:', error);
+  }
+
+  return translatedPayload;
 }
 
