@@ -29,35 +29,52 @@ function decodeHtmlEntities(text) {
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const resolvedParams = await params
-  const post = await getBlogPostBySlug(resolvedParams.slug)
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
+  let post = null
+  try {
+    const apiUrl = new URL(`/api/content?type=blog&slug=${encodeURIComponent(resolvedParams.slug)}&language=fr`, baseUrl)
+    const response = await fetch(apiUrl.toString(), { next: { revalidate: 3600 } })
+    if (response.ok) {
+      const payload = await response.json()
+      post = payload?.post || null
+    }
+  } catch (error) {
+    console.warn('Error fetching blog post from content API (fr):', error)
+  }
+
+  if (!post) {
+    post = await getBlogPostBySlug(resolvedParams.slug)
+  }
   
   if (!post) {
     return {
-      title: 'Publicación No Encontrada | Sport Endorse',
-      description: 'La publicación solicitada no se pudo encontrar.'
+      title: 'Article introuvable | Sport Endorse',
+      description: "L'article demandé est introuvable."
     }
   }
   
-  const title = decodeHtmlEntities(post.title?.rendered || 'Publicación del Blog')
+  const title = decodeHtmlEntities(post.title?.rendered || 'Article de blog')
   const description = post.yoast_head_json?.description || 
-    (post.excerpt?.rendered ? post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Lee esta publicación del blog en Sport Endorse.')
+    (post.excerpt?.rendered ? post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Lisez cet article sur Sport Endorse.')
   
   return {
     title: `${title} | Sport Endorse`,
     description: decodeHtmlEntities(description),
     alternates: {
-      canonical: `https://www.sportendorse.com/es/${resolvedParams.slug}`,
+      canonical: `https://www.sportendorse.com/fr/${resolvedParams.slug}`,
       languages: {
         'en': `/${resolvedParams.slug}`,
         'es': `/es/${resolvedParams.slug}`,
-        'de': `/de/${resolvedParams.slug}`
+        'de': `/de/${resolvedParams.slug}`,
+        'fr': `/fr/${resolvedParams.slug}`
       }
     },
     openGraph: {
       title,
       description: decodeHtmlEntities(description),
       type: 'article',
-      locale: 'es_ES',
+      locale: 'fr_FR',
       publishedTime: post.date,
       authors: post._embedded?.author?.[0]?.name ? [post._embedded.author[0].name] : undefined,
       images: post._embedded?.['wp:featuredmedia']?.[0]?.source_url ? [

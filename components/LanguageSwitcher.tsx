@@ -6,7 +6,7 @@ import { useLanguage } from '@/context/LanguageContext';
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
-  const { language } = useLanguage();
+  const { language, changeLanguage } = useLanguage();
 
   const switchLanguage = (newLang: string) => {
     // No cookies needed - URL path maintains language preference (GDPR/CCPA compliant)
@@ -21,6 +21,7 @@ export default function LanguageSwitcher() {
       newPath = newLang === 'en' ? pathname : `/${newLang}${pathname}`;
     }
     
+    changeLanguage(newLang as 'en' | 'es' | 'de' | 'fr');
     router.push(newPath);
   };
 

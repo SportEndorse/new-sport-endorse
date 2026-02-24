@@ -29,7 +29,23 @@ function decodeHtmlEntities(text) {
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const resolvedParams = await params
-  const post = await getBlogPostBySlug(resolvedParams.slug)
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
+  let post = null
+  try {
+    const apiUrl = new URL(`/api/content?type=blog&slug=${encodeURIComponent(resolvedParams.slug)}&language=de`, baseUrl)
+    const response = await fetch(apiUrl.toString(), { next: { revalidate: 3600 } })
+    if (response.ok) {
+      const payload = await response.json()
+      post = payload?.post || null
+    }
+  } catch (error) {
+    console.warn('Error fetching blog post from content API (de):', error)
+  }
+
+  if (!post) {
+    post = await getBlogPostBySlug(resolvedParams.slug)
+  }
   
   if (!post) {
     return {
@@ -50,7 +66,8 @@ export async function generateMetadata({ params }) {
       languages: {
         'en': `/${resolvedParams.slug}`,
         'es': `/es/${resolvedParams.slug}`,
-        'de': `/de/${resolvedParams.slug}`
+        'de': `/de/${resolvedParams.slug}`,
+        'fr': `/fr/${resolvedParams.slug}`
       }
     },
     openGraph: {
