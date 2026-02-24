@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from "react";
+import { useLanguage } from "./LanguageContext";
 
 type ContentListType = 'podcasts' | 'blogPosts' | 'newsStories' | 'successStories';
 
@@ -65,9 +66,9 @@ interface WordPressDataContextType extends WordPressData {
 const WordPressDataContext = createContext<WordPressDataContextType | undefined>(undefined);
 
 // Fetch list data from the Neon-backed content API
-async function fetchAllFromContent(type: ContentListType): Promise<WordPressPost[]> {
+async function fetchAllFromContent(type: ContentListType, language: string = 'en'): Promise<WordPressPost[]> {
   try {
-    const response = await fetch(`/api/content?type=${API_TYPE[type]}`);
+    const response = await fetch(`/api/content?type=${API_TYPE[type]}&language=${language}`);
     if (!response.ok) return [];
     const data = await response.json();
     return data.posts || [];
@@ -78,9 +79,9 @@ async function fetchAllFromContent(type: ContentListType): Promise<WordPressPost
 }
 
 // Fetch first N items quickly (for progressive loading)
-async function fetchFirstN(type: ContentListType, limit: number = 3): Promise<WordPressPost[]> {
+async function fetchFirstN(type: ContentListType, language: string = 'en', limit: number = 3): Promise<WordPressPost[]> {
   try {
-    const response = await fetch(`/api/content?type=${API_TYPE[type]}&limit=${limit}`);
+    const response = await fetch(`/api/content?type=${API_TYPE[type]}&limit=${limit}&language=${language}`);
     if (!response.ok) return [];
     const data = await response.json();
     return data.posts || [];
@@ -91,6 +92,7 @@ async function fetchFirstN(type: ContentListType, limit: number = 3): Promise<Wo
 }
 
 export function WordPressDataProvider({ children }: { children: ReactNode }) {
+  const { language } = useLanguage();
   const [data, setData] = useState<WordPressData>({
     podcasts: [],
     blogPosts: [],
@@ -105,7 +107,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
     error: null,
   });
 
-  const fetchAllData = async () => {
+  const fetchAllData = useCallback(async () => {
     try {
       setData(prev => ({ 
         ...prev, 
@@ -118,13 +120,13 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
         error: null 
       }));
 
-        // Fetch all endpoints in parallel for efficiency
-        const [podcasts, blogPosts, newsStories, successStories] = await Promise.all([
-          fetchAllFromContent('podcasts'),
-          fetchAllFromContent('blogPosts'),
-          fetchAllFromContent('newsStories'),
-          fetchAllFromContent('successStories'),
-        ]);
+      // Fetch all endpoints in parallel for efficiency
+      const [podcasts, blogPosts, newsStories, successStories] = await Promise.all([
+        fetchAllFromContent('podcasts', language),
+        fetchAllFromContent('blogPosts', language),
+        fetchAllFromContent('newsStories', language),
+        fetchAllFromContent('successStories', language),
+      ]);
 
       setData({
         podcasts: podcasts || [],
@@ -152,15 +154,27 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
         error: error instanceof Error ? error : new Error('Failed to fetch WordPress data'),
       }));
     }
-  };
+  }, [language]);
 
   // Track which data types have been loaded (using ref to avoid re-renders)
   const loadedTypesRef = useRef<Set<string>>(new Set());
 
+  // Clear loaded markers when language changes so we refetch localized data
+  useEffect(() => {
+    loadedTypesRef.current.clear();
+    setData(prev => ({
+      ...prev,
+      podcasts: [],
+      blogPosts: [],
+      newsStories: [],
+      successStories: [],
+    }));
+  }, [language]);
+
   // Fetch remaining pages starting from a specific page (for progressive loading)
   async function fetchRemainingPages(listType: ContentListType, startPage: number = 2): Promise<WordPressPost[]> {
     // With Neon content we fetch full list at once, so just reuse fetchAllFromContent
-    return fetchAllFromContent(listType);
+    return fetchAllFromContent(listType, language);
   }
 
   // Only fetch list data when needed (lazy loading)
@@ -180,7 +194,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
       let items: WordPressPost[] = [];
       switch (type) {
         case 'podcasts':
-          items = await fetchAllFromContent('podcasts');
+          items = await fetchAllFromContent('podcasts', language);
           setData(prev => ({ 
             ...prev, 
             podcasts: items, 
@@ -188,7 +202,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
           }));
           break;
         case 'blogPosts':
-          items = await fetchAllFromContent('blogPosts');
+          items = await fetchAllFromContent('blogPosts', language);
           setData(prev => ({ 
             ...prev, 
             blogPosts: items, 
@@ -196,7 +210,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
           }));
           break;
         case 'newsStories':
-          items = await fetchAllFromContent('newsStories');
+          items = await fetchAllFromContent('newsStories', language);
           setData(prev => ({ 
             ...prev, 
             newsStories: items, 
@@ -204,7 +218,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
           }));
           break;
         case 'successStories':
-          items = await fetchAllFromContent('successStories');
+          items = await fetchAllFromContent('successStories', language);
           setData(prev => ({ 
             ...prev, 
             successStories: items, 
@@ -222,7 +236,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
         error: error instanceof Error ? error : new Error(`Failed to fetch ${type}`),
       }));
     }
-  }, [data.successStories, data.podcasts, data.blogPosts, data.newsStories]);
+  }, [language]);
 
   // Generic helper to fetch first N items and update cache
   const fetchFirstItems = useCallback(async (
@@ -232,7 +246,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
   ): Promise<WordPressPost[]> => {
     try {
       let items: WordPressPost[] = [];
-      items = await fetchFirstN(listType, limit);
+      items = await fetchFirstN(listType, language, limit);
       
       // Update the cache with these items
       if (items.length > 0) {
@@ -261,7 +275,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
       console.error(`Error fetching first ${type}:`, error);
       return [];
     }
-  }, []);
+  }, [language]);
 
   // Fetch first N success stories quickly (for progressive loading)
   const fetchFirstSuccessStories = useCallback(async (limit: number = 3): Promise<WordPressPost[]> => {
@@ -301,7 +315,7 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
         return cached;
       }
 
-      const response = await fetch(`/api/content?type=${API_TYPE[listType]}&slug=${slug}`);
+      const response = await fetch(`/api/content?type=${API_TYPE[listType]}&slug=${slug}&language=${language}`);
       if (!response.ok) return null;
       const data = await response.json();
       const item = data.post || null;
@@ -325,11 +339,11 @@ export function WordPressDataProvider({ children }: { children: ReactNode }) {
       console.error(`Error fetching ${type} by slug:`, error);
       return null;
     }
-  }, [getCachedItem]);
+  }, [getCachedItem, language]);
 
   const refreshData = useCallback(async () => {
     await fetchAllData();
-  }, []);
+  }, [fetchAllData]);
 
   const getPodcastBySlug = useCallback((slug: string): WordPressPost | null => {
     return getCachedItem('podcasts', slug);

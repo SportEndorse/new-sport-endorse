@@ -25,6 +25,9 @@ interface BlogPost {
     author?: Array<{ name: string }>;
     'wp:featuredmedia'?: Array<{ source_url: string }>;
   };
+  yoast_head_json?: {
+    description?: string;
+  };
 }
 
 interface BlogPostContentProps {
@@ -41,7 +44,10 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // First check cache
+    setIsLoading(true);
+    setTranslatedPost(null);
+
+    // First check cache (per-language cache is cleared on language change)
     const cached = getBlogPostBySlug(slug);
     if (cached) {
       setPost(cached as BlogPost);
@@ -49,7 +55,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
       return;
     }
 
-    // Fetch just this one item
+    // Fetch just this one item for the current language
     fetchBlogPostBySlug(slug).then((fetchedPost) => {
       if (fetchedPost) {
         setPost(fetchedPost as BlogPost);
@@ -58,7 +64,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
       }
       setIsLoading(false);
     });
-  }, [slug, getBlogPostBySlug, fetchBlogPostBySlug]);
+  }, [slug, language, getBlogPostBySlug, fetchBlogPostBySlug]);
 
   // Translate post when language changes or post is loaded
   useEffect(() => {
@@ -69,6 +75,7 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
           title: post.title,
           excerpt: post.excerpt,
           content: post.content,
+          yoast_head_json: post.yoast_head_json ? { description: post.yoast_head_json.description } : undefined,
         },
         'post'
       ).then((translated) => {
@@ -78,6 +85,12 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
             title: translated.title,
             excerpt: translated.excerpt,
             content: translated.content || post.content,
+            ...(translated.yoast_head_json && {
+              yoast_head_json: {
+                ...post.yoast_head_json,
+                description: translated.yoast_head_json.description,
+              }
+            }),
           });
         }
       });

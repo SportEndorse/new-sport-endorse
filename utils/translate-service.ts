@@ -357,18 +357,51 @@ export async function translateWordPressPost(
     language: targetLanguage as ContentLanguage,
   });
 
-  if (localizedFromDb) {
+  const effectiveLocalized = localizedFromDb;
+
+  if (effectiveLocalized) {
+    // targetLanguage is always non-English here, so simply test if DB differs from source (indicates localized rows)
+    const looksLocalized = (
+      effectiveLocalized.title?.rendered !== post.title?.rendered ||
+      effectiveLocalized.excerpt?.rendered !== post.excerpt?.rendered ||
+      (post.content?.rendered && effectiveLocalized.content?.rendered !== post.content.rendered) ||
+      (post.yoast_head_json?.description && effectiveLocalized.yoast_head_json?.description !== post.yoast_head_json.description)
+    );
+
+    // If DB only returned the English fallback, continue to live-translate
+    if (looksLocalized) {
+      let translatedYoastDescription = effectiveLocalized.yoast_head_json?.description;
+      let translatedBottomDescription = effectiveLocalized.success_stories_bottom_description;
+
+    // If optional fields were not stored in DB, translate them on the fly
+    if (!translatedYoastDescription && post.yoast_head_json?.description) {
+      translatedYoastDescription = await translateField(
+        post.yoast_head_json.description,
+        'yoast_description',
+        `${postType}-${post.slug}-yoast-description`
+      );
+    }
+
+    if (postType === 'success_story' && !translatedBottomDescription && post.success_stories_bottom_description) {
+      translatedBottomDescription = await translateField(
+        post.success_stories_bottom_description,
+        'bottom_description',
+        `${postType}-${post.slug}-bottom-description`
+      );
+    }
+
     return {
-      title: localizedFromDb.title,
-      excerpt: localizedFromDb.excerpt || { rendered: '' },
-      ...(localizedFromDb.content && { content: localizedFromDb.content }),
-      ...(localizedFromDb.yoast_head_json?.description && {
-        yoast_head_json: { description: localizedFromDb.yoast_head_json.description },
+        title: effectiveLocalized.title,
+        excerpt: effectiveLocalized.excerpt || { rendered: '' },
+        ...(effectiveLocalized.content && { content: effectiveLocalized.content }),
+      ...(translatedYoastDescription && {
+        yoast_head_json: { description: translatedYoastDescription },
       }),
-      ...(localizedFromDb.success_stories_bottom_description && {
-        success_stories_bottom_description: localizedFromDb.success_stories_bottom_description,
+      ...(translatedBottomDescription && {
+        success_stories_bottom_description: translatedBottomDescription,
       }),
     };
+    }
   }
 
   // Check cache for all fields first (batch lookup for efficiency)
@@ -376,8 +409,9 @@ export async function translateWordPressPost(
   const titleHash = generateSourceHash(titleText);
   const excerptKey = post.excerpt?.rendered ? generateContextKey(postType, post.slug, 'excerpt') : null;
   const excerptHash = post.excerpt?.rendered ? generateSourceHash(post.excerpt.rendered) : null;
-  const contentKey = post.content?.rendered ? generateContextKey(postType, post.slug, 'content') : null;
-  const contentHash = post.content?.rendered ? generateSourceHash(post.content.rendered) : null;
+  const shouldTranslateContent = postType !== 'post';
+  const contentKey = shouldTranslateContent && post.content?.rendered ? generateContextKey(postType, post.slug, 'content') : null;
+  const contentHash = shouldTranslateContent && post.content?.rendered ? generateSourceHash(post.content.rendered) : null;
   
   const cacheKeys = [
     { key: titleKey, hash: titleHash },
@@ -418,7 +452,7 @@ export async function translateWordPressPost(
   // Only translate content if it exists
   let translatedContent: string | undefined;
   const contentText = post.content?.rendered;
-  if (contentText && contentText.trim().length > 0) {
+  if (shouldTranslateContent && contentText && contentText.trim().length > 0) {
     const cachedContent = cachedTranslations.get(contentKey!);
     if (cachedContent) {
       translatedContent = cachedContent;
@@ -432,23 +466,22 @@ export async function translateWordPressPost(
     }
   }
   
-  // For success stories, also translate special fields
+  // Translate optional fields
   let translatedYoastDescription: string | undefined;
   let translatedBottomDescription: string | undefined;
+
+  const yoastDescription = post.yoast_head_json?.description;
+  if (yoastDescription && yoastDescription.trim().length > 0) {
+    await new Promise(resolve => setTimeout(resolve, 300));
+    translatedYoastDescription = await translateField(
+      yoastDescription, 
+      'yoast_description',
+      `${postType}-${post.slug}-yoast-description`
+    );
+  }
   
+  // Only success stories have bottom descriptions
   if (postType === 'success_story') {
-    // Translate yoast_head_json.description if it exists
-    const yoastDescription = post.yoast_head_json?.description;
-    if (yoastDescription && yoastDescription.trim().length > 0) {
-      await new Promise(resolve => setTimeout(resolve, 300));
-      translatedYoastDescription = await translateField(
-        yoastDescription, 
-        'yoast_description',
-        `${postType}-${post.slug}-yoast-description`
-      );
-    }
-    
-    // Translate success_stories_bottom_description if it exists
     const bottomDescription = post.success_stories_bottom_description;
     if (bottomDescription && bottomDescription.trim().length > 0) {
       await new Promise(resolve => setTimeout(resolve, 300));

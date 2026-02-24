@@ -1,4 +1,4 @@
-import { getSuccessStorySlugs, getSuccessStoryBySlug } from '@/utils/wordpress-api'
+import { getSuccessStorySlugs } from '@/utils/wordpress-api'
 import SuccessStoryContent from '@/components/SuccessStoryContent'
 
 // Function to decode HTML entities
@@ -30,35 +30,43 @@ function decodeHtmlEntities(text) {
 export async function generateMetadata({ params }) {
   try {
     const resolvedParams = await params
-    const story = await getSuccessStoryBySlug(resolvedParams.slug)
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+    const apiUrl = new URL(`/api/content?type=success_story&slug=${encodeURIComponent(resolvedParams.slug)}&language=fr`, baseUrl)
+
+    const response = await fetch(apiUrl.toString(), {
+      next: { revalidate: 3600 },
+    })
+    const payload = response.ok ? await response.json() : null
+    const story = payload?.post
     
     if (!story) {
       return {
-        title: 'Historia de Éxito No Encontrada | Sport Endorse',
-        description: 'La historia de éxito solicitada no se pudo encontrar.'
+        title: 'Histoire de réussite introuvable | Sport Endorse',
+        description: 'La page demandée est introuvable.',
       }
     }
     
-    const title = decodeHtmlEntities(story.title?.rendered || 'Historia de Éxito')
+    const title = decodeHtmlEntities(story.title?.rendered || 'Histoire de réussite')
     const description = story.yoast_head_json?.description || 
-      (story.excerpt?.rendered ? story.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Lea esta historia de éxito inspiradora.')
+      (story.excerpt?.rendered ? story.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) : 'Découvrez cette histoire de réussite inspirante.')
     
     return {
       title: `${title} | Sport Endorse`,
       description: decodeHtmlEntities(description),
       alternates: {
-        canonical: `https://www.sportendorse.com/es/success_stories/${resolvedParams.slug}`,
+        canonical: `https://www.sportendorse.com/fr/success_stories/${resolvedParams.slug}`,
         languages: {
           'en': `/success_stories/${resolvedParams.slug}`,
           'es': `/es/success_stories/${resolvedParams.slug}`,
-          'de': `/de/success_stories/${resolvedParams.slug}`
+          'de': `/de/success_stories/${resolvedParams.slug}`,
+          'fr': `/fr/success_stories/${resolvedParams.slug}`
         }
       },
       openGraph: {
         title,
         description: decodeHtmlEntities(description),
         type: 'article',
-        locale: 'es_ES',
+        locale: 'fr_FR',
         publishedTime: story.date,
         images: story.yoast_head_json?.og_image?.[0]?.url ? [
           {
@@ -79,8 +87,8 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.warn('Error generating metadata for success story:', error)
     return {
-      title: 'Historia de Éxito | Sport Endorse',
-      description: 'Lea historias de éxito inspiradoras en Sport Endorse.'
+      title: 'Histoire de réussite | Sport Endorse',
+      description: 'Découvrez des histoires de réussite inspirantes sur Sport Endorse.'
     }
   }
 }

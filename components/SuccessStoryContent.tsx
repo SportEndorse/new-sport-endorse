@@ -63,6 +63,9 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+    setTranslatedStory(null);
+
     // First check cache
     const cached = getSuccessStoryBySlug(slug);
     if (cached) {
@@ -80,7 +83,7 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
       }
       setIsLoading(false);
     });
-  }, [slug, getSuccessStoryBySlug, fetchSuccessStoryBySlug]);
+  }, [slug, language, getSuccessStoryBySlug, fetchSuccessStoryBySlug]);
 
   // Translate success story when language changes or story is loaded
   useEffect(() => {

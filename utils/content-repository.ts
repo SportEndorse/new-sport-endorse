@@ -32,13 +32,14 @@ interface DbPostRow {
   wordpress_id: number | null;
   featured_image_url: string | null;
   yoast_og_image: string | null;
-  success_stories_bottom_description: string | null;
   created_at: string | null;
   updated_at: string | null;
   published_at: string | null;
   title: string | null;
   excerpt: string | null;
+  description: string | null;
   content: string | null;
+  success_stories_bottom_description: string | null;
 }
 
 function mapRowToPost(row: DbPostRow): WordPressLikePost {
@@ -52,7 +53,8 @@ function mapRowToPost(row: DbPostRow): WordPressLikePost {
     date,
     title: { rendered: row.title || '' },
     excerpt: { rendered: row.excerpt || '' },
-    ...(row.content && { content: { rendered: row.content } }),
+    // Always provide a content object so consumers do not crash when content is absent
+    content: { rendered: row.content || '' },
     ...(row.success_stories_bottom_description && {
       success_stories_bottom_description: row.success_stories_bottom_description,
     }),
@@ -65,7 +67,12 @@ function mapRowToPost(row: DbPostRow): WordPressLikePost {
             height: null,
           },
         ],
+        ...(row.description && { description: row.description }),
       },
+    }),
+    // If there is no OG image but we have a description, still surface it
+    ...(!ogImage && row.description && {
+      yoast_head_json: { description: row.description },
     }),
     ...(featured && {
       featured_media_url: featured,
@@ -93,13 +100,14 @@ export async function getPostsFromDb(options: {
         p.wordpress_id,
         p.featured_image_url,
         p.yoast_og_image,
-        p.success_stories_bottom_description,
         p.created_at,
         p.updated_at,
         p.published_at,
         COALESCE(pc_lang.title, pc_en.title) AS title,
         COALESCE(pc_lang.excerpt, pc_en.excerpt) AS excerpt,
-          COALESCE(pc_lang.content, pc_en.content) AS content
+        COALESCE(pc_lang.description, pc_en.description) AS description,
+        COALESCE(pc_lang.content, pc_en.content) AS content,
+        COALESCE(pc_lang.success_stories_bottom_description, pc_en.success_stories_bottom_description) AS success_stories_bottom_description
       FROM posts p
       LEFT JOIN post_content pc_lang ON pc_lang.post_id = p.id AND pc_lang.language = ${language}
       LEFT JOIN post_content pc_en ON pc_en.post_id = p.id AND pc_en.language = 'en'
@@ -135,13 +143,14 @@ export async function getPostBySlugFromDb(options: {
         p.wordpress_id,
         p.featured_image_url,
         p.yoast_og_image,
-        p.success_stories_bottom_description,
         p.created_at,
         p.updated_at,
         p.published_at,
         COALESCE(pc_lang.title, pc_en.title) AS title,
         COALESCE(pc_lang.excerpt, pc_en.excerpt) AS excerpt,
-        COALESCE(pc_lang.content, pc_en.content) AS content
+        COALESCE(pc_lang.description, pc_en.description) AS description,
+        COALESCE(pc_lang.content, pc_en.content) AS content,
+        COALESCE(pc_lang.success_stories_bottom_description, pc_en.success_stories_bottom_description) AS success_stories_bottom_description
       FROM posts p
       LEFT JOIN post_content pc_lang ON pc_lang.post_id = p.id AND pc_lang.language = ${language}
       LEFT JOIN post_content pc_en ON pc_en.post_id = p.id AND pc_en.language = 'en'
@@ -201,19 +210,25 @@ export async function upsertPostContent(options: {
         language,
         title,
         excerpt,
-        content
+        description,
+        content,
+        success_stories_bottom_description
       ) VALUES (
         ${postId},
         ${options.language},
         ${options.title},
         ${options.excerpt || ''},
-        ${options.content || null}
+        ${options.yoastDescription || null},
+        ${options.content || null},
+        ${options.bottomDescription || null}
       )
       ON CONFLICT (post_id, language)
       DO UPDATE SET
         title = EXCLUDED.title,
         excerpt = EXCLUDED.excerpt,
-        content = EXCLUDED.content
+        description = EXCLUDED.description,
+        content = EXCLUDED.content,
+        success_stories_bottom_description = EXCLUDED.success_stories_bottom_description
     `;
   } catch (error) {
     if (isMissingRelationError(error)) {
