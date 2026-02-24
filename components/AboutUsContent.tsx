@@ -324,7 +324,7 @@ export default function AboutUsContent() {
                 </div>
               </div>
 
-              <div className="about-us-partner-card">
+              {/*<div className="about-us-partner-card">
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo" style={{ backgroundColor:"black"}}>
                     <a href={t.partners.sportingClubIreland.url} target="_blank" rel="noopener">
@@ -349,7 +349,7 @@ export default function AboutUsContent() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div>*/}
 
               <div className="about-us-partner-card">
                 <div className="about-us-partner-content">
@@ -378,7 +378,7 @@ export default function AboutUsContent() {
                 </div>
               </div>
 
-              <div className="about-us-partner-card">
+              {/*<div className="about-us-partner-card">
                 <div className="about-us-partner-content">
                   <div className="about-us-partner-logo">
                     <a href={t.partners.careerFit.url} target="_blank" rel="noopener">
@@ -403,7 +403,7 @@ export default function AboutUsContent() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div>*/}
 
             </div>
           </div>
