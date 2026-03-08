@@ -38,15 +38,15 @@ export async function GET(request: NextRequest) {
     if (slug) {
       const post = await getPostBySlugFromDb({ type, slug, language });
       if (!post) {
-        return NextResponse.json({ error: 'Not found' }, { status: 404 });
+        return NextResponse.json({ error: 'Not found' }, { status: 404, headers: { 'Cache-Control': 'no-store' } });
       }
-      return NextResponse.json({ post });
+      return NextResponse.json({ post }, { headers: { 'Cache-Control': 'no-store' } });
     }
 
     const posts = await getPostsFromDb({ type, language, limit });
-    return NextResponse.json({ posts });
+    return NextResponse.json({ posts }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (error) {
     console.error('Content API error:', error);
-    return NextResponse.json({ error: 'Failed to load content' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to load content' }, { status: 500, headers: { 'Cache-Control': 'no-store' } });
   }
 }

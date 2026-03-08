@@ -1,5 +1,26 @@
 {
+  "crons": [
+    {
+      "path": "/api/wordpress/sync?type=blog",
+      "schedule": "0,15,30,45 * * * *"
+    },
+    {
+      "path": "/api/wordpress/sync?type=press",
+      "schedule": "3,18,33,48 * * * *"
+    },
+    {
+      "path": "/api/wordpress/sync?type=podcast",
+      "schedule": "6,21,36,51 * * * *"
+    },
+    {
+      "path": "/api/wordpress/sync?type=success_story",
+      "schedule": "9,24,39,54 * * * *"
+    }
+  ],
   "functions": {
+    "app/api/wordpress/sync/route.ts": {
+      "maxDuration": 60
+    },
     "app/**": {
       "maxDuration": 10
     }
@@ -27,6 +48,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
         }
       ]
     },
