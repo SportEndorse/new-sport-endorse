@@ -12,9 +12,24 @@ interface ValueItem {
   description: string;
 }
 
+interface TeamMember {
+  name: string;
+  role: string;
+  country: string;
+  countryFlag: string;
+  departments: string[];
+  imageUrl?: string;
+}
+
+interface TeamGroup {
+  type: string;
+  members: TeamMember[];
+}
+
 export default function AboutUsContent() {
   const { language } = useLanguage();
   const t = translations[language].aboutUs;
+  const teamContent = t.team;
   const [showCareerForm, setShowCareerForm] = useState(false);
   const [hubspotLoaded, setHubspotLoaded] = useState(false);
 
@@ -56,72 +71,138 @@ export default function AboutUsContent() {
     setShowCareerForm(false);
   };
 
-  const teamMembers = [
+  const teamGroups: TeamGroup[] = [
     {
-      name: "Trevor Twamley",
-      role: "Founder and CEO",
-      country: "Ireland",
-      imageUrl: "/images/teamPhotos/trevor-twamley-min.png"
+      type: teamContent.groups.boardExecutiveLeadership,
+      members: [
+        {
+          name: "Declan Bourke",
+          countryFlag: "/images/flags/Ireland_flag.png",
+          imageUrl: "/images/teamPhotos/declan-bourke-headshot.png",
+          ...teamContent.members.declanBourke
+        },
+        {
+          name: "Trevor Twamley",
+          countryFlag: "/images/flags/Ireland_flag.png",
+          imageUrl: "/images/teamPhotos/trevor-twamley-headshot.png",
+          ...teamContent.members.trevorTwamley
+        }
+      ]
     },
     {
-      name: "Declan Bourke",
-      role: "Founder and COO",
-      country: "Ireland",
-      imageUrl: "/images/teamPhotos/declan-bourke-min.png"
+      type: teamContent.groups.executiveTeam,
+      members: [
+        {
+          name: "Manav Bhatia",
+          countryFlag: "/images/flags/United_Arab_Emirates_flag.png",
+          imageUrl: "/images/teamPhotos/manav-bhatia-min.jpg",
+          ...teamContent.members.manavBhatia
+        },
+        {
+          name: "Rowan Ellis",
+          countryFlag: "/images/flags/UK_flag.png",
+          ...teamContent.members.rowanEllis
+        },
+        {
+          name: "Martin Nutty",
+          countryFlag: "/images/flags/usa-flag.svg",
+          imageUrl: "/images/teamPhotos/martin-nutty-min.jpeg",
+          ...teamContent.members.martinNutty
+        }
+      ]
     },
     {
-      name: "Manav Bhatia",
-      role: "Global Marketing Manager",
-      country: "Dubai",
-      imageUrl: "/images/teamPhotos/manav-bhatia-min.jpg"
-    },
-    {
-      name: "Martin Nutty",
-      role: "CDO",
-      country: "USA",
-      imageUrl: "/images/teamPhotos/martin-nutty-min.jpeg"
-    },
-    {
-      name: "Seán Armadá",
-      role: "Markets Development Manager",
-      country: "Spain",
-      imageUrl: "/images/teamPhotos/sean-armada-min.jpg"
-    },
-    {
-      name: "Liam Forster",
-      role: "Lead Generation Manager",
-      country: "Ireland",
-      imageUrl: "/images/teamPhotos/liam-forster-min.jpeg"
-    },
-    {
-      name: "Collin Fiske",
-      role: "Full Stack Developer",
-      country: "USA",
-      imageUrl: "/images/teamPhotos/collin-fiske-min.jpg"
-    },
-    {
-      name: "Allison Melting",
-      role: "Content Marketing Manager",
-      country: "USA",
-      imageUrl: "/images/teamPhotos/allison-melting-min.jpeg"
-    },
-    {
-      name: "Karl Napper",
-      role: "Customer Success Manager",
-      country: "Ireland",
-      imageUrl: "/images/teamPhotos/karl-napper-min.jpeg"
-    },
-    {
-      name: "Jack Sampson",
-      role: "Data Analyst",
-      country: "USA",
-      imageUrl: "/images/teamPhotos/jack-sampson-min.jpeg"
-    },
-    {
-      name: "Oscar Hunt Quinn",
-      role: "Customer Success Manager",
-      country: "Ireland",
-      imageUrl: "/images/teamPhotos/oscar-quinn-hunt-min.jpeg"
+      type: teamContent.groups.teamMembers,
+      members: [
+        {
+          name: "Seán Armadà",
+          countryFlag: "/images/flags/spanish_flag.svg",
+          imageUrl: "/images/teamPhotos/sean-armada-headshot.png",
+          ...teamContent.members.seanArmada
+        },
+        {
+          name: "Lara-Lyn Connellan",
+          countryFlag: "/images/flags/flag-of-south-africa.jpg",
+          imageUrl: "/images/teamPhotos/lara-lyn-connellan-headshot.png",
+          ...teamContent.members.laraLynConnellan
+        },
+        {
+          name: "Priyanka Deodhar",
+          countryFlag: "/images/flags/Ireland_flag.png",
+          imageUrl: "/images/teamPhotos/priyanka-deodhar-headshot.png",
+          ...teamContent.members.priyankaDeodhar
+        },
+        {
+          name: "Cameron Duckham",
+          countryFlag: "/images/flags/flag-of-south-africa.jpg",
+          ...teamContent.members.cameronDuckham
+        },
+        {
+          name: "Collin Fiske",
+          countryFlag: "/images/flags/usa-flag.svg",
+          imageUrl: "/images/teamPhotos/collin-fiske-min.jpg",
+          ...teamContent.members.collinFiske
+        },
+        {
+          name: "Liam Forster",
+          countryFlag: "/images/flags/Ireland_flag.png",
+          imageUrl: "/images/teamPhotos/liam-forster-min.jpeg",
+          ...teamContent.members.liamForster
+        },
+        {
+          name: "Clara Gómez",
+          countryFlag: "/images/flags/Ireland_flag.png",
+          imageUrl: "/images/teamPhotos/clara-gomez-headshot.png",
+          ...teamContent.members.claraGomez
+        },
+        {
+          name: "Arthur Groslier",
+          countryFlag: "/images/flags/french-flag.svg",
+          imageUrl: "/images/teamPhotos/arthur-groslier-headshot.png",
+          ...teamContent.members.arthurGroslier
+        },
+        {
+          name: "Allison Melting",
+          countryFlag: "/images/flags/usa-flag.svg",
+          imageUrl: "/images/teamPhotos/allison-melting-min.jpeg",
+          ...teamContent.members.allisonMelting
+        },
+        {
+          name: "Clementine Philbin",
+          countryFlag: "/images/flags/UK_flag.png",
+          imageUrl: "/images/teamPhotos/clementine-philbin-headshot.png",
+          ...teamContent.members.clementinePhilbin
+        },
+        {
+          name: "Paul Richardson",
+          countryFlag: "/images/flags/UK_flag.png",
+          imageUrl: "/images/teamPhotos/paul-richardson-headshot.png",
+          ...teamContent.members.paulRichardson
+        },
+        {
+          name: "Jack Sampson",
+          countryFlag: "/images/flags/usa-flag.svg",
+          imageUrl: "/images/teamPhotos/jack-sampson-min.jpeg",
+          ...teamContent.members.jackSampson
+        },
+        {
+          name: "Lena Smirnova",
+          countryFlag: "/images/flags/Ireland_flag.png",
+          imageUrl: "/images/teamPhotos/lena-smirnova-headshot.png",
+          ...teamContent.members.lenaSmirnova
+        },
+        {
+          name: "Eliott Vauret",
+          countryFlag: "/images/flags/Ireland_flag.png",
+          imageUrl: "/images/teamPhotos/eliott-vauret-headshot.png",
+          ...teamContent.members.eliottVauret
+        },
+        {
+          name: "Nicola Woodgate",
+          countryFlag: "/images/flags/flag-of-south-africa.jpg",
+          ...teamContent.members.nicolaWoodgate
+        }
+      ]
     }
   ];
 
@@ -196,27 +277,61 @@ export default function AboutUsContent() {
               </p>
             </div>
 
-            <div className="about-us-team-grid">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="about-us-team-card">
-                  <div className="about-us-team-photo-container">
-                    <img
-                      src={member.imageUrl}
-                      alt={member.name}
-                      width={200}
-                      height={200}
-                      className="about-us-team-photo"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="about-us-team-info">
-                    <h3 className="about-us-team-name">{member.name}</h3>
-                    <p className="about-us-team-role">{member.role}</p>
-                    <p className="about-us-team-role" style={{marginTop:"5px"}}>{member.country}</p>
-                  </div>
+            {teamGroups.map((group) => (
+              <div key={group.type} className="about-us-team-group">
+                <h3 className="about-us-team-group-title">{group.type}</h3>
+                <div className={`about-us-team-grid${group.members.length === 2 ? ' about-us-team-grid-compact' : ''}`}>
+                  {group.members.map((member) => (
+                    <div key={member.name} className="about-us-team-card">
+                      <div className="about-us-team-photo-container">
+                        {member.imageUrl ? (
+                          <img
+                            src={member.imageUrl}
+                            alt={member.name}
+                            width={200}
+                            height={200}
+                            className="about-us-team-photo"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="about-us-team-placeholder-avatar-large" aria-hidden="true">
+                            {member.name
+                              .split(' ')
+                              .map((part) => part[0])
+                              .join('')
+                              .slice(0, 2)
+                              .toUpperCase()}
+                          </div>
+                        )}
+                      </div>
+                      <div className="about-us-team-info">
+                        <h3 className="about-us-team-name">{member.name}</h3>
+                        <p className="about-us-team-role">{member.role}</p>
+                        <p className="about-us-team-country" style={{ marginTop: "5px" }}>
+                          <img
+                            src={member.countryFlag}
+                            alt={`${member.country} ${teamContent.flagAltSuffix}`}
+                            className="about-us-team-country-flag"
+                            loading="lazy"
+                            onError={(event) => {
+                              event.currentTarget.style.display = 'none';
+                            }}
+                          />
+                          <span>{member.country}</span>
+                        </p>
+                        <div className="about-us-team-tags">
+                          {member.departments.map((department) => (
+                            <span key={`${member.name}-${department}`} className="about-us-team-tag">
+                              {department}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -414,9 +529,9 @@ export default function AboutUsContent() {
               x
             </button>
             
-            <h3 className="popup-title">Join Our Team</h3>
+            <h3 className="popup-title">{t.careers.formTitle}</h3>
             <p className="popup-subtitle">
-              We&apos;re always looking for talented individuals to join our growing team.
+              {t.careers.formSubtitle}
             </p>
 
             <div className="hubspot-form-container">
@@ -428,7 +543,7 @@ export default function AboutUsContent() {
                   data-portal-id="4025606"
                 ></div>
               ) : (
-                <div className="loading-message">Loading form...</div>
+                <div className="loading-message">{t.careers.formLoading}</div>
               )}
             </div>
           </div>

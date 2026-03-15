@@ -177,7 +177,115 @@ const translations = {
       team: {
         title: "Meet Our",
         titleSpan: "Team",
-        subtitle: "Get to know the passionate individuals driving Sport Endorse forward"
+        subtitle: "Get to know the passionate individuals driving Sport Endorse forward",
+        flagAltSuffix: "flag",
+        groups: {
+          boardExecutiveLeadership: "Board & Executive Leadership",
+          executiveTeam: "Executive Team",
+          teamMembers: "Team Members"
+        },
+        members: {
+          declanBourke: {
+            role: "COO + Founder",
+            country: "Ireland",
+            departments: ["Management", "IT/ Operations"]
+          },
+          trevorTwamley: {
+            role: "CEO + Founder",
+            country: "Ireland",
+            departments: ["Management", "Sales"]
+          },
+          manavBhatia: {
+            role: "CMO",
+            country: "UAE",
+            departments: ["Marketing"]
+          },
+          rowanEllis: {
+            role: "CFO (fractional)",
+            country: "UK",
+            departments: ["Finance"]
+          },
+          martinNutty: {
+            role: "CDO",
+            country: "USA",
+            departments: ["IT/ Operations"]
+          },
+          seanArmada: {
+            role: "Markets Development Manager",
+            country: "Spain",
+            departments: ["Sales"]
+          },
+          laraLynConnellan: {
+            role: "Customer Success Executive",
+            country: "South Africa",
+            departments: ["Customer Success"]
+          },
+          priyankaDeodhar: {
+            role: "HR Consultant",
+            country: "Ireland",
+            departments: ["HR"]
+          },
+          cameronDuckham: {
+            role: "Bookkeeper",
+            country: "South Africa",
+            departments: ["Finance"]
+          },
+          collinFiske: {
+            role: "Full Stack Developer",
+            country: "USA",
+            departments: ["IT/ Operations"]
+          },
+          liamForster: {
+            role: "Lead Generation Manager",
+            country: "Ireland",
+            departments: ["Marketing"]
+          },
+          claraGomez: {
+            role: "Market Growth Executive",
+            country: "Ireland",
+            departments: ["Sales", "Marketing"]
+          },
+          arthurGroslier: {
+            role: "Market Development Executive",
+            country: "France",
+            departments: ["Sales", "Marketing"]
+          },
+          allisonMelting: {
+            role: "Content Strategist",
+            country: "USA",
+            departments: ["Marketing"]
+          },
+          clementinePhilbin: {
+            role: "Finance Director",
+            country: "UK",
+            departments: ["Finance"]
+          },
+          paulRichardson: {
+            role: "UK Sales & Brand Development",
+            country: "UK",
+            departments: ["Sales"]
+          },
+          jackSampson: {
+            role: "Data Analyst",
+            country: "USA",
+            departments: ["IT/ Operations"]
+          },
+          lenaSmirnova: {
+            role: "Market Development Executive",
+            country: "Ireland",
+            departments: ["Marketing", "Customer Success"]
+          },
+          eliottVauret: {
+            role: "Customer Success & Marketing Executive",
+            country: "Ireland",
+            departments: ["Customer Success", "Marketing"]
+          },
+          nicolaWoodgate: {
+            role: "Sales & Customer Success Executive",
+            country: "South Africa",
+            departments: ["Sales & Customer Success"]
+          }
+        }
       },
       careers: {
         title: "Careers",
@@ -185,7 +293,10 @@ const translations = {
         subtitle: "Are you passionate about sports marketing and want to be part of our growing team? We're always looking for talented individuals who share our values and vision.",
         cardTitle: "Ready to Make an Impact?",
         cardDescription: "At Sport Endorse, we believe in fostering talent and providing opportunities for growth. If you're looking for a dynamic environment where you can contribute to connecting athletes with brands and make a real difference in the sports industry, we'd love to hear from you.",
-        buttonText: "Get in Touch"
+        buttonText: "Get in Touch",
+        formTitle: "Join Our Team",
+        formSubtitle: "We're always looking for talented individuals to join our growing team.",
+        formLoading: "Loading form..."
       },
       partners: {
         title: "Our",
@@ -809,7 +920,115 @@ const translations = {
       team: {
         title: "Conoce Nuestro",
         titleSpan: "Equipo",
-        subtitle: "Conoce a las personas apasionadas que impulsan Sport Endorse hacia adelante"
+        subtitle: "Conoce a las personas apasionadas que impulsan Sport Endorse hacia adelante",
+        flagAltSuffix: "bandera",
+        groups: {
+          boardExecutiveLeadership: "Consejo y Dirección Ejecutiva",
+          executiveTeam: "Equipo Ejecutivo",
+          teamMembers: "Miembros del Equipo"
+        },
+        members: {
+          declanBourke: {
+            role: "COO + Fundador",
+            country: "Irlanda",
+            departments: ["Dirección", "IT/ Operaciones"]
+          },
+          trevorTwamley: {
+            role: "CEO + Fundador",
+            country: "Irlanda",
+            departments: ["Dirección", "Ventas"]
+          },
+          manavBhatia: {
+            role: "CMO",
+            country: "EAU",
+            departments: ["Marketing"]
+          },
+          rowanEllis: {
+            role: "CFO externo",
+            country: "Reino Unido",
+            departments: ["Finanzas"]
+          },
+          martinNutty: {
+            role: "CDO",
+            country: "Estados Unidos",
+            departments: ["IT/ Operaciones"]
+          },
+          seanArmada: {
+            role: "Gerente de Desarrollo de Mercados",
+            country: "España",
+            departments: ["Ventas"]
+          },
+          laraLynConnellan: {
+            role: "Ejecutiva de Éxito del Cliente",
+            country: "Sudáfrica",
+            departments: ["Éxito del Cliente"]
+          },
+          priyankaDeodhar: {
+            role: "Consultora de RR. HH.",
+            country: "Irlanda",
+            departments: ["RR. HH."]
+          },
+          cameronDuckham: {
+            role: "Contable",
+            country: "Sudáfrica",
+            departments: ["Finanzas"]
+          },
+          collinFiske: {
+            role: "Desarrollador Full Stack",
+            country: "Estados Unidos",
+            departments: ["IT/ Operaciones"]
+          },
+          liamForster: {
+            role: "Gerente de Generación de Leads",
+            country: "Irlanda",
+            departments: ["Marketing"]
+          },
+          claraGomez: {
+            role: "Ejecutiva de Crecimiento de Mercado",
+            country: "Irlanda",
+            departments: ["Ventas", "Marketing"]
+          },
+          arthurGroslier: {
+            role: "Ejecutivo de Desarrollo de Mercado",
+            country: "Francia",
+            departments: ["Ventas", "Marketing"]
+          },
+          allisonMelting: {
+            role: "Estratega de Contenido",
+            country: "Estados Unidos",
+            departments: ["Marketing"]
+          },
+          clementinePhilbin: {
+            role: "Directora Financiera",
+            country: "Reino Unido",
+            departments: ["Finanzas"]
+          },
+          paulRichardson: {
+            role: "Ventas y Desarrollo de Marca en Reino Unido",
+            country: "Reino Unido",
+            departments: ["Ventas"]
+          },
+          jackSampson: {
+            role: "Analista de Datos",
+            country: "Estados Unidos",
+            departments: ["IT/ Operaciones"]
+          },
+          lenaSmirnova: {
+            role: "Ejecutiva de Desarrollo de Mercado",
+            country: "Irlanda",
+            departments: ["Marketing", "Éxito del Cliente"]
+          },
+          eliottVauret: {
+            role: "Ejecutivo de Éxito del Cliente y Marketing",
+            country: "Irlanda",
+            departments: ["Éxito del Cliente", "Marketing"]
+          },
+          nicolaWoodgate: {
+            role: "Ejecutiva de Ventas y Éxito del Cliente",
+            country: "Sudáfrica",
+            departments: ["Ventas y Éxito del Cliente"]
+          }
+        }
       },
       careers: {
         title: "Carreras",
@@ -817,7 +1036,10 @@ const translations = {
         subtitle: "¿Eres apasionado por el marketing deportivo y quieres ser parte de nuestro equipo en crecimiento? Siempre estamos buscando individuos talentosos que compartan nuestros valores y visión.",
         cardTitle: "¿Listo para Causar un Impacto?",
         cardDescription: "En Sport Endorse, creemos en fomentar el talento y proporcionar oportunidades de crecimiento. Si estás buscando un ambiente dinámico donde puedas contribuir a conectar atletas con marcas y hacer una diferencia real en la industria deportiva, nos encantaría saber de ti.",
-        buttonText: "Ponte en Contacto"
+        buttonText: "Ponte en Contacto",
+        formTitle: "Únete a Nuestro Equipo",
+        formSubtitle: "Siempre estamos buscando personas con talento para unirse a nuestro equipo en crecimiento.",
+        formLoading: "Cargando formulario..."
       },
       partners: {
         title: "Nuestros",
@@ -1432,7 +1654,115 @@ const translations = {
       team: {
         title: "Lernen Sie Unser",
         titleSpan: "Team Kennen",
-        subtitle: "Lernen Sie die leidenschaftlichen Personen kennen, die Sport Endorse vorantreiben"
+        subtitle: "Lernen Sie die leidenschaftlichen Personen kennen, die Sport Endorse vorantreiben",
+        flagAltSuffix: "Flagge",
+        groups: {
+          boardExecutiveLeadership: "Vorstand & Geschäftsleitung",
+          executiveTeam: "Führungsteam",
+          teamMembers: "Teammitglieder"
+        },
+        members: {
+          declanBourke: {
+            role: "COO + Gründer",
+            country: "Irland",
+            departments: ["Management", "IT / Betrieb"]
+          },
+          trevorTwamley: {
+            role: "CEO + Gründer",
+            country: "Irland",
+            departments: ["Management", "Vertrieb"]
+          },
+          manavBhatia: {
+            role: "CMO",
+            country: "VAE",
+            departments: ["Marketing"]
+          },
+          rowanEllis: {
+            role: "CFO (interim)",
+            country: "Vereinigtes Königreich",
+            departments: ["Finanzen"]
+          },
+          martinNutty: {
+            role: "CDO",
+            country: "USA",
+            departments: ["IT / Betrieb"]
+          },
+          seanArmada: {
+            role: "Manager für Marktentwicklung",
+            country: "Spanien",
+            departments: ["Vertrieb"]
+          },
+          laraLynConnellan: {
+            role: "Customer Success Executive",
+            country: "Südafrika",
+            departments: ["Kundenerfolg"]
+          },
+          priyankaDeodhar: {
+            role: "HR-Beraterin",
+            country: "Irland",
+            departments: ["Personal"]
+          },
+          cameronDuckham: {
+            role: "Buchhalter",
+            country: "Südafrika",
+            departments: ["Finanzen"]
+          },
+          collinFiske: {
+            role: "Full Stack Developer",
+            country: "USA",
+            departments: ["IT / Betrieb"]
+          },
+          liamForster: {
+            role: "Manager für Leadgenerierung",
+            country: "Irland",
+            departments: ["Marketing"]
+          },
+          claraGomez: {
+            role: "Mitarbeiterin für Marktwachstum",
+            country: "Irland",
+            departments: ["Vertrieb", "Marketing"]
+          },
+          arthurGroslier: {
+            role: "Mitarbeiter für Marktentwicklung",
+            country: "Frankreich",
+            departments: ["Vertrieb", "Marketing"]
+          },
+          allisonMelting: {
+            role: "Content-Strategin",
+            country: "USA",
+            departments: ["Marketing"]
+          },
+          clementinePhilbin: {
+            role: "Finanzdirektorin",
+            country: "Vereinigtes Königreich",
+            departments: ["Finanzen"]
+          },
+          paulRichardson: {
+            role: "Vertrieb & Markenentwicklung UK",
+            country: "Vereinigtes Königreich",
+            departments: ["Vertrieb"]
+          },
+          jackSampson: {
+            role: "Datenanalyst",
+            country: "USA",
+            departments: ["IT / Betrieb"]
+          },
+          lenaSmirnova: {
+            role: "Mitarbeiterin für Marktentwicklung",
+            country: "Irland",
+            departments: ["Marketing", "Kundenerfolg"]
+          },
+          eliottVauret: {
+            role: "Mitarbeiter für Customer Success & Marketing",
+            country: "Irland",
+            departments: ["Kundenerfolg", "Marketing"]
+          },
+          nicolaWoodgate: {
+            role: "Mitarbeiterin für Vertrieb & Customer Success",
+            country: "Südafrika",
+            departments: ["Vertrieb & Kundenerfolg"]
+          }
+        }
       },
       careers: {
         title: "Karrieren",
@@ -1440,7 +1770,10 @@ const translations = {
         subtitle: "Sind Sie leidenschaftlich für Sportmarketing und möchten Teil unseres wachsenden Teams sein? Wir suchen immer nach talentierten Personen, die unsere Werte und Vision teilen.",
         cardTitle: "Bereit, einen Einfluss zu machen?",
         cardDescription: "Bei Sport Endorse glauben wir daran, Talente zu fördern und Wachstumsmöglichkeiten zu bieten. Wenn Sie nach einem dynamischen Umfeld suchen, in dem Sie dazu beitragen können, Athleten mit Marken zu verbinden und einen echten Unterschied in der Sportindustrie zu machen, würden wir gerne von Ihnen hören.",
-        buttonText: "Kontakt Aufnehmen"
+        buttonText: "Kontakt Aufnehmen",
+        formTitle: "Werden Sie Teil unseres Teams",
+        formSubtitle: "Wir sind immer auf der Suche nach talentierten Menschen, die unser wachsendes Team verstärken möchten.",
+        formLoading: "Formular wird geladen..."
       },
       partners: {
         title: "Unsere",
@@ -2064,7 +2397,115 @@ const translations = {
       team: {
         title: "Rencontrez notre",
         titleSpan: "Équipe",
-        subtitle: "Rencontrez les individus passionnés qui font avancer Sport Endorse"
+        subtitle: "Rencontrez les individus passionnés qui font avancer Sport Endorse",
+        flagAltSuffix: "drapeau",
+        groups: {
+          boardExecutiveLeadership: "Conseil d'administration et direction exécutive",
+          executiveTeam: "Équipe de direction",
+          teamMembers: "Membres de l'équipe"
+        },
+        members: {
+          declanBourke: {
+            role: "COO + Fondateur",
+            country: "Irlande",
+            departments: ["Direction", "IT / Opérations"]
+          },
+          trevorTwamley: {
+            role: "CEO + Fondateur",
+            country: "Irlande",
+            departments: ["Direction", "Ventes"]
+          },
+          manavBhatia: {
+            role: "CMO",
+            country: "EAU",
+            departments: ["Marketing"]
+          },
+          rowanEllis: {
+            role: "CFO à temps partagé",
+            country: "Royaume-Uni",
+            departments: ["Finance"]
+          },
+          martinNutty: {
+            role: "CDO",
+            country: "États-Unis",
+            departments: ["IT / Opérations"]
+          },
+          seanArmada: {
+            role: "Responsable du développement des marchés",
+            country: "Espagne",
+            departments: ["Ventes"]
+          },
+          laraLynConnellan: {
+            role: "Chargée de la réussite client",
+            country: "Afrique du Sud",
+            departments: ["Réussite client"]
+          },
+          priyankaDeodhar: {
+            role: "Consultante RH",
+            country: "Irlande",
+            departments: ["RH"]
+          },
+          cameronDuckham: {
+            role: "Comptable",
+            country: "Afrique du Sud",
+            departments: ["Finance"]
+          },
+          collinFiske: {
+            role: "Développeur full stack",
+            country: "États-Unis",
+            departments: ["IT / Opérations"]
+          },
+          liamForster: {
+            role: "Responsable de la génération de leads",
+            country: "Irlande",
+            departments: ["Marketing"]
+          },
+          claraGomez: {
+            role: "Chargée de la croissance des marchés",
+            country: "Irlande",
+            departments: ["Ventes", "Marketing"]
+          },
+          arthurGroslier: {
+            role: "Chargé du développement des marchés",
+            country: "France",
+            departments: ["Ventes", "Marketing"]
+          },
+          allisonMelting: {
+            role: "Responsable stratégie de contenu",
+            country: "États-Unis",
+            departments: ["Marketing"]
+          },
+          clementinePhilbin: {
+            role: "Directrice financière",
+            country: "Royaume-Uni",
+            departments: ["Finance"]
+          },
+          paulRichardson: {
+            role: "Ventes et développement de marque au Royaume-Uni",
+            country: "Royaume-Uni",
+            departments: ["Ventes"]
+          },
+          jackSampson: {
+            role: "Analyste de données",
+            country: "États-Unis",
+            departments: ["IT / Opérations"]
+          },
+          lenaSmirnova: {
+            role: "Chargée du développement des marchés",
+            country: "Irlande",
+            departments: ["Marketing", "Réussite client"]
+          },
+          eliottVauret: {
+            role: "Chargé de la réussite client et du marketing",
+            country: "Irlande",
+            departments: ["Réussite client", "Marketing"]
+          },
+          nicolaWoodgate: {
+            role: "Chargée des ventes et de la réussite client",
+            country: "Afrique du Sud",
+            departments: ["Ventes & réussite client"]
+          }
+        }
       },
       careers: {
         title: "Carrières",
@@ -2072,7 +2513,10 @@ const translations = {
         subtitle: "Êtes-vous passionné par le marketing sportif et voulez-vous faire partie de notre équipe en croissance? Nous recherchons toujours des individus talentueux qui partagent nos valeurs et notre vision.",
         cardTitle: "Prêt à créer un impact?",
         cardDescription: "Chez Sport Endorse, nous croyons en développer les talents et fournir des opportunités de croissance. Si vous recherchez un environnement dynamique où vous pouvez contribuer à connecter les athlètes avec les marques et faire une réelle différence dans l'industrie du sport, nous adorerions vous entendre.",
-        buttonText: "Contactez-nous"
+        buttonText: "Contactez-nous",
+        formTitle: "Rejoignez notre équipe",
+        formSubtitle: "Nous sommes toujours à la recherche de personnes talentueuses pour rejoindre notre équipe en pleine croissance.",
+        formLoading: "Chargement du formulaire..."
       },
       partners: {
         title: "Nos",
