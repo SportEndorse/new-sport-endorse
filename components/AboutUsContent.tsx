@@ -88,12 +88,6 @@ export default function AboutUsContent() {
       imageUrl: "/images/teamPhotos/sean-armada-min.jpg"
     },
     {
-      name: "Taisa Gwaj",
-      role: "Bookkeeper",
-      country: "Ireland",
-      imageUrl: "/images/teamPhotos/taisa-gwaj-min.jpg"
-    },
-    {
       name: "Liam Forster",
       role: "Lead Generation Manager",
       country: "Ireland",
