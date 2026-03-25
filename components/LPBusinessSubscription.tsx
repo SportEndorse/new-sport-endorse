@@ -11,7 +11,7 @@ export default function LPBusinessSubscription() {
             fontSize: "2.5rem",
             color: "#0078c1",
             marginBottom: "1rem"
-          }}>FREE TRIAL</h2>
+          }}>CHOOSE YOUR PLAN</h2>
         </div>
 
         <div style={{
@@ -20,43 +20,37 @@ export default function LPBusinessSubscription() {
           padding: "3rem 4rem",
           boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
           border: "2px solid #0078c1",
-          maxWidth: "900px",
+          maxWidth: "1000px",
           margin: "0 auto"
         }}>
           <div style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "2rem 4rem",
-            maxWidth: "900px",
+            maxWidth: "1000px",
             margin: "0 auto"
           }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#10b981", marginRight: "1rem", fontSize: "1.4rem", fontWeight: "bold", flexShrink: 0 }}>✔</span>
-              <span style={{ fontSize: "1.05rem", fontWeight: "600", color: "#1f2937" }}>Access to the platform</span>
+            <div style={{ border: "2px solid #c7d2fe", borderRadius: "14px", padding: "1.5rem" }}>
+              <h3 style={{ color: "#4338ca", fontSize: "1.3rem", marginBottom: "0.5rem" }}>Quarterly Rate</h3>
+              <p style={{ color: "#1f2937", fontSize: "2rem", fontWeight: "800", marginBottom: "0.25rem" }}>£700<span style={{ fontSize: "1rem", fontWeight: "600", color: "#64748b" }}>/quarter</span></p>
+              <p style={{ color: "#64748b", marginBottom: "1rem" }}>Paid every 3 months, +VAT</p>
+              <ul style={{ margin: 0, paddingLeft: "1.25rem", color: "#374151", lineHeight: 1.7 }}>
+                <li>Full platform access</li>
+                <li>Unlimited profile views and searches</li>
+                <li>Post opportunities globally</li>
+                <li>Dedicated onboarding</li>
+              </ul>
             </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#10b981", marginRight: "1rem", fontSize: "1.4rem", fontWeight: "bold", flexShrink: 0 }}>✔</span>
-              <span style={{ fontSize: "1.05rem", fontWeight: "600", color: "#1f2937" }}>Advanced search and filters</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#10b981", marginRight: "1rem", fontSize: "1.4rem", fontWeight: "bold", flexShrink: 0 }}>✔</span>
-              <span style={{ fontSize: "1.05rem", fontWeight: "600", color: "#1f2937" }}>Verified Talent Profiles</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#10b981", marginRight: "1rem", fontSize: "1.4rem", fontWeight: "bold", flexShrink: 0 }}>✔</span>
-              <span style={{ fontSize: "1.05rem", fontWeight: "600", color: "#1f2937" }}>Direct messaging with talent</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#10b981", marginRight: "1rem", fontSize: "1.4rem", fontWeight: "bold", flexShrink: 0 }}>✔</span>
-              <span style={{ fontSize: "1.05rem", fontWeight: "600", color: "#1f2937" }}>Access 50 Talent Profiles</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#10b981", marginRight: "1rem", fontSize: "1.4rem", fontWeight: "bold", flexShrink: 0 }}>✔</span>
-              <span style={{ fontSize: "1.05rem", fontWeight: "600", color: "#1f2937" }}>Target 1 Geography of your choice</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#10b981", marginRight: "1rem", fontSize: "1.4rem", fontWeight: "bold", flexShrink: 0 }}>✔</span>
-              <span style={{ fontSize: "1.05rem", fontWeight: "600", color: "#1f2937" }}>Dedicated Onboarding</span>
+            <div style={{ border: "2px solid #bae6fd", borderRadius: "14px", padding: "1.5rem" }}>
+              <h3 style={{ color: "#0369a1", fontSize: "1.3rem", marginBottom: "0.5rem" }}>Annual Rate</h3>
+              <p style={{ color: "#1f2937", fontSize: "2rem", fontWeight: "800", marginBottom: "0.25rem" }}>£1,799<span style={{ fontSize: "1rem", fontWeight: "600", color: "#64748b" }}>/year</span></p>
+              <p style={{ color: "#64748b", marginBottom: "1rem" }}>Paid every 12 months, +VAT</p>
+              <ul style={{ margin: 0, paddingLeft: "1.25rem", color: "#374151", lineHeight: 1.7 }}>
+                <li>Everything in Quarterly</li>
+                <li>Customer Success Manager</li>
+                <li>Best annual value</li>
+                <li>Priority support</li>
+              </ul>
             </div>
             
           </div>
@@ -67,24 +61,38 @@ export default function LPBusinessSubscription() {
             paddingTop: "2rem",
             borderTop: "1px solid #e5e7eb"
           }}>
-            <a
-              href="https://platform.sportendorse.com/signup/brand?subscription=trial"
-              className="subscription-cta-button subscription-trial-button"
-              style={{ 
-                display: "inline-block",
-                fontSize: "1.15rem",
-                padding: "1rem 3rem",
-                background: "#0078c1",
-                color: "white",
-                textDecoration: "none",
-                borderRadius: "8px",
-                fontWeight: "600",
-                transition: "all 0.3s ease",
-                boxShadow: "0 4px 12px rgba(0,120,193,0.3)"
-              }}
-            >
-              Start Free Trial
-            </a>
+            <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
+              <a
+                href="https://platform.sportendorse.com/signup/brand?subscription=quarterly"
+                className="subscription-cta-button subscription-quarterly-button"
+                style={{ 
+                  display: "inline-block",
+                  fontSize: "1.05rem",
+                  padding: "1rem 2rem",
+                  textDecoration: "none",
+                  borderRadius: "8px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                Subscribe Quarterly
+              </a>
+              <a
+                href="https://platform.sportendorse.com/signup/brand?subscription=annual"
+                className="subscription-cta-button subscription-annual-button"
+                style={{ 
+                  display: "inline-block",
+                  fontSize: "1.05rem",
+                  padding: "1rem 2rem",
+                  textDecoration: "none",
+                  borderRadius: "8px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                Choose Annual Plan
+              </a>
+            </div>
           </div>
         </div>
       </div>

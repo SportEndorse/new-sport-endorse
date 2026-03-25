@@ -135,20 +135,13 @@
   }
 }
 
-.subscription-plan-header.trial-plan {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: white;
-  border-left: 3px solid #059669;
-  border-right: 3px solid #059669;
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
-}
-
 .subscription-plan-header.quarterly-plan {
   background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
   color: white;
   border-left: 3px solid #4f46e5;
   border-right: 3px solid #4f46e5;
   box-shadow: 0 4px 20px rgba(99, 102, 241, 0.2);
+  /*border-top-left-radius: 20px;*/
 }
 
 .subscription-plan-header.quarterly-plan::before {
@@ -263,18 +256,12 @@
 }
 
 .subscription-feature-row td:nth-child(2) {
-  background: rgba(16, 185, 129, 0.03);
-  border-left: 2px solid rgba(16, 185, 129, 0.2);
-  border-right: 2px solid rgba(16, 185, 129, 0.2);
-}
-
-.subscription-feature-row td:nth-child(3) {
   background: rgba(99, 102, 241, 0.03);
   border-left: 2px solid rgba(99, 102, 241, 0.2);
   border-right: 2px solid rgba(99, 102, 241, 0.2);
 }
 
-.subscription-feature-row td:nth-child(4) {
+.subscription-feature-row td:nth-child(3) {
   background: rgba(0, 158, 227, 0.05);
   border-left: 2px solid rgba(0, 158, 227, 0.3);
   border-right: 2px solid rgba(0, 158, 227, 0.3);
@@ -319,18 +306,12 @@
 }
 
 .subscription-cta-row td:nth-child(2) {
-  background: rgba(16, 185, 129, 0.08);
-  border-left: 2px solid rgba(16, 185, 129, 0.3);
-  border-right: 2px solid rgba(16, 185, 129, 0.3);
-}
-
-.subscription-cta-row td:nth-child(3) {
   background: rgba(99, 102, 241, 0.08);
   border-left: 2px solid rgba(99, 102, 241, 0.3);
   border-right: 2px solid rgba(99, 102, 241, 0.3);
 }
 
-.subscription-cta-row td:nth-child(4) {
+.subscription-cta-row td:nth-child(3) {
   background: rgba(0, 158, 227, 0.1);
   border-left: 2px solid rgba(0, 158, 227, 0.4);
   border-right: 2px solid rgba(0, 158, 227, 0.4);
@@ -390,17 +371,6 @@
   text-decoration: none;
   display: inline-block;
   text-align: center;
-}
-
-.subscription-trial-button {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-}
-
-.subscription-trial-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
 }
 
 .subscription-quarterly-button {
@@ -705,7 +675,7 @@
   }
   
   .subscription-table {
-    min-width: 800px;
+    min-width: 650px;
   }
   
   .subscription-table-title-cell {
@@ -793,7 +763,7 @@
   }
   
   .subscription-table {
-    min-width: 650px;
+    min-width: 560px;
   }
   
   .subscription-table th,
@@ -1002,17 +972,6 @@
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-}
-
-.subscription-card .subscription-trial-button {
-  background: #f8fafc;
-  color: #1e293b;
-  border: 2px solid #e2e8f0;
-}
-
-.subscription-card .subscription-trial-button:hover {
-  background: #e2e8f0;
-  transform: translateY(-2px);
 }
 
 .subscription-card .subscription-quarterly-button {

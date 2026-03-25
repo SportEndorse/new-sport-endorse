@@ -865,10 +865,10 @@ export const agencyFAQs = {
 
 export const subscriptionFAQs = {
   en: [
-    {
+    /* {
       question: "What do I get access to on the Free Trial?",
       answer: "During the 30-day Free Trial, you can: view up to 50 athlete profiles, access talent only within selected market, and post opportunities to same selected market. After 30 days, your trial account will lock automatically unless you upgrade to a paid subscription."
-    },
+    }, */
     {
       question: "What do I get access to on a paid subscription?",
       answer: "Quarterly and Annual subscribers receive full, unrestricted access to: all athlete profiles on the platform, all global markets, unlimited profile views, unlimited searches, and unlimited opportunities."
@@ -877,18 +877,18 @@ export const subscriptionFAQs = {
       question: "Can I search across multiple countries with a paid plan?",
       answer: "Yes. Paid subscribers can target unlimited regions for multi-market or global campaigns."
     },
-    {
+    /* {
       question: "Can I post opportunities during the Free Trial?",
       answer: "Yes — but only to your selected trial market. Paid subscribers can post unlimited opportunities globally."
-    },
+    }, */
     {
       question: "What types of partnerships can I create?",
       answer: "All subscribers can set up campaigns such as: social media partnerships, paid collaborations, gifting campaigns, appearances, guest speaking, and long-term ambassador contracts."
     },
-    {
+    /* {
       question: "Can I message athletes directly?",
       answer: "Yes. Direct messaging is enabled for both Free Trial and paid plans."
-    },
+    }, */
     {
       question: "Can I book multiple athletes for one campaign?",
       answer: "Yes. Multi-Talent Selection is available to all paid subscribers at no extra cost."
@@ -901,10 +901,10 @@ export const subscriptionFAQs = {
       question: "Do you provide campaign insights?",
       answer: "Yes. Our team can support you with performance insights and pre-selection analytics to help assess athlete suitability."
     },
-    {
+    /* {
       question: "Do subscribers get onboarding support?",
       answer: "Paid subscribers: dedicated onboarding + Customer Success Manager. Free Trial users: guided onboarding resources."
-    },
+    }, */
     {
       question: "How much does it cost to collaborate with an athlete?",
       answer: "You set the budget. The final amount includes: your allocated campaign budget and applicable VAT."
@@ -925,10 +925,10 @@ export const subscriptionFAQs = {
       question: "Does Multi-Currency Support cost extra?",
       answer: "No. You can set campaign budgets in USD, GBP, or EUR without additional charges."
     },
-    {
+    /* {
       question: "What happens when my Free Trial ends?",
       answer: "After 30 days, the trial account is automatically locked. Upgrade to a quarterly, annual or custom subscription to continue using the platform."
-    },
+    }, */
     {
       question: "Can I edit my brand profile?",
       answer: "Yes, you can update your profile at any time."
@@ -939,10 +939,10 @@ export const subscriptionFAQs = {
     }
   ],
   es: [
-    {
+    /* {
       question: "¿A qué tengo acceso en la Prueba Gratuita?",
       answer: "Durante la Prueba Gratuita de 30 días, puedes: ver hasta 50 perfiles de atletas, acceder al talento solo dentro del mercado seleccionado, y publicar oportunidades en el mismo mercado seleccionado. Después de 30 días, tu cuenta de prueba se bloqueará automáticamente a menos que actualices a una suscripción de pago."
-    },
+    }, */
     {
       question: "¿A qué tengo acceso con una suscripción de pago?",
       answer: "Los suscriptores Trimestrales y Anuales reciben acceso completo y sin restricciones a: todos los perfiles de atletas en la plataforma, todos los mercados globales, visualizaciones ilimitadas de perfiles, búsquedas ilimitadas y oportunidades ilimitadas."
@@ -951,18 +951,18 @@ export const subscriptionFAQs = {
       question: "¿Puedo buscar en múltiples países con un plan de pago?",
       answer: "Sí. Los suscriptores de pago pueden dirigirse a regiones ilimitadas para campañas multi-mercado o globales."
     },
-    {
+    /* {
       question: "¿Puedo publicar oportunidades durante la Prueba Gratuita?",
       answer: "Sí — pero solo en tu mercado de prueba seleccionado. Los suscriptores de pago pueden publicar oportunidades ilimitadas globalmente."
-    },
+    }, */
     {
       question: "¿Qué tipos de asociaciones puedo crear?",
       answer: "Todos los suscriptores pueden configurar campañas como: asociaciones en redes sociales, colaboraciones pagadas, campañas de obsequios, apariciones, participación como orador invitado y contratos de embajadores a largo plazo."
     },
-    {
+    /* {
       question: "¿Puedo enviar mensajes directamente a los atletas?",
       answer: "Sí. La mensajería directa está habilitada tanto para planes de Prueba Gratuita como de pago."
-    },
+    }, */
     {
       question: "¿Puedo reservar múltiples atletas para una campaña?",
       answer: "Sí. La Selección Multi-Talento está disponible para todos los suscriptores de pago sin costo adicional."
@@ -975,10 +975,10 @@ export const subscriptionFAQs = {
       question: "¿Proporcionan información sobre campañas?",
       answer: "Sí. Nuestro equipo puede apoyarte con información de rendimiento y análisis de pre-selección para ayudar a evaluar la idoneidad del atleta."
     },
-    {
+    /* {
       question: "¿Los suscriptores reciben apoyo de incorporación?",
       answer: "Suscriptores de pago: incorporación dedicada + Gerente de Éxito del Cliente. Usuarios de Prueba Gratuita: recursos de incorporación guiados."
-    },
+    }, */
     {
       question: "¿Cuánto cuesta colaborar con un atleta?",
       answer: "Tú estableces el presupuesto. El monto final incluye: tu presupuesto de campaña asignado e IVA aplicable."
@@ -999,10 +999,10 @@ export const subscriptionFAQs = {
       question: "¿El Soporte Multi-Moneda cuesta extra?",
       answer: "No. Puedes establecer presupuestos de campaña en USD, GBP o EUR sin cargos adicionales."
     },
-    {
+    /* {
       question: "¿Qué pasa cuando termina mi Prueba Gratuita?",
       answer: "Después de 30 días, la cuenta de prueba se bloquea automáticamente. Actualiza a una suscripción trimestral, anual o personalizada para continuar usando la plataforma."
-    },
+    }, */
     {
       question: "¿Puedo editar mi perfil de marca?",
       answer: "Sí, puedes actualizar tu perfil en cualquier momento."
@@ -1013,10 +1013,10 @@ export const subscriptionFAQs = {
     }
   ],
   de: [
-    {
+    /* {
       question: "Wozu habe ich Zugang in der kostenlosen Testversion?",
       answer: "Während der 30-tägigen kostenlosen Testversion können Sie: bis zu 50 Athletenprofile ansehen, nur auf Talente innerhalb des ausgewählten Marktes zugreifen und Möglichkeiten im selben ausgewählten Markt veröffentlichen. Nach 30 Tagen wird Ihr Testkonto automatisch gesperrt, es sei denn, Sie upgraden auf ein kostenpflichtiges Abonnement."
-    },
+    }, */
     {
       question: "Wozu habe ich Zugang mit einem kostenpflichtigen Abonnement?",
       answer: "Quartals- und Jahresabonnenten erhalten vollen, uneingeschränkten Zugang zu: allen Athletenprofilen auf der Plattform, allen globalen Märkten, unbegrenzten Profilansichten, unbegrenzten Suchen und unbegrenzten Möglichkeiten."
@@ -1025,18 +1025,18 @@ export const subscriptionFAQs = {
       question: "Kann ich mit einem kostenpflichtigen Plan in mehreren Ländern suchen?",
       answer: "Ja. Kostenpflichtige Abonnenten können unbegrenzte Regionen für Multi-Markt- oder globale Kampagnen ansprechen."
     },
-    {
+    /* {
       question: "Kann ich während der kostenlosen Testversion Möglichkeiten veröffentlichen?",
       answer: "Ja — aber nur in Ihrem ausgewählten Testmarkt. Kostenpflichtige Abonnenten können unbegrenzte Möglichkeiten global veröffentlichen."
-    },
+    }, */
     {
       question: "Welche Arten von Partnerschaften kann ich erstellen?",
       answer: "Alle Abonnenten können Kampagnen einrichten wie: Social-Media-Partnerschaften, bezahlte Kooperationen, Geschenkkampagnen, Auftritte, Gastvorträge und langfristige Botschafterverträge."
     },
-    {
+    /* {
       question: "Kann ich Athleten direkt Nachrichten senden?",
       answer: "Ja. Direktnachrichten sind sowohl für kostenlose Testversionen als auch für kostenpflichtige Pläne aktiviert."
-    },
+    }, */
     {
       question: "Kann ich mehrere Athleten für eine Kampagne buchen?",
       answer: "Ja. Multi-Talent-Auswahl steht allen kostenpflichtigen Abonnenten ohne zusätzliche Kosten zur Verfügung."
@@ -1049,10 +1049,10 @@ export const subscriptionFAQs = {
       question: "Bieten Sie Kampagnen-Einblicke?",
       answer: "Ja. Unser Team kann Sie mit Leistungseinblicken und Vorauswahl-Analysen unterstützen, um die Eignung des Athleten zu bewerten."
     },
-    {
+    /* {
       question: "Erhalten Abonnenten Onboarding-Unterstützung?",
       answer: "Kostenpflichtige Abonnenten: dediziertes Onboarding + Customer Success Manager. Kostenlose Testnutzer: geführte Onboarding-Ressourcen."
-    },
+    }, */
     {
       question: "Wie viel kostet es, mit einem Athleten zusammenzuarbeiten?",
       answer: "Sie legen das Budget fest. Der endgültige Betrag umfasst: Ihr zugewiesenes Kampagnenbudget und die anfallende Mehrwertsteuer."
@@ -1073,10 +1073,10 @@ export const subscriptionFAQs = {
       question: "Kostet Multi-Währungs-Unterstützung extra?",
       answer: "Nein. Sie können Kampagnenbudgets in USD, GBP oder EUR ohne zusätzliche Gebühren festlegen."
     },
-    {
+    /* {
       question: "Was passiert, wenn meine kostenlose Testversion endet?",
       answer: "Nach 30 Tagen wird das Testkonto automatisch gesperrt. Upgraden Sie auf ein Quartals-, Jahres- oder benutzerdefiniertes Abonnement, um die Plattform weiter zu nutzen."
-    },
+    }, */
     {
       question: "Kann ich mein Markenprofil bearbeiten?",
       answer: "Ja, Sie können Ihr Profil jederzeit aktualisieren."
@@ -1087,10 +1087,10 @@ export const subscriptionFAQs = {
     }
   ],
   fr: [
-    {
+    /* {
       question: "À quoi ai-je accès pendant l'essai gratuit?",
       answer: "Pendant l'essai gratuit de 30 jours, vous pouvez: voir jusqu'à 50 profils d'athlètes, accéder aux talents uniquement dans le marché sélectionné, et publier des opportunités sur le même marché sélectionné. Après 30 jours, votre compte d'essai se verrouillera automatiquement à moins que vous ne passiez à un abonnement payant."
-    },
+    }, */
     {
       question: "À quoi ai-je accès avec un abonnement payant?",
       answer: "Les abonnés trimestriels et annuels reçoivent un accès complet et illimité à: tous les profils d'athlètes sur la plateforme, tous les marchés mondiaux, vues de profil illimitées, recherches illimitées et opportunités illimitées."
@@ -1099,18 +1099,18 @@ export const subscriptionFAQs = {
       question: "Puis-je effectuer des recherches dans plusieurs pays avec un plan payant?",
       answer: "Oui. Les abonnés payants peuvent cibler des régions illimitées pour des campagnes multi-marchés ou mondiales."
     },
-    {
+    /* {
       question: "Puis-je publier des opportunités pendant l'essai gratuit?",
       answer: "Oui — mais uniquement sur votre marché d'essai sélectionné. Les abonnés payants peuvent publier des opportunités illimitées dans le monde entier."
-    },
+    }, */
     {
       question: "Quels types de partenariats puis-je créer?",
       answer: "Tous les abonnés peuvent créer des campagnes telles que : partenariats sur les réseaux sociaux, collaborations rémunérées, campagnes d’envoi de produits, apparitions lors d’événements, interventions en tant que conférencier et contrats d’ambassadeur de marque à long terme."
     },
-    {
+    /* {
       question: "Puis-je envoyer des messages directement aux athlètes?",
       answer: "Oui. La messagerie directe est activée pour les plans d'essai gratuit et payants."
-    },
+    }, */
     {
       question: "Puis-je réserver plusieurs athlètes pour une campagne?",
       answer: "Oui. La sélection multi-talents est disponible pour tous les abonnés payants sans frais supplémentaires."
@@ -1123,10 +1123,10 @@ export const subscriptionFAQs = {
       question: "Fournissez-vous des informations sur les campagnes?",
       answer: "Oui. Notre équipe peut vous accompagner avec des informations sur les performances et des analyses de pré-sélection pour aider à évaluer l'adéquation de l'athlète."
     },
-    {
+    /* {
       question: "Les abonnés bénéficient-ils d'un support d'intégration?",
       answer: "Abonnés payants: intégration dédiée + Responsable de la réussite client. Utilisateurs de l'essai gratuit: ressources d'intégration guidées."
-    },
+    }, */
     {
       question: "Combien coûte la collaboration avec un athlète?",
       answer: "Vous fixez le budget. Le montant final comprend: votre budget de campagne alloué et la TVA applicable."
@@ -1147,10 +1147,10 @@ export const subscriptionFAQs = {
       question: "Le support multi-devises coûte-t-il un supplément?",
       answer: "Non. Vous pouvez définir des budgets de campagne en USD, GBP ou EUR sans frais supplémentaires."
     },
-    {
+    /* {
       question: "Que se passe-t-il lorsque mon essai gratuit se termine?",
       answer: "Après 30 jours, le compte d'essai est automatiquement verrouillé. Passez à un abonnement trimestriel, annuel ou personnalisé pour continuer à utiliser la plateforme."
-    },
+    }, */
     {
       question: "Puis-je modifier mon profil de marque?",
       answer: "Oui, vous pouvez mettre à jour votre profil à tout moment."

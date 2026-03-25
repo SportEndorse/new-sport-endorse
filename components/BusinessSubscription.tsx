@@ -29,35 +29,35 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
     {
       category: t.categories.talentDiscovery,
       features: [
-        { name: t.features.accessToPlatform, trial: true, quarterly: true, annual: true },
-        { name: t.features.advancedSearchTools, trial: true, quarterly: true, annual: true },
-        { name: t.features.verifiedTalentProfiles, trial: true, quarterly: true, annual: true }
+        { name: t.features.accessToPlatform, quarterly: true, annual: true },
+        { name: t.features.advancedSearchTools, quarterly: true, annual: true },
+        { name: t.features.verifiedTalentProfiles, quarterly: true, annual: true }
       ]
     },
     {
       category: t.categories.communication,
       features: [
-        { name: t.features.directMessaging, trial: true, quarterly: true, annual: true }
+        { name: t.features.directMessaging, quarterly: true, annual: true }
       ]
     },
     {
       category: t.categories.campaignManagement,
       features: [
-        { name: t.features.postOpportunities, trial: false, quarterly: true, annual: true }
+        { name: t.features.postOpportunities, quarterly: true, annual: true }
       ]
     },
     {
       category: t.categories.growthScale,
       features: [
-        { name: t.features.unlimitedProfiles, trial: false, quarterly: true, annual: true },
-        { name: t.features.targetUnlimitedMarkets, trial: false, quarterly: true, annual: true }
+        { name: t.features.unlimitedProfiles, quarterly: true, annual: true },
+        { name: t.features.targetUnlimitedMarkets, quarterly: true, annual: true }
       ]
     },
     {
       category: t.categories.supportSuccess,
       features: [
-        { name: t.features.dedicatedOnboarding, trial: true, quarterly: true, annual: true },
-        { name: t.features.customerSuccessManager, trial: false, quarterly: false, annual: true }
+        { name: t.features.dedicatedOnboarding, quarterly: true, annual: true },
+        { name: t.features.customerSuccessManager, quarterly: false, annual: true }
       ]
     }
   ];
@@ -84,13 +84,6 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
               <thead>
                 <tr>
                   <th className="subscription-table-title-cell">{t.sectionTitle}</th>
-                  <th className="subscription-plan-header trial-plan">
-                    <div className="subscription-plan-name">{t.plans.freeTrial}</div>
-                    <div className="subscription-plan-price">
-                      <span className="currency">€/£/$</span>0<span className="period">/month</span>
-                    </div>
-                    <div className="subscription-billing-info">{t.billing.freeTrialInfo}</div>
-                  </th>
                   <th className="subscription-plan-header quarterly-plan">
                     <div className="subscription-plan-name">{t.plans.quarterlyRate}</div>
                     <div className="subscription-plan-price">
@@ -110,11 +103,6 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
               <tbody>
                 <tr className="subscription-cta-row">
                   <td><strong>{t.buttons.getStarted}</strong></td>
-                  <td>
-                    <a href={`${language === 'en' ? '' : `/${language}`}/subscription`} className="subscription-cta-button subscription-trial-button">
-                      {t.buttons.seeMore}
-                    </a>
-                  </td>
                   <td>
                     <a href={`${language === 'en' ? '' : `/${language}`}/subscription`} className="subscription-cta-button subscription-quarterly-button">
                       {t.buttons.seeMore}
@@ -136,13 +124,6 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
               <thead>
                 <tr>
                   <th className="subscription-table-title-cell">{t.sectionTitle}</th>
-                  <th className="subscription-plan-header trial-plan">
-                    <div className="subscription-plan-name">{t.plans.freeTrial}</div>
-                    <div className="subscription-plan-price">
-                      <span className="currency">€/£/$</span>0<span className="period">/month</span>
-                    </div>
-                    <div className="subscription-billing-info">{t.billing.freeTrialInfo}</div>
-                  </th>
                   <th className="subscription-plan-header quarterly-plan">
                     <div className="subscription-plan-name">{t.plans.quarterlyRate}</div>
                     <div className="subscription-plan-price">
@@ -163,24 +144,13 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
                 {featureCategories.map((category, categoryIndex) => (
                   <React.Fragment key={categoryIndex}>
                     <tr className="subscription-category-row">
-                      <td className="subscription-category-header" colSpan={4}>
+                      <td className="subscription-category-header" colSpan={3}>
                         {category.category}
                       </td>
                     </tr>
                     {category.features.map((feature, featureIndex) => (
                       <tr key={featureIndex} className="subscription-feature-row">
                         <td>{feature.name}</td>
-                        <td>
-                          {feature.trial ? (
-                            <svg className="subscription-check-icon" viewBox="0 0 20 20" fill="currentColor">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                          ) : (
-                            <svg className="subscription-x-icon" viewBox="0 0 20 20" fill="currentColor">
-                              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                            </svg>
-                          )}
-                        </td>
                         <td>
                           {feature.quarterly ? (
                             <svg className="subscription-check-icon" viewBox="0 0 20 20" fill="currentColor">
@@ -209,11 +179,6 @@ export default function BusinessSubscription({ titleLevel = 'h2', shortened = fa
                 ))}
                 <tr className="subscription-cta-row">
                   <td><strong>{t.buttons.getStarted}</strong></td>
-                  <td>
-                    <a href="https://platform.sportendorse.com/signup/brand?subscription=trial" target="_blank" rel="noopener noreferrer" className="subscription-cta-button subscription-trial-button">
-                      {t.buttons.startFreeTrial}
-                    </a>
-                  </td>
                   <td>
                     <a href="https://platform.sportendorse.com/signup/brand?subscription=quarterly" target="_blank" rel="noopener noreferrer" className="subscription-cta-button subscription-quarterly-button">
                       {t.buttons.subscribeNow}
