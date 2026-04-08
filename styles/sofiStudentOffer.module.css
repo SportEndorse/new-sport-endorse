@@ -1,0 +1,40 @@
+.sofiOffer {
+  max-width: 980px;
+  margin: 0 auto;
+  color: #1f2937;
+  line-height: 1.65;
+}
+
+.sofiOffer h1 {
+  font-size: 1.7rem;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.sofiOfferSection {
+  margin-bottom: 1.5rem;
+}
+
+.sofiOfferSectionTitle {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.sofiOfferSectionTitleBold {
+  font-weight: 700;
+}
+
+.sofiOffer p {
+  margin: 0 0 0.75rem;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 768px) {
+  .sofiOffer h1 {
+    font-size: 1.4rem;
+  }
+
+  .sofiOffer p {
+    font-size: 0.95rem;
+  }
+}
