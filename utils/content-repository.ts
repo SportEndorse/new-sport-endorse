@@ -1,4 +1,4 @@
-import { getDb } from './db';
+import { executeSql } from './db';
 
 export type ContentLanguage = 'en' | 'es' | 'de' | 'fr';
 export type ContentType = 'blog' | 'press' | 'podcast' | 'success_story';
@@ -17,15 +17,11 @@ export interface WordPressLikePost {
     description?: string | null;
   };
   _embedded?: {
-    'wp:featuredmedia'?: Array<{ source_url: string }>
+    'wp:featuredmedia'?: Array<{ source_url: string }>;
   };
 }
 
-function isMissingRelationError(error: unknown): boolean {
-  return Boolean((error as { code?: string })?.code === '42P01');
-}
-
-interface DbPostRow {
+interface UnifiedPostRow {
   id: number;
   slug: string;
   type: string;
@@ -42,45 +38,52 @@ interface DbPostRow {
   success_stories_bottom_description: string | null;
 }
 
-function mapRowToPost(row: DbPostRow): WordPressLikePost {
+interface UnifiedPostMetaRow {
+  source_post_id: number;
+  wordpress_id: number | null;
+  featured_image_url: string | null;
+  yoast_og_image: string | null;
+  published_at: string | null;
+  is_new: number | null;
+  post_created_at: string | null;
+  post_updated_at: string | null;
+}
+
+function mapRowToPost(row: UnifiedPostRow): WordPressLikePost {
   const date = row.published_at || row.created_at || row.updated_at || new Date().toISOString();
   const featured = row.featured_image_url || row.yoast_og_image || undefined;
   const ogImage = row.yoast_og_image || row.featured_image_url || undefined;
 
-  const post: WordPressLikePost = {
+  const title = row.title?.trim() || '';
+  const excerpt = row.excerpt?.trim() || '';
+  const content = row.content?.trim() || '';
+  const description = row.description?.trim() || '';
+  const bottomDesc = row.success_stories_bottom_description?.trim() || '';
+
+  return {
     id: row.id,
     slug: row.slug,
     date,
-    title: { rendered: row.title || '' },
-    excerpt: { rendered: row.excerpt || '' },
-    // Always provide a content object so consumers do not crash when content is absent
-    content: { rendered: row.content || '' },
-    ...(row.success_stories_bottom_description && {
-      success_stories_bottom_description: row.success_stories_bottom_description,
+    title: { rendered: title },
+    excerpt: { rendered: excerpt },
+    content: { rendered: content },
+    ...(bottomDesc && {
+      success_stories_bottom_description: bottomDesc,
     }),
     ...(ogImage && {
       yoast_head_json: {
-        og_image: [
-          {
-            url: ogImage,
-            width: null,
-            height: null,
-          },
-        ],
-        ...(row.description && { description: row.description }),
+        og_image: [{ url: ogImage, width: null, height: null }],
+        ...(description && { description }),
       },
     }),
-    // If there is no OG image but we have a description, still surface it
-    ...(!ogImage && row.description && {
-      yoast_head_json: { description: row.description },
+    ...(!ogImage && description && {
+      yoast_head_json: { description },
     }),
     ...(featured && {
       featured_media_url: featured,
       _embedded: { 'wp:featuredmedia': [{ source_url: featured }] },
     }),
   };
-
-  return post;
 }
 
 export async function getPostsFromDb(options: {
@@ -88,42 +91,41 @@ export async function getPostsFromDb(options: {
   language?: ContentLanguage;
   limit?: number;
 }): Promise<WordPressLikePost[]> {
-  const sql = getDb();
   const language = options.language || 'en';
 
-  try {
-    const rows = (await sql`
-      SELECT
-        p.id,
-        p.slug,
-        p.type,
-        p.wordpress_id,
-        p.featured_image_url,
-        p.yoast_og_image,
-        p.created_at,
-        p.updated_at,
-        p.published_at,
-        COALESCE(pc_lang.title, pc_en.title) AS title,
-        COALESCE(pc_lang.excerpt, pc_en.excerpt) AS excerpt,
-        COALESCE(pc_lang.description, pc_en.description) AS description,
-        COALESCE(pc_lang.content, pc_en.content) AS content,
-        COALESCE(pc_lang.success_stories_bottom_description, pc_en.success_stories_bottom_description) AS success_stories_bottom_description
-      FROM posts p
-      LEFT JOIN post_content pc_lang ON pc_lang.post_id = p.id AND pc_lang.language = ${language}
-      LEFT JOIN post_content pc_en ON pc_en.post_id = p.id AND pc_en.language = 'en'
-      WHERE p.type = ${options.type}
-      ORDER BY p.published_at DESC NULLS LAST, p.updated_at DESC NULLS LAST, p.id DESC
-      ${options.limit ? sql`LIMIT ${options.limit}` : sql``}
-    `) as unknown as DbPostRow[];
+  let sql = `
+    SELECT
+      source_post_id AS id,
+      slug,
+      type,
+      wordpress_id,
+      featured_image_url,
+      yoast_og_image,
+      post_created_at AS created_at,
+      COALESCE(content_updated_at, post_updated_at, updated_at) AS updated_at,
+      published_at,
+      title,
+      excerpt,
+      description,
+      content,
+      success_stories_bottom_description
+    FROM unified_posts
+    WHERE type = ? AND language = ?
+    ORDER BY
+      CASE WHEN published_at IS NOT NULL THEN 0 ELSE 1 END ASC,
+      CASE WHEN published_at IS NOT NULL THEN published_at ELSE COALESCE(content_updated_at, post_updated_at, updated_at) END DESC,
+      source_post_id DESC
+  `;
 
-    return rows.map(mapRowToPost);
-  } catch (error) {
-    if (isMissingRelationError(error)) {
-      console.error('post_content table is missing; returning empty set.');
-      return [];
-    }
-    throw error;
+  const params: any[] = [options.type, language];
+
+  if (options.limit) {
+    sql += ' LIMIT ?';
+    params.push(options.limit);
   }
+
+  const rows = (await executeSql(sql, params)) as unknown as UnifiedPostRow[];
+  return rows.map(mapRowToPost);
 }
 
 export async function getPostBySlugFromDb(options: {
@@ -131,58 +133,46 @@ export async function getPostBySlugFromDb(options: {
   slug: string;
   language?: ContentLanguage;
 }): Promise<WordPressLikePost | null> {
-  const sql = getDb();
   const language = options.language || 'en';
 
-  try {
-    const rows = (await sql`
+  const rows = (await executeSql(
+    `
       SELECT
-        p.id,
-        p.slug,
-        p.type,
-        p.wordpress_id,
-        p.featured_image_url,
-        p.yoast_og_image,
-        p.created_at,
-        p.updated_at,
-        p.published_at,
-        COALESCE(pc_lang.title, pc_en.title) AS title,
-        COALESCE(pc_lang.excerpt, pc_en.excerpt) AS excerpt,
-        COALESCE(pc_lang.description, pc_en.description) AS description,
-        COALESCE(pc_lang.content, pc_en.content) AS content,
-        COALESCE(pc_lang.success_stories_bottom_description, pc_en.success_stories_bottom_description) AS success_stories_bottom_description
-      FROM posts p
-      LEFT JOIN post_content pc_lang ON pc_lang.post_id = p.id AND pc_lang.language = ${language}
-      LEFT JOIN post_content pc_en ON pc_en.post_id = p.id AND pc_en.language = 'en'
-      WHERE p.type = ${options.type} AND p.slug = ${options.slug}
+        source_post_id AS id,
+        slug,
+        type,
+        wordpress_id,
+        featured_image_url,
+        yoast_og_image,
+        post_created_at AS created_at,
+        COALESCE(content_updated_at, post_updated_at, updated_at) AS updated_at,
+        published_at,
+        title,
+        excerpt,
+        description,
+        content,
+        success_stories_bottom_description
+      FROM unified_posts
+      WHERE type = ? AND slug = ? AND language = ?
       LIMIT 1
-    `) as unknown as DbPostRow[];
+    `,
+    [options.type, options.slug, language]
+  )) as unknown as UnifiedPostRow[];
 
-    if (!rows || rows.length === 0) return null;
-    return mapRowToPost(rows[0]);
-  } catch (error) {
-    if (isMissingRelationError(error)) {
-      console.error('post_content table is missing; returning null.');
-      return null;
-    }
-    throw error;
-  }
+  if (!rows || rows.length === 0) return null;
+  return mapRowToPost(rows[0]);
 }
 
 export async function getLatestPostsUpdatedAt(): Promise<string | null> {
-  const sql = getDb();
-  try {
-    const rows = (await sql`
-      SELECT MAX(updated_at) AS max FROM posts
-    `) as unknown as Array<{ max: string | null }>;
-    return rows?.[0]?.max || null;
-  } catch (error) {
-    if (isMissingRelationError(error)) {
-      console.error('posts table is missing; returning null for latest updated at.');
-      return null;
-    }
-    throw error;
-  }
+  const rows = (await executeSql(
+    `
+      SELECT MAX(COALESCE(content_updated_at, post_updated_at, updated_at)) AS max
+      FROM unified_posts
+    `,
+    []
+  )) as unknown as Array<{ max: string | null }>;
+
+  return rows?.[0]?.max || null;
 }
 
 export async function upsertPostContent(options: {
@@ -195,46 +185,88 @@ export async function upsertPostContent(options: {
   yoastDescription?: string | null;
   bottomDescription?: string | null;
 }): Promise<void> {
-  const sql = getDb();
-  try {
-    const postRows = (await sql`
-      SELECT id FROM posts WHERE slug = ${options.slug} AND type = ${options.type} LIMIT 1
-    `) as unknown as Array<{ id: number }>;
+  const metaRows = (await executeSql(
+    `
+      SELECT
+        source_post_id,
+        wordpress_id,
+        featured_image_url,
+        yoast_og_image,
+        published_at,
+        is_new,
+        post_created_at,
+        post_updated_at
+      FROM unified_posts
+      WHERE slug = ? AND type = ? AND language IN (?, 'en')
+      ORDER BY CASE WHEN language = ? THEN 0 ELSE 1 END
+      LIMIT 1
+    `,
+    [options.slug, options.type, options.language, options.language]
+  )) as unknown as UnifiedPostMetaRow[];
 
-    if (!postRows || postRows.length === 0) return;
-    const postId = postRows[0].id;
+  if (metaRows.length === 0) return;
 
-    await sql`
-      INSERT INTO post_content (
-        post_id,
+  const meta = metaRows[0];
+
+  await executeSql(
+    `
+      INSERT INTO unified_posts (
+        source_post_id,
         language,
+        slug,
+        type,
+        wordpress_id,
+        featured_image_url,
+        yoast_og_image,
+        published_at,
+        is_new,
         title,
         excerpt,
-        description,
         content,
-        success_stories_bottom_description
-      ) VALUES (
-        ${postId},
-        ${options.language},
-        ${options.title},
-        ${options.excerpt || ''},
-        ${options.yoastDescription || null},
-        ${options.content || null},
-        ${options.bottomDescription || null}
-      )
-      ON CONFLICT (post_id, language)
+        description,
+        success_stories_bottom_description,
+        post_created_at,
+        post_updated_at,
+        content_created_at,
+        content_updated_at,
+        created_at,
+        updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+      ON CONFLICT (source_post_id, language)
       DO UPDATE SET
+        slug = EXCLUDED.slug,
+        type = EXCLUDED.type,
+        wordpress_id = EXCLUDED.wordpress_id,
+        featured_image_url = EXCLUDED.featured_image_url,
+        yoast_og_image = EXCLUDED.yoast_og_image,
+        published_at = EXCLUDED.published_at,
+        is_new = EXCLUDED.is_new,
         title = EXCLUDED.title,
         excerpt = EXCLUDED.excerpt,
-        description = EXCLUDED.description,
         content = EXCLUDED.content,
-        success_stories_bottom_description = EXCLUDED.success_stories_bottom_description
-    `;
-  } catch (error) {
-    if (isMissingRelationError(error)) {
-      console.error('posts or post_content table is missing; skip upsert.');
-      return;
-    }
-    throw error;
-  }
+        description = EXCLUDED.description,
+        success_stories_bottom_description = EXCLUDED.success_stories_bottom_description,
+        post_updated_at = EXCLUDED.post_updated_at,
+        content_updated_at = CURRENT_TIMESTAMP,
+        updated_at = CURRENT_TIMESTAMP
+    `,
+    [
+      meta.source_post_id,
+      options.language,
+      options.slug,
+      options.type,
+      meta.wordpress_id,
+      meta.featured_image_url,
+      meta.yoast_og_image,
+      meta.published_at,
+      meta.is_new || 0,
+      options.title,
+      options.excerpt || null,
+      options.content || null,
+      options.yoastDescription || null,
+      options.bottomDescription || null,
+      meta.post_created_at,
+      meta.post_updated_at,
+    ]
+  );
 }

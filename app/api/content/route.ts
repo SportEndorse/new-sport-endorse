@@ -53,6 +53,14 @@ export async function GET(request: NextRequest) {
 
       try {
         post = await getPostBySlugFromDb({ type, slug, language });
+        
+        // If requested language has no content, try English as fallback
+        if (post && language !== 'en' && (!post.title?.rendered || post.title.rendered.trim() === '')) {
+          const englishPost = await getPostBySlugFromDb({ type, slug, language: 'en' });
+          if (englishPost && englishPost.title?.rendered) {
+            post = englishPost;
+          }
+        }
       } catch (dbError) {
         console.error('Content API database error, using WordPress fallback for slug:', getDbErrorDetails(dbError));
         try {

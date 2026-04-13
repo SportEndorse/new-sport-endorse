@@ -1,5 +1,5 @@
 import { translate } from 'google-translate-api-x';
-import { sql } from '@vercel/postgres';
+import { executeSql } from './db';
 import crypto from 'crypto';
 import {
   ContentLanguage,
@@ -106,73 +106,33 @@ function generateContextKey(
 
 /**
  * Get translation from database cache
+ * Note: Translations table not used - skip caching
  */
 async function getCachedTranslation(
   contextKey: string,
   language: 'es' | 'de' | 'fr',
   sourceHash: string
 ): Promise<string | null> {
-  try {
-    const result = await sql`
-      SELECT translated_text, source_hash
-      FROM translations
-      WHERE context_key = ${contextKey}
-        AND language = ${language}
-        AND source_hash = ${sourceHash}
-      LIMIT 1
-    `;
-    
-    if (result.rows.length > 0) {
-      // Verify hash matches (content hasn't changed)
-      if (result.rows[0].source_hash === sourceHash) {
-        return result.rows[0].translated_text;
-      }
-    }
-    
-    return null;
-  } catch (error) {
-    console.error('Error fetching cached translation:', error);
-    return null;
-  }
+  // Skip cache - translations table not in use
+  // Returns null to trigger fresh translation on demand
+  return null;
 }
 
 /**
- * Batch get translations from database cache (more efficient than individual queries)
- * Uses individual queries since Vercel Postgres doesn't support sql.join
+ * Batch get translations from database cache
+ * Note: Translations table not in use
  */
 async function getCachedTranslationsBatch(
   contextKeys: Array<{ key: string; hash: string }>,
   language: 'es' | 'de' | 'fr'
 ): Promise<Map<string, string>> {
-  const cache = new Map<string, string>();
-  
-  if (contextKeys.length === 0) return cache;
-  
-  // Use Promise.all to fetch all translations in parallel
-  // This is still more efficient than sequential queries
-  try {
-    const promises = contextKeys.map(({ key, hash }) => 
-      getCachedTranslation(key, language, hash).then(cached => ({ key, cached }))
-    );
-    
-    const results = await Promise.all(promises);
-    
-    results.forEach(({ key, cached }) => {
-      if (cached) {
-        cache.set(key, cached);
-      }
-    });
-    
-    return cache;
-  } catch (error) {
-    console.error('Error fetching batch cached translations:', error);
-    // Return empty cache on error - translations will be fetched individually
-    return cache;
-  }
+  // Skip batch cache - translations table not in use
+  return new Map();
 }
 
 /**
  * Save translation to database cache
+ * Note: Translations table not in use
  */
 async function saveTranslation(
   contextKey: string,
@@ -180,20 +140,9 @@ async function saveTranslation(
   sourceHash: string,
   translatedText: string
 ): Promise<void> {
-  try {
-    await sql`
-      INSERT INTO translations (context_key, language, source_hash, translated_text)
-      VALUES (${contextKey}, ${language}, ${sourceHash}, ${translatedText})
-      ON CONFLICT (context_key, language)
-      DO UPDATE SET
-        source_hash = ${sourceHash},
-        translated_text = ${translatedText},
-        created_at = NOW()
-    `;
-  } catch (error) {
-    console.error('Error saving translation:', error);
-    // Don't throw - caching failure shouldn't break the app
-  }
+  // Skip cache save - translations table not in use
+  // Each translation request will translate on demand
+  return;
 }
 
 /**

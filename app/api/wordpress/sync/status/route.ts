@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDb } from '@/utils/db';
+import { executeSql } from '@/utils/db';
 import { ContentType } from '@/utils/content-repository';
 
 type TypeSummary = {
@@ -29,37 +29,39 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const sql = getDb();
-
-    const [overall] = (await sql`
-      SELECT
-        COUNT(*)::int AS total_posts,
-        MAX(updated_at) AS last_updated_at,
-        MAX(published_at) AS last_published_at
-      FROM posts
-    `) as unknown as Array<{
+    const overallRows = (await executeSql(
+      `SELECT
+         COUNT(DISTINCT source_post_id) AS total_posts,
+         MAX(COALESCE(content_updated_at, post_updated_at, updated_at)) AS last_updated_at,
+         MAX(published_at) AS last_published_at
+       FROM unified_posts`,
+      []
+    )) as unknown as Array<{
       total_posts: number;
       last_updated_at: string | null;
       last_published_at: string | null;
     }>;
 
-    const byType = (await sql`
-      SELECT
-        type,
-        COUNT(*)::int AS count,
-        MAX(updated_at) AS latest_updated_at,
-        MAX(published_at) AS latest_published_at
-      FROM posts
-      GROUP BY type
-      ORDER BY type ASC
-    `) as unknown as Array<{
+    const byTypeRows = (await executeSql(
+      `SELECT
+         type,
+         COUNT(DISTINCT source_post_id) AS count,
+         MAX(COALESCE(content_updated_at, post_updated_at, updated_at)) AS latest_updated_at,
+         MAX(published_at) AS latest_published_at
+       FROM unified_posts
+       GROUP BY type
+       ORDER BY type ASC`,
+      []
+    )) as unknown as Array<{
       type: ContentType;
       count: number;
       latest_updated_at: string | null;
       latest_published_at: string | null;
     }>;
 
-    const summaries: TypeSummary[] = byType.map((row) => ({
+    const overall = overallRows[0];
+
+    const summaries: TypeSummary[] = byTypeRows.map((row) => ({
       type: row.type,
       count: row.count,
       latestUpdatedAt: row.latest_updated_at,
@@ -92,8 +94,13 @@ export async function GET(request: NextRequest) {
     );
   } catch (error) {
     console.error('Sync status failed:', error);
+
+    const hint = (error as { message?: string })?.message?.includes('no such table')
+      ? 'unified_posts table is missing. Run: turso db shell sportendorse-prod < scripts/turso-schema.sql and then turso db shell sportendorse-prod < scripts/migrate-to-unified-posts.sql'
+      : null;
+
     return NextResponse.json(
-      { error: 'Failed to load sync status' },
+      { error: 'Failed to load sync status', hint },
       { status: 500, headers: { 'Cache-Control': 'no-store' } }
     );
   }
