@@ -65,7 +65,7 @@ interface WordPressDataContextType extends WordPressData {
 
 const WordPressDataContext = createContext<WordPressDataContextType | undefined>(undefined);
 
-// Fetch list data from the Neon-backed content API
+// Fetch list data from the Turso-backed content API
 async function fetchAllFromContent(type: ContentListType, language: string = 'en'): Promise<WordPressPost[]> {
   try {
     const response = await fetch(`/api/content?type=${API_TYPE[type]}&language=${language}`);

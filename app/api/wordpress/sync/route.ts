@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDb } from '@/utils/db';
+import { executeSql } from '@/utils/db';
 import { ContentType, getLatestPostsUpdatedAt } from '@/utils/content-repository';
 
 const WORDPRESS_API_URL = 'https://cms.sportendorse.com/wp-json/wp/v2';
@@ -30,6 +30,11 @@ type WordPressPost = {
   yoast_head_json?: { description?: string; og_image?: Array<{ url: string }> };
   success_stories_bottom_description?: string;
   _embedded?: { 'wp:featuredmedia'?: Array<{ source_url: string }> };
+};
+
+type SourcePostRow = {
+  source_post_id: number;
+  post_created_at: string | null;
 };
 
 async function fetchAllFromWordPress(endpoint: string): Promise<WordPressPost[]> {
@@ -84,93 +89,126 @@ function mapWpToDb(post: WordPressPost) {
   };
 }
 
+async function getNextSourcePostId(): Promise<number> {
+  const rows = (await executeSql(
+    'SELECT COALESCE(MAX(source_post_id), 0) + 1 AS next_id FROM unified_posts',
+    []
+  )) as unknown as Array<{ next_id: number }>;
+
+  return rows?.[0]?.next_id || 1;
+}
+
+async function findSourcePostRow(type: ContentType, payload: ReturnType<typeof mapWpToDb>): Promise<SourcePostRow | null> {
+  if (payload.wordpressId) {
+    const byWordPress = (await executeSql(
+      `SELECT source_post_id, post_created_at
+       FROM unified_posts
+       WHERE wordpress_id = ?
+       ORDER BY CASE WHEN language = 'en' THEN 0 ELSE 1 END
+       LIMIT 1`,
+      [payload.wordpressId]
+    )) as unknown as SourcePostRow[];
+
+    if (byWordPress.length > 0) return byWordPress[0];
+  }
+
+  const bySlug = (await executeSql(
+    `SELECT source_post_id, post_created_at
+     FROM unified_posts
+     WHERE slug = ? AND type = ?
+     ORDER BY CASE WHEN language = 'en' THEN 0 ELSE 1 END
+     LIMIT 1`,
+    [payload.slug, type]
+  )) as unknown as SourcePostRow[];
+
+  if (bySlug.length > 0) return bySlug[0];
+
+  return null;
+}
+
 async function upsertPost(type: ContentType, payload: ReturnType<typeof mapWpToDb>) {
-  const sql = getDb();
+  const sourceRow = await findSourcePostRow(type, payload);
+  const sourcePostId = sourceRow?.source_post_id || (await getNextSourcePostId());
+  const postCreatedAt = sourceRow?.post_created_at || new Date().toISOString();
 
-  const [postRow] = (await sql`
-    WITH updated_by_wp AS (
-      UPDATE posts
-      SET
-        slug = ${payload.slug},
-        type = ${type},
-        featured_image_url = ${payload.featuredImage},
-        yoast_og_image = ${payload.yoastOgImage},
-        published_at = ${payload.date},
-        updated_at = NOW()
-      WHERE wordpress_id = ${payload.wordpressId}
-      RETURNING id
-    ),
-    updated_by_slug AS (
-      UPDATE posts
-      SET
-        wordpress_id = ${payload.wordpressId},
-        featured_image_url = ${payload.featuredImage},
-        yoast_og_image = ${payload.yoastOgImage},
-        published_at = ${payload.date},
-        updated_at = NOW()
-      WHERE NOT EXISTS (SELECT 1 FROM updated_by_wp)
-        AND slug = ${payload.slug}
-        AND type = ${type}
-      RETURNING id
-    ),
-    inserted AS (
-      INSERT INTO posts (
-        wordpress_id,
-        slug,
-        type,
-        featured_image_url,
-        yoast_og_image,
-        published_at,
-        updated_at
-      )
-      SELECT
-        ${payload.wordpressId},
-        ${payload.slug},
-        ${type},
-        ${payload.featuredImage},
-        ${payload.yoastOgImage},
-        ${payload.date},
-        NOW()
-      WHERE NOT EXISTS (SELECT 1 FROM updated_by_wp)
-        AND NOT EXISTS (SELECT 1 FROM updated_by_slug)
-      RETURNING id
-    )
-    SELECT id FROM updated_by_wp
-    UNION ALL
-    SELECT id FROM updated_by_slug
-    UNION ALL
-    SELECT id FROM inserted
-    LIMIT 1
-  `) as unknown as Array<{ id: number }>;
+  await executeSql(
+    `UPDATE unified_posts
+     SET
+       slug = ?,
+       type = ?,
+       wordpress_id = ?,
+       featured_image_url = ?,
+       yoast_og_image = ?,
+       published_at = ?,
+       post_updated_at = CURRENT_TIMESTAMP,
+       updated_at = CURRENT_TIMESTAMP
+     WHERE source_post_id = ?`,
+    [
+      payload.slug,
+      type,
+      payload.wordpressId,
+      payload.featuredImage,
+      payload.yoastOgImage,
+      payload.date,
+      sourcePostId,
+    ]
+  );
 
-  const postId = postRow.id;
-
-  await sql`
-    INSERT INTO post_content (
-      post_id,
+  await executeSql(
+    `INSERT INTO unified_posts (
+      source_post_id,
       language,
+      slug,
+      type,
+      wordpress_id,
+      featured_image_url,
+      yoast_og_image,
+      published_at,
+      is_new,
       title,
       excerpt,
       content,
       description,
-      success_stories_bottom_description
-    ) VALUES (
-      ${postId},
-      'en',
-      ${payload.title},
-      ${payload.excerpt},
-      ${payload.content},
-      ${payload.yoastDescription},
-      ${payload.bottomDescription}
-    )
-    ON CONFLICT (post_id, language)
+      success_stories_bottom_description,
+      post_created_at,
+      post_updated_at,
+      content_created_at,
+      content_updated_at,
+      created_at,
+      updated_at
+    ) VALUES (?, 'en', ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    ON CONFLICT (source_post_id, language)
     DO UPDATE SET
+      slug = EXCLUDED.slug,
+      type = EXCLUDED.type,
+      wordpress_id = EXCLUDED.wordpress_id,
+      featured_image_url = EXCLUDED.featured_image_url,
+      yoast_og_image = EXCLUDED.yoast_og_image,
+      published_at = EXCLUDED.published_at,
       title = EXCLUDED.title,
       excerpt = EXCLUDED.excerpt,
       content = EXCLUDED.content,
       description = EXCLUDED.description,
-      success_stories_bottom_description = EXCLUDED.success_stories_bottom_description
-  `;
+      success_stories_bottom_description = EXCLUDED.success_stories_bottom_description,
+      post_updated_at = CURRENT_TIMESTAMP,
+      content_updated_at = CURRENT_TIMESTAMP,
+      updated_at = CURRENT_TIMESTAMP`,
+    [
+      sourcePostId,
+      payload.slug,
+      type,
+      payload.wordpressId,
+      payload.featuredImage,
+      payload.yoastOgImage,
+      payload.date,
+      payload.title,
+      payload.excerpt,
+      payload.content,
+      payload.yoastDescription,
+      payload.bottomDescription,
+      postCreatedAt,
+    ]
+  );
 }
 
 function getMinSyncIntervalMs(): number {
@@ -261,10 +299,9 @@ async function runSync(request: NextRequest) {
       message: (error as { message?: string })?.message || 'Unknown error',
     };
 
-    const hint =
-      details.code === '42P01'
-        ? 'Database schema missing. Ensure tables posts and post_content exist in the connected Neon database.'
-        : null;
+    const hint = (error as { message?: string })?.message?.includes('no such table')
+      ? 'Database schema missing. Run: turso db shell sportendorse-prod < scripts/turso-schema.sql and then turso db shell sportendorse-prod < scripts/migrate-to-unified-posts.sql'
+      : null;
 
     return NextResponse.json(
       { error: 'Sync failed', details, hint },
