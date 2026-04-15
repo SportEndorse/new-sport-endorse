@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { executeSql } from '@/utils/db';
 import { ContentType, getLatestPostsUpdatedAt } from '@/utils/content-repository';
+import { translateWordPressPost } from '@/utils/translate-service';
 
 const WORDPRESS_API_URL = 'https://cms.sportendorse.com/wp-json/wp/v2';
 
@@ -19,6 +20,9 @@ const COLLECTION_BY_TYPE: Record<ContentType, { endpoint: string; type: ContentT
 };
 
 const DEFAULT_MIN_SYNC_INTERVAL_MINUTES = 30;
+const TRANSLATION_LANGUAGES: Array<'es' | 'de' | 'fr'> = ['es', 'de', 'fr'];
+
+type TranslationPostType = 'post' | 'podcast' | 'press' | 'success_story';
 
 type WordPressPost = {
   id: number;
@@ -36,6 +40,21 @@ type SourcePostRow = {
   source_post_id: number;
   post_created_at: string | null;
 };
+
+function mapContentTypeToTranslationPostType(type: ContentType): TranslationPostType {
+  switch (type) {
+    case 'blog':
+      return 'post';
+    case 'press':
+      return 'press';
+    case 'podcast':
+      return 'podcast';
+    case 'success_story':
+      return 'success_story';
+    default:
+      throw new Error(`Unsupported content type for translation: ${type}`);
+  }
+}
 
 async function fetchAllFromWordPress(endpoint: string): Promise<WordPressPost[]> {
   let page = 1;
@@ -126,9 +145,48 @@ async function findSourcePostRow(type: ContentType, payload: ReturnType<typeof m
   return null;
 }
 
-async function upsertPost(type: ContentType, payload: ReturnType<typeof mapWpToDb>) {
+async function generateTranslationsForNewPost(
+  type: ContentType,
+  payload: ReturnType<typeof mapWpToDb>
+): Promise<{ requested: number; succeeded: number; failed: number }> {
+  const postType = mapContentTypeToTranslationPostType(type);
+
+  const post = {
+    slug: payload.slug,
+    title: { rendered: payload.title },
+    excerpt: { rendered: payload.excerpt },
+    ...(payload.content ? { content: { rendered: payload.content } } : {}),
+    ...(payload.yoastDescription ? { yoast_head_json: { description: payload.yoastDescription } } : {}),
+    ...(payload.bottomDescription ? { success_stories_bottom_description: payload.bottomDescription } : {}),
+  };
+
+  let succeeded = 0;
+  let failed = 0;
+
+  for (const language of TRANSLATION_LANGUAGES) {
+    try {
+      await translateWordPressPost(post, postType, language);
+      succeeded += 1;
+    } catch (error) {
+      failed += 1;
+      console.error(`Translation generation failed for ${type}/${payload.slug} (${language}):`, error);
+    }
+  }
+
+  return {
+    requested: TRANSLATION_LANGUAGES.length,
+    succeeded,
+    failed,
+  };
+}
+
+async function upsertPost(
+  type: ContentType,
+  payload: ReturnType<typeof mapWpToDb>
+): Promise<{ sourcePostId: number; isNewSource: boolean }> {
   const sourceRow = await findSourcePostRow(type, payload);
   const sourcePostId = sourceRow?.source_post_id || (await getNextSourcePostId());
+  const isNewSource = !sourceRow;
   const postCreatedAt = sourceRow?.post_created_at || new Date().toISOString();
 
   await executeSql(
@@ -176,7 +234,7 @@ async function upsertPost(type: ContentType, payload: ReturnType<typeof mapWpToD
       content_updated_at,
       created_at,
       updated_at
-    ) VALUES (?, 'en', ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    ) VALUES (?, 'en', ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
     ON CONFLICT (source_post_id, language)
     DO UPDATE SET
       slug = EXCLUDED.slug,
@@ -209,6 +267,11 @@ async function upsertPost(type: ContentType, payload: ReturnType<typeof mapWpToD
       postCreatedAt,
     ]
   );
+
+  return {
+    sourcePostId,
+    isNewSource,
+  };
 }
 
 function getMinSyncIntervalMs(): number {
@@ -271,12 +334,24 @@ async function runSync(request: NextRequest) {
     }
 
     const summaries = [] as Array<{ type: ContentType; count: number }>;
+    let translationsRequested = 0;
+    let translationsSucceeded = 0;
+    let translationsFailed = 0;
+    let newPostsTranslated = 0;
 
     for (const { endpoint, type } of selectedCollections) {
       const wpItems = await fetchAllFromWordPress(endpoint);
       for (const item of wpItems) {
         const mapped = mapWpToDb(item);
-        await upsertPost(type, mapped);
+        const upsertResult = await upsertPost(type, mapped);
+
+        if (upsertResult.isNewSource) {
+          newPostsTranslated += 1;
+          const translationResult = await generateTranslationsForNewPost(type, mapped);
+          translationsRequested += translationResult.requested;
+          translationsSucceeded += translationResult.succeeded;
+          translationsFailed += translationResult.failed;
+        }
       }
       summaries.push({ type, count: wpItems.length });
     }
@@ -288,6 +363,12 @@ async function runSync(request: NextRequest) {
         type: typeParam || 'all',
         minIntervalMinutes: Math.floor(minIntervalMs / (60 * 1000)),
         summaries,
+        translations: {
+          newPostsTranslated,
+          requested: translationsRequested,
+          succeeded: translationsSucceeded,
+          failed: translationsFailed,
+        },
       },
       { headers: { 'Cache-Control': 'no-store' } }
     );
