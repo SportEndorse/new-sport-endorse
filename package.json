@@ -15,6 +15,7 @@
   "dependencies": {
     "@libsql/client": "^0.17.2",
     "@next/third-parties": "^15.5.3",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.0.1",
     "google-translate-api-x": "^10.7.2",
     "lucide-react": "^0.525.0",

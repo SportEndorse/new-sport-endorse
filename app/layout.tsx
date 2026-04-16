@@ -7,6 +7,8 @@ import ConditionalLayout from "../components/ConditionalLayout";
 import { Metadata } from "next";
 import Script from "next/script";
 
+import { Analytics } from "@vercel/analytics/next"
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sportendorse.com/"),
@@ -119,6 +121,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </ConditionalLayout>
           </WordPressDataProvider>
         </LanguageProvider>
+
+        <Analytics />
       </body>
     </html>
   );
