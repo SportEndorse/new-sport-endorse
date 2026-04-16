@@ -166,8 +166,10 @@ export async function getPostBySlugFromDb(options: {
 export async function getLatestPostsUpdatedAt(): Promise<string | null> {
   const rows = (await executeSql(
     `
-      SELECT MAX(COALESCE(content_updated_at, post_updated_at, updated_at)) AS max
+      SELECT updated_at AS max
       FROM unified_posts
+      ORDER BY updated_at DESC
+      LIMIT 1
     `,
     []
   )) as unknown as Array<{ max: string | null }>;

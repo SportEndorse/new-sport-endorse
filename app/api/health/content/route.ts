@@ -62,7 +62,7 @@ export async function GET(request: NextRequest) {
          COUNT(DISTINCT source_post_id) AS total_logical_posts,
          COUNT(DISTINCT language) AS distinct_languages,
          COUNT(DISTINCT type) AS distinct_types,
-         MAX(COALESCE(content_updated_at, post_updated_at, updated_at)) AS last_updated_at
+         MAX(updated_at) AS last_updated_at
        FROM unified_posts`,
       []
     )) as unknown as Array<{

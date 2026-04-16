@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
     const overallRows = (await executeSql(
       `SELECT
          COUNT(DISTINCT source_post_id) AS total_posts,
-         MAX(COALESCE(content_updated_at, post_updated_at, updated_at)) AS last_updated_at,
+         MAX(updated_at) AS last_updated_at,
          MAX(published_at) AS last_published_at
        FROM unified_posts`,
       []
@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
       `SELECT
          type,
          COUNT(DISTINCT source_post_id) AS count,
-         MAX(COALESCE(content_updated_at, post_updated_at, updated_at)) AS latest_updated_at,
+         MAX(updated_at) AS latest_updated_at,
          MAX(published_at) AS latest_published_at
        FROM unified_posts
        GROUP BY type
