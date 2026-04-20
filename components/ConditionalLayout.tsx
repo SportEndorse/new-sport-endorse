@@ -8,7 +8,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const pathname = usePathname();
   
   // Routes where we don't want Header and Footer
-  const hideHeaderFooterRoutes = ['/privacy-center', '/lp/get-started'];
+  const hideHeaderFooterRoutes = ['/privacy-center', '/lp/get-started', '/lp/sharks-player-form'];
   
   const shouldHideHeaderFooter = hideHeaderFooterRoutes.some(route => 
     pathname.startsWith(route)
