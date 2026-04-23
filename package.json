@@ -6,7 +6,7 @@
     "dev": "next dev",
     "generate-sitemap": "node ./scripts/generate-sitemap.js",
     "build": "next build",
-    "start": "next start -p 8080",
+    "start": "next start -p 8081",
     "lint": "next lint",
     "translate:all": "TS_NODE_TRANSPILE_ONLY=1 ts-node --compiler-options '{\"module\":\"Node16\",\"moduleResolution\":\"Node16\",\"esModuleInterop\":true}' ./scripts/translate-all.ts",
     "translate:success-bottoms": "TS_NODE_TRANSPILE_ONLY=1 ts-node --compiler-options '{\"module\":\"Node16\",\"moduleResolution\":\"Node16\",\"esModuleInterop\":true}' ./scripts/translate-success-bottoms.ts",

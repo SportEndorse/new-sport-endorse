@@ -6,232 +6,565 @@ import "../styles/policies.css";
 export default function TermsAndConditionsContent() {
   return (
     <main>
-      <h2>Sport Endorse Limited Terms And Conditions<br/>Updated: November 2024</h2>
+      <h2>Sport Endorse Limited <br/>Platform Terms And Conditions <br/>Updated: April 2026</h2>
 
       <p>
-      These terms and conditions of use (including all parts and schedules to them) together with our privacy policy (https://www.sportendorse.com/privacy-centre/) (collectively, these &apos;Terms&apos;) are a contract (referred to in these Terms as an &apos;Agreement&apos;) entered into by and between you and Sport Endorse Limited (company registration number 593768) with registered office address at 2 Seapoint Avenue, Blackrock, County Dublin (&apos;Sport Endorse&apos;, &apos;the Company&apos; &apos;we&apos;, or &apos;us&apos; or &apos;our&apos;). The Terms describe your rights and responsibilities with regard to the use of all Sport Endorse websites and applications, and all content and services contained therein.
-      <br/><br/>These Terms apply to all Brands, visitors, users, and others who access any of the Service. The additional terms contained in Part B also apply to Brands/Agencies and the additional terms contained in Part C also apply to Talent. By using, accessing, or registering with the Service, you agree to be bound and abide by these Terms and all applicable laws and regulations.
+        These terms and conditions of use (together with all schedules and, where applicable, the Brand or Talent&apos;s selected Subscription Plan), and our Privacy Policy available at https://www.sportendorse.com/privacy-centre/ (collectively, the “Terms”), constitute a legally binding agreement (the “Agreement”) between you (the “User”) and Sport Endorse Limited, a private company incorporated in Ireland under company registration number 593768, with its registered office at 2 Seapoint Avenue, Blackrock, County Dublin, Ireland (“Sport Endorse”, “the Company”, “we”, “us” or “our”).
 
-      <br/><br/>PART A: GENERAL TERMS
+Part A applies to all Users of the Service. <br/><br/>Part B applies additionally to Brands and Agencies. Part C applies additionally to Talent. By registering for, accessing or using the Service, you confirm that you have read, understood and agree to be bound by the Terms and by all Applicable Law.
 
-      <br/><br/>1. DEFINITIONS
+<br/><br/><strong>Mandatory consumer rights.</strong> If you are a natural person acting outside your trade, business, craft or profession and you reside in the European Union, the United Kingdom, South Africa or any other jurisdiction whose laws confer non-waivable consumer rights, nothing in these Terms excludes or limits those rights, and any provision that purports to do so shall be read down to the minimum extent necessary.
+<br/><br/>
+<strong>PART A — GENERAL TERMS</strong>
 
-      <br/>In these Terms, the following phrases and wording shall have the following meaning:
+<br/><br/>
+<strong>1.</strong> <strong>Definitions and Interpretation</strong><br/>
 
-      <br/><br/>&apos;Agency&apos; means a User which is engaged in the business of attempting to procure engagements for Talent with Brands and which attempts to represent Talent (also &apos;Agent&apos; and &apos;Agencies&apos;);
+In these Terms, the following capitalised terms have the meanings set out below:
 
-      <br/><br/>&apos;Agreement&apos; means this agreement between any user and Sports Endorse which is comprised of these Terms and any related orders or agreements referred to herein and in which these Terms are referred to and constitutes the entire understanding and agreement between Sport Endorse Limited and User with respect to the subject matter of this Agreement and supersedes all prior agreements, negotiations and discussions between the parties relating to it unless agreed otherwise in writing between the parties;
+<br/><br/><strong>“Agency”</strong> - a User engaged in the business of representing Talent, or procuring commercial engagements on behalf of Talent (also “Agent” or “Agencies”).
 
-      <br/><br/>&apos;Brand&apos; means any User which is a person, firm or corporate body (together with any company which is related to the Brand) that uses the Sport Endorse Service or application to access Talent;
+<br/><br/><strong>“Applicable Law”</strong> - all laws, regulations, binding codes and mandatory standards applying to a User, the Service, a Sponsorship Contract, the delivery of Deliverables or a Deal Payment, including (as relevant) Irish law, the law of England and Wales, U.S. federal and state law (including NIL rules), European Union law (including the GDPR and Digital Services Act), South African law (including POPIA and the Consumer Protection Act), and applicable advertising standards codes.
 
-      <br/><br/>&apos;Intellectual Property&apos; means patents, trademarks, service marks, rights (registered or unregistered) in any designs, applications for any of the foregoing, trade or business names, copyright (including rights in computer software), secret formulae and processes, other proprietary knowledge and information, internet domain names, rights protecting goodwill and reputation, database rights (including rights of extraction) and all rights and forms of protection of a similar nature to any of the foregoing or having equivalent effect anywhere in the world and all rights under licences and consents in respect of any of the rights and forms of protection mentioned in this definition (and &apos;Intellectual Property Rights&apos; shall be construed accordingly);
+<br/><br/><strong>“Brand”</strong> - a User (being an individual, firm, corporate body or related entity) that uses the Service to identify, engage or transact with Talent for sponsorship, endorsement or commercial partnership purposes.
 
-      <br/><br/>&apos;User&apos; means the person, firm or corporate body together with any company which is related to the User that uses the Sport Endorse Service or application, including all Brands, Agencies, and Talent (also may be referred to as &apos;you&apos; or &apos;your&apos;);
+<br/><br/><strong>“Business Day”</strong> - a day other than a Saturday, Sunday or public holiday in Dublin, Ireland.
 
-      <br/><br/>&apos;Service&apos; means all Sport Endorse websites and applications, and all content and services contained therein (also may be referred to as &apos;Services&apos;);
+<br/><br/><strong>“Commission”</strong> - the commission payable to Sport Endorse under clause 5 and the applicable Subscription Plan, calculated on the Deal Payment. No Commission is payable in respect of Gift-in-Kind.
 
-      <br/><br/>&apos;Sport Endorse&apos; means Sport Endorse Limited (company registration number 593768) with registered office address at 2 Seapoint Avenue, Blackrock, County Dublin (&apos;Sport Endorse&apos;, &apos;the Company&apos; &apos;we&apos;, or &apos;us&apos; or &apos;our&apos;);
+<br/><br/><strong>“Confirmed Opportunity”</strong> - an Opportunity in respect of which a Talent has accepted the Brand&apos;s proposal and the Brand has confirmed the Talent, whether in-Platform or otherwise.
 
-      <br/><br/>&apos;Talent&apos; means Users which are athletes, sports personalities, sports presenters, brand ambassadors and other influencers who use the Sport Endorse Platform to engage with Brands;
+<br/><br/><strong>“Content”</strong> - any materials posted, uploaded, created, transmitted or otherwise made available through the Service, including Talent Deliverables and profile information.
 
-      <br/><br/>2. OVERVIEW OF SERVICE AND UPDATES
+<br/><br/><strong>“Deal Payment”</strong> - the cash consideration (exclusive of Gift-in-Kind) agreed to be payable by a Brand to a Talent under a Sponsorship Contract.
 
-      <br/><br/>2.1 Overview. Sport Endorse is a platform for Brands and Agencies to communicate and transact with Talent seeking endorsement and commercial partnership opportunities. Brands/Agencies can using the Service offer and negotiate sponsorship opportunities with Talent to create sponsorship/endorsement contracts (&apos;Sponsorship Contracts&apos;) and/or commercial partnerships.
+<br/><br/><strong>“Deal Value”</strong> - the total value of consideration agreed between a Brand and a Talent in respect of an Opportunity or Sponsorship Contract, comprising the Deal Payment plus the declared retail value of any Gift-in-Kind plus any expenses reimbursed.
 
-      <br/><br/>2.2 Role of Sport Endorse. Sport Endorse acts as a technology platform for Users to access Talent. Save as is expressly agreed otherwise, we do not act as agent for the Talent and do not represent or undertake to represent any such Talent. We have no liability in any way for the acts and omissions of any Talent or Brand or Agency or User and each User acknowledges and agrees that Sport Endorse is not responsible for nor bears any liability in relation to the conduct or activities of any Talent or User.
+<br/><br/><strong>“Deliverables”</strong> - the content, appearances, posts, activations or other services to be provided by a Talent under a Sponsorship Contract.
 
-      <br/><br/>2.3 Talent Engagements. Where a User agrees an engagement with a Talent through the Service, a separate contract is formed between the Talent and User to which we are not a party. You acknowledge that any disputes, claims or proceedings arising out of or related to the engagement of any Talent shall be pursued solely and exclusively between User and Talent. For the avoidance of doubt, under no circumstances shall Sport Endorse be liable, responsible or involved in any way with any failure on the part of either party to an agreement between Talent and User or for any disputes, claims, proceedings or controversies of any nature which may arise in respect of such agreements.
+<br/><br/><strong>“Gift-in-Kind”</strong> - any product, kit, equipment, experience, hospitality, travel or other non-cash consideration provided (or to be provided) by a Brand to a Talent in connection with an Opportunity, valued at its retail market price as declared by the Brand when posting the Opportunity.
 
-      <br/><br/>2.4 Provision of Service. We may, without prior notice, change the Service; stop providing the Service or features of the Service; or create usage limits for the Service. If, for any reason, we believe that you have not complied with these Terms, we may, at our sole discretion and without liability, permanently terminate or temporarily suspend your access to the Service immediately and without prior notice. If you believe your account has been terminated or suspended in error, please contact your account manager or send us an email at platform.hello@sportendorse.com.
+<br/><br/><strong>“Intellectual Property Rights”</strong> - patents, trademarks, service marks, design rights (registered or unregistered), applications for any of the foregoing, trade or business names, copyright (including rights in computer software), database rights, rights in confidential information, know-how, goodwill and reputation, domain names, moral rights, and all other rights of a similar nature (and their equivalents in any jurisdiction), whether or not registered or registrable.
 
-      <br/><br/>2.5 Updating the Terms. We may, in our sole discretion, modify or update these Terms from time to time. Your continued use of the Service after any such change constitutes your acceptance of the new Terms. If you do not agree to any of these Terms or any future Terms, then your only remedy is to discontinue your use of the Service.
+<br/><br/><strong>“Kill Fee”</strong> - the cancellation fee payable by a Brand under clause 6.2 where a Confirmed Opportunity is cancelled.
 
-      <br/><br/>3. USE OF THE SERVICE
+<br/><br/><strong>“Opportunity”</strong> - a sponsorship, endorsement, partnership, ambassadorship, appearance or similar commercial opportunity posted by a Brand or Agency on the Service.
 
-      <br/><br/>3.1 Code of Conduct. In your use of the Service, you agree to act in a lawful and respectful manner toward us and toward all other Users. We reserve the right to remove or refuse to post any content that we, in our sole discretion, determine to be disrespectful, inappropriate or illegal. Please read these Terms before using the application and/or Service. By using the Service and/or accessing, using or downloading material, you agree to be bound by these Terms and the Code of Conduct. If you are agreeing to these Terms on behalf of someone else (your employer for example), then you are representing and warranting to us that you have full legal authority to bind that third party and to enter into this Agreement with us on behalf of that third party.
+<br/><br/><strong>“Platform or Service”</strong> - Sport Endorse&apos;s websites, mobile and desktop applications, APIs and all related services.
 
-      <br/><br/>3.2 No Persons Under 16. Persons under 16 years of age are no permitted to become a User and or use the Service. All Users confirm that they are over 16 years of age. Persons under the age of 16 must not submit any personal information to us.
+<br/><br/><strong>“Sponsorship Contract”</strong> - the agreement between a Brand (or Agency) and a Talent in respect of a Confirmed Opportunity, on the terms agreed through the Service (and incorporating the relevant provisions of these Terms).
 
-      <br/><br/>3.3 Account Security. You are the sole authorised user of any account you create on the Service. As such, you are responsible for all activities that occur in relation to any account you create. You should take care to keep your password confidential. You must notify us immediately of any breach of security or unauthorised use of your account. Sport Endorse will not be liable for any losses caused by unauthorised use.
+<br/><br/><strong>“Subscription Plan”</strong> - the subscription plan under which a Brand or Agency accesses the Service, as published by Sport Endorse from time to time.
 
-      <br/><br/>3.4 Registration Data. You agree to provide accurate and complete information when you register with, and as you use, the Service (&apos;Registration Data&apos;) in order to allow Sport Endorse to provide the Service and retain records relating to same and to this end, you agree to update your Registration Data to keep it accurate and complete. You agree that Sport Endorse may store and use the Registration Data you provide for use in maintaining and arranging any payment to your account. Such Registration Data will be stored and maintained in accordance with our Privacy Policy.
+<br/><br/><strong>“Tail Period”</strong> - the period of eighteen (18) months commencing on the last Communication through the Service between two Users introduced through the Service, as referenced in clause 7.
 
-      <br/><br/>3.5 Content. When creating your account, you must provide accurate and complete information. Sport Endorse has no responsibility for the content including all materials or information that you or other Users post, create or make available through the Service (collectively, &apos;Content&apos;). Any Content you create must be your own. By creating Content, you grant us a license to use your Content in our business activities related to the Service (including promotional activities).
+<br/><br/><strong>“Talent”</strong> - a User who is an athlete, sports personality, presenter, brand ambassador, content creator, sports influencer or similar person using the Service to engage with Brands.
 
-      <br/><br/>3.6 Notices. By providing an email address, you consent to Sport Endorse using the email address to send you notices related to the Service and/or special offers. You may choose to opt out of messages (to the extent the messages are not required by law). Opting out may prevent you from receiving important notices regarding updates, improvements, or offers.
+<br/><br/><strong>“User”</strong> - any person who accesses, registers for, or uses the Service, including Brands, Agencies and Talent (also “you” or “your”).
 
-      <br/><br/>3.7 Prohibited Activities. You may not:
-      <br/>(i) use any robot, spider, scraper or other automated means to access the Service;
-      <br/>(ii) interfere or attempt to interfere with the proper operation, system integrity, or security of the Service;
-      <br/>(iii) attempt to circumvent the Service and associated Commissions (as described in these Terms);
-      <br/>(iv) use the Service to advertise or promote a competing website, product, or service;
-      <br/>(v) copy, reproduce, modify, create derivative works from, distribute, or publicly display any part of the Service or any Content that is not your own;
-      <br/>(vi) collect or harvest any personally identifiable information from the Service.
+<br/><br/>
+<strong>1.2</strong>	Interpretation. References to “writing” include email and in-Platform messaging. Words in the singular include the plural and vice versa. Headings are for convenience only and do not affect interpretation. References to a statute include any subordinate legislation and any amendment, replacement or re-enactment.
 
-      <br/><br/>3.8 Communications. To prevent direct or indirect attempts to circumvent the Service and associated Commissions, Sport Endorse has the right, but not the obligation, to prevent Users from including email addresses, phone numbers, and other personal and identifying information in communications sent via the Service. When you use the Service or send e-mails to us, you are communicating with us electronically. We will communicate with you by e-mail or by posting notices on the website. For contractual purposes, you consent to receive communications from us electronically and you agree that all agreements, notices, disclosures and other communications that we provide to you electronically satisfy any legal requirement that such communications be in writing, unless mandatory applicable laws specifically require a different form of communication.
+<br/><br/>
+<strong>2.</strong> <strong>The Service and Role of Sport Endorse</strong>
 
-      <br/><br/>4. DEALS AND DEAL PAYMENTS
+<br/><br/>
+<strong>2.1</strong>	Nature of the Service. The Service is a technology-enabled marketplace that enables Brands and Agencies to identify, communicate with, and transact with Talent for sponsorship, endorsement and commercial partnership purposes.
 
-      <br/><br/>4.1 Sponsorship Contracts. &apos;Sponsorship Contracts&apos; are created directly between the Talent and Brand/Agency according to the terms, rights, and benefits agreed and entered into by both Talent and Brand/Agency. Sport Endorse has no responsibility with respect to the Sponsorship Contracts. Compliance with advertising/sporting regulations and all applicable law related to such contracts is the responsibility of the Talent and Brand/Agency.
+<br/><br/>
+<strong>2.2</strong>	Not a Party to Sponsorship Contracts. Save where it expressly agrees otherwise in writing, Sport Endorse is not a party to any Sponsorship Contract, does not act as agent for any User and does not guarantee the performance of any User. The provision of the Service does not constitute the offer, provision or brokerage of regulated financial, employment or agency services.
 
-      <br/><br/>4.2 Deal Payments. &apos;Deal Payment&apos; refers to the cash consideration owed by a Brand/Agency to the Talent per the terms of a Sponsorship Contract. Unless otherwise agreed in writing by all parties (including Sport Endorse), we will charge the Brand/Agency credit card on file for all Deal Payments and will hold Deal Payments in escrow pending completion of the relevant campaign.
+<br/><br/>
+<strong>2.3</strong>	Payment Facilitation. Notwithstanding clause 2.2, Sport Endorse operates invoicing, collection and settlement mechanisms in respect of Deal Payments, Commissions, Kill Fees, Subscription Fees and liquidated damages, and is entitled to collect and apply such amounts in accordance with these Terms. Sport Endorse does not hold Deal Payments in escrow; Deal Payments are invoiced to the Brand on completion of the Sponsorship Contract and settled to the Talent upon receipt of cleared funds (see clause 5).
 
-      <br/><br/>4.3 Sport Endorse Commission. All payments or other forms of compensation or reward between Brand/Agency and the Talent who have met through the Service (including but not limited to Deal Payments) are subject to payment to Sport Endorse of commission at the rate of commission detailed in their Plan, which is payable to Sport Endorse (a &apos;Commission&apos;) for one year after the last communication (e.g. application, invite, or message) between the parties via the Service. No commission will be collected on deals where payment is in the form of a product or gift of kit.
+<br/><br/>
+<strong>2.4</strong>	Changes to the Service. We may modify, suspend, limit or discontinue features of the Service. Where a change is material and adversely affects paying Users, we will give at least thirty (30) days&apos; prior written notice and a pro-rata refund of prepaid, unused Subscription Fees where reasonably applicable.
 
-      <br/><br/>4.4 Charges for Service. Prices for the Service may change at any time, and we do not provide price protection or refunds in the event of a price reduction or promotional offering. The use of the Service is subject to payment of all subscription or commission payments due as set out in these Terms for relevant users.
+<br/><br/>
+<strong>2.5</strong>	Modification of Terms. We may update these Terms by giving at least thirty (30) days&apos; prior notice (by email to the address on file and/or in-Platform). Continued use of the Service after the effective date constitutes acceptance. Users who do not agree may terminate in accordance with clause 14.
 
-      <br/><br/>4.5 Cancelled Deals. If Talent cancels a deal or otherwise does not fulfil his or her obligations under a Sponsorship Contract, we will return the unearned portion of the Deal Payment to the Brand/Agency in the form of a credit or a refund.
+<br/><br/>
+<strong>3.</strong> <strong>Eligibility, Registration and Account Security</strong>
 
-      <br/><br/>4.6 Agents. All communications are strictly between Brands and Talent. Agents are not permitted to register, control, operate or maintain an account but may access an account for administrative purposes with Talent consent.
+<br/><br/>
+<strong>3.1</strong>	Minimum Age. The Service is not intended for persons under the age of sixteen (16). Certain features (including U.S. NIL functionality and restricted-category Opportunities) require the User to be aged eighteen (18) or such higher age as Applicable Law or the relevant Brand requires. Where a Talent is a minor under the laws of their home jurisdiction, the Talent warrants that a parent or legal guardian has reviewed and approved these Terms and any Sponsorship Contract, and Sport Endorse may require written evidence of such consent and co-signature by the parent or guardian.
 
-      <br/><br/>5. REPRESENTATIONS
+<br/><br/>
+<strong>3.2</strong>	Registration Data. Users must provide accurate, current and complete information when registering and using the Service, and must update it promptly when it changes. Each User warrants that it (and the individual accepting these Terms on its behalf) has the authority to enter into this Agreement.
 
-      <br/><br/>5.1 Suitability of Users. We cannot guarantee—and we make no representations regarding—the suitability, reliability, or quality of the Talent or Brands/Agencies listed on the Service. Users are solely responsible for conducting background checks on other Users with whom they transact via the Service.
+<br/><br/>
+<strong>3.3</strong>	Account Security. Each User is responsible for maintaining the confidentiality of its credentials and for all activity under its account. Users must notify Sport Endorse promptly of any suspected unauthorised access. Sport Endorse is not liable for losses caused by the User&apos;s failure to safeguard credentials.
 
-      <br/><br/>5.2 Brand/Agency Representations. Brands/Agencies listing on Sport Endorse represent and warrant that the Sponsorship Contract entered into, together with any other content or materials provided, complies with all applicable laws, regulations, policies and agreements, does not violate any third-party rights and that such Brand or Agency has all necessary rights and entitlements to enter into such Sponsorship Contracts.
+<br/><br/>
+<strong>3.4</strong>	Verification. Sport Endorse may (but is not obliged to) carry out identity, AML/KYC, sanctions and other verification checks and may suspend an account pending completion.
 
-      <br/><br/>6. LICENSE TO USE SERVICE
+<br/><br/>
+<strong>3.5</strong>	Sanctions and Export Controls. Each User represents and warrants that it is not (i) located in, nor a national or resident of, any country or territory subject to comprehensive sanctions by the EU, UK, UN or the U.S. Office of Foreign Assets Control, or (ii) a designated person on any applicable sanctions or restricted-party list. Users must not use the Service in violation of any export control or sanctions law.
 
-      <br/><br/>6.1 Sport Endorse Intellectual Property. Users acknowledge that the Service and all software, images, text, graphics, illustrations, logos, patents, trademarks, service marks, copyrights, photographs and other content within the Service (&apos;Sport Endorse Content&apos;), and all intellectual property rights in the foregoing, are the exclusive property of Sport Endorse and its licensors. Except as expressly provided herein, nothing in these Terms shall be deemed to create a license to use Sport Endorse Content. Use of Sport Endorse Content for any purpose not expressly permitted by these Terms is prohibited.
+<br/><br/>
+<strong>4.</strong> <strong>Opportunities, Engagements and Deliverables</strong>
 
-      <br/><br/>6.2 Intellectual Property Rights. Users acknowledge and agree that Sport Endorse and/or its licensors own all Information and Intellectual Property Rights in the Service. Except as expressly stated herein, this agreement does not grant User you any rights to, under or in, any patents, copyright, database right, trade secrets, trade names, trade marks (whether registered or unregistered), or any other rights or licences in respect of the Service. To the extent that any modifications or improvements to the Service are carried out under or in connection with this Agreement, whether by Sport Endorse alone or jointly with User, and whether based on User ideas or suggestions, all Intellectual Property Rights to such underlying ideas and in any resulting improvement or modifications shall be assigned to and shall vest with and be solely owned by Sport Endorse and/or its licensors.
+<br/><br/>
+<strong>4.1</strong>	Posting Opportunities. A Brand posting an Opportunity must disclose fully and accurately: (i) the Deliverables required; (ii) the Deal Payment (if any); (iii) the nature and declared retail value of any Gift-in-Kind; (iv) deadlines and the campaign timeline; (v) territory and content usage rights required; (vi) any exclusivity; (vii) any regulatory context (e.g. alcohol, gambling, betting, age-restricted products, NIL compliance, team or league category restrictions); and (viii) any material safety or venue information.
 
-      <br/><br/>6.3 Non Exclusive Licence to Sports Endorse. If User post Content or submit material to Sport Endorse, and unless otherwise indicated, User grants Sport Endorse a non-exclusive, royalty-free and fully sub-licensable and transferable rights to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display the content throughout the world in any media.
+<br/><br/>
+<strong>4.2</strong>	Formation of Sponsorship Contract. A Sponsorship Contract is formed when a Talent accepts the Opportunity on the terms (including amendments) agreed through the Service and the Brand confirms the Talent. The terms so agreed, together with the relevant provisions of these Terms, constitute the Sponsorship Contract.
 
-      <br/><br/>6.4 Our License to User. Subject to the Terms, Sport Endorse grant User a limited, non- transferable, and revocable license to access and use the Service, including accessing and viewing Sport Endorse Content, as expressly permitted by the features of the Service. Sport Endorse may terminate this license at any time for any reason or no reason. Except for the rights and licenses expressly granted, Sport Endorse reserves all other rights and no other rights are granted by implication or otherwise.
+<br/><br/>
+<strong>4.3</strong>	Delivery and Acceptance. Unless the Sponsorship Contract provides otherwise: (i) the Talent shall deliver Deliverables by the stated deadline(s); (ii) the Brand shall review and either approve or provide specific, reasonable written change requests within seven (7) days of delivery; (iii) Deliverables are deemed accepted if no timely change request is provided; (iv) the Talent shall have a reasonable opportunity (not less than seven (7) days) to address change requests; and (v) publication or posting by the Brand or Talent constitutes acceptance of the relevant Deliverables.
+
+<br/><br/>
+<strong>4.4</strong>	Expenses. Pre-agreed out-of-pocket expenses (e.g. travel, production, location fees) shall be reimbursed by the Brand against supporting documentation, and shall remain payable notwithstanding any subsequent cancellation.
+
+<br/><br/>
+<strong>4.5</strong>	Gift-in-Kind Delivery. Where Gift-in-Kind forms all or part of the consideration, the Brand shall dispatch it so as to arrive no later than the agreed date. Title and risk in Gift-in-Kind pass to the Talent on delivery, subject to clause 6 (cancellation and non-performance).
+
+<br/><br/>
+<strong>5.</strong> <strong>Fees, Commissions, Payments and Escrow</strong>
 
-      <br/><br/>6.5 No Sharing of Data or Information. User may not resell, redistribute, broadcast or transfer information or use the information in a searchable, machine readable database or file except through the authorised access to the Service. Unless separately and specifically authorised in writing by Sport Endorse, User may not rent, lease, sublicence, distribute, transfer, copy, reproduce, publicly display, publish, adapt, modify, create derivative works, store or time-share the Service, any part thereof, or any of the Information received or accessed therefrom to or through any other person or entity.
-          
-      <br/><br/>7. COPYRIGHT INFRINGEMENT NOTICES
+<br/><br/>
+<strong>5.1</strong>	Subscription Fees. Brands and Agencies pay Subscription Fees in advance for the applicable subscription term, as published in their Subscription Plan. Subscription Fees are non-refundable during the then-current term (whether the initial term or any renewed term), save as expressly required by Applicable Law. A Brand or Agency may cancel at any time, in which case: (i) access to the Service shall continue until the end of the then-current paid term; (ii) no refund of Subscription Fees shall be payable; and (iii) the Subscription Plan shall not renew. See also Part B1.
 
-      <br/><br/>7.1 Notice of Infringement. Sport Endorse is committed to respecting others&apos; intellectual property rights, and we ask our Users to do the same. If a User believes that your work has been copied in a way that constitutes copyright infringement on the Service, please send a written notice of claimed copyright infringement to platform.legal@sportendorse.com.
+<br/><br/>
+<strong>5.2</strong>	<strong>Commission on Deal Payments</strong>. Unless expressly agreed otherwise in writing by Sport Endorse, Commission is payable on the Deal Payment (cash consideration) of every Opportunity or Sponsorship Contract between a Brand and a Talent who connected through the Service, at the rate set out in the applicable Subscription Plan. No Commission is payable on Gift-in-Kind. For the avoidance of doubt, where an Opportunity combines a cash Deal Payment with Gift-in-Kind, Commission applies to the cash Deal Payment only.
 
-      <br/><br/>7.2 Restrictions on Use of Material. Except as expressly permitted in these terms, User may not: (i) remove, alter, cover, or distort any copyright, trademark, or other proprietary rights notice on the website or information; (ii) circumvent, disable or otherwise interfere with security-related features of the Service; (iii) use an automatic device (such as a robot or spider) or manual process to copy or &apos;scrape&apos; the Service or Information for any purpose without our express written permission; (iv) collect or harvest any personal data or personally identifiable information from the Service including, without limitation, user names, passwords, email addresses; (v) attempt to or interfere with the proper working of the Service or impair, overburden, or disable the same; (vi) decompile, reverse engineer, or disassemble any portion of the website; (vii) use network-monitoring software to determine architecture of or extract usage data from the website; (viii) encourage conduct that violates any local, state, federal law or international law, impersonate others, use a false email address, or misrepresent your affiliation with others; or (ix) engage in any conduct that restricts or inhibits any other user from using or enjoying the website.
+<br/><br/>
+<strong>5.3</strong>	<strong>Invoicing of Deal Payments</strong>. Sport Endorse does not hold Deal Payments in escrow. On completion of a Sponsorship Contract (being acceptance or deemed acceptance of the Deliverables under clause 4.3, or the trigger of a Kill Fee under clause 6.2), Sport Endorse shall invoice the Brand for the Deal Payment plus Commission plus any applicable taxes. The Brand shall pay on the payment terms stated on the invoice, which shall be Sport Endorse&apos;s standard payment terms of immediate payment unless extended terms (typically 30, 60 or, by prior written agreement, 90 days) have been agreed with the Brand in writing (including on the Brand&apos;s Subscription Plan). Payment terms applicable to a Brand shall be disclosed to the Talent before the Talent accepts the Opportunity.
 
-      <br/><br/>7.3 Compliance with Laws. User agrees to use the Service for lawful purposes only. When using the Service, User agrees to comply with all applicable federal, state, and local laws, including, without limitation, copyright law. User agrees not to post or transmit any information through the Service or associated applications which (a) infringes the rights of others or violates their privacy or publicity rights, (ii) is unlawful, threatening, abusive, defamatory, libellous, vulgar, obscene, profane, indecent or otherwise objectionable, (c) is protected by copyright, trademark or other proprietary right without express written permission of the owner of such right, (d) contains unauthorised or malicious software such as viruses. User shall be solely liable for any damages resulting from infringement of any copyright, trademark or other proprietary right, or any other harm caused by User&apos;s use of the Service or Information.
+<br/><br/>
+<strong>5.4</strong>	Settlement to Talent. Sport Endorse shall settle the Deal Payment to the Talent (net of Commission and any tax required to be withheld) within five (5) Business Days of Sport Endorse&apos;s receipt of cleared funds from the Brand. Where the Brand pays in instalments or late, the Talent shall be paid pro-rata on each receipt. The Talent acknowledges that settlement timing is contingent on the Brand&apos;s payment terms and actual payment, as disclosed under clause 5.3, and that Sport Endorse is not liable for the Brand&apos;s failure or delay to pay, subject to clause 5.8 (enforcement).
 
-      <br/><br/>8. RESOLUTION OF DISPUTES
+<br/><br/>
+<strong>5.5</strong>	Taxes. Each User is responsible for its own taxes (including income tax, corporate tax, self-employment tax, VAT/GST and withholding taxes) in every relevant jurisdiction. Where Sport Endorse is required by Applicable Law to deduct or withhold tax, it may do so and will provide customary documentation. Talent acknowledge that they transact as independent contractors.
 
-      <br/><br/>8.1 Between You and Another User. Sport Endorse has no obligation to resolve disputes between you and another User. If such a dispute arises, Sport Endorse may, in its sole discretion and without incurring liability, facilitate communication between Users, or otherwise take any actions we deem appropriate to resolve the dispute.
+<br/><br/>
+<strong>5.6</strong>	Currency and Charges. Fees and Commissions are payable in the currency specified on the Service or the invoice. Users are responsible for their own bank, card and foreign-exchange charges. Chargebacks made without merit may result in the charged-back amount (plus Sport Endorse&apos;s reasonable costs) being set off against amounts payable to the User or invoiced directly.
 
-      <br/><br/>8.2 Between You and Sport Endorse. Our goal is to resolve any dispute quickly and cost-effectively. Accordingly, if a User is dissatisfied with the Service or has any claim against Sport Endorse at law or equity, User agrees to first contact us directly at platform.legal@sportendorse.com to seek dispute assistance prior to initiating any claim or legal action.
+<br/><br/>
+<strong>5.7</strong>	Late Payment. Amounts overdue beyond the invoice payment terms accrue interest at four percent (4%) per annum above the European Central Bank main refinancing rate, together with reasonable collection costs (including, for business-to-business debts in Ireland, compensation and charges payable under Statutory Instrument No. 580/2012 and, in the UK, the Late Payment of Commercial Debts (Interest) Act 1998). Sport Endorse may suspend access to the Service and to new Opportunities pending payment.
 
-      <br/><br/>8.3 Mediation. If the matter cannot be resolved through negotiation directly between the parties within 10 Business Days of notification, the dispute may be referred by either party to a single mediator to be nominated by the parties and being a CEDR accredited mediator experienced in such disputes. The costs of the mediator shall be borne equally by the parties.
+<br/><br/>
+<strong>5.8</strong>	<strong>Brand Payment Obligation and Enforcement</strong>. The Brand&apos;s obligation to pay Sport Endorse&apos;s invoice in respect of a completed Sponsorship Contract is unconditional and is not affected by any dispute between the Brand and the Talent (which shall be resolved separately under clause 15 without suspending payment). Where the Brand fails to pay an undisputed invoice by its due date, Sport Endorse shall (without limitation): (a) pursue collection and recovery (including interest and costs under clause 5.7); (b) suspend or terminate the Brand&apos;s account; (c) report the default to credit reference agencies where legally permissible; and (d) at the Talent&apos;s written request, assign to the Talent Sport Endorse&apos;s rights to the unpaid Deal Payment portion (net of Commission, which remains due to Sport Endorse) so that the Talent may sue the Brand directly. Sport Endorse shall keep the Talent reasonably informed of collection progress.
 
-      <br/><br/>8.4 Arbitration. Failing a resolution of the dispute through mediation the dispute shall be decided by an independent arbitrator as a binding arbitration pursuant to the Arbitration Acts 2010, agreed by the parties or, in default of agreement, appointed by the President for the time being of the Law Society of Ireland or in the event of his being unwilling or unable to do so by the next senior officer of the Society who is willing and able to make the appointment provided always that these provisions shall apply also to the appointment (whether by agreement or otherwise) of any replacement arbitrator where the original arbitrator (or any replacement) has been removed by Order of the High Court, or refuses to act, or is incapable of acting.
+<br/><br/>
+<strong>6.</strong> <strong>Cancellation, Kill Fees and Non-Performance</strong>
 
-      <br/><br/>8.5 Costs and Decision of Arbitration. The costs of the arbitrator shall be borne in such proportion as the arbitrator shall determine to be fair and reasonable in all circumstances or, if no such determination is made, by the Parties in equal proportions. The findings and submissions to the arbitrator shall be deemed and remain always strictly confidential as between the parties. The decision of the Arbitrator shall be final and binding. The place of arbitration under this Clause 19 shall be Dublin, Ireland.
+<br/><br/>
+<strong>6.1</strong>	Principle. Once a Sponsorship Contract is formed, both parties are bound to perform. This clause 6 allocates the cost of cancellation or non-performance. The parties agree that the amounts specified are genuine pre-estimates of loss, reasonable in the circumstances, and are payable as liquidated damages and not as a penalty. They are without prejudice to any other rights and remedies the parties may have, including damages for losses exceeding the stated amounts.
 
-      <br/><br/>9. THIRD PARTY LINKS
+<br/><br/>
+<strong>6.2</strong>	<strong>Brand Cancellation - Kill Fee</strong>. Where a Brand cancels a Confirmed Opportunity (whether expressly, or by failing to take necessary steps such as delivering Gift-in-Kind or materials, failing to approve Deliverables, or failing to pay Sport Endorse&apos;s invoice in respect of the Deal Payment within a reasonable period of written notice), the following Kill Fees are payable to the Talent:
 
-      <br/><br/>9.1 Links. The Service may contain links to third-party websites, advertisers, services, special offers, or other events or activities that are not owned or controlled by Sport Endorse. Sport Endorse does not endorse or assume any responsibility for any such third-party sites, information, materials, products, or services.
+      </p>
+      <table className="full-border-table">
+        <thead>
+          <tr>
+            <th>Stage at which Brand cancels</th>
+            <th>Kill Fee (% of Deal Payment)</th>
+            <th>Gift-in-Kind</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Brand confirms Talent; Talent has not yet begun production</td>
+            <td>25%</td>
+            <td>Talent retains, or returns at Brand&apos;s cost (Brand&apos;s election)</td>
+          </tr>
+          <tr>
+            <td>Talent has commenced production but not delivered</td>
+            <td>50%</td>
+            <td>Talent retains</td>
+          </tr>
+          <tr>
+            <td>Talent has delivered Deliverables to Brand</td>
+            <td>100%</td>
+            <td>Talent retains</td>
+          </tr>
+          <tr>
+            <td>Deliverables approved, posted or published</td>
+            <td>100% + agreed usage/licence fees</td>
+            <td>Talent retains</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
 
-      <br/><br/>9.2 Access to Third Party Websites. If User access a third-party website from the Service, User does so at your own risk, and User understand that neither these Terms nor Sport Endorse&apos;s Privacy Policy apply to your User&apos;s use of such sites.
+Plus the Brand shall pay: (a) any pre-agreed out-of-pocket expenses under clause 4.4; and (b) Commission remains payable to Sport Endorse on the Kill Fee (no Commission is payable on the Gift-in-Kind retained by the Talent). All such amounts shall be invoiced by Sport Endorse to the Brand under clause 5.3 and settled to the Talent under clause 5.4.
 
-      <br/><br/>10. WARRANTY DISCLAIMER
+<br/><br/>
+<strong>6.3</strong>	Brand Cancellation - No Use of Content. Where a Brand cancels after Deliverables have been created and elects not to use them, the Talent shall retain (i) all Intellectual Property Rights and usage rights in those Deliverables; (ii) the Kill Fee under clause 6.2; (iii) any Gift-in-Kind received; and (iv) the right to showcase the Deliverables on the Talent&apos;s own channels, provided the Talent does not disparage the Brand and does not represent a continuing commercial relationship.
 
-      <br/><br/>10.1 As is Service. The Service is provided by Sport Endorse on an &apos;as is,&apos; &apos;as available&apos; basis, and without any warranties or conditions of any kind, express or implied, including but not limited to the implied warranties of merchantability, accuracy, fitness for a particular purpose, title and non-infringement, whether arising out of statute, in law, or from a course of dealing or usage or trade. We make no representations or warranties, of any kind, either express or implied, as to the quality, identity or reliability of the Service or any User, or the accuracy of any content.
-      .
-      <br/><br/>10.2 Necessary Technology. Use of the Service requires; (i) compatible devices, (ii) internet access, (iii) certain software (for which fees may apply), (iv) may require periodic updates, and (v) may be affected by the performance of these factors. High speed internet access is strongly recommended for regular use and is required for video. The latest version of required software is recommended to access the Service and may be required for certain transactions or features. You agree that meeting these requirements, which may change from time to time, is your responsibility. The Service are not part of any other product or offering, and no purchase or obtaining of any other product shall be construed to represent or guarantee you access to the Service.
+<br/><br/>
+<strong>6.4</strong>	<strong>Talent Cancellation or Non-Performance</strong>. Where a Talent cancels a Confirmed Opportunity, or fails to deliver Deliverables by the deadline and does not cure within fourteen (14) days of written notice: (a) any Gift-in-Kind received must be returned, undamaged and in saleable condition, at the Talent&apos;s cost, within fourteen (14) days; if return is impossible or the item has been used, the Talent shall pay the declared retail value; (b) any advance Deal Payment received by the Talent shall be refunded; (c) the Talent shall pay liquidated damages equal to twenty-five percent (25%) of the Deal Payment (or, where there is no cash Deal Payment, twenty-five percent (25%) of the declared retail value of the Gift-in-Kind) in compensation for the Brand&apos;s opportunity cost and the cost of re-sourcing Talent; (d) Sport Endorse shall invoice the defaulting Talent (or set off the amount against sums otherwise payable to the Talent through the Service in respect of other deals) and shall remit recovered amounts to the Brand net of Commission; and (e) repeated Talent default may result in suspension or termination under clause 14.
 
-      <br/><br/>10.3 Third Party Materials. Certain services may include materials from third parties. Sport Endorse may provide links to third-party websites as a convenience to you. User agrees that Sport Endorse is not responsible for examining or evaluating the content or accuracy and Sport Endorse does not warrant and will not have any liability or responsibility for any third-party materials or websites, or for any other materials, products, or services of third parties. User agrees that it will not use any third-party materials in a manner that would infringe or violate the rights of any other party and that Sport Endorse is not in any way responsible for any such use by you.
+<br/><br/>
+<strong>6.5</strong>	Force Majeure, Injury, Illness or Professional Change. Where performance is genuinely prevented by Force Majeure (clause 17.3), verified injury or illness, or a material change in the Talent&apos;s professional circumstances (e.g. transfer, retirement, deselection or team medical restriction), the parties shall in good faith seek to reschedule or mutually release the Sponsorship Contract. Kill Fees and liquidated damages shall not apply in such circumstances, save that: (i) Gift-in-Kind shall be returned where reasonably possible, or its declared value refunded; (ii) the Brand shall reimburse verified out-of-pocket Talent expenses; and (iii) any advance Deal Payment for work not performed shall be returned.
 
-      <br/><br/>10.4 Interruption of Service. Sport Endorse does not guarantee, represent or warrant that use of the Service will be uninterrupted or error-free and User agrees that from time to time Sport Endorse may remove the Service for indefinite periods of time, or cancel the Service at any time, without notice to User. No warranty is made that the Service will meet User&apos;s requirements.
+<br/><br/>
+<strong>6.6</strong>	Role of Sport Endorse. Sport Endorse is not itself liable for Kill Fees or liquidated damages as principal. However, Sport Endorse will invoice, collect, enforce and settle amounts due under this clause 6 in accordance with clauses 5.3, 5.4 and 5.8, and may pause invoicing or settlement pending resolution of a bona fide dispute under clause 15.
 
-      <br/><br/>11. LIMITATION OF LIABILITY AND RELEASE
+<br/><br/>
+<strong>7.</strong> <strong>Anti-Circumvention</strong>
 
-      <br/><br/>11.1 Exclusion of Liability. To the maximum extent permitted by applicable law, neither Sport Endorse, our licensors, nor our third-party service providers shall be liable to any User for any special, indirect, consequential, incidental or punitive damages arising out of or related to this Agreement or the use of the Service, including but not limited to: loss of profits, loss of business opportunities, loss of reputation, or loss of goodwill, even if advised of the possibility of such damages.
+<br/><br/>
+<strong>7.1</strong>	<strong>Covenant.</strong> Each User covenants that, during the Tail Period, any sponsorship, endorsement, appearance, ambassadorship, content, image-rights, licensing, Gift-in-Kind or similar arrangement (a “Downstream Deal”) entered into with another User who was introduced, accessed or communicated with through the Service — whether on or off the Service, whether directly or indirectly, whether through an intermediary, agent, related party, corporate affiliate, family member, or a third-party platform — shall be: (a) either routed through, and documented on, the Service; or (b) promptly disclosed in writing to Sport Endorse in sufficient detail for Commission to be calculated; and (c) subject to payment of Commission at the rate applicable under the relevant Subscription Plan, calculated on the Deal Payment component of the Downstream Deal.
 
-      <br/><br/>11.2 Limitation of Liability. Notwithstanding anything to the contrary stated in these Terms, in no event will our aggregate liability to you arising out of or related to these Terms or the Service, whether based on contract, tort, negligence or any other theory of liability, exceed the greater of (a) €1,000, or (b) the aggregate amount of fees actually collected by us from you for the Services to which the liability relates during the six (6) month period immediately preceding the determination of such liability.
+<br/><br/>
+<strong>7.2</strong>	<strong>Liquidated Damages.</strong> In the event of a breach of clause 7.1, the breaching User shall pay Sport Endorse, as agreed liquidated damages and not as a penalty, an amount equal to <strong>two hundred percent (200%) of the Commission that would have been payable</strong> of the Commission that would have been payable on the Deal Payment component of the Downstream Deal (or, where the Downstream Deal is wholly or substantially in Gift-in-Kind, a minimum sum equal to €2,500 per undisclosed Downstream Deal), together with Sport Endorse&apos;s reasonable costs of investigation and enforcement (including legal fees and external advisor costs). The parties acknowledge that the harm arising from circumvention is inherently difficult to quantify and that this amount is a reasonable pre-estimate.
 
-      <br/><br/>11.3 Waiver and Release. Sport Endorse will have no liability to User for damages (whether direct or indirect) arising out of, or relating to, any transaction entered into using the Service (including any Sponsorship Contract). If User have a dispute, controversy or claim with or against another User or a third party, you agree to, and do hereby waive all claims against Sport Endorse, release Sport Endorse (and our officers, directors, agents, subsidiaries, joint ventures and employees) from claims, demands and damages (actual and consequential) of every kind and nature, known and unknown, arising out of or in any way connected with such dispute.
+<br/><br/>
+<strong>7.3</strong>	Audit Rights. Users shall, on at least ten (10) Business Days&apos; written notice and not more than twice in any calendar year, permit Sport Endorse (or its independent auditors, bound by confidentiality) to inspect records, books, accounts, invoices and relevant communications concerning potential Downstream Deals during the Tail Period and for twenty-four (24) months thereafter. The costs of an audit shall be borne by Sport Endorse unless it identifies under-reporting of five percent (5%) or more of the Commission properly due in the audited period, in which case the audited User shall bear Sport Endorse&apos;s reasonable costs.
 
-      <br/><br/>12. ASSIGNMENT & CONFIDENTIALITY
+<br/><br/>
+<strong>7.4</strong>	Certification on Request. On reasonable written request, a User shall provide a signed certification, accurate to its knowledge after due enquiry, listing any Downstream Deals concluded during the Tail Period and the consideration paid or received.
 
-      <br/><br/>12.1 No Assignment by User. These Terms, and any rights and licenses granted hereunder, may not be transferred or assigned by you, but may be assigned by Sport Endorse without restriction. Any attempted transfer or assignment in violation hereof shall be null and void and shall entitle Sport Endorse to terminate the Agreement.
+<br/><br/>
+<strong>7.5</strong>	No Double Counting. Commission under clause 7 does not apply where it has already been properly accounted for and paid through the Service.
 
-      <br/><br/>12.2 Confidentiality. Each party agrees and undertakes that during the term of these Terms and thereafter it shall keep confidential and shall not use for its own purposes, nor without the prior written consent of the other party disclose to any third party, all information of a confidential nature (including, without limitation, information relating to Sport Endorse&apos;s Service, it&apos;s website, applications and business and any information relating to either Sport Endorse&apos;s or User products, operations, processes, plans or intentions, product information, know-how, design rights, trade secrets and information of commercial value) which may become known to that party from the other party (&apos;Confidential Information&apos;), unless the information is public knowledge or already known to that party at the time of disclosure or subsequently becomes public knowledge other than by breach of this Agreement or subsequently comes lawfully into the possession of that party from a third party or the party is required to disclose by applicable law.
+<br/><br/>
+<strong>7.6</strong>	Reasonableness. The parties acknowledge that this clause 7 is a reasonable and necessary protection of Sport Endorse&apos;s legitimate business interests, and that the duration and scope are commensurate with the value that the Service provides in sourcing and enabling the relationship. If a court of competent jurisdiction determines that any element of this clause 7 is unreasonable, the clause shall be read down to the minimum extent necessary to be enforceable.
 
-      <br/><br/>12.3 Limited Disclosure. To the extent necessary to implement the provisions of this Agreement, each party may disclose Confidential Information to those of its directors, employees, or advisors as may be reasonably necessary or desirable, provided that before any such disclosure each party shall make those persons aware of its obligations of confidentiality under these Terms and shall at all times procure compliance by those employees with them.
+<br/><br/>
+<strong>8.</strong> <strong>Intellectual Property, Content Licences and Image Rights</strong>
 
-      <br/><br/>13. GOVERNING LAW
+<br/><br/>
+<strong>8.1</strong>	Sport Endorse IP. The Service and all Sport Endorse content, software, trade marks, logos, designs and other Intellectual Property Rights are owned by Sport Endorse and its licensors. Users are granted a limited, non-exclusive, revocable, non-transferable, non-sublicensable licence to access and use the Service for its intended purpose only.
 
-      <br/><br/>13.1 These Terms and any action related thereto will be governed by the laws of Ireland and the parties herby submit to exclusive arbitration as set out in clause 8 of these Terms, for the resolution of all and any disputes.
+<br/><br/>
+<strong>8.2</strong>	User Content. Users retain ownership of Content they create or provide and grant Sport Endorse a worldwide, royalty-free, non-exclusive, sub-licensable and transferable licence to host, store, display, reproduce, translate, format and otherwise use such Content as necessary to provide, improve and promote the Service, for as long as such use is reasonably required (subject to account closure rights under clause 8.5).
 
-      <br/><br/>14. ENTIRE AGREEMENT/SEVERABILITY
+<br/><br/>
+<strong>8.3</strong>	<strong>Talent Deliverables - Brand Usage Rights.</strong> Subject to (i) payment in full of the Deal Payment and Commission (or any applicable Kill Fee in lieu), and (ii) delivery in full of any Gift-in-Kind to the Talent, the Talent grants the Brand the specific usage rights to the Deliverables set out in the Sponsorship Contract (scope, territory, channels and duration). Absent express agreement, the licence is non-exclusive, non-transferable, limited to twelve (12) months from delivery, confined to the Brand&apos;s owned and operated channels and to the territory specified in the Opportunity, and restricted to the campaign for which the Deliverables were created. Use in paid media, derivative products, out-of-home advertising, or any extension or renewal, requires a separate written agreement (subject to Commission).
 
-      <br/><br/>14.1 These Terms, together with any amendments and any other written agreements you may enter into with Sport Endorse in connection with the Service, shall constitute the entire agreement between you and Sport Endorse concerning the Service. If any provision or portion of a provision of these Terms is deemed invalid by a court of competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining portion of such provision or any other provisions of these Terms, which shall remain in full force and effect.
+<br/><br/>
+<strong>8.4</strong>	Unpaid Deliverables. Where the Brand has not paid in full (or any applicable Kill Fee), no licence to use the Deliverables is granted and any use constitutes copyright infringement and a material breach.
 
-      <br/><br/>15. MISCELLANEOUS
+<br/><br/>
+<strong>8.5</strong>	Image Rights for Platform Promotion. Each Talent grants Sport Endorse a worldwide, non-exclusive, royalty-free right to use the Talent&apos;s name, image, likeness, biographical details and profile Content for the purpose of operating and promoting the Service and illustrating available Talent to prospective Brands. Such use shall cease within a reasonable time (and no later than ninety (90) days) following the closure of the Talent&apos;s account, save in relation to legitimate archival and case-study materials.
 
-      <br/><br/>15.1 Waiver. No waiver of any term herein shall be deemed a further or continuing waiver of such term or any other term, and a failure or delay of Sport Endorse to assert any right or provision herein shall not constitute a waiver of such right or provision.
+<br/><br/>
+<strong>8.6</strong>	Moral Rights. To the extent permitted by Applicable Law, each User waives moral rights in User Content to the minimum extent necessary to give effect to clauses 8.2, 8.3 and 8.5. Where waiver is not permitted (including under the laws of certain EU Member States and South Africa), the User consents to the use described to the maximum extent permitted.
 
-      <br/><br/>15.2 No Third Party Rights. Unless otherwise expressly provided, no provision of this Agreement is intended or shall be construed to confer upon or give to any person or entity other than Sport Endorse and you any rights, remedies or other benefits under or by reason of this Agreement.
-      <br/><br/>15.3 Force Majeure. User agrees that Sport Endorse shall carry no responsibility for non-fulfilment or delayed fulfilment of the Service owing to a force majeure event, including but not limited to, war, acts of terrorism, riots, civil unrest, intervention by government or public authorizes, fire, strike or lock-out, export and/or import bans, failure in telecommunications services and networks, shortage of labour, fuel or power, pandemic, epidemic or any other cause beyond the control of us which may delay or impede the Service.
+<br/><br/>
+<strong>8.7</strong>	Infringement Notices. Copyright, trade mark and other IP infringement notices should be sent to platform.legal@sportendorse.com, including the information required under the EU Digital Services Act and (for U.S. material) the Digital Millennium Copyright Act. Sport Endorse will investigate and, where appropriate, take down Content and suspend repeat infringers.
 
-      <br/><br/>15.4 No Joint Venture. User agrees that no joint venture, partnership, employment, or agency relationship exists between you and Sport Endorse as a result of these or use of this Service
+<br/><br/>
+<strong>8.8</strong>	<strong>Success Stories.</strong> Each User grants Sport Endorse a non-exclusive, worldwide, royalty-free and (once approved under this clause 8.8) perpetual licence to produce and publish case studies, testimonials, press releases, social media posts, sales and investor materials, conference content and other marketing or business-development materials (each a “Success Story”) featuring a completed Sponsorship Contract, including the Brand&apos;s name, logo and products, the Talent&apos;s name, image and likeness, selected Deliverables, non-confidential campaign metrics, and a narrative description of the engagement, in any format and media now known or later developed. Sport Endorse shall: (a) submit each draft Success Story to the relevant Brand and the relevant Talent for review before first publication; (b) consider in good faith reasonable amendments proposed by either party (including redaction or anonymisation of commercially sensitive financial terms at a party&apos;s written request); (c) not publish the Success Story until written approval has been received from both the Brand and the Talent, save that if a party does not respond with either approval or substantive change requests within ten (10) Business Days of a written request for approval, that party&apos;s approval shall be deemed given; and (d) not make material edits to an approved Success Story that change its meaning or positioning without re-submitting the amended version for approval under (a)-(c). The right to continue using an approved (or deemed-approved) Success Story survives termination of this Agreement, subject to any non-waivable image or data-protection rights under Applicable Law.
 
-      <br/><br/>16. THIRD-PARTY APIS
+<br/><br/>
+<strong>9.</strong> <strong>Acceptable Use and Prohibited Activities</strong>
 
-      <br/><br/>16.1 API&apos;s. The Sport Endorse platform uses and links to a range of other services, software solutions and apps via API&apos;s which include the following. All use and/or access of such API&apos;s is subject to the relevant terms and conditions of use which any User must accept to utilise.
+<br/><br/>
+<strong>9.1</strong>	Users shall not: (i) use any robot, spider, scraper or other automated means to access the Service; (ii) attempt to circumvent the Service or any Commission (clause 7); (iii) use the Service to advertise a competing platform, product or service; (iv) harvest personal data or contact information; (v) transmit malicious code or interfere with Service security or integrity; (vi) post or transmit Content that is unlawful, deceptive, misleading, harassing, defamatory, obscene, discriminatory or infringing; (vii) impersonate any person or misrepresent affiliation or credentials; or (viii) use the Service to promote products or services unlawful in the User&apos;s or counterparty&apos;s jurisdiction.
 
-      <br/><br/>16.2 Stripe: Our platform connects to Stripe APIs to process payments and to pull and centralise our clients&apos; data and for KYC/AML purposes. Click Here to access Stripe&apos;s Terms of Service.
+<br/><br/>
+<strong>9.2</strong>	Communications Monitoring. To prevent circumvention and to maintain security and compliance, Sport Endorse may (but is not obliged to) monitor and filter in-Platform messages, including automated filtering of personal contact details, off-Platform payment solicitations and attempts to transact outside the Service.
 
-      <br/><br/>16.3 YouTube: Our platform connects to YouTube APIs to pull and centralise our clients&apos; data. Click Here to access YouTube&apos;s Terms of Service.
-      <br/><br/>16.4 Instagram: Our platform connects to Instagram APIs to pull and centralise our clients&apos; data. Click Here to access Instagram&apos;s Terms of Service.
+<br/><br/>
+<strong>10.</strong> <strong>Regulatory Compliance: Advertising, Disclosure and NIL</strong>
 
-      <br/><br/>16.5 Twitter: Our platform connects to Twitter APIs to pull and centralise our clients&apos; data. Click Here to access Twitter&apos;s Terms of Service.
+<br/><br/>
+<strong>10.1</strong>	Compliance. Each User shall comply with all Applicable Law and applicable codes governing advertising, endorsements, influencer marketing and sponsorship in every jurisdiction in which Content is made available, including: the UK CAP Code and CMA guidance; the U.S. FTC Endorsement Guides; the Advertising Standards Authority of Ireland rules; the ASA South Africa code; the EU Unfair Commercial Practices Directive and Digital Services Act; and applicable rules of sports governing bodies, teams, leagues, federations and schools.
 
-      <br/><br/>16.6 Facebook: Our platform connects to Facebook APIs to pull and centralise our clients&apos; data. Click Here to access Facebook&apos;s Terms of Service.
+<br/><br/>
+<strong>10.2</strong>	Disclosure. The Talent and the Brand shall ensure that every item of sponsored Content carries a clear, prominent and unambiguous disclosure (e.g. #Ad, #Sponsored, “Paid Partnership with [Brand]”) that complies with the rules referenced in clause 10.1 in every territory in which the Content is accessible. Failure to make required disclosures is a material breach.
 
-      <br/><br/>16.7 TikTok: Our platform connects to TikTok APIs to pull and centralise our clients&apos; data. Click Here to access TikTok&apos;s Terms of Service.
+<br/><br/>
+<strong>10.3</strong>	NIL (U.S. Collegiate). Where a Talent is a U.S. college athlete, the parties shall comply with the NCAA, conference, school and state NIL rules applicable to the Talent, including any pre-approval, pre-clearance or reporting requirements. The Talent warrants that entry into the Sponsorship Contract does not jeopardise the Talent&apos;s amateur or eligibility status.
 
-      <br/><br/>17. HOSTING SERVICES
+<br/><br/>
+<strong>10.4</strong>	Restricted Categories. Opportunities involving alcohol, betting, gambling, tobacco, e-cigarettes, cannabis, prescription medicines, weapons, supplements, high-risk financial products, or other categories flagged on the Service, require the Talent&apos;s specific prior written consent and are subject to territory-specific restrictions under Applicable Law, which the Brand warrants it has verified.
 
-      <br/><br/>17.1 Sharing Data with Hosting Services. Our platform uses certain hosting services (including Amazon Web Services) such that the data that we collect from you may be transferred to, and stored at, a destination outside the European Economic Area (&apos;EEA&apos;). Such transfers will be subject to the terms and conditions agreed with such hosting services. It may also be processed by staff operating outside the EEA who work for us or for the hosting service provider. By submitting your personal data, you consent to this transfer, storing or processing. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with these Terms and our Privacy Policy. Click Here to access our Privacy Policy. The safeguards in place with regard to the transfer of your personal data outside of the EEA are the entry by us into appropriate contracts with all transferees of such personal data.
+<br/><br/>
+<strong>10.5</strong>	Anti-Bribery. Each User shall comply with applicable anti-bribery and anti-corruption laws, including the Irish Criminal Justice (Corruption Offences) Act 2018, the UK Bribery Act 2010, the U.S. Foreign Corrupt Practices Act, and South Africa&apos;s Prevention and Combating of Corrupt Activities Act.
 
-      <br/><br/>18. CONTACTING US
+<br/><br/>
+<strong>11.</strong> <strong>Data Protection</strong>
 
-      <br/><br/>18.1 Assistance. If you wish to report a violation of the Terms, have any questions, or need assistance, please contact Sport Endorse customer support at platform.hello@sportendorse.com.
-          
-      <br/><br/>PART B: ADDITIONAL TERMS APPLICABLE TO BRANDS/AGENCIES
-      <br/><br/>1. Age. No person under 16 maybe a User and Brands must use best endeavours to ensure that no personal information in respect of a person who is under the age of 16 years is submitted to Sport Endorse. We will not knowingly accept any data from a Brand or Agency in respect of a person who is under the age of 16 years.
+<br/><br/>
+<strong>11.1</strong>	Sport Endorse processes personal data in accordance with the GDPR (Regulation (EU) 2016/679), the UK GDPR and Data Protection Act 2018, the Irish Data Protection Acts 1988-2018, POPIA (South Africa, Act 4 of 2013), the California Consumer Privacy Act/California Privacy Rights Act, and other Applicable Law.
 
-      <br/><br/>2. Venue. Brands and Agencies agree that it is their responsibility to ensure that any venues or locations in which the engagement with the Talent is held is safe, fit for purpose and with adequate security.
+<br/><br/>
+<strong>11.2</strong>	Privacy Policy. The categories of personal data processed and the lawful bases for processing are described in the Privacy Policy.
 
-      <br/><br/>3. Brand/Agency. Brands and Agencies shall sign up to Sport Endorse for a subscription plan. This may offer support from an account manager (such plans being &apos;Subscription Plans&apos;). Subscription Plans are non-refundable within the initial service term. All Subscription Plans are automatically renewed until cancelled by the User prior to any such renewal, in writing to Sport Endorse via email to subscriptions@sportendorse.com. In instances where the credit card on file fails, we will contact the Brand/Agency email on file for an alternate payment method. If there is no response, we will follow up with the Brand/Agency&apos;s financial team.
+<br/><br/>
+<strong>11.3</strong>	Brand Controller Responsibilities. Where a Brand acts as an independent controller of personal data received through the Service (including for its own direct-marketing activities), the Brand is solely responsible for its own compliance, including its own privacy notices, lawful bases and audience consents, and shall enter into such data processing, joint controller or data sharing arrangements with Sport Endorse as Sport Endorse reasonably requires.
 
-      <br/><br/>4. Cancelation of Subscription Plan. A Brand/Agency may cancel a subscription to a Subscription Plan at any time after the initial service term is complete and there are no open Sponsorship Contracts in the account (i.e. deals where a proposal has been accepted by the Talent but the opportunity has not yet been completed). Cancelation requests must be made in writing to the Sport Endorse account manager or to subscriptions@sportendorse.com. In the event we cancel your Subscription Plan for failure to comply with these Terms, you will forfeit the remainder of your subscription term; we will not issue a refund.
+<br/><br/>
+<strong>11.4</strong>	International Transfers. Personal data may be transferred outside the EEA and the UK. Where this occurs, Sport Endorse will rely on appropriate safeguards (including the EU Standard Contractual Clauses, the UK International Data Transfer Addendum, or binding corporate rules or adequacy decisions where applicable).
 
-      <br/><br/>5. Suspension of Service. We reserve the right in our sole discretion (acting reasonably) and at any time to terminate or suspend your access to the Service and/or block your access to the website/application for any reason including, without limitation if you have failed to comply with these Terms and or pay any amount due. User agrees that Sport Endorse shall not be liable to you or any third party for any termination or suspension of your account or for blocking your access to the Service.
+<br/><br/>
+<strong>12.</strong> <strong>Representations, Warranties and Indemnities</strong>
 
-      <br/><br/>6. Continuation of Terms. Any suspension or termination shall not affect your obligations to us under these Terms and Conditions and shall be without prejudice to any accrued rights of either Party or amounts payable in respect of the Fees. The provisions of these Terms and Conditions which by their nature should survive the suspension or termination shall survive including, but not limited to indemnities, releases, disclaimers, limitations on liability, and choice of law.
+<br/><br/>
+<strong>12.1</strong>	Mutual Representations. Each User represents and warrants that: (i) it has authority to enter into this Agreement; (ii) its use of the Service will not violate any other agreement to which it is subject; (iii) the information it provides is accurate and complete; and (iv) it will comply with Applicable Law.
 
+<br/><br/>
+<strong>12.2</strong>	Brand / Agency Indemnity. Each Brand and Agency shall indemnify and hold harmless Sport Endorse, its affiliates and their directors, officers, employees and agents from and against all losses, damages, liabilities, costs and expenses (including reasonable legal fees) arising out of or relating to: (a) the Brand&apos;s or Agency&apos;s breach of these Terms or any Sponsorship Contract; (b) any claim by a Talent relating to unpaid amounts, Kill Fees or misuse of Deliverables; (c) the Brand&apos;s products, services or marketing (including product safety, misleading advertising or infringement claims); (d) any breach of data protection law by the Brand; and (e) any breach of sanctions or anti-bribery law by the Brand.
 
-      <br/><br/>PART C: ADDITIONAL TERMS APPLICABLE TO TALENT
+<br/><br/>
+<strong>12.3</strong>	Talent Indemnity. Each Talent shall indemnify and hold harmless Sport Endorse, its affiliates and their directors, officers, employees and agents from and against all losses, damages, liabilities, costs and expenses (including reasonable legal fees) arising out of or relating to: (a) the Talent&apos;s breach of these Terms or any Sponsorship Contract; (b) Content posted by the Talent that infringes third-party rights or violates Applicable Law; and (c) any breach by the Talent of sports governing body, team, league, school, or NIL rules.
 
-      <br/><br/>1. Intellectual Property. The Talent acknowledges that the Service and all software, images, text, graphics, illustrations, logos, patents, trademarks, service marks, copyrights, photographs and other content within the Service (&apos;Sport Endorse Content&apos;), and all intellectual property rights in the foregoing, are the exclusive property of Sport Endorse and its licensors. Except as expressly provided herein, nothing in these Terms shall be deemed to create a license to use Sport Endorse Content. Use of Sport Endorse Content for any purpose not expressly permitted by these Terms is prohibited.
+<br/><br/>
+<strong>12.4</strong>	Warranty Disclaimer. To the maximum extent permitted by Applicable Law, the Service is provided on an “as is” and “as available” basis. Sport Endorse disclaims all implied warranties, including merchantability, fitness for a particular purpose, accuracy and non-infringement, save to the extent these cannot be excluded under Applicable Law (including the Irish Sale of Goods and Supply of Services Act 1980, the UK Consumer Rights Act 2015 and the South African Consumer Protection Act as applicable to consumer Users).
 
-      <br/><br/>2. Ownership of Sport Endorse. The Talent acknowledges and agrees that Sport Endorse and/or its licensors own all Information and Intellectual Property Rights in the Service. Except as expressly stated herein, this agreement does not grant you any rights to, under or in, any patents, copyright, database right, trade secrets, trade names, trademarks (whether registered or unregistered), or any other rights or licences in respect of the Service. To the extent that any modifications or improvements to the Service are carried out under or in connection with this Agreement, whether by Sport Endorse alone or jointly with the Talent, and whether based on the Talent&apos;s ideas or suggestions from, all Intellectual Property Rights to such underlying ideas and in any resulting improvement or modifications shall be assigned to and shall vest with and be solely owned by Sport Endorse and/or its licensors.
+<br/><br/>
+<strong>12.5</strong>	Insurance. The Brand warrants that it maintains product liability and, where venues are used, public liability insurance on commercially reasonable terms. Talent performing physical activities, appearances or stunts under a Sponsorship Contract warrant that they maintain appropriate personal accident cover (or that the Brand has agreed to provide equivalent cover).
 
-      <br/><br/>3. Grant of Non Exclusive Right. If the Talent posts content or submits material to Sport Endorse, and unless otherwise indicated, you grant us a non-exclusive, royalty-free and fully sub-licensable and transferable rights to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display the content throughout the world in any media.
+<br/><br/>
+<strong>13.</strong> <strong>Limitation of Liability</strong>
 
-      <br/><br/>4. All Talent using the Service provided by Sport Endorse agrees with Sport Endorse that:
+<br/><br/>
+<strong>13.1</strong>	Exclusions. Nothing in these Terms excludes or limits liability for: (i) death or personal injury caused by negligence; (ii) fraud or fraudulent misrepresentation; (iii) any other liability that cannot be excluded or limited under Applicable Law; or (iv) a User&apos;s payment obligations under clauses 5, 6 and 7.
 
-      <br/><br/>4.1 Sport Endorse has the unrestricted right to depict the Talent, by way of photograph or film (whether provided by the Talent or created by Sport Endorse) as permitted by law, using any technology or media including but not limited to digital, electronic, print, film and television media now known or yet to be invented relating to the promotion of the business activities of Sport Endorse while the Talent is using the Service of Sport Endorse;
+<br/><br/>
+<strong>13.2</strong>	Exclusion of Certain Losses. Subject to clause 13.1, neither party shall be liable to the other for: loss of profits; loss of revenue; loss of goodwill or reputation; loss of business opportunity; or any indirect, consequential, special or punitive damages.
 
-      <br/><br/>4.2 Sport Endorse may generate and use images of the Talent on a nonexclusive basis in media or for promotional purposes throughout the World;
+<br/><br/>
+<strong>13.3</strong>	Cap. Subject to clauses 13.1 and 13.2, Sport Endorse&apos;s aggregate liability to any User in connection with this Agreement, whether in contract, tort (including negligence), breach of statutory duty or otherwise, shall not exceed the greater of (a) €5,000, or (b) the total fees and Commissions actually received and retained by Sport Endorse from that User during the twelve (12) months preceding the event giving rise to liability.
 
-      <br/><br/>4.3 any images or depictions of the Talent generated by Sport Endorse may be edited, stored, copies made of and reused at the sole desertion of Sport Endorse;
+<br/><br/>
+<strong>13.4</strong>	Disputes Between Users. Sport Endorse is not a party to Sponsorship Contracts and, save for its facilitation role under clauses 5, 6 and 15, has no liability for the acts or omissions of Users. Each User releases Sport Endorse from claims arising out of disputes with other Users, to the maximum extent permitted by Applicable Law.
 
-      <br/><br/>4.4 the Talent releases Sport Endorse from any future claim made by me or anyone else arising out of the use of the images or depictions of the Talent;
+<br/><br/>
+<strong>14.</strong> <strong>Term and Termination</strong>
 
-      <br/><br/>4.5 no consideration is due to the Talent for this release;
+<br/><br/>
+<strong>14.1</strong>	Term. This Agreement commences on registration and continues until terminated in accordance with its terms.
 
-      <br/><br/>4.6 this release is irrevocable and worldwide for the period while the Talent is using the service of Sport Endorse and will be governed by the law of The Republic of Ireland;
+<br/><br/>
+<strong>14.2</strong>	Termination for Convenience by User. A User may terminate by closing its account, subject to (a) completing any open Sponsorship Contracts; (b) clauses 6 and 7; and (c) any minimum Subscription term.
 
-      <br/><br/>4.7 The Talent has read this release and fully understands the contents and consequences of this release and accept that it will be fully binding on the Talent.
-      
+<br/><br/>
+<strong>14.3</strong>	Termination for Cause by Sport Endorse. Sport Endorse may, acting reasonably, suspend or terminate a User&apos;s account on notice where the User: (i) materially breaches these Terms (including clauses 7, 9 and 10) and, if capable of cure, fails to cure within fourteen (14) days of written notice; (ii) becomes insolvent or enters any similar process; (iii) is placed on a sanctions list; or (iv) poses a brand-safety, legal or reputational risk to Sport Endorse or its Users, including in light of credible allegations of serious misconduct.
+
+<br/><br/>
+<strong>14.4</strong>	Consequences of Termination. Termination does not relieve Users of accrued obligations (including payment of Commission, Kill Fees, liquidated damages, and completion of Confirmed Opportunities), and shall not affect the Tail Period. Clauses 5 (in respect of accrued sums), 6, 7, 8, 11, 12, 13, 14.4, 15, 16 and 17 survive termination.
+
+<br/><br/>
+<strong>15.</strong> <strong>Dispute Resolution</strong>
+
+<br/><br/>
+<strong>15.1</strong>	Good-Faith Negotiation. The parties shall first seek to resolve any dispute through good-faith discussions, escalated to senior management, for a period of at least twenty (20) Business Days from written notice of the dispute.
+
+<br/><br/>
+<strong>15.2</strong>	Mediation. Failing resolution, the dispute shall be referred to mediation under the Mediation Rules of the Centre for Effective Dispute Resolution (CEDR) or another mutually agreed mediator experienced in commercial, sports and digital media disputes. The seat of mediation shall be Dublin, Ireland; the language shall be English; each party shall bear its own costs; mediator fees shall be shared equally.
+
+<br/><br/>
+<strong>15.3</strong>	Arbitration. Failing mediation, any dispute shall be finally resolved by binding arbitration under the Rules of Arbitration Ireland (or, where the amount in dispute exceeds €250,000 or a party reasonably requests it, the Rules of the London Court of International Arbitration). The seat shall be Dublin, Ireland. The language shall be English. A sole arbitrator shall be appointed, save that three arbitrators shall be appointed where the amount in dispute exceeds €500,000. The award shall be final and binding, and enforceable in any court of competent jurisdiction under the New York Convention.
+
+<br/><br/>
+<strong>15.4</strong>	Court Carve-Outs. Notwithstanding the above, either party may apply to a court of competent jurisdiction for: (i) injunctive or equitable relief (including to restrain circumvention, breach of confidence or IP infringement); (ii) enforcement of an arbitral award; or (iii) proceedings to recover undisputed liquidated amounts.
+
+<br/><br/>
+<strong>15.5</strong>	Consumer Users. Where a User is a consumer and Applicable Law (including EU, UK and South African consumer law) requires that the User be able to bring or defend proceedings in their home courts and under their home law in respect of mandatory consumer protections, nothing in this clause 15 overrides those rights.
+
+<br/><br/>
+<strong>15.6</strong>	Class Action Waiver. To the extent permitted by Applicable Law, Users agree to bring claims in their individual capacity only, and not as a plaintiff or class member in any purported class, collective or representative action.
+
+<br/><br/>
+<strong>15.7</strong>	Limitation Period. To the extent permitted by Applicable Law, any claim arising out of or relating to this Agreement must be brought within one (1) year of the date on which the claimant first became (or, acting reasonably, ought to have become) aware of the facts giving rise to the claim.
+
+<br/><br/>
+<strong>16.</strong> <strong>Governing Law and Jurisdiction</strong>
+
+<br/><br/>
+<strong>16.1</strong>	Governing Law. These Terms and any non-contractual obligations arising out of or in connection with them shall be governed by the laws of Ireland, without regard to conflict-of-laws rules.
+
+<br/><br/>
+<strong>16.2</strong>	Jurisdiction. Subject to clause 15 (arbitration) and to mandatory consumer rights, the parties submit to the non-exclusive jurisdiction of the courts of Ireland. Sport Endorse may alternatively bring proceedings against a User in the User&apos;s home jurisdiction (including any court of competent jurisdiction in the United Kingdom, any U.S. state, any EU Member State, or South Africa) for the enforcement of these Terms, any arbitral award or any injunctive relief.
+
+<br/><br/>
+<strong>16.3</strong>	Jurisdictional Acknowledgements. Users acknowledge that these Terms are intended to be enforceable in, and compliant with, the laws of Ireland, the United Kingdom, the European Union, the United States and South Africa. Schedule 2 sets out specific jurisdictional acknowledgements which, where applicable, form part of these Terms.
+
+<br/><br/>
+<strong>17.</strong> <strong>General</strong>
+
+<br/><br/>
+<strong>17.1</strong>	Assignment. A User may not assign or transfer this Agreement without Sport Endorse&apos;s prior written consent. Sport Endorse may assign to an affiliate, group company or an acquirer of all or substantially all of its business.
+
+<br/><br/>
+<strong>17.2</strong>	Entire Agreement. These Terms (together with the schedules, the User&apos;s Subscription Plan, the Privacy Policy and any written Sponsorship Contract) constitute the entire agreement between the parties and supersede all prior understandings. No party has relied on any statement not set out in the Terms.
+
+<br/><br/>
+<strong>17.3</strong>	Force Majeure. Neither party shall be liable for any delay in, or failure of, performance caused by events beyond its reasonable control (including war, terrorism, civil unrest, acts of government, pandemic or epidemic, utility or internet failure, cyberattack, industrial action, or fire or flood). The affected party shall give prompt notice and use reasonable efforts to mitigate. If a Force Majeure event continues for more than sixty (60) days, either party may terminate affected Sponsorship Contracts on written notice.
+
+<br/><br/>
+<strong>17.4</strong>	Severability. If any provision is held invalid or unenforceable by a court of competent jurisdiction, the remainder of these Terms shall remain in full force and effect, and wherever possible the invalid provision shall be read down rather than struck out, to the minimum extent necessary to give the maximum permissible effect to the parties&apos; intention.
+
+<br/><br/>
+<strong>17.5</strong>	No Waiver. A failure or delay by a party to exercise any right is not a waiver of that right or of any other right.
+
+<br/><br/>
+<strong>17.6</strong>	Third-Party Rights. Save as expressly provided (including indemnified persons under clauses 12.2 and 12.3, who may enforce the indemnities in their favour), no third party shall have rights under the Contracts (Rights of Third Parties) Act 1999 (UK), the Contracts (Rights of Third Parties) Act 2017 or any equivalent legislation.
+
+<br/><br/>
+<strong>17.7</strong>	Notices. Notices to Sport Endorse must be sent to platform.legal@sportendorse.com. Notices to Users may be delivered to the email address on the User&apos;s account and shall be deemed received on the Business Day after transmission.
+
+<br/><br/>
+<strong>17.8</strong>	Language. These Terms are drafted in English. Any translation is provided for convenience only, and the English text prevails.
+
+<br/><br/>
+<strong>17.9</strong>	Electronic Signature. The parties agree that electronic acceptance and signature of these Terms and of any Sponsorship Contract is valid and binding, as contemplated by the Irish Electronic Commerce Act 2000, the EU eIDAS Regulation (910/2014), the UK Electronic Communications Act 2000, the U.S. ESIGN Act and Uniform Electronic Transactions Act, and the South African Electronic Communications and Transactions Act 2002.
+
+<br/><br/>
+<strong>17.10</strong>	Relationship. Nothing in these Terms creates a partnership, employment, agency or joint-venture relationship between any User and Sport Endorse or between Users.
+
+<br/><br/>
+<strong>17.11</strong>	Third-Party APIs and Hosting. The Service integrates with third-party APIs (including Stripe, Meta/Facebook, Instagram, TikTok, YouTube, X/Twitter) and hosting services (including Amazon Web Services). Use of third-party services is subject to the providers&apos; own terms.
+
+<br/><br/>
+<strong>17.12</strong>	Contact. For queries or to report a breach of these Terms, contact platform.hello@sportendorse.com (general) or platform.legal@sportendorse.com (legal).
+</p>
+
+<p>
+<br/>
+<strong>PART B — ADDITIONAL TERMS FOR BRANDS AND AGENCIES</strong>
+
+<br/><br/>
+<strong>B1</strong>	Subscription Plans. Brands and Agencies select a Subscription Plan and pay Subscription Fees in advance for the applicable term. Subscription Plans renew automatically at the end of each term at the then-current rates unless cancelled. Cancellation may be made at any time by written notice to subscriptions@sportendorse.com: (a) access to the Service continues until the end of the then-current paid term; (b) no refund of Subscription Fees is payable in respect of the then-current term; and (c) no further renewal will occur. Subscription Fees are non-refundable during the then-current term, save as expressly required by Applicable Law (including, for any non-business consumer User, non-waivable statutory consumer rights).
+
+<br/><br/>
+<strong>B2</strong>	Accurate Posting. Brands must not post Opportunities they are not willing and able to perform. Repeated cancellation of Confirmed Opportunities (or posting of misleading Opportunities) may result in suspension and, at Sport Endorse&apos;s reasonable discretion, a requirement to pay in advance (rather than on extended payment terms) before posting further Opportunities.
+
+<br/><br/>
+<strong>B3</strong>	Content Use Strictly Within Agreed Rights. Brands may only use Deliverables within the scope of the licence agreed under clause 8.3. Any use beyond scope, after non-payment, or after termination is a material breach and copyright infringement and will entitle the Talent and Sport Endorse to all remedies available at law.
+
+<br/><br/>
+<strong>B4</strong>	Agency Role. Agencies must clearly identify the Talent they represent and the scope of their authority. An Agency is jointly and severally liable with the Talent it represents for obligations under this Agreement to the extent it transacts on the Talent&apos;s behalf, including in respect of the anti-circumvention covenants in clause 7.
+
+<br/><br/>
+<strong>B5</strong>	Product and Safety Responsibility. Each Brand represents and warrants that any product or service which is the subject of an Opportunity, and any Gift-in-Kind, complies with Applicable Law, including product safety, consumer protection, advertising disclosure and age-restricted category rules.
+
+<br/><br/>
+<strong>B6</strong>	Venues and Live Engagements. Brands are responsible for the safety, security and fitness-for-purpose of any venue at which a Talent is required to appear, and shall maintain appropriate public liability and (where relevant) employer&apos;s liability insurance.
+
+<br/><br/>
+<strong>B7</strong>	Payment Methods. Subscription Fees are paid up front at the time of subscription or renewal, by credit card or other method accepted by Sport Endorse (via Stripe or an equivalent licensed provider). Deal Payments, Commissions, Kill Fees and liquidated damages are invoiced by Sport Endorse under clause 5.3 and payable on the payment terms stated on the invoice (immediate, 30, 60 or, by prior agreement, 90 days). Brands that fail to pay may be suspended under clause 5.7 and pursued for collection under clause 5.8.
+
+<br/><br/>
+<strong>B8</strong>	Age Restrictions. No Brand may post an Opportunity knowingly targeted at, or requiring performance by, a Talent under the age of sixteen (16). Opportunities requiring performance by Talent aged 16-17 (or minors under local law) are only permitted with demonstrable parental or guardian consent and shall comply with applicable child-protection and working-with-children laws.
+
+<br/><br/>
+<strong>B9</strong>	Success Stories. The Brand acknowledges and consents to Sport Endorse&apos;s Success Story rights under clause 8.8. The Brand shall review draft Success Stories in good faith and respond (with approval or substantive change requests) within the period set out in clause 8.8.
+</p>
+
+<p>
+<br/>
+<strong>PART C — ADDITIONAL TERMS FOR TALENT</strong>
+
+<br/><br/>
+<strong>C1</strong>	Independent Contractor. The Talent engages with Brands as an independent contractor. No employment, agency, partnership or joint-venture relationship is created between the Talent and Sport Endorse or between the Talent and a Brand by virtue of using the Service.
+
+<br/><br/>
+<strong>C2</strong>	Eligibility Warranties. The Talent warrants that: (i) the performance of any Sponsorship Contract will not breach any contract to which the Talent is subject (team, league, federation, school, existing endorsement, exclusivity); (ii) the Talent has obtained all necessary approvals from any team, league, federation or school, including NIL approvals for U.S. college athletes, where required; and (iii) the Talent is duly authorised to grant the image, likeness and content rights contemplated in these Terms.
+
+<br/><br/>
+<strong>C3</strong>	Performance Obligations. The Talent shall: (i) deliver Deliverables by the deadlines and to the specifications set out in the Sponsorship Contract; (ii) ensure all posted Content is genuine, accurate and not misleading, and carries all required disclosures; (iii) not remove or take down sponsored Content before the end of the agreed posting period; and (iv) cooperate in good faith with reasonable Brand change requests that fall within the agreed scope of clause 4.3.
+
+<br/><br/>
+<strong>C4</strong>	Gift-in-Kind Commitment. The Talent acknowledges that acceptance of Gift-in-Kind commits the Talent to the Deliverables in the Sponsorship Contract, and that non-performance triggers the return and liquidated damages remedies in clause 6.4.
+
+<br/><br/>
+<strong>C5</strong>	Brand Safety and Morality. During the term of any Sponsorship Contract, and for ninety (90) days thereafter, the Talent shall not engage in conduct that is materially likely to bring the Brand or Sport Endorse into serious disrepute or which would reasonably be expected to cause significant reputational harm to the Brand. Breach may result in forfeiture of unpaid Deal Payment, a claim for damages, and account suspension.
+
+<br/><br/>
+<strong>C6</strong>	Disclosure Compliance. The Talent shall comply with all advertising-disclosure rules in every jurisdiction where the Content is accessible, as set out in clause 10.
+
+<br/><br/>
+<strong>C7</strong>	Exclusivity. Exclusivity, if any, shall be as specifically set out in the Sponsorship Contract. Absent express agreement, no category exclusivity applies, but the Talent shall not include conflicting brand content within the same Deliverables.
+
+<br/><br/>
+<strong>C8</strong>	Promotional Image Rights. The Talent acknowledges and consents to Sport Endorse&apos;s limited use of name, image, likeness and profile Content to promote the Service, as set out in clause 8.5.
+
+<br/><br/>
+<strong>C9</strong>	Tax. The Talent is solely responsible for its own tax, social security, VAT/GST and any other filings in every relevant jurisdiction, and shall provide Sport Endorse with any tax-residence documentation reasonably requested for withholding or reporting purposes.
+
+<br/><br/>
+<strong>C10</strong>	Minors. Where the Talent is a minor under the laws of the Talent&apos;s home jurisdiction, a parent or legal guardian must co-sign the account and each Sponsorship Contract and shall be jointly and severally liable for the Talent&apos;s obligations. Sport Endorse may require verification of parental or guardian identity.
+
+<br/><br/>
+<strong>C11</strong>	Anti-Circumvention Acknowledgement. The Talent acknowledges that clause 7 applies to the Talent and that engaging with a Brand introduced through the Service on an off-Platform basis during the Tail Period constitutes a breach of these Terms.
+
+<br/><br/>
+<strong>C12</strong>	Success Stories. The Talent acknowledges and consents to Sport Endorse&apos;s Success Story rights under clause 8.8. The Talent shall review draft Success Stories in good faith and respond (with approval or substantive change requests) within the period set out in clause 8.8.
+</p>
+
+<p>
+<br/>
+<strong>SCHEDULE 1 — CANCELLATION AND KILL-FEE MATRIX (Reference)</strong>
+
+<br/><br/>This Schedule 1 is a summary of clauses 6.2 and 6.4. In the event of any inconsistency, the body of the Terms prevails.
+
+<br/><br/><strong>Brand Cancellation - Payable to Talent</strong>
+
+      </p>
+      <table className="full-border-table">
+        <thead>
+          <tr>
+            <th>Stage at which Brand cancels</th>
+            <th>Kill Fee (% of Deal Payment)</th>
+            <th>Gift-in-Kind</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Brand confirms Talent; Talent has not yet begun production</td>
+            <td>25%</td>
+            <td>Talent retains, or returns at Brand&apos;s cost (Brand&apos;s election)</td>
+          </tr>
+          <tr>
+            <td>Talent has commenced production but not delivered</td>
+            <td>50%</td>
+            <td>Talent retains</td>
+          </tr>
+          <tr>
+            <td>Talent has delivered Deliverables to Brand</td>
+            <td>100%</td>
+            <td>Talent retains</td>
+          </tr>
+          <tr>
+            <td>Deliverables approved, posted or published</td>
+            <td>100% + agreed usage/licence fees</td>
+            <td>Talent retains</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+
+<strong>Talent Cancellation or Non-Performance - Payable to Brand</strong>
+<br/>
+<ul>
+  <li>Return of all Gift-in-Kind within 14 days (undamaged, saleable), or payment of declared retail value.</li>
+  <li>Refund of any advance Deal Payment.</li>
+  <li>Liquidated damages: 25% of Deal Payment (or, if none, 25% of declared retail value of Gift-in-Kind).</li>
+  <li>Sport Endorse may invoice the defaulting Talent, or set off amounts against sums otherwise payable to the Talent on other deals (clause 6.4(d)).</li>
+  <li>Repeated default may lead to suspension or termination.</li>
+</ul>
+
+
+<br/><br/><strong>SCHEDULE 2 — JURISDICTION-SPECIFIC ACKNOWLEDGEMENTS</strong>
+
+<strong>Ireland (Home Jurisdiction)</strong>
+<br/><br/>
+Governing law. The courts of Ireland have non-exclusive jurisdiction. Irish Arbitration Act 2010 applies to any arbitration seated in Dublin.
+<br/><br/>
+<strong>United Kingdom</strong>
+<br/><br/>
+The UK GDPR, the Data Protection Act 2018, the CAP Code and the Consumer Rights Act 2015 apply to relevant Users. Non-waivable consumer rights (Consumer Rights Act 2015) are preserved; clauses 15.5 and 16.2 reflect this.
+<br/><br/>
+<strong>European Union</strong>
+<br/><br/>
+The GDPR, the Digital Services Act, the Unfair Commercial Practices Directive and applicable national consumer law apply. Nothing in these Terms excludes non-waivable EU consumer protections, and EU consumers retain their right to bring proceedings in their home courts where Applicable Law so requires.
+<br/><br/>
+<strong>United States</strong>
+<br/><br/>
+U.S. Users acknowledge that the FTC Endorsement Guides apply, that applicable U.S. state NIL rules apply to college athletes, and that the ESIGN Act and Uniform Electronic Transactions Act recognise electronic signature. The class-action waiver and limitation provisions (clauses 15.6 and 15.7) and the jury-trial waiver below apply to the maximum extent permitted by Applicable Law. TO THE EXTENT PERMITTED BY APPLICABLE LAW, EACH U.S. USER WAIVES ITS RIGHT TO A TRIAL BY JURY IN RESPECT OF ANY DISPUTE ARISING OUT OF OR RELATING TO THESE TERMS. California residents&apos; rights under the CCPA/CPRA are preserved.
+<br/><br/>
+<strong>South Africa</strong>
+<br/><br/>
+POPIA, the Consumer Protection Act 2008 and the Electronic Communications and Transactions Act 2002 apply. Where a User qualifies as a “consumer” under the CPA, non-waivable CPA protections are preserved, and clauses 15.5 and 16.2 apply accordingly. Clause 7 is intended to operate as a reasonable restraint of trade and is severable under South African law to the extent required to preserve enforceability.
+
       </p>
     </main>
   );
