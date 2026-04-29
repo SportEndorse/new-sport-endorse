@@ -101,6 +101,7 @@ export default function AboutUsContent() {
         {
           name: "Rowan Ellis",
           countryFlag: "/images/flags/UK_flag.png",
+          imageUrl: "/images/teamPhotos/rowan-ellis-headshot.png",
           ...teamContent.members.rowanEllis
         },
         {
@@ -200,6 +201,7 @@ export default function AboutUsContent() {
         {
           name: "Nicola Woodgate",
           countryFlag: "/images/flags/flag-of-south-africa.jpg",
+          imageUrl: "/images/teamPhotos/nicola-woodgate-headshot.png",
           ...teamContent.members.nicolaWoodgate
         }
       ]
