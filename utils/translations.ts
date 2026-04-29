@@ -188,7 +188,7 @@ const translations = {
           declanBourke: {
             role: "COO + Founder",
             country: "Ireland",
-            departments: ["Management", "IT/ Operations"]
+            departments: ["Management", "IT/Operations"]
           },
           trevorTwamley: {
             role: "CEO + Founder",
@@ -208,7 +208,7 @@ const translations = {
           martinNutty: {
             role: "CDO",
             country: "USA",
-            departments: ["IT/ Operations"]
+            departments: ["IT/Operations"]
           },
           seanArmada: {
             role: "Markets Development Manager",
@@ -233,7 +233,7 @@ const translations = {
           collinFiske: {
             role: "Full Stack Developer",
             country: "USA",
-            departments: ["IT/ Operations"]
+            departments: ["IT/Operations"]
           },
           liamForster: {
             role: "Lead Generation Manager",
@@ -268,7 +268,7 @@ const translations = {
           jackSampson: {
             role: "Data Analyst",
             country: "USA",
-            departments: ["IT/ Operations"]
+            departments: ["IT/Operations"]
           },
           lenaSmirnova: {
             role: "Market Development Executive",
@@ -931,7 +931,7 @@ const translations = {
           declanBourke: {
             role: "COO + Fundador",
             country: "Irlanda",
-            departments: ["Dirección", "IT/ Operaciones"]
+            departments: ["Dirección", "IT/Operaciones"]
           },
           trevorTwamley: {
             role: "CEO + Fundador",
@@ -951,7 +951,7 @@ const translations = {
           martinNutty: {
             role: "CDO",
             country: "Estados Unidos",
-            departments: ["IT/ Operaciones"]
+            departments: ["IT/Operaciones"]
           },
           seanArmada: {
             role: "Gerente de Desarrollo de Mercados",
@@ -976,7 +976,7 @@ const translations = {
           collinFiske: {
             role: "Desarrollador Full Stack",
             country: "Estados Unidos",
-            departments: ["IT/ Operaciones"]
+            departments: ["IT/Operaciones"]
           },
           liamForster: {
             role: "Gerente de Generación de Leads",
@@ -1011,7 +1011,7 @@ const translations = {
           jackSampson: {
             role: "Analista de Datos",
             country: "Estados Unidos",
-            departments: ["IT/ Operaciones"]
+            departments: ["IT/Operaciones"]
           },
           lenaSmirnova: {
             role: "Ejecutiva de Desarrollo de Mercado",
@@ -1665,7 +1665,7 @@ const translations = {
           declanBourke: {
             role: "COO + Gründer",
             country: "Irland",
-            departments: ["Management", "IT / Betrieb"]
+            departments: ["Management", "IT/Betrieb"]
           },
           trevorTwamley: {
             role: "CEO + Gründer",
@@ -1685,7 +1685,7 @@ const translations = {
           martinNutty: {
             role: "CDO",
             country: "USA",
-            departments: ["IT / Betrieb"]
+            departments: ["IT/Betrieb"]
           },
           seanArmada: {
             role: "Manager für Marktentwicklung",
@@ -1710,7 +1710,7 @@ const translations = {
           collinFiske: {
             role: "Full Stack Developer",
             country: "USA",
-            departments: ["IT / Betrieb"]
+            departments: ["IT/Betrieb"]
           },
           liamForster: {
             role: "Manager für Leadgenerierung",
@@ -1745,7 +1745,7 @@ const translations = {
           jackSampson: {
             role: "Datenanalyst",
             country: "USA",
-            departments: ["IT / Betrieb"]
+            departments: ["IT/Betrieb"]
           },
           lenaSmirnova: {
             role: "Mitarbeiterin für Marktentwicklung",
