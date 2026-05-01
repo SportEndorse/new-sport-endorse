@@ -182,6 +182,7 @@ h1.blog-main-title {
 }
 
 h2.blog-post-title {
+  color: black;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
