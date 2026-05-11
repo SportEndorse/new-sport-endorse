@@ -1,6 +1,6 @@
 ## Sport Endorse Website
 
-Next.js 15 website backed by Neon/Postgres for content serving and translation caching.
+Next.js 15 website backed by Turso db for content serving and translation caching.
 
 ## Local Development
 
@@ -13,19 +13,18 @@ Default local URL: `http://localhost:3000`
 
 ## Required Environment Variables
 
-- `NEON_DATABASE_URL` (preferred) or `POSTGRES_URL` or `DATABASE_URL`
+- `DATABASE_URL` - this is old, but used for the old neon db setup, using turso now
+- `TURSO_DATABASE_URL` - for turso db
+- `TURSO_AUTH_TOKEN` - for turso db
 - `NEXT_PUBLIC_SITE_URL` (recommended for server-side metadata URL generation)
-- `WORDPRESS_SYNC_SECRET` (recommended for secure sync endpoint access)
-- `CRON_SECRET` (recommended when using Vercel Cron)
-- `WORDPRESS_SYNC_MIN_INTERVAL_MINUTES` (optional, defaults to `30`)
 
-## WordPress -> Neon Sync
+## WordPress -> Turso Sync
 
 ### Where the sync happens
 
 - Sync endpoint: `app/api/wordpress/sync/route.ts`
 - DB upsert logic: `app/api/wordpress/sync/route.ts` (`upsertPost`)
-- Content read API (from Neon): `app/api/content/route.ts`
+- Content read API (from Turso): `app/api/content/route.ts`
 - DB read helpers: `utils/content-repository.ts`
 
 ### What gets synced
@@ -119,9 +118,9 @@ If a WordPress post changed but website content did not:
 2. Confirm sync was not skipped by interval (`skipped: true` response).
 3. Run a forced sync (`force=true`) and verify `summaries` counts.
 4. Verify sync auth headers/secret are correct.
-5. Confirm Neon tables (`posts`, `post_content`) contain updated row values.
+5. Confirm Turso tables (`posts`, `post_content`) contain updated row values.
 6. Re-check page source path:
-	 - Main content loads from `/api/content` (Neon-backed).
+	 - Main content loads from `/api/content` (Turso-backed).
 	 - Some metadata and static slug generation still fetch directly from WordPress utilities.
 
 ## Useful Scripts
