@@ -10,7 +10,8 @@ export const metadata: Metadata = {
       'en': '/success_stories',
       'es': '/es/success_stories',
       'de': '/de/success_stories',
-      'fr': '/fr/success_stories'
+      'fr': '/fr/success_stories',
+      'x-default': 'https://www.sportendorse.com/success_stories'
     }
   },
   openGraph: {

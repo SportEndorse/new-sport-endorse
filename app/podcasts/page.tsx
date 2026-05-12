@@ -10,7 +10,8 @@ export const metadata: Metadata = {
       'en': '/podcasts',
       'es': '/es/podcasts',
       'de': '/de/podcasts',
-      'fr': '/fr/podcasts'
+      'fr': '/fr/podcasts',
+      'x-default': 'https://www.sportendorse.com/podcasts'
     }
   },
   openGraph: {

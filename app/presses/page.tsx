@@ -7,11 +7,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.sportendorse.com/presses",
     languages: {
-      'en': '/presses',
-      'es': '/es/presses',
-      'de': '/de/presses',
-      'fr': '/fr/presses'
-    }
+      en: "/presses",
+      es: "/es/presses",
+      de: "/de/presses",
+      fr: "/fr/presses",
+      "x-default": "https://www.sportendorse.com/presses",
+    },
   },
   openGraph: {
     title: "Latest Sports News & Press Releases | Sport Endorse",

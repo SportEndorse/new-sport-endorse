@@ -86,7 +86,7 @@ export default function HomeContent() {
           <img
             key={`placeholder-${screenSize}`}
             src={placeholderImage}
-            alt=""
+            alt="sport endorse video image"
             className="home-videoPlaceholder"
             style={{
               position: 'absolute',

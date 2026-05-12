@@ -13,7 +13,8 @@ export const metadata: Metadata = {
       'en': "https://www.sportendorse.com/terms-and-conditions",
       'es': "https://www.sportendorse.com/es/terms-and-conditions",
       'de': "https://www.sportendorse.com/de/terms-and-conditions",
-      'fr': "https://www.sportendorse.com/fr/terms-and-conditions"
+      'fr': "https://www.sportendorse.com/fr/terms-and-conditions",
+      'x-default': 'https://www.sportendorse.com/terms-and-conditions'
     }
   },
   openGraph: {

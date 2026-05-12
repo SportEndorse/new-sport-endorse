@@ -13,7 +13,8 @@ export const metadata: Metadata = {
       'en': '/contact-us',
       'es': '/es/contact-us',
       'de': '/de/contact-us',
-      'fr': '/fr/contact-us'
+      'fr': '/fr/contact-us',
+      'x-default': 'https://www.sportendorse.com/contact-us'
     }
   },
   openGraph: {
