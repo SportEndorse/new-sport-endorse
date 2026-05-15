@@ -471,7 +471,7 @@ const translations = {
       },
       featuredTalents: {
         title: "Discover Our Talent at Sport Endorse",
-        subtitle: "We work with a diverse selection of 7000+ global athletes and 280 sporting disciplines.",
+        subtitle: "We work with a diverse selection of 8000+ global athletes and 280 sporting disciplines.",
         viewAll: "Sign up to view more!",
         location: "Location"
       },
@@ -1214,7 +1214,7 @@ const translations = {
       },
       featuredTalents: {
         title: "Descubre Nuestro Talento en Sport Endorse",
-        subtitle: "Trabajamos con una selección diversa de 7000+ atletas globales y 280 disciplinas deportivas.",
+        subtitle: "Trabajamos con una selección diversa de 8000+ atletas globales y 280 disciplinas deportivas.",
         viewAll: "¡Regístrate para ver más!",
         location: "Ubicación"
       },
@@ -1948,7 +1948,7 @@ const translations = {
       },
       featuredTalents: {
         title: "Entdecken Sie Unser Talent bei Sport Endorse",
-        subtitle: "Wir arbeiten mit einer vielfältigen Auswahl von 7000+ globalen Athleten und 280 Sportdisziplinen.",
+        subtitle: "Wir arbeiten mit einer vielfältigen Auswahl von 8000+ globalen Athleten und 280 Sportdisziplinen.",
         viewAll: "Registrieren Sie sich, um mehr zu sehen!",
         location: "Standort"
       },
@@ -2691,7 +2691,7 @@ const translations = {
       },
       featuredTalents: {
         title: "Découvrez nos talents sur Sport Endorse",
-        subtitle: "Nous travaillons avec une sélection diversifiée de 7000+ athlètes mondiaux et 280 disciplines sportives.",
+        subtitle: "Nous travaillons avec une sélection diversifiée de 8000+ athlètes mondiaux et 280 disciplines sportives.",
         viewAll: "Inscrivez-vous pour voir plus!",
         location: "Localisation"
       },
