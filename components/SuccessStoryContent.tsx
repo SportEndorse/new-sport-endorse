@@ -223,16 +223,24 @@ export default function SuccessStoryContent({ slug }: SuccessStoryContentProps) 
                 
                 {/* Show bottom description if available */}
                 {(displayStory?.success_stories_bottom_description || story.success_stories_bottom_description) && (
-                  <div className="success-story-bottom-description" style={{ 
-                    fontSize: '1rem', 
-                    marginBottom: '2rem',
-                    padding: '1rem',
-                    background: '#f1f3f4',
-                    borderLeft: '4px solid #28a745',
-                    borderRadius: '4px'
-                  }}>
-                    {decodeHtmlEntities((displayStory?.success_stories_bottom_description || story.success_stories_bottom_description || '').replace(/<[^>]*>/g, ''))}
-                  </div>
+                  <div
+                    className="success-story-bottom-description"
+                    style={{
+                      fontSize: '1rem',
+                      marginBottom: '2rem',
+                      padding: '1rem',
+                      background: '#f1f3f4',
+                      borderLeft: '4px solid #28a745',
+                      borderRadius: '4px'
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: decodeHtmlEntities(
+                        displayStory?.success_stories_bottom_description ||
+                          story.success_stories_bottom_description ||
+                          ''
+                      )
+                    }}
+                  />
                 )}
                 
                 <div 
