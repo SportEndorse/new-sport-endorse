@@ -17,7 +17,7 @@ export default function Community({ showAgencies = false }: CommunityProps) {
   const brands = "650+";
   const agencies = "20+";
   const sports = "280+";
-  const nationalities = "85+";
+  const nationalities = "100+";
 
   return (
     <section className="statistics-section">
