@@ -15,7 +15,7 @@ export default function Community({ showAgencies = false }: CommunityProps) {
   // Hard-coded values
   const athletes = "8000+";
   const brands = "650+";
-  const agencies = "20+";
+  const agencies = "30+";
   const sports = "280+";
   const nationalities = "100+";
 
