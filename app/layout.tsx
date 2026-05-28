@@ -47,7 +47,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/ico" href="favicon.ico" />
         
         {/* Optimized video preloading with WebM format */}
-        <link rel="preload" as="video" href="/videos/4_3 aspect ratio (wide) .webm" type="video/webm" />
+        <link
+          rel="preload"
+          as="video"
+          href="/videos/9_16 aspect ratio (mobile_reel_tiktok).webm"
+          type="video/webm"
+          media="(max-width: 480px)"
+        />
+        <link
+          rel="preload"
+          as="video"
+          href="/videos/3_4 aspect ratio (in between).webm"
+          type="video/webm"
+          media="(min-width: 481px) and (max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="video"
+          href="/videos/4_3 aspect ratio (wide) .webm"
+          type="video/webm"
+          media="(min-width: 769px)"
+        />
         
         {/* DNS prefetch for potential video CDN */}
         <link rel="dns-prefetch" href="//cdn.sportendorse.com" />

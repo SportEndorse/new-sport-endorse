@@ -15,12 +15,9 @@ export default function HomeContent() {
   const { language } = useLanguage();
   const t = translations[language];
   const [isMobile, setIsMobile] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [screenSize, setScreenSize] = useState<'small' | 'medium' | 'large'>('large');
 
   useEffect(() => {
-    setIsClient(true);
     const checkScreenSize = () => {
       const width = window.innerWidth;
       setIsMobile(width <= 480);
@@ -41,18 +38,6 @@ export default function HomeContent() {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  // Optimized video source selection with compressed formats
-  const getVideoSource = () => {
-    if (!isClient) return "/videos/4_3 aspect ratio (wide) .webm";
-    if (window.innerWidth <= 480) {
-      return "/videos/9_16 aspect ratio (mobile_reel_tiktok).webm";
-    } else if (window.innerWidth <= 768) {
-      return "/videos/3_4 aspect ratio (in between).webm";
-    } else {
-      return "/videos/4_3 aspect ratio (wide) .webm";
-    }
-  };
-
    // Get placeholder image based on screen size
   const getPlaceholderImage = () => {
     switch (screenSize) {
@@ -67,41 +52,12 @@ export default function HomeContent() {
     }
   };
 
-  const videoSource = getVideoSource();
   const placeholderImage = getPlaceholderImage();
-
-  const handleVideoLoaded = () => {
-    setIsVideoLoaded(true);
-  };
-
-  const handleVideoLoadStart = () => {
-    setIsVideoLoaded(false);
-  };
 
   return (
     <>
       <section className="home-heroSection">
         <div className="home-videoBackground">
-          {/* Placeholder image shown while video loads */}
-          <img
-            key={`placeholder-${screenSize}`}
-            src={placeholderImage}
-            alt="sport endorse video image"
-            className="home-videoPlaceholder"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              zIndex: 0,
-              opacity: isVideoLoaded ? 0 : 1,
-              transition: 'opacity 0.5s ease-in-out',
-              pointerEvents: 'none',
-            }}
-          />
           <video 
             autoPlay 
             muted 
@@ -109,16 +65,19 @@ export default function HomeContent() {
             playsInline 
             className="home-backgroundVideo"
             preload="auto"
-            src={undefined}
-            onLoadedData={handleVideoLoaded}
-            onCanPlay={handleVideoLoaded}
-            onLoadStart={handleVideoLoadStart}
-            style={{
-              opacity: isVideoLoaded ? 1 : 0,
-              transition: 'opacity 0.5s ease-in-out',
-            }}
+            poster={placeholderImage}
           >
-            <source src={videoSource} type="video/webm" />
+            <source
+              src="/videos/9_16 aspect ratio (mobile_reel_tiktok).webm"
+              type="video/webm"
+              media="(max-width: 480px)"
+            />
+            <source
+              src="/videos/3_4 aspect ratio (in between).webm"
+              type="video/webm"
+              media="(max-width: 768px)"
+            />
+            <source src="/videos/4_3 aspect ratio (wide) .webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
         </div>
