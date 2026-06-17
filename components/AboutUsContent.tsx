@@ -175,12 +175,6 @@ export default function AboutUsContent() {
           ...teamContent.members.clementinePhilbin
         },
         {
-          name: "Paul Richardson",
-          countryFlag: "/images/flags/UK_flag.png",
-          imageUrl: "/images/teamPhotos/paul-richardson-headshot.png",
-          ...teamContent.members.paulRichardson
-        },
-        {
           name: "Jack Sampson",
           countryFlag: "/images/flags/usa-flag.svg",
           imageUrl: "/images/teamPhotos/jack-sampson-min.jpeg",
