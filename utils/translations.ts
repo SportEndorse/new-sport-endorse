@@ -203,7 +203,7 @@ const translations = {
           rowanEllis: {
             role: "CFO (fractional)",
             country: "UK",
-            departments: ["Finance"]
+            departments: ["Investment", "M&A"]
           },
           martinNutty: {
             role: "CDO",
@@ -941,7 +941,7 @@ const translations = {
           rowanEllis: {
             role: "CFO externo",
             country: "Reino Unido",
-            departments: ["Finanzas"]
+            departments: ["Inversión", "M&A"]
           },
           martinNutty: {
             role: "CDO",
@@ -1670,7 +1670,7 @@ const translations = {
           rowanEllis: {
             role: "CFO (interim)",
             country: "Vereinigtes Königreich",
-            departments: ["Finanzen"]
+            departments: ["Investition", "M&A"]
           },
           martinNutty: {
             role: "CDO",
@@ -2408,7 +2408,7 @@ const translations = {
           rowanEllis: {
             role: "CFO à temps partagé",
             country: "Royaume-Uni",
-            departments: ["Finance"]
+            departments: ["Investissement", "M&A"]
           },
           martinNutty: {
             role: "CDO",
