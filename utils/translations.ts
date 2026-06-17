@@ -260,11 +260,6 @@ const translations = {
             country: "UK",
             departments: ["Finance"]
           },
-          paulRichardson: {
-            role: "UK Sales & Brand Development",
-            country: "UK",
-            departments: ["Sales"]
-          },
           jackSampson: {
             role: "Data Analyst",
             country: "USA",
@@ -1003,11 +998,6 @@ const translations = {
             country: "Reino Unido",
             departments: ["Finanzas"]
           },
-          paulRichardson: {
-            role: "Ventas y Desarrollo de Marca en Reino Unido",
-            country: "Reino Unido",
-            departments: ["Ventas"]
-          },
           jackSampson: {
             role: "Analista de Datos",
             country: "Estados Unidos",
@@ -1736,11 +1726,6 @@ const translations = {
             role: "Finanzdirektorin",
             country: "Vereinigtes Königreich",
             departments: ["Finanzen"]
-          },
-          paulRichardson: {
-            role: "Vertrieb & Markenentwicklung UK",
-            country: "Vereinigtes Königreich",
-            departments: ["Vertrieb"]
           },
           jackSampson: {
             role: "Datenanalyst",
@@ -2479,11 +2464,6 @@ const translations = {
             role: "Directrice financière",
             country: "Royaume-Uni",
             departments: ["Finance"]
-          },
-          paulRichardson: {
-            role: "Ventes et développement de marque au Royaume-Uni",
-            country: "Royaume-Uni",
-            departments: ["Ventes"]
           },
           jackSampson: {
             role: "Analyste de données",
