@@ -244,7 +244,7 @@ export default function Header() {
                 </Link>
               </>
             )}
-            <a target="_blank" href="https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07" onClick={() => setHamburgerMenuOpen(false)}>
+            <a target="_blank" href="https://meetings.hubspot.com/alicia269/sport-endorse-demo?embed=true" onClick={() => setHamburgerMenuOpen(false)}>
               {t.bookDemo}
             </a>
             <Link href={getNavLink("/success_stories")} onClick={() => setHamburgerMenuOpen(false)}>

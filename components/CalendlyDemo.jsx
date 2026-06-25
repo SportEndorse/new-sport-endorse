@@ -8,9 +8,12 @@ export default function CalendlyDemo({ agencies = false }) {
   const t = translations[language];
   const tDemo = translations[language].components.calendlyDemo;
   
-  const demoUrl = agencies 
+  /*const demoUrl = agencies 
     ? "https://calendly.com/d/cwcj-xx7-2xn/sport-endorse-demo-agency"
-    : "https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07";
+    : "https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07";*/
+  const demoUrl = agencies 
+  ? "https://meetings.hubspot.com/alicia269/sport-endorse-demo?embed=true"
+  : "https://meetings.hubspot.com/alicia269/sport-endorse-demo?embed=true";
     
   const buttonText = agencies ? tDemo.agencyButtonText : tDemo.buttonText;
   const description = agencies ? tDemo.agencyDescription : tDemo.description;
