@@ -1,6 +1,6 @@
 /* Calendly Demo Section */
 .calendly-demo-section {
-  padding: 2rem 1rem 3rem;
+  padding: 1rem;
   background-color: #fff;
   max-width: 1200px;
   margin: 0 auto;
@@ -94,7 +94,7 @@
 /* Tablet styles */
 @media (max-width: 768px) {
   .calendly-demo-section {
-    padding: 2rem 1rem;
+    padding: 1rem;
   }
   
   .calendly-demo-header {
@@ -140,7 +140,7 @@
 /* Mobile styles */
 @media (max-width: 600px) {
   .calendly-demo-section {
-    padding: 1.5rem 0.75rem;
+    padding: 0.75rem;
   }
   
   .calendly-demo-header {
@@ -174,7 +174,7 @@
 /* Small mobile styles */
 @media (max-width: 480px) {
   .calendly-demo-section {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
   }
   
   .calendly-demo-header {
