@@ -244,9 +244,9 @@ export default function Header() {
                 </Link>
               </>
             )}
-            <a target="_blank" href="https://meetings.hubspot.com/alicia269/sport-endorse-demo?embed=true" onClick={() => setHamburgerMenuOpen(false)}>
+            <Link href={getNavLink("/book-a-demo")} onClick={() => setHamburgerMenuOpen(false)}>
               {t.bookDemo}
-            </a>
+            </Link>
             <Link href={getNavLink("/success_stories")} onClick={() => setHamburgerMenuOpen(false)}>
               {t.successStories}
             </Link>

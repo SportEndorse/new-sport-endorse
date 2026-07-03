@@ -697,6 +697,13 @@ const translations = {
           closing: "Thank you!"
         }
       },
+      bookADemo: {
+        badge: "BOOK A DEMO",
+        title: "Sport Endorse Demo — What to Expect",
+        description: "Join a short demo to see how the Sport Endorse platform connects brands with elite athletes and creators.",
+        description2: "You'll get a look at the user-friendly interface, how to post collaboration opportunities, explore our global talent, and learn how to manage campaigns from start to finish.",
+        description3: "Book a time that suits you to discover how easy it is to set up, connect, and drive results through authentic athlete partnerships."
+      },
       blog: {
         title: "Latest Blog Posts",
         description: "Articles from Sport Endorse team members on what is impacting the sports, marketing and sponsorship world",
@@ -1425,6 +1432,13 @@ const translations = {
           messageField: "Mensaje:",
           closing: "¡Gracias!"
         }
+      },
+      bookADemo: {
+        badge: "RESERVA UNA DEMO",
+        title: "Demo de Sport Endorse — Qué Esperar",
+        description: "Únete a una breve demostración para ver cómo la plataforma Sport Endorse conecta a las marcas con atletas y creadores de élite.",
+        description2: "Verás la interfaz fácil de usar, cómo publicar oportunidades de colaboración, explorar nuestro talento global y aprender a gestionar campañas de principio a fin.",
+        description3: "Reserva un horario que te convenga para descubrir lo fácil que es configurar, conectar e impulsar resultados a través de asociaciones auténticas con atletas."
       },
       blog: {
         title: "Últimas Publicaciones del Blog",
@@ -2164,6 +2178,13 @@ const translations = {
           closing: "Vielen Dank!"
         }
       },
+      bookADemo: {
+        badge: "DEMO BUCHEN",
+        title: "Sport Endorse Demo — Was Sie erwartet",
+        description: "Nehmen Sie an einer kurzen Demo teil, um zu sehen, wie die Sport Endorse-Plattform Marken mit Elite-Athleten und Creators verbindet.",
+        description2: "Sie erhalten einen Einblick in die benutzerfreundliche Oberfläche, wie Sie Kooperationsmöglichkeiten veröffentlichen, unser globales Talent entdecken und Kampagnen von Anfang bis Ende verwalten.",
+        description3: "Buchen Sie einen passenden Termin, um zu entdecken, wie einfach es ist, authentische Partnerschaften mit Athleten einzurichten, zu verbinden und Ergebnisse zu erzielen."
+      },
       blog: {
         title: "Neueste Blog-Beiträge",
         description: "Artikel von Sport Endorse Team-Mitgliedern über das, was die Sport-, Marketing- und Sponsoring-Welt beeinflusst",
@@ -2901,6 +2922,13 @@ const translations = {
           messageField: "Message:",
           closing: "Merci!"
         }
+      },
+      bookADemo: {
+        badge: "RÉSERVER UNE DÉMO",
+        title: "Démo Sport Endorse — À quoi s'attendre",
+        description: "Participez à une courte démo pour découvrir comment la plateforme Sport Endorse connecte les marques avec des athlètes et créateurs d'élite.",
+        description2: "Vous découvrirez l'interface conviviale, comment publier des opportunités de collaboration, explorer notre talent mondial et apprendre à gérer des campagnes de bout en bout.",
+        description3: "Réservez un horaire qui vous convient pour découvrir à quel point il est facile de configurer, connecter et obtenir des résultats grâce à des partenariats authentiques avec des athlètes."
       },
       blog: {
         title: "Derniers messages du blog",
