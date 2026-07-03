@@ -10,7 +10,7 @@ export const brandFAQs = {
     },
     {
       question: "Why should I join Sport Endorse?",
-      answer: "By joining Sport Endorse, you will have access to over 7,000 verified athletes, all of whom can help you promote your brand using their large followings. These collaborations drive awareness and more sales through authentic athlete sponsorship opportunities."
+      answer: "By joining Sport Endorse, you will have access to over 8000 verified athletes, all of whom can help you promote your brand using their large followings. These collaborations drive awareness and more sales through authentic athlete sponsorship opportunities."
     },
     {
       question: "I'm a small business. Is sponsorship also possible for small budgets?",
@@ -104,7 +104,7 @@ export const brandFAQs = {
     },
     {
       question: "¿Por qué debería unirme a Sport Endorse?",
-      answer: "Al unirte a Sport Endorse, tendrás acceso a más de 7,000 atletas verificados, todos los cuales pueden ayudarte a promocionar tu marca usando sus grandes seguidores. Estas colaboraciones impulsan la conciencia y más ventas a través de oportunidades auténticas de patrocinio de atletas."
+      answer: "Al unirte a Sport Endorse, tendrás acceso a más de 8000 atletas verificados, todos los cuales pueden ayudarte a promocionar tu marca usando sus grandes seguidores. Estas colaboraciones impulsan la conciencia y más ventas a través de oportunidades auténticas de patrocinio de atletas."
     },
     {
       question: "Soy una pequeña empresa. ¿El patrocinio también es posible para presupuestos pequeños?",
@@ -198,7 +198,7 @@ export const brandFAQs = {
     },
     {
       question: "Warum sollte ich Sport Endorse beitreten?",
-      answer: "Durch den Beitritt zu Sport Endorse haben Sie Zugang zu über 7.000 verifizierten Athleten, die alle dabei helfen können, Ihre Marke mit ihren großen Followings zu bewerben. Diese Kooperationen fördern das Bewusstsein und mehr Verkäufe durch authentische Athleten-Sponsoring-Möglichkeiten."
+      answer: "Durch den Beitritt zu Sport Endorse haben Sie Zugang zu über 8000 verifizierten Athleten, die alle dabei helfen können, Ihre Marke mit ihren großen Followings zu bewerben. Diese Kooperationen fördern das Bewusstsein und mehr Verkäufe durch authentische Athleten-Sponsoring-Möglichkeiten."
     },
     {
       question: "Ich bin ein kleines Unternehmen. Ist Sponsoring auch für kleine Budgets möglich?",
