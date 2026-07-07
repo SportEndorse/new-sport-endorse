@@ -43,6 +43,18 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
       }
     }
   };
+
+  const getNavLink = (path: string) => {
+    // Ensure path starts with /
+    const cleanPath = path.startsWith('/') ? path : '/' + path;
+    
+    if (language === 'en') {
+      return cleanPath;
+    }
+    return `/${language}${cleanPath}`;
+  };
+
+
   return (
     <section className="benefit-section" style={{ background }}>
       <div className="benefit-left">
@@ -63,13 +75,13 @@ export default function BenefitSection({ title, subtitle, image, label, backgrou
           {image && (image !== "/images/talentBenefitPic.png" && image !== "/images/talentBenefitPic-min.png" && image !== "images/agencyBenefitPic.jpg" && image !== "/images/agencyBenefitPic.jpg") ? (
             <>
               <Link href={getPageLink()}><button className="benefit-button">{customButtonText || t.common.learnMore}</button></Link>
-              <a target="_blank" href={
+              <Link href={
                 (image === "/images/agency_dashboard.png" || image === "/images/agency_dashboard-min.png" || label === t.home.benefitSection.agency.label) 
-                  ? "https://calendly.com/d/cwcj-xx7-2xn/sport-endorse-demo-agency"
-                  : "https://calendly.com/d/dzw-nc4-57b/sport-endorse-demo?month=2025-07"
+                  ? getNavLink("/agency#agency-demo")
+                  : getNavLink("/book-a-demo")
               }>
               <button className="demo-button">{t.common.bookDemo}</button>
-              </a>
+              </Link>
             </>
           ) : (
             <>

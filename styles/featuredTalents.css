@@ -38,6 +38,11 @@
   overflow-x: auto;
   padding-bottom: 1rem;
   /*box-shadow: inset -100px 0 100px -50px black;*/
+
+  
+  overflow-x: scroll;
+  scrollbar-color: #eaf5ff white;
+  scrollbar-width: thin;
 }
 
 .talent-card {

@@ -11,6 +11,7 @@ import CategoryDropdownFAQ from "@/components/CategoryDropdownFAQ";
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "@/utils/translations";
 import { agencyFAQs } from "@/utils/faqData";
+import Link from "next/link";
 
 export default function AgencyContent() {
   const { language } = useLanguage();
@@ -34,14 +35,9 @@ export default function AgencyContent() {
             <p className="agency-description">
               {t.agency.description}
             </p>
-            <a 
-              href="https://calendly.com/d/cwcj-xx7-2xn/sport-endorse-demo-agency"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="agency-cta-button"
-            >
+            <Link href="#agency-demo" className="agency-cta-button">
               {t.agency.bookCallToPartner}
-            </a>
+            </Link>
           </div>
           
           <div className="agency-imageContainer">
@@ -54,7 +50,7 @@ export default function AgencyContent() {
 
       <AgencyHowItWorks />
 
-      <CalendlyDemo agencies={true} />
+      <CalendlyDemo agencies={true} id="agency-demo"/>
       <br/>
 
       <SuccessStories />
